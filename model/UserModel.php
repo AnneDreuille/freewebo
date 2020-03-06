@@ -52,6 +52,15 @@ class UserModel extends Model {
       return $req->fetchAll();
     }
 
+//mettre à jour les données d'1 user
+  public function updateData($mail, $phone, $id) {
+    $db= $this->dbConnect();
+
+    $req = $db->prepare('UPDATE user SET mail=?, phone=?, WHERE id=?');
+
+    return $req->execute(array($mail, $phone, $id));
+  }
+
 //blacklister 1 user
   public function blacklist($blacklistDate, $id) {
     $db= $this->dbConnect();
