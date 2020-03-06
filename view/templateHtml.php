@@ -24,7 +24,7 @@
         <!--lien bootstrap-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
         <!--lien autre style-->
-        <!-- <link rel="stylesheet" href="/freewebo/public/style.css"/> -->
+        <link rel="stylesheet" href="/freewebo/public/style.css"/>
 
         <!--script schema.org-->
         <!-- Balisage JSON-LD généré par l'outil d'aide au balisage de données structurées de Google -->
