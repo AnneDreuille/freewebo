@@ -53,7 +53,7 @@ class UserModel extends Model {
     }
 
 //mettre à jour les données d'1 user
-  public function updateData($mail, $phone, $id) {
+  public function updateUser($mail, $phone, $id) {
     $db= $this->dbConnect();
 
     $req = $db->prepare('UPDATE user SET mail=?, phone=?, WHERE id=?');
