@@ -62,7 +62,7 @@ class UserModel extends Model {
   }
 
 //blacklister 1 user
-  public function blacklist($blacklistDate, $id) {
+  public function blacklist($id) {
     $db= $this->dbConnect();
 
     $req = $db->prepare('UPDATE user SET blacklistDate=NOW() WHERE id=?');
