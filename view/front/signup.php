@@ -21,33 +21,33 @@
                     <fieldset class="form-check">
                         <legend>Qui êtes-vous&nbsp;?</legend>
 
-                        <input type="radio" id="client1" name="userType" class="form-check-input" /><br/>
+                        <input type="radio" id="client1" name="userType" value="client" class="form-check-input" /><br/>
                         <label for="client1" class="form-check-label">Gérant d'une association</label>
 
-                        <input type="radio" id="client2" name="userType" class="form-check-input" /><br/>
+                        <input type="radio" id="client2" name="userType" value="client" class="form-check-input" /><br/>
                         <label for="client2" class="form-check-label">Jeune créateur d'entreprise</label>
 
-                        <input type="radio" id="dev" name="userType" class="form-check-input" /><br/>
+                        <input type="radio" id="dev" name="userType" value="dev" class="form-check-input" /><br/>
                         <label for="dev" class="form-check-label">Développeur bénévole</label>
                     </fieldset>
 
                     <fieldset class="form-group form-inline">
                         <label for="lastName">Nom</label>
-                        <input type="text" name="lastName" id="lastName" required/><br/>
+                        <input type="text" name="lastName" id="lastName" value="lastName" required/><br/>
 
                         <label for="firstName">Prénom</label>
-                        <input type="text" name="firstName" id="firstName" required/><br/>
+                        <input type="text" name="firstName" id="firstName" value="firstName" required/><br/>
                     </fieldset>
 
                     <fieldset class="form-group">
                         <label for="email">Mail</label>
-                        <input type="email" name="email" placeholder="monmail@exemple.com" required/><br/>
+                        <input type="email" name="email" value="mail" placeholder="monmail@exemple.com" required/><br/>
 
                         <label for="tel">Tél.</label>
-                        <input type="tel" name="tel" placeholder="0x xx xx xx xx" pattern="[0-9]{2}s\[0-9]{2}s\[0-9]{2}s\[0-9]{2}s\[0-9]{2}" /><br/>
+                        <input type="tel" name="tel" value="phone" placeholder="0x xx xx xx xx" pattern="[0-9]{2}s\[0-9]{2}s\[0-9]{2}s\[0-9]{2}s\[0-9]{2}" /><br/>
 
                         <label for="password">Mot de passe</label>
-                        <input type="password" name="password" required/><br/>
+                        <input type="password" name="password" value="password" required/><br/>
                     </fieldset>
 
                     <input type="submit" value="signUp" id="submit" class="btn btn-success" >Valider<br/>
