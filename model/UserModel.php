@@ -4,12 +4,12 @@ require_once(__DIR__.'/Model.php');
 class UserModel extends Model {
 
 //insérer un nouveau user
-  public function signUp($userType,$firstName,$lastName,$mail,$phone,$password)
+  public function signUp($userType,$lastName,$firstName,$mail,$phone,$password)
     $db= $this->dbConnect();
 
-    $req = $db->prepare('INSERT INTO user (userType,firstName,lastName,mail,phone,password,signUpDate) VALUES (?,?,?,?,?,?,NOW())');
+    $req = $db->prepare('INSERT INTO user (userType,lastName,firstName,mail,phone,password,signUpDate) VALUES (?,?,?,?,?,?,NOW())');
 
-    return $req->execute(array($userType,$firstName,$lastName,$mail,$phone,$password));
+    return $req->execute(array($userType,$lastName,$firstName,$mail,$phone,$password));
   }
 
   //récupérer le nombre de clients
