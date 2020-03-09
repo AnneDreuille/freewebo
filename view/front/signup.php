@@ -44,7 +44,7 @@
                         <input type="email" name="email" value="mail" placeholder="monmail@exemple.com" required/><br/>
 
                         <label for="tel">Tél.</label>
-                        <input type="tel" name="tel" value="phone" placeholder="0x xx xx xx xx" pattern="[0-9]{2}s\[0-9]{2}s\[0-9]{2}s\[0-9]{2}s\[0-9]{2}" /><br/>
+                        <input type="tel" name="tel" value="phone" placeholder="0x xx xx xx xx" /><br/>
 
                         <label for="password">Mot de passe</label>
                         <input type="password" name="password" value="password" required/><br/>
