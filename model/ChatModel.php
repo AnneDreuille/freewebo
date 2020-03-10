@@ -9,7 +9,7 @@ class ChatModel extends Model {
 
     $req = $db->prepare('INSERT INTO chat (idSender,idProject,message,postDate) VALUES (?,?,?,NOW())');
 
-    return $req->execute(array($idSender,$idProject,$message);
+    return $req->execute(array($idSender,$idProject,$message));
   }
 
 //récupérer la liste des messages
