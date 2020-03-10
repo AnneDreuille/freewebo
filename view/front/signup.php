@@ -17,7 +17,7 @@
             <div class="col-xs-12 col-md-6">
 
                 <!-- afficher le formulaire d'INSCRIPTION à remplir -->
-                <form action="action=/signUp.php" method="post">
+                <form action="action=index.php?action=signUp" method="post">
                     <fieldset class="form-check">
                         <legend>Qui êtes-vous&nbsp;?</legend>
 
