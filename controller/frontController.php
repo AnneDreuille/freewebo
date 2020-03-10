@@ -44,7 +44,7 @@ function signUp() {
     $addData= $userModel->signUp(htmlspecialchars($_POST['userType']), htmlspecialchars($_POST['lastName']), htmlspecialchars($_POST['firstName']), htmlspecialchars($_POST['mail']), htmlspecialchars($_POST['phone']), $password_hash);
 
     //diriger vers la page signUp
-    header('Location: index.php?action=signUp']);
+    header('Location: index.php?action=signUp');
     die();
 
   }
