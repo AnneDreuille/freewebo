@@ -4,10 +4,10 @@
 <?php ob_start(); ?>
     <div class="container-fluid">
 
-        <h1 class="text-center page-header text-primary"><strong>Bienvenue sur le site FreeWebo&nbsp;!</strong>
-        <!-- <p><img src="public/images/logo.jpg" alt="logo"/></p> -->
-        <!-- <p></p> -->
-        </h1>
+        <header class="card-header">
+            <h1 class="text-center page-header text-info"><img src="public/images/logo.jpg" alt="logo"/><strong> Bienvenue sur le site FreeWebo&nbsp;!</strong>
+            </h1>
+        </header>
 
         <div class="row">
 
