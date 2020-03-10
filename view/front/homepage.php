@@ -4,10 +4,19 @@
 <?php ob_start(); ?>
     <div class="container-fluid">
 
-        <header class="card-header">
+        <header class="card-header rounded">
             <h1 class="text-center page-header text-info"><img src="public/images/logo.png" alt="logo"/><strong> Bienvenue sur le site FreeWebo&nbsp;!</strong>
             </h1>
         </header>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <p class="text-center bg-info rounded text-white font-weight-semi-bold">FreeWebo est une agence web solidaire<br/> qui crée des sites web gratuitement<br/> pour des associations<br/>et des jeunes créateurs d'entreprise,<br/>avec l'aide de développeurs bénévoles</p>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+
 
         <div class="row">
 
