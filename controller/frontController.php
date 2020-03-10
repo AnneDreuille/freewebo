@@ -7,7 +7,7 @@ require_once(__DIR__.'/../model/ChatModel.php');
 
 //rediriger vers homepage
 function homepage(){
-  require(__DIR__.'/../view/front/homepage.php');
+    require(__DIR__.'/../view/front/homepage.php');
 }
 
 //renseigner le formulaire d'inscription
@@ -17,21 +17,21 @@ function signUp() {
   if (!empty ($_POST)){
 
     if (empty($_POST['userType'])){
-      $message= "Sélectionner SVP une case !";
+        $message= "Sélectionner SVP une case !";
     } elseif (empty($_POST['lastName'])) {
-      $message= "Indiquer SVP votre nom !";
+        $message= "Indiquer SVP votre nom !";
     } elseif (empty($_POST['firstName'])) {
-      $message= "Indiquer SVP votre prénom !";
+        $message= "Indiquer SVP votre prénom !";
     } elseif (empty($_POST['mail'])) {
-      $message="Indiquer SVP votre mail !";
+        $message="Indiquer SVP votre mail !";
     } elseif (!preg_match('#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#is', $mail)){
-      $message= "Indiquer SVP une adresse mail correcte !";
+        $message= "Indiquer SVP une adresse mail correcte !";
     } elseif (!preg_match('[0-9]{10}', $phone)) {
-      $message= "Indiquer SVP un n° de tél. portable correct !";
+        $message= "Indiquer SVP un n° de tél. portable correct !";
     } elseif (empty($_POST['password'])) {
-      $message= "Indiquer SVP votre mot de passe !";
+        $message= "Indiquer SVP votre mot de passe !";
     } else {
-      $message= "Super ! Merci de vous être inscrit(e) !";
+        $message= "Super ! Merci de vous être inscrit(e) !";
     }
 
     //créer l'objet
@@ -43,7 +43,7 @@ function signUp() {
     //appeler la fonction de cet objet
     $addData= $userModel->signUp(htmlspecialchars($_POST['userType']), htmlspecialchars($_POST['lastName']), htmlspecialchars($_POST['firstName']), htmlspecialchars($_POST['mail']), htmlspecialchars($_POST['phone']), $password_hash);
 
-    //diriger vers la page signUp
+    // diriger vers la page signUp
     header('Location: index.php?action=signUp');
     die();
 
