@@ -17,9 +17,9 @@
         <script src="https://kit.fontawesome.com/97e1d87785.js"></script>
 
         <!--liens pour le favicon (les 2 1ers pour version en ligne, le 3ème pour version en local)-->
-        <!-- <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="icon" href="/blogjf/public/images/favicon.ico" type="image/ico" /> -->
+        <link rel="icon" href="/freewebo/public/images/favicon.ico" type="image/ico" />
 
         <!--lien CDN bootstrap-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
