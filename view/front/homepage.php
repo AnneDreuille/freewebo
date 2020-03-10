@@ -7,33 +7,35 @@
         <header class="card-header rounded">
             <h1 class="text-center page-header text-info"><img src="public/images/logo.png" alt="logo"/><strong> Bienvenue sur le site FreeWebo&nbsp;!</strong>
             </h1>
-        </header>
+        </header><br/>
 
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4">
-                <p class="text-center bg-info rounded text-white font-weight-semi-bold">FreeWebo est une agence web solidaire<br/> qui crée des sites web gratuitement<br/> pour des associations<br/>et des jeunes créateurs d'entreprise,<br/>avec l'aide de développeurs bénévoles</p>
+                <p class="text-center bg-info rounded text-white py-3">FreeWebo est une agence web solidaire<br/> qui crée des sites web gratuitement<br/> pour des associations<br/>et des jeunes créateurs d'entreprise,<br/>avec l'aide de développeurs bénévoles</p>
             </div>
-            <div class="col-md-4"></div>
-        </div>
 
+            <div class="offset-md-1 col-md-3">
+                <!-- formulaire pour se connecter -->
+                <form method="post">
+                    <div class="form-group small mb-1">
+                        <legend class="italic font-weight-bold text-info small">Espace membre</legend>
+                        <input type="email" name="email" placeholder="monmail@exemple.com" required class="px-3" />
+                        <input type="password" name="password" value="password" required class="px-3"/>
+                    </div>
+                    <input type="submit" value="Se connecter" id="submit" class="btn btn-info btn-sm small" />
+                </form>
+                <div>
+                    <!-- bouton pour s'inscrire -->
+                    <p class="small italic font-weight-bold text-info mt-3 mb-0">Pas encore inscrit&nbsp;?</p>
+                    <a class="btn btn-sm btn-info small" href="index.php?action=signUp" role="button">S'inscrire</a>
+                </div>
+            </div>
+        </div><br/>
 
         <div class="row">
-
-            <div class="col-xs-12 col-md-6">
-                <!-- formulaire se connecter -->
-                <!-- <form action="action=/signIn.php" method="post">
-                    <fieldset class="form-group">
-                        <label for="email">Mail</label>
-                        <input type="email" name="email" value="mail" placeholder="monmail@exemple.com" required/><br/>
-
-                        <label for="password">Mot de passe</label>
-                        <input type="password" name="password" value="password" required/><br/>
-                    </fieldset>
-
-                    <input type="submit" value="signIn" id="submit" class="btn btn-success" >Se connecter<br/>
-                </form> -->
-            </div>
+            <div class="col-md-8"></div>
+            <div class="col-md-4"></div>
         </div><br/>
 
     <!-- Bouton back to the top -->
