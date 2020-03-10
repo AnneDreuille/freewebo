@@ -4,7 +4,7 @@ require_once(__DIR__.'/Model.php');
 class ChatModel extends Model {
 
 //écrire un nouveau message
-  public function addMessage($idSender,$idProject,$message)
+  public function addMessage($idSender,$idProject,$message){
     $db= $this->dbConnect();
 
     $req = $db->prepare('INSERT INTO chat (idSender,idProject,message,postDate) VALUES (?,?,?,NOW())');
