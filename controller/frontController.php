@@ -5,6 +5,11 @@ require_once(__DIR__.'/../model/UserModel.php');
 require_once(__DIR__.'/../model/ChatModel.php');
 // require_once(__DIR__.'/../model/ProjectModel.php');
 
+//rediriger vers homepage
+function homepage(){
+  require(__DIR__.'/../view/front/homepage.php');
+}
+
 //renseigner le formulaire d'inscription
 function signUp() {
 
