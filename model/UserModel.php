@@ -4,7 +4,7 @@ require_once(__DIR__.'/Model.php');
 class UserModel extends Model {
 
 //insérer un nouveau user
-  public function signUp($userType,$lastName,$firstName,$mail,$phone,$password)
+  public function signUp($userType,$lastName,$firstName,$mail,$phone,$password){
     $db= $this->dbConnect();
 
     $req = $db->prepare('INSERT INTO user (userType,lastName,firstName,mail,phone,password,signUpDate) VALUES (?,?,?,?,?,?,NOW())');
