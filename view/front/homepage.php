@@ -5,7 +5,7 @@
     <div class="container-fluid">
 
         <header class="card-header">
-            <h1 class="text-center page-header text-info"><img src="public/images/logo.jpg" alt="logo"/><strong> Bienvenue sur le site FreeWebo&nbsp;!</strong>
+            <h1 class="text-center page-header text-info"><img src="public/images/logo.png" alt="logo"/><strong> Bienvenue sur le site FreeWebo&nbsp;!</strong>
             </h1>
         </header>
 
