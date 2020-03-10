@@ -4,7 +4,7 @@
 require_once(__DIR__.'/app/config.php');
 
 //charger les fichiers controller
-// require_once(__DIR__.'/controller/frontController.php');
+require_once(__DIR__.'/controller/frontController.php');
 // require_once(__DIR__.'/controller/backController.php');
 
 //tester le paramètre action pour savoir quelle fonction du controleur appeler
