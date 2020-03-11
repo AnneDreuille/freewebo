@@ -43,9 +43,14 @@ function signUp() {
     //appeler la fonction de cet objet
     $addData= $userModel->signUp(htmlspecialchars($_POST['userType']), htmlspecialchars($_POST['lastName']), htmlspecialchars($_POST['firstName']), htmlspecialchars($_POST['mail']), htmlspecialchars($_POST['phone']), $password_hash);
 
-    // diriger vers la page signUp
-    header('Location: index.php?action=signUp');
-    die();
-
+    if ($addData===false){
+        throw new Exception("Impossible d'ajouter les données du formulaire");
+    } else {
+        // diriger vers la page signUp
+        header('Location: index.php?action=signUp');
+        die();
+    }
+  } else {
+        throw new Exception("Le formulaire n'est pas correctement renseigné");
   }
 }
