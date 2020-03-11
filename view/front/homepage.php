@@ -28,7 +28,7 @@
                 <div>
                     <!-- bouton pour s'inscrire -->
                     <p class="small italic font-weight-bold text-info mt-3 mb-0">Pas encore inscrit&nbsp;?</p>
-                    <a class="btn btn-sm btn-info small" href="index.php?action=signUp" role="button">S'inscrire</a>
+                    <a class="btn btn-sm btn-info small" href="view/front/signUp.php" role="button">S'inscrire</a>
                 </div>
             </div>
         </div><br/>
