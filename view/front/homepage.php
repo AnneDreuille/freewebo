@@ -15,7 +15,7 @@
                 <p class="text-center bg-info rounded text-white py-3">FreeWebo est une agence web solidaire<br/> qui crée des sites web gratuitement<br/> pour des associations<br/>et des jeunes créateurs d'entreprise,<br/>avec l'aide de développeurs bénévoles</p>
             </div>
 
-            <div class="offset-md-1 col-md-2 offset-md-1">
+            <div class="offset-md-1 col-md-3">
                 <!-- formulaire pour se connecter -->
                 <form method="post">
                     <div class="form-group">
@@ -61,8 +61,8 @@
             <div class="col-md-4"></div>
         </div><br/>
 
-    <!-- Bouton back to the top -->
-    <!-- <a href="#" class="fixed-action-btn smooth-scroll btn-floating btn-lg btn-primary pull-right"><span class="glyphicon glyphicon-arrow-up"></span></a> -->
+        <!-- Bouton back to the top -->
+        <a href="#" class="fixed-action-btn smooth-scroll btn-floating btn-lg btn-info float-right"><span class="fas fa-arrow-circle-up"></span></a>
 
     </div><br/><br/> <!-- fin container -->
 
