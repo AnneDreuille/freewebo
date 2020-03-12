@@ -24,7 +24,7 @@
                             <div class="col">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" aria-label="arobase">@</span>
-                                    <input type="email" name="mail" id="mail" placeholder="monmail@exemple.com" required class="form-control small"/>
+                                    <input type="email" name="mail" id="mail" placeholder="monmail@exemple.com" required class="form-control"/>
                                 </div>
                             </div>
                         </div>
@@ -32,10 +32,7 @@
                             <div class="col">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" aria-label="password"><span class="fas fa-lock"></span></span>
-                                    <input type="password" name="password" id="password" placeholder="******" required class="form-control small"/>
-                                    <div class="input-group-append">
-                                        <span class="input-group-text"><span class="far fa-eye"></span></span>
-                                    </div>
+                                    <input type="password" name="password" id="password" placeholder="******" data-toggle="password" required class="form-control"/>
                                 </div>
                             </div>
                         </div>
