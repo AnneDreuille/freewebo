@@ -44,9 +44,8 @@ function signUp() {
         if ($addData===false){
             throw new Exception("Impossible d'ajouter les données du formulaire");
         } else {
-            // diriger vers la page signUp
-            header('Location: index.php?action=signUp');
-            die();
+            //charger le fichier en vue de l'affichage dans la page html
+            require(__DIR__.'/../view/front/signUp.php');
         }
     }
 }
