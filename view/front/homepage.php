@@ -24,7 +24,7 @@
                             <div class="col">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" aria-label="arobase">@</span>
-                                    <input type="email" name="email" id="mail" placeholder="monmail@exemple.com" required class="form-control small"/>
+                                    <input type="email" name="mail" id="mail" placeholder="monmail@exemple.com" required class="form-control small"/>
                                 </div>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                         <div class="form-group row">
                             <div class="col">
                                 <span class="small italic font-weight-bold text-info mt-3 mb-0">Pas encore membre&nbsp;?</span>
-                                <a class="btn btn-sm btn-info small" href="/freewebo/view/front/signUp.php" role="button"><span class="fas fa-user-edit"></span> S'inscrire</a>
+                                <a class="btn btn-sm btn-info small" href="index.php?action=signUp" role="button"><span class="fas fa-user-edit"></span> S'inscrire</a>
                             </div>
                         </div>
                     </div>
