@@ -28,7 +28,7 @@ try {
     //   ();
     // }
   }
-  //afficher par défaut la liste des posts publiés : page d'accueil listPosts
+  //afficher par défaut la page d'accueil
   else {
     homepage();
   }
