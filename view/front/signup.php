@@ -91,9 +91,9 @@
             <div class="col-md-4"></div>
         </div><br/>
 
-    <!-- Bouton back to the top -->
-   <!--  <a href="#" class="fixed-action-btn smooth-scroll btn-floating btn-lg btn-primary pull-right"><span class="glyphicon glyphicon-arrow-up"></span></a>
- -->
+        <!-- Bouton back to the top -->
+        <a href="#" class="fixed-action-btn smooth-scroll btn-floating btn-lg btn-info float-right"><span class="fas fa-arrow-circle-up"></span></a>
+
     </div><br/><br/> <!-- fin container -->
 
     <!-- bouton Retour à la page d'accueil-->
