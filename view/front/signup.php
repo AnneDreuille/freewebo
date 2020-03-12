@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-md-4">
                 <!-- bouton Retour à la page d'accueil-->
-                <a class="btn btn-lg btn-info btn-sm" href="/freewebo/view/front/homepage.php" role="button"><span class="fas fa-home"></span> Retour à la page d'accueil</a>
+                <a class="btn btn-lg btn-info btn-sm" href="/freewebo" role="button"><span class="fas fa-home"></span> Retour à la page d'accueil</a>
             </div>
 
             <div class="col-md-4">
@@ -25,19 +25,19 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 <!-- afficher le formulaire d'INSCRIPTION à remplir -->
-                <form action="action=index.php?action=signUp" method="post" class="border px-3 py-3 bg-light rounded">
+                <form action="index.php?action=signUp" method="post" class="border px-3 py-3 bg-light rounded">
                     <div>
                         <p class="mb-0 text-info font-weight-bold">Qui êtes-vous&nbsp;?</p>
                         <div class="form-check">
-                            <input type="radio" id="radio1" name="radio" value="client" class="form-check-input" />
+                            <input type="radio" id="radio1" name="userType" value="client" class="form-check-input" />
                             <label for="radio1" class="form-check-label">Gérant d'une association</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" id="radio2" name="radio" value="client" class="form-check-input" />
+                            <input type="radio" id="radio2" name="userType" value="client" class="form-check-input" />
                             <label for="radio2" class="form-check-label">Jeune créateur d'entreprise</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" id="radio3" name="radio" value="dev" class="form-check-input" />
+                            <input type="radio" id="radio3" name="userType" value="dev" class="form-check-input" />
                             <label for="radio3" class="form-check-label">Développeur bénévole</label>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                         <div class="col">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" aria-label="arobase">@</span>
-                                <input type="email" name="email" id="mail" placeholder="monmail@exemple.com" required class="form-control"/>
+                                <input type="email" name="mail" id="mail" placeholder="monmail@exemple.com" required class="form-control"/>
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                         <div class="col">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" aria-label="tel"><span class="fas fa-phone"></span></span>
-                                <input type="tel" name="tel" id="phone" placeholder="0X XX XX XX XX" class="form-control" />
+                                <input type="tel" name="phone" id="phone" placeholder="0X XX XX XX XX" class="form-control" />
                             </div>
                         </div>
                     </div>
@@ -81,11 +81,13 @@
                         </div>
                     </div>
 
+                    <p class="small italic text-center text-info"><?php echo $message; ?></p>
                     <div class="form-group row">
                         <div class="col text-center">
                             <input type="submit" value="Valider" id="submit" class="btn btn-info font-weight-bold px-5" />
                         </div>
                     </div>
+                    <!-- <p class="small italic text-center text-info"><?php echo $message; ?></p> -->
                 </form>
             </div>
             <div class="col-md-4"></div>
@@ -96,7 +98,7 @@
 
         <!-- bouton Retour à la page d'accueil-->
         <div class="row">
-            <a class="btn btn-lg btn-info btn-sm" href="/freewebo/view/front/homepage.php" role="button"><span class="fas fa-home"></span> Retour à la page d'accueil</a>
+            <a class="btn btn-lg btn-info btn-sm" href="/freewebo" role="button"><span class="fas fa-home"></span> Retour à la page d'accueil</a>
         </div>
 
     </div><br/><br/> <!-- fin container -->
