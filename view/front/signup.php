@@ -94,11 +94,12 @@
         <!-- Bouton back to the top -->
         <a href="#" class="fixed-action-btn smooth-scroll btn-floating btn-lg btn-info rounded-circle float-right"><span class="fas fa-arrow-circle-up"></span></a>
 
+        <!-- bouton Retour à la page d'accueil-->
+        <div class="row">
+            <a class="btn btn-lg btn-info btn-sm" href="/freewebo/view/front/homepage.php" role="button"><span class="fas fa-home"></span> Retour à la page d'accueil</a>
+        </div>
+
     </div><br/><br/> <!-- fin container -->
-
-    <!-- bouton Retour à la page d'accueil-->
-    <!-- <a class="btn btn-lg btn-info" href="index.php" role="button"><span class="glyphicon glyphicon-circle-arrow-left"></span> Retour à la page d'accueil</a><br/><br/> -->
-
 
 
 <?php $content= ob_get_clean();?>
