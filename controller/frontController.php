@@ -15,22 +15,23 @@ function signUp() {
 
   //vérifier que le formulaire a bien reçu les paramètres
 
+    $message= "Complèter SVP le formulaire !";
+
     if (empty($_POST['userType'])) {
-        $message= "Sélectionner SVP une case !";
+        $message;
     } elseif (empty($_POST['lastName'])) {
-        $message= "Indiquer SVP votre nom !";
+        $message;
     } elseif (empty($_POST['firstName'])) {
-        $message= "Indiquer SVP votre prénom !";
+        $message;
     } elseif (empty($_POST['mail'])) {
-        $message="Indiquer SVP votre mail !";
-    } elseif (!preg_match('#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#is', $mail)){
-        $message= "Indiquer SVP une adresse mail correcte !";
-    } elseif (!preg_match('[0-9]{10}', $phone)) {
-        $message= "Indiquer SVP un n° de tél. portable correct !";
+        $message;
+    } elseif (!preg_match('#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#is', $_POST['mail'])){
+        $message;
+    } elseif (!empty ($_POST['phone']) && !preg_match('[0-9]{10}', $_POST['phone'])) {
+        $message;
     } elseif (empty($_POST['password'])) {
-        $message= "Indiquer SVP votre mot de passe !";
+        $message;
     } else {
-        $message= "Super ! Merci de vous être inscrit(e) !";
 
         //créer l'objet
         $userModel= new UserModel();
@@ -43,9 +44,8 @@ function signUp() {
 
         if ($addData===false){
             throw new Exception("Impossible d'ajouter les données du formulaire");
-        } else {
-            //charger le fichier en vue de l'affichage dans la page html
-            require(__DIR__.'/../view/front/signUp.php');
         }
     }
+    //charger le fichier en vue de l'affichage dans la page html
+    require(__DIR__.'/../view/front/signUp.php');
 }
