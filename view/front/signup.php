@@ -92,7 +92,7 @@
         </div><br/>
 
         <!-- Bouton back to the top -->
-        <a href="#" class="fixed-action-btn smooth-scroll btn-floating btn-lg btn-info float-right"><span class="fas fa-arrow-circle-up"></span></a>
+        <a href="#" class="fixed-action-btn smooth-scroll btn-floating btn-lg btn-info rounded-circle float-right"><span class="fas fa-arrow-circle-up"></span></a>
 
     </div><br/><br/> <!-- fin container -->
 
