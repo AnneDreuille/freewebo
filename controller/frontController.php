@@ -49,3 +49,36 @@ function signUp() {
     //charger le fichier en vue de l'affichage dans la page html
     require(__DIR__.'/../view/front/signUp.php');
 }
+
+//vérifier les données de connexion
+function signIn() {
+
+    //vérifier que le formulaire a bien reçu les paramètres
+    if (empty($_POST['mail']) && empty($_POST['password'])){
+
+        echo ('Saisir SVP mail et mot de passe !');
+
+    } else {
+
+        //créer l'objet
+        $userModel= new UserModel();
+
+        //appeler la fonction de cet objet
+        $signIn= $userModel->signIn(htmlspecialchars($_POST['mail']));
+
+        //comparer le password avec db
+        $password_OK = password_verify($_POST['password'], $password);
+
+        if (!$password_OK) {
+            echo 'Saisir SVP un mot de passe correct !';
+        } else {
+            session_start();
+            $_SESSION['id'] = $id;
+            $_SESSION['firstName'] = $firstName;
+            echo 'Vous êtes connecté(e) !';
+        }
+
+        //charger le fichier en vue de l'affichage dans la page html
+        require(__DIR__.'/../view/front/homepage.php');
+    }
+}
