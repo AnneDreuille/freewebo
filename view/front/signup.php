@@ -73,10 +73,7 @@
                         <div class="col">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" aria-label="password"><span class="fas fa-lock"></span></span>
-                                <input type="password" name="password" id="password" placeholder="******" required class="form-control"/>
-                                <div class="input-group-append">
-                                    <span class="input-group-text"><span class="far fa-eye"></span></span>
-                                </div>
+                                <input type="password" name="password" id="password" placeholder="******" data-toggle="password" required class="form-control"/>
                             </div>
                         </div>
                     </div>
@@ -84,10 +81,10 @@
                     <p class="small italic text-center text-info"><?php echo $message; ?></p>
                     <div class="form-group row">
                         <div class="col text-center">
-                            <input type="submit" value="Valider" id="submit" class="btn btn-info font-weight-bold px-5" />
+                            <input type="submit" value="Valider" id="submit" class="btn btn-info font-weight-bold px-5 submit" />
                         </div>
                     </div>
-                    <!-- <p class="small italic text-center text-info"><?php echo $message; ?></p> -->
+                    <p class="small italic text-center text-info success"></p>
                 </form>
             </div>
             <div class="col-md-4"></div>
