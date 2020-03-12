@@ -14,9 +14,8 @@ function homepage(){
 function signUp() {
 
   //vérifier que le formulaire a bien reçu les paramètres
-  if (!empty ($_POST)){
 
-    if (empty($_POST['userType'])){
+    if (empty($_POST['userType'])) {
         $message= "Sélectionner SVP une case !";
     } elseif (empty($_POST['lastName'])) {
         $message= "Indiquer SVP votre nom !";
@@ -32,25 +31,22 @@ function signUp() {
         $message= "Indiquer SVP votre mot de passe !";
     } else {
         $message= "Super ! Merci de vous être inscrit(e) !";
+
+        //créer l'objet
+        $userModel= new UserModel();
+
+        //crypter le password
+        $password_hash= password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+        //appeler la fonction de cet objet
+        $addData= $userModel->signUp(htmlspecialchars($_POST['userType']), htmlspecialchars($_POST['lastName']), htmlspecialchars($_POST['firstName']), htmlspecialchars($_POST['mail']), htmlspecialchars($_POST['phone']), $password_hash);
+
+        if ($addData===false){
+            throw new Exception("Impossible d'ajouter les données du formulaire");
+        } else {
+            // diriger vers la page signUp
+            header('Location: index.php?action=signUp');
+            die();
+        }
     }
-
-    //créer l'objet
-    $userModel= new UserModel();
-
-    //crypter le password
-    $password_hash= password_hash($_POST['password'], PASSWORD_DEFAULT);
-
-    //appeler la fonction de cet objet
-    $addData= $userModel->signUp(htmlspecialchars($_POST['userType']), htmlspecialchars($_POST['lastName']), htmlspecialchars($_POST['firstName']), htmlspecialchars($_POST['mail']), htmlspecialchars($_POST['phone']), $password_hash);
-
-    if ($addData===false){
-        throw new Exception("Impossible d'ajouter les données du formulaire");
-    } else {
-        // diriger vers la page signUp
-        header('Location: index.php?action=signUp');
-        die();
-    }
-  } else {
-        throw new Exception("Le formulaire n'est pas correctement renseigné");
-  }
 }
