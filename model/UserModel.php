@@ -3,7 +3,7 @@ require_once(__DIR__.'/Model.php');
 
 class UserModel extends Model {
 
-//insérer un nouveau user
+  //insérer un nouveau user
   public function signUp($userType,$lastName,$firstName,$mail,$phone,$password){
     $db= $this->dbConnect();
 
@@ -11,6 +11,16 @@ class UserModel extends Model {
 
     return $req->execute(array($userType,$lastName,$firstName,$mail,$phone,$password));
   }
+
+  //récupérer les données d'1 user
+    public function signIn($mail) {
+      $db= $this->dbConnect();
+
+      $req = $db->prepare('SELECT id,userType,firstName,lastName,mail,phone,DATE_FORMAT(signUpDate, "%d/%m/%Y à %Hh%i") AS signUpDate_fr, DATE_FORMAT(blacklistDate, "%d/%m/%Y à %Hh%i") AS blacklistDate_fr FROM user WHERE mail=?');
+
+      $req->execute(array($mail));
+      return $req->fetch();
+    }
 
   //récupérer le nombre de clients
     public function nbClient() {
