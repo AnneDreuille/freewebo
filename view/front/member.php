@@ -17,10 +17,27 @@
         </div>
 
         <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-6 btn-group">
+                <!-- afficher le prénom du client -->
+                <button type="button" class="btn btn-outline-secondary disabled rounded mr-2">
+                <?php
+                    echo ('prénom du client');
+                ?>
+                </button>
+                <!-- afficher le nom du projet -->
+                <button type="button" class="btn btn-outline-secondary disabled rounded mr-2">
+                <?php echo ('nom du projet'); ?>
+                </button>
+                <!-- afficher le prénom du développeur -->
+                <button type="button" class="btn btn-outline-secondary disabled rounded mr-2">
+                <?php
+                    echo ('prénom du dev');
+                ?>
+                </button>
+            </div>
 
-            <div class="col-md-4"></div>
+            <div class="col-md-3"></div>
         </div><br/>
 
         <div class="row">
