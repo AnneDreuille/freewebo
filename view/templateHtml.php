@@ -76,7 +76,13 @@
 
         <!-- script pour TinyMCE éditeur texte -->
         <script src="https://cdn.tiny.cloud/1/jy2e0nx3gog6j48dtlzexwjk3qxqq5noggxzme1zo8amqzcm/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-        <script>tinymce.init({ selector:'textarea'});</script>
+        <script>
+            tinymce.init({
+            selector:'textarea',
+            plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+            toolbar_mode: 'floating',
+            });
+        </script>
 
         <!-- script pour bootstrap, jquery & js-->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
