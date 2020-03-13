@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <?php
 
 //charger le fichier config avec définition des constantes d'accès à la db
