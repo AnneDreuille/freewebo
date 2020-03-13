@@ -16,9 +16,9 @@ try {
       signUp();
     }
 
-    // elseif ($_GET['action']=='') {
-    //   ();
-    // }
+    elseif ($_GET['action']=='signIn') {
+      signIn();
+    }
 
     // elseif($_GET['action']=='') {
     //  ();
