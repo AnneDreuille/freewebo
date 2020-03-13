@@ -17,7 +17,7 @@
 
             <div class="offset-md-1 col-md-3">
                 <!-- formulaire pour se connecter -->
-                <form method="post">
+                <form action="index.php?action=signIn" method="post">
                     <div class="form-group">
                         <p class="italic font-weight-bold text-info small mb-0">Espace membre</p>
                         <div class="form-group row mb-1">
