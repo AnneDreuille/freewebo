@@ -50,15 +50,23 @@ function signUp() {
     require(__DIR__.'/../view/front/signUp.php');
 }
 
-//vérifier les données de connexion
+//se connecter à l'espace membre
 function signIn() {
 
+    // crypter le password entré dans le formulaire
+    $password_hash= password_hash(htmlspecialchars($_POST['password']), PASSWORD_DEFAULT);
+
+    $_SESSION['mail']= htmlspecialchars($_POST['mail']);
+    $_SESSION['password']= $password_hash;
+
+    //diriger le membre déjà inscrit vers l'espace membre
+    if (isset($_SESSION['mail']) && isset($_SESSION['password']))
+    {
+        header('location: /freewebo/view/front/member.php');
+    }
+
     //vérifier que le formulaire a bien reçu les paramètres
-    if (empty($_POST['mail']) && empty($_POST['password'])){
-
-        echo ('Saisir SVP mail et mot de passe !');
-
-    } else {
+    if (!empty($_POST['mail']) && empty($_POST['password'])) {
 
         //créer l'objet
         $userModel= new UserModel();
@@ -66,19 +74,18 @@ function signIn() {
         //appeler la fonction de cet objet
         $signIn= $userModel->signIn(htmlspecialchars($_POST['mail']));
 
-        //comparer le password avec db
-        $password_OK = password_verify($_POST['password'], $password);
+        //comparer le password entré haché avec celui dans la db
+        $password_OK = password_verify($password_hash, $signIn['password']);
 
         if (!$password_OK) {
             echo 'Saisir SVP un mot de passe correct !';
         } else {
-            session_start();
-            $_SESSION['id'] = $id;
-            $_SESSION['firstName'] = $firstName;
-            echo 'Vous êtes connecté(e) !';
+            $_SESSION['id'] = $signIn['id'];
+            $_SESSION['firstName'] = $signIn['firstName'];
+            $_SESSION['userType'] = $signIn['userType'];
         }
 
-        //charger le fichier en vue de l'affichage dans la page html
-        require(__DIR__.'/../view/front/homepage.php');
+        //diriger le membre inscrit vers l'espace membre
+        header('location: /freewebo/view/front/member.php');
     }
 }
