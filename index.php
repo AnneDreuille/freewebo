@@ -22,9 +22,9 @@ try {
       signIn();
     }
 
-    // elseif($_GET['action']=='') {
-    //  ();
-    // }
+    elseif($_GET['action']=='member') {
+     member();
+    }
 
     // elseif($_GET['action']=='') {
     //   ();
