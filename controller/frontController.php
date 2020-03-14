@@ -40,7 +40,7 @@ function signUp() {
         $password_hash= password_hash($_POST['password'], PASSWORD_DEFAULT);
 
         //appeler la fonction de cet objet
-        $addData= $userModel->signUp(htmlspecialchars($_POST['userType']), htmlspecialchars($_POST['lastName']), htmlspecialchars($_POST['firstName']), htmlspecialchars($_POST['mail']), htmlspecialchars($_POST['phone']), $password_hash);
+        $addData= $userModel->signUp($_POST['userType'], $_POST['lastName'], $_POST['firstName'], $_POST['mail'], $_POST['phone'], $password_hash);
 
         if ($addData===false){
             throw new Exception("Impossible d'ajouter les données du formulaire");
@@ -53,39 +53,46 @@ function signUp() {
 //se connecter à l'espace membre
 function signIn() {
 
-    // crypter le password entré dans le formulaire
-    $password_hash= password_hash(htmlspecialchars($_POST['password']), PASSWORD_DEFAULT);
-
-    $_SESSION['mail']= htmlspecialchars($_POST['mail']);
-    $_SESSION['password']= $password_hash;
+    // $_SESSION['mail']= htmlspecialchars($_POST['mail']);
+    // $_SESSION['password']= $password_hash;
 
     //diriger le membre déjà inscrit vers l'espace membre
-    if (isset($_SESSION['mail']) && isset($_SESSION['password']))
-    {
-        header('location: /freewebo/view/front/member.php');
-    }
+    // if (isset($_SESSION['mail']) && isset($_SESSION['password']))
+    // {
+    //     header('location: /freewebo/view/front/member.php');
+    // }
 
     //vérifier que le formulaire a bien reçu les paramètres
-    if (!empty($_POST['mail']) && empty($_POST['password'])) {
+    if (!empty($_POST['mail']) && !empty($_POST['password'])) {
 
         //créer l'objet
         $userModel= new UserModel();
 
         //appeler la fonction de cet objet
-        $signIn= $userModel->signIn(htmlspecialchars($_POST['mail']));
+        $member= $userModel->signIn($_POST['mail']);
+
+        //ajout ctrl sur le mail existe sur var signIn est différent de false
 
         //comparer le password entré haché avec celui dans la db
-        $password_OK = password_verify($password_hash, $signIn['password']);
+        $password_OK = password_verify($_POST['password'], $member['password']);
 
         if (!$password_OK) {
-            echo 'Saisir SVP un mot de passe correct !';
+            // echo 'Saisir SVP un mot de passe correct !';
+            header('location: index.php');
+            die();
         } else {
-            $_SESSION['id'] = $signIn['id'];
-            $_SESSION['firstName'] = $signIn['firstName'];
-            $_SESSION['userType'] = $signIn['userType'];
+            $_SESSION['idUser'] = $member['id'];
         }
 
         //diriger le membre inscrit vers l'espace membre
-        header('location: /freewebo/view/front/member.php');
+        header('location: index.php?action=member');
+        die();
     }
+    header('location: index.php');
+    die();
+}
+
+function member (){
+    var_dump($_SESSION);
+    require (__DIR__.'/../view/front/member.php');
 }
