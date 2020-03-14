@@ -53,15 +53,6 @@ function signUp() {
 //se connecter à l'espace membre
 function signIn() {
 
-    // $_SESSION['mail']= htmlspecialchars($_POST['mail']);
-    // $_SESSION['password']= $password_hash;
-
-    //diriger le membre déjà inscrit vers l'espace membre
-    // if (isset($_SESSION['mail']) && isset($_SESSION['password']))
-    // {
-    //     header('location: /freewebo/view/front/member.php');
-    // }
-
     //vérifier que le formulaire a bien reçu les paramètres
     if (!empty($_POST['mail']) && !empty($_POST['password'])) {
 
@@ -77,11 +68,12 @@ function signIn() {
         $password_OK = password_verify($_POST['password'], $member['password']);
 
         if (!$password_OK) {
-            // echo 'Saisir SVP un mot de passe correct !';
             header('location: index.php');
             die();
         } else {
             $_SESSION['idUser'] = $member['id'];
+            $_SESSION['firstName'] = $member['firstName'];
+            $_SESSION['userType'] = $member['userType'];
         }
 
         //diriger le membre inscrit vers l'espace membre
@@ -93,6 +85,5 @@ function signIn() {
 }
 
 function member (){
-    var_dump($_SESSION);
     require (__DIR__.'/../view/front/member.php');
 }
