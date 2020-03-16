@@ -26,9 +26,17 @@ try {
      member();
     }
 
+    elseif($_GET['action']=='need') {
+      need();
+    }
+
     // elseif($_GET['action']=='') {
     //   ();
     // }
+
+
+
+
   }
   //afficher par défaut la page d'accueil
   else {
