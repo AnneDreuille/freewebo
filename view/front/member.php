@@ -36,13 +36,24 @@
                 ?>
                 </button>
             </div>
-
             <div class="col-md-3"></div>
         </div><br/>
 
         <div class="row">
-            <div class="col-md-8"></div>
-            <div class="col-md-4"></div>
+            <div class="offset-md-1 col-md-10 offset-md-1 border">
+            <p class="text-center pb-10">insérer progress bar</p>
+            </div>
+        </div><br/>
+
+        <div class="row">
+            <!-- bouton pour décrire le besoin -->
+            <div class="offset-md-1 col-md-3">
+                <button type="button" class="btn btn-success rounded-circle" href="index.php?action=need"><span class="far fa-file-alt"></span><p class="font-weight_bold"> 1. Je décris mon besoin&nbsp;!</p></button>
+            </div>
+
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
         </div><br/>
 
         <!-- Bouton back to the top -->
