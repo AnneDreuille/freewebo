@@ -14,7 +14,6 @@ function homepage(){
 function signUp() {
 
   //vérifier que le formulaire a bien reçu les paramètres
-
     $message= "Complèter SVP le formulaire !";
 
     if (empty($_POST['userType'])) {
@@ -84,6 +83,32 @@ function signIn() {
     die();
 }
 
+//rediriger vers espace membre
 function member (){
     require (__DIR__.'/../view/front/member.php');
 }
+
+//renseigner le formulaire "need" expression des besoins
+function need() {
+
+  //vérifier que le formulaire a bien reçu les paramètres
+    $message= "Complèter SVP le formulaire !";
+    if (empty($_POST['name']) && empty($_POST['description'])) {
+        $message;
+
+    } else {
+
+        //créer l'objet
+        $projectModel= new ProjectModel();
+
+        //appeler la fonction de cet objet
+        $addData= $projectModel->need($_POST['name'], $_SESSION['idUser'], $_POST['description'], NOW());
+
+        if ($addData===false){
+            throw new Exception("Impossible d'ajouter les données du formulaire");
+        }
+    }
+    //charger le fichier en vue de l'affichage dans la page html
+    require(__DIR__.'/../view/front/need.php');
+}
+
