@@ -11,7 +11,7 @@
 
         <!-- bouton Retour à la page d'accueil-->
         <div class="row">
-            <div class="col-md">
+            <div class="col-md-4">
                 <a class="btn btn-lg btn-info btn-sm" href="/freewebo" role="button"><span class="fas fa-home"></span> Retour à la page d'accueil</a>
             </div>
         </div>
@@ -22,7 +22,11 @@
                 <!-- afficher le prénom du client -->
                 <button type="button" class="btn btn-outline-secondary disabled rounded mr-2">
                 <?php
-                    echo ('prénom du client');
+                    if (!empty ($_SESSION['idUser']) && ($_SESSION['userType']='client')){
+                        echo $_SESSION['firstName'] ;
+                    } else {
+                        echo 'prénom du client';
+                    }
                 ?>
                 </button>
                 <!-- afficher le nom du projet -->
@@ -37,13 +41,23 @@
                 </button>
             </div>
             <div class="col-md-3"></div>
-        </div><br/>
+        </div><br/><br/>
 
         <div class="row">
-            <div class="offset-md-1 col-md-10 offset-md-1 border">
-            <p class="text-center pb-10">insérer progress bar</p>
+            <div class="col-md-12">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-success rounded mr-2 w-15">1. Définir le besoin</button>
+                    <button type="button" class="btn btn-warning rounded mr-2 w-15">2. Trouver un développeur</button>
+                    <button type="button" class="btn btn-warning rounded mr-2 w-15">3. Nommer un développeur</button>
+                    <button type="button" class="btn btn-primary rounded mr-2">4. Donner le modèle</button>
+                    <button type="button" class="btn btn-success rounded mr-2">5. Accepter le modèle</button>
+                    <button type="button" class="btn btn-primary rounded mr-2">6. Donner l'url</button>
+                    <button type="button" class="btn btn-success rounded mr-2">7. Noter les intervenants</button>
+                </div>
             </div>
-        </div><br/>
+        </div><br/><br/><br/>
+
+
 
         <div class="row">
             <!-- bouton pour décrire le besoin -->
