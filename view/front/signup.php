@@ -44,10 +44,10 @@
 
                     <div class="form-group row mt-3">
                         <div class="col">
-                            <input type="text" name="lastName" id="lastName" placeholder="Nom" required class="form-control"/>
+                            <input type="text" name="lastName" id="lastName" placeholder="Nom" required class="form-control text-uppercase"/>
                         </div>
                         <div class="col">
-                            <input type="text" name="firstName" id="firstName" placeholder="Prénom" required class="form-control"/>
+                            <input type="text" name="firstName" id="firstName" placeholder="Prénom" required class="form-control text-capitalize"/>
                         </div>
                     </div>
 
@@ -78,7 +78,7 @@
                         </div>
                     </div>
 
-                    <p class="small italic text-center text-info"><?php echo $message; ?></p>
+                    <!-- <p class="small italic text-center text-info"><?php echo $message; ?></p> -->
                     <div class="form-group row">
                         <div class="col text-center">
                             <input type="submit" value="Valider" id="submit" class="btn btn-info font-weight-bold px-5 submit" />
