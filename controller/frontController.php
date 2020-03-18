@@ -3,7 +3,7 @@
 //charger les classes
 require_once(__DIR__.'/../model/UserModel.php');
 require_once(__DIR__.'/../model/ChatModel.php');
-// require_once(__DIR__.'/../model/ProjectModel.php');
+require_once(__DIR__.'/../model/ProjectModel.php');
 
 //rediriger vers homepage
 function homepage(){
@@ -61,7 +61,7 @@ function signIn() {
         //appeler la fonction de cet objet
         $member= $userModel->signIn($_POST['mail']);
 
-        //ajout ctrl sur le mail existe sur var signIn est différent de false
+        //ajout ctrl sur le mail existe sur var signIn est différent de false???
 
         //comparer le password entré haché avec celui dans la db
         $password_OK = password_verify($_POST['password'], $member['password']);
@@ -92,17 +92,13 @@ function member (){
 function need() {
 
   //vérifier que le formulaire a bien reçu les paramètres
-    $message= "Complèter SVP le formulaire !";
-    if (empty($_POST['name']) && empty($_POST['description'])) {
-        $message;
-
-    } else {
+    if (!empty($_POST['name']) && !empty($_SESSION['idUser']) && !empty($_POST['description'])) {
 
         //créer l'objet
         $projectModel= new ProjectModel();
 
         //appeler la fonction de cet objet
-        $addData= $projectModel->need($_POST['name'], $_SESSION['idUser'], $_POST['description'], NOW());
+        $addData= $projectModel->need($_POST['name'], $_SESSION['idUser'], $_POST['description']);
 
         if ($addData===false){
             throw new Exception("Impossible d'ajouter les données du formulaire");
