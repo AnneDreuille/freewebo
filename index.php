@@ -12,23 +12,23 @@ require_once(__DIR__.'/controller/frontController.php');
 //tester le paramètre action pour savoir quelle fonction du controleur appeler
 try {
 
-  if (isset($_GET['action'])) {
+    if (isset($_GET['action'])) {
 
-    if ($_GET['action']=='signUp') {
-      signUp();
-    }
+        if ($_GET['action']=='signUp') {
+            signUp();
+        }
 
-    elseif ($_GET['action']=='signIn') {
-      signIn();
-    }
+        elseif ($_GET['action']=='signIn') {
+            signIn();
+        }
 
-    elseif($_GET['action']=='member') {
-     member();
-    }
+        elseif($_GET['action']=='member') {
+            member();
+        }
 
-    elseif($_GET['action']=='need') {
-      need();
-    }
+        elseif($_GET['action']=='need') {
+            need();
+        }
 
     // elseif($_GET['action']=='') {
     //   ();
@@ -37,11 +37,11 @@ try {
 
 
 
-  }
-  //afficher par défaut la page d'accueil
-  else {
-    homepage();
-  }
+    }
+    //afficher par défaut la page d'accueil
+    else {
+        homepage();
+    }
 }
 catch(Exception $e) {
   echo 'Erreur : ' .$e->getMessage();
