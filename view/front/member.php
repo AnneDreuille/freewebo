@@ -16,25 +16,32 @@
             </div>
         </div>
 
+        <!-- afficher prénom client, nom projet et prénom dév-->
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6 btn-group">
                 <!-- afficher le prénom du client -->
-                <button type="button" class="btn btn-outline-secondary disabled rounded mr-2">
+                <button type="button" class="btn btn-outline-dark disabled rounded mr-2">
                 <?php
-                    if (!empty ($_SESSION['idUser']) && ($_SESSION['userType']='client')){
-                        echo $_SESSION['firstName'] ;
-                    } else {
+                    // if (!empty ($_SESSION['idUser']) && ($_SESSION['userType']='client')){
+                    //     echo $_SESSION['firstName'] ;
+                    // } else {
                         echo 'prénom du client';
-                    }
+                    // }
                 ?>
                 </button>
                 <!-- afficher le nom du projet -->
-                <button type="button" class="btn btn-outline-secondary disabled rounded mr-2">
-                <?php echo ('nom du projet'); ?>
+                <button type="button" class="btn btn-outline-dark disabled rounded mr-2">
+                <?php
+                    if (!empty ($_SESSION['nameProject'])){
+                        echo $_SESSION['nameProject'];
+                    } else {
+                        echo 'nom du projet';
+                    }
+                ?>
                 </button>
                 <!-- afficher le prénom du développeur -->
-                <button type="button" class="btn btn-outline-secondary disabled rounded mr-2">
+                <button type="button" class="btn btn-outline-dark disabled rounded mr-2">
                 <?php
                     echo ('prénom du dev');
                 ?>
@@ -43,28 +50,44 @@
             <div class="col-md-3"></div>
         </div><br/><br/>
 
+        <!-- afficher les boutons & images du process -->
         <div class="row">
-            <div class="col-md-12">
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-success rounded mr-2 w-15">1. Définir le besoin</button>
-                    <button type="button" class="btn btn-warning rounded mr-2 w-15">2. Trouver un développeur</button>
-                    <button type="button" class="btn btn-warning rounded mr-2 w-15">3. Nommer un développeur</button>
-                    <button type="button" class="btn btn-primary rounded mr-2">4. Donner le modèle</button>
-                    <button type="button" class="btn btn-success rounded mr-2">5. Accepter le modèle</button>
-                    <button type="button" class="btn btn-primary rounded mr-2">6. Donner l'url</button>
-                    <button type="button" class="btn btn-success rounded mr-2">7. Noter les intervenants</button>
+            <div class="col-md-12 text-center">
+                <div class="btn-group align-items-end" role="group">
+                    <div>
+                        <div class="mb-1"><img src="public/images/1.process.jpg" alt="process étape1"/>
+                        </div>
+                        <a href="index.php?action=need"><button type="button" class="btn btn-success rounded mr-2 px-1">1. Je décris le besoin</button></a>
+                    </div>
+                    <div>
+                        <div class="mb-1"><img src="public/images/2.process.jpg" alt="process étape2"/></div>
+                        <a href=#><button type="button" class="btn btn-warning rounded mr-2 px-1">2. Développeur en cours</button></a>
+                    </div>
+                    <div>
+                        <div class="mb-1"><img src="public/images/3.process.jpg" alt="process étape3"/></div>
+                        <a href=#><button type="button" class="btn btn-warning rounded mr-2 px-1">3. Développeur choisi</button></a>
+                    </div>
+                    <div>
+                        <div class="mb-1"><img src="public/images/4.process.png" alt="process étape4"/></div>
+                        <a href=#><button type="button" class="btn btn-primary rounded mr-2 px-1">4. Envoi modèle</button></a>
+                    </div>
+                    <div>
+                        <div class="mb-1"><img src="public/images/5.process.png" alt="process étape5"/></div>
+                        <a href=#><button type="button" class="btn btn-success rounded mr-2 px-1">5. J'accepte le modèle</button></a>
+                    </div>
+                    <div>
+                        <div class="mb-1"><img src="public/images/6.process.jpg" alt="process étape6"/></div>
+                        <a href=#><button type="button" class="btn btn-primary rounded mr-2 px-1">6. Envoi URL</button></a>
+                    </div>
+                    <div>
+                        <div class="mb-1"><img src="public/images/7.process.jpg" alt="process étape7"/></div>
+                        <a href=#><button type="button" class="btn btn-warning rounded mr-2 px-1">7. Notations</button></a>
+                    </div>
                 </div>
             </div>
-        </div><br/><br/><br/>
-
-
+        </div><br/><br/>
 
         <div class="row">
-            <!-- bouton pour décrire le besoin -->
-            <div class="offset-md-1 col-md-3">
-                <button type="button" class="btn btn-success rounded-circle" href="index.php?action=need"><span class="far fa-file-alt"></span><p class="font-weight_bold"> 1. Je décris mon besoin&nbsp;!</p></button>
-            </div>
-
             <div class="col-md-3"></div>
             <div class="col-md-3"></div>
             <div class="col-md-3"></div>
