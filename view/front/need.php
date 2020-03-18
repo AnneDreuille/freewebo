@@ -37,7 +37,7 @@
                     <div class="form-group row">
                         <div class="col">
                             <label for="description" class="text-info font-weight-bold">Description du site souhaité</label>
-                            <textarea name="description" id="description" required class="form-control"> </textarea>
+                            <textarea name="description" id="description" class="form-control"></textarea>
                                 <p><small id="helpDescription" class="form-text italic">
                                     <ul>
                                         <li>Type de site souhaité : site institutionnel ou vitrine, site e-commerce, blog,...</li>
