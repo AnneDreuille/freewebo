@@ -24,7 +24,7 @@
                             <div class="col">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" aria-label="arobase">@</span>
-                                    <input type="email" name="mail" id="mail" placeholder="monmail@exemple.com" required class="form-control"/>
+                                    <input type="email" name="mail" id="mail" placeholder="monmail@exemple.com" required class="form-control text-lowercase"/>
                                 </div>
                             </div>
                         </div>
