@@ -1,13 +1,9 @@
 <?php $title ="S'inscrire sur freewebo.org - Agence Web solidaire"; ?>
 <?php $metaDescription="S'inscrire à FreeWebo pour demander la création de votre site web gratuitement... ou pour être développeur bénévole&nbsp;!"; ?>
+<?php $header = 'Inscrivez-vous sur le site FreeWebo&nbsp;!'; ?>
 
 <?php ob_start(); ?>
     <div class="container-fluid">
-
-        <header class="card-header rounded">
-            <h1 class="text-center page-header text-info"><img src="/freewebo/public/images/logo.png" alt="logo"/><strong> Inscrivez-vous sur le site FreeWebo&nbsp;!</strong>
-            </h1>
-        </header><br/>
 
         <div class="row">
             <div class="col-md-4">
@@ -78,13 +74,21 @@
                         </div>
                     </div>
 
-                    <!-- <p class="small italic text-center text-info"><?php echo $message; ?></p> -->
                     <div class="form-group row">
                         <div class="col text-center">
-                            <input type="submit" value="Valider" id="submit" class="btn btn-info font-weight-bold px-5 submit" />
+                            <input type="submit" value="Valider" id="submit" class="btn btn-info font-weight-bold px-5"/>
                         </div>
                     </div>
-                    <p class="small italic text-center text-info success"></p>
+                    <!-- afficher les messages : erreur ou succès -->
+                    <p class="small italic text-center text-info">
+                    <?php
+                    if ($message==false){
+                        echo 'Compléter SVP le formulaire';
+                    } elseif ($message==true){
+                        echo 'Super ! Vous êtes maintenant inscrit(e).';
+                    }
+                    ?>
+                    </p>
                 </form>
             </div>
             <div class="col-md-4"></div>
