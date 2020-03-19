@@ -10,27 +10,29 @@ function homepage(){
     require(__DIR__.'/../view/front/homepage.php');
 }
 
+//USER
+
 //renseigner le formulaire d'inscription
 function signUp() {
-
   //vérifier que le formulaire a bien reçu les paramètres
-    $message= "Complèter SVP le formulaire !";
+    $message= null;
 
     if (empty($_POST['userType'])) {
-        $message;
+        $message= false;
     } elseif (empty($_POST['lastName'])) {
-        $message;
+        $message= false;
     } elseif (empty($_POST['firstName'])) {
-        $message;
+        $message= false;
     } elseif (empty($_POST['mail'])) {
-        $message;
+        $message= false;
     } elseif (!preg_match('#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#is', $_POST['mail'])){
-        $message;
+        $message= false;
     } elseif (!empty ($_POST['phone']) && !preg_match('[0-9]{10}', $_POST['phone'])) {
-        $message;
+        $message= false;
     } elseif (empty($_POST['password'])) {
-        $message;
+        $message= false;
     } else {
+        $message= true;
 
         //créer l'objet
         $userModel= new UserModel();
@@ -51,7 +53,6 @@ function signUp() {
 
 //se connecter à l'espace membre
 function signIn() {
-
     //vérifier que le formulaire a bien reçu les paramètres
     if (!empty($_POST['mail']) && !empty($_POST['password'])) {
 
@@ -60,8 +61,6 @@ function signIn() {
 
         //appeler la fonction de cet objet
         $member= $userModel->signIn($_POST['mail']);
-
-        //ajout ctrl sur le mail existe sur var signIn est différent de false???
 
         //comparer le password entré haché avec celui dans la db
         $password_OK = password_verify($_POST['password'], $member['password']);
@@ -83,14 +82,29 @@ function signIn() {
     die();
 }
 
-//rediriger vers espace membre
+//rediriger un client vers espace membre
 function member (){
+    //vérifier qu'on a bien un idUser en session et que c'est un client
+    if (!empty($_SESSION['idUser']) && ($_SESSION['userType']='client')) {
+
+        $idClient= $_SESSION['idUser'];
+
+        //créer l'objet
+        $projectModel= new ProjectModel();
+
+        //appeler la fonction de cet objet
+        $dataProject= $projectModel->dataProject($idClient);
+
+    } else {
+        $dataProject=false;
+    }
     require (__DIR__.'/../view/front/member.php');
 }
 
+//PROJECT
+
 //renseigner le formulaire "need" expression des besoins
 function need() {
-
   //vérifier que le formulaire a bien reçu les paramètres
     if (!empty($_POST['name']) && !empty($_SESSION['idUser']) && !empty($_POST['description'])) {
 
@@ -107,4 +121,9 @@ function need() {
     //charger le fichier en vue de l'affichage dans la page html
     require(__DIR__.'/../view/front/need.php');
 }
+
+
+
+
+
 
