@@ -61,6 +61,11 @@
     </head>
 
     <body>
+        <header class="card-header">
+            <h1 class="text-center page-header text-info"><img src="/freewebo/public/images/logo.png" alt="logo" class="img.card-img"/><strong> <?php echo $header; ?></strong>
+            </h1>
+        </header><br/>
+
         <?php echo $content; ?>
 
 
@@ -93,9 +98,6 @@
         <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
 
         <script src="/freewebo/public/main.js"></script>
-
-        <hr/><br/>
-
 
     </body>
 </html>
