@@ -22,6 +22,9 @@ class UserModel extends Model {
       return $req->fetch();
     }
 
+
+//NON ENCORE UTILISE
+
   //récupérer le nombre de clients
     public function nbClient() {
       $db= $this->dbConnect();
