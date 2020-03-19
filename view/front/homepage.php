@@ -1,13 +1,9 @@
 <?php $title ="FreeWebo - Agence web solidaire"; ?>
 <?php $metaDescription="FreeWebo est une agence web solidaire qui crée gratuitement des sites web pour des associations ou jeunes créateurs d'entreprise, en faisant appel à des développeurs bénévoles&nbsp;!"; ?>
+<?php $header = 'Bienvenue sur le site FreeWebo&nbsp;!'; ?>
 
 <?php ob_start(); ?>
     <div class="container-fluid">
-
-        <header class="card-header rounded">
-            <h1 class="text-center page-header text-info"><img src="/freewebo/public/images/logo.png" alt="logo"/><strong> Bienvenue sur le site FreeWebo&nbsp;!</strong>
-            </h1>
-        </header><br/>
 
         <div class="row">
             <div class="col-md-4"></div>
