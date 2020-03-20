@@ -7,8 +7,8 @@
 
         <div class="row">
             <div class="col-md-3">
-                <!-- bouton Retour à la page d'accueil-->
-                <a class="btn btn-lg btn-info btn-sm" href="index.php?action=member" role="button"><span class="fas fa-campground"></span> Retour à l'espace membre</a>
+                <!-- bouton Retour à l'espace membre-->
+                <a class="btn btn-lg btn-success btn-sm" href="index.php?action=member" role="button"><span class="fas fa-campground"></span> Retour à l'espace membre</a>
             </div>
 
             <div class="col-md-6">
@@ -59,14 +59,17 @@
             <div class="col-md-3"></div>
         </div><br/>
 
-        <!-- Bouton back to the top -->
-
-        <a href="#" class="fixed-action-btn smooth-scroll btn-floating btn-lg btn-info rounded-circle float-right"><span class="fas fa-arrow-circle-up"></span></a>
 
         <!-- bouton Retour à l'espace membre-->
         <div class="row">
-            <a class="btn btn-lg btn-info btn-sm" href="index.php?action=member" role="button"><span class="fas fa-campground"></span> Retour à l'espace membre</a>
+            <div class='col-md-3'>
+                <a class="btn btn-lg btn-success btn-sm" href="index.php?action=member" role="button"><span class="fas fa-campground"></span> Retour à l'espace membre</a>
+            </div>
         </div>
+
+        <!-- Bouton back to the top -->
+        <a href="#" class="fixed-action-btn smooth-scroll btn-floating btn-lg btn-info rounded-circle float-right"><span class="fas fa-arrow-circle-up"></span></a>
+
 
     </div><br/><br/> <!-- fin container -->
 
