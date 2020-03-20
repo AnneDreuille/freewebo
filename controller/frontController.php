@@ -14,7 +14,7 @@ function homepage(){
 
 //renseigner le formulaire d'inscription
 function signUp() {
-  //vérifier que le formulaire a bien reçu les paramètres
+    //vérifier que le formulaire a bien reçu les paramètres
     $message= null;
 
     if (empty($_POST['userType'])) {
@@ -42,6 +42,11 @@ function signUp() {
 
         //appeler la fonction de cet objet
         $addData= $userModel->signUp($_POST['userType'], $_POST['lastName'], $_POST['firstName'], $_POST['mail'], $_POST['phone'], $password_hash);
+
+        // if ($_POST['mail']== $addData['mail']){
+        //     throw new Exception('Mail déjà existant');
+        //     echo 'Il y a déjà un compte avec ce mail !';
+        // }
 
         if ($addData===false){
             throw new Exception("Impossible d'ajouter les données du formulaire");
@@ -105,7 +110,7 @@ function member (){
 
 //renseigner le formulaire "need" expression des besoins
 function need() {
-  //vérifier que le formulaire a bien reçu les paramètres
+    //vérifier que le formulaire a bien reçu les paramètres
     if (!empty($_POST['name']) && !empty($_SESSION['idUser']) && !empty($_POST['description'])) {
 
         //créer l'objet
