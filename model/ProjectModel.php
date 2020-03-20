@@ -3,7 +3,7 @@ require_once(__DIR__.'/Model.php');
 
 class ProjectModel extends Model {
 
-//insérer un nouveau projet
+  //insérer un nouveau projet
   public function need($name,$idClient,$description){
     $db= $this->dbConnect();
 
@@ -12,7 +12,7 @@ class ProjectModel extends Model {
     return $req->execute(array($name,$idClient,$description));
   }
 
-//récupérer les données d'un projet
+  //récupérer les données d'un projet
   public function dataProject($idClient) {
     $db= $this->dbConnect();
 
@@ -22,12 +22,21 @@ class ProjectModel extends Model {
     return $req->fetch();
   }
 
+  //mettre à jour les données d'1 projet / désignation d'un dév
+  public function assign($idDev) {
+    $db= $this->dbConnect();
+
+    $req = $db->prepare('UPDATE project SET assignDate=NOW() WHERE idDev=?');
+
+    return $req->execute(array($idDev));
+  }
+
 
 //NON ENCORE UTILISE
 
-//mettre à jour les données d'1 projet
 
-//lister les projets
+
+  //lister les projets
   public function listProject() {
     $db= $this->dbConnect();
 
