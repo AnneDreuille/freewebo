@@ -7,13 +7,14 @@ require_once(__DIR__.'/app/config.php');
 
 //charger les fichiers controller
 require_once(__DIR__.'/controller/frontController.php');
-// require_once(__DIR__.'/controller/backController.php');
+require_once(__DIR__.'/controller/backController.php');
 
 //tester le paramètre action pour savoir quelle fonction du controleur appeler
 try {
 
     if (isset($_GET['action'])) {
 
+//FRONT
         if ($_GET['action']=='signUp') {
             signUp();
         }
@@ -30,9 +31,26 @@ try {
             need();
         }
 
-    // elseif($_GET['action']=='') {
-    //   ();
-    // }
+//BACK
+        elseif($_GET['action']=='admin') {
+            admin();
+        }
+
+        elseif($_GET['action']=='assign') {
+            assign();
+        }
+
+        // elseif($_GET['action']=='') {
+        //      ();
+        // }
+
+        // elseif($_GET['action']=='') {
+        //      ();
+        // }
+
+        // elseif($_GET['action']=='') {
+        //      ();
+        // }
 
 
 
