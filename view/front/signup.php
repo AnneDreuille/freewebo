@@ -94,13 +94,16 @@
             <div class="col-md-4"></div>
         </div><br/>
 
-        <!-- Bouton back to the top -->
-        <a href="#" class="fixed-action-btn smooth-scroll btn-floating btn-lg btn-info rounded-circle float-right"><span class="fas fa-arrow-circle-up"></span></a>
 
         <!-- bouton Retour à la page d'accueil-->
         <div class="row">
-            <a class="btn btn-lg btn-info btn-sm" href="/freewebo" role="button"><span class="fas fa-home"></span> Retour à la page d'accueil</a>
+            <div class='col-md-4'>
+                <a class="btn btn-lg btn-info btn-sm" href="/freewebo" role="button"><span class="fas fa-home"></span> Retour à la page d'accueil</a>
+            </div>
         </div>
+
+        <!-- Bouton back to the top -->
+        <a href="#" class="fixed-action-btn smooth-scroll btn-floating btn-lg btn-info rounded-circle float-right"><span class="fas fa-arrow-circle-up"></span></a>
 
     </div><br/><br/> <!-- fin container -->
 
