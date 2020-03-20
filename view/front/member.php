@@ -63,11 +63,11 @@
                     </div>
                     <div>
                         <div class="mb-1"><img src="public/images/2.process.jpg" alt="process étape2"/></div>
-                        <a href=#><button type="button" class="btn btn-warning rounded mr-2 px-1">2. Recherche développeur</button></a>
+                        <a href=#><button type="button" class="btn btn-warning disabled rounded mr-2 px-1">2. Recherche développeur</button></a>
                     </div>
                     <div>
                         <div class="mb-1"><img src="public/images/3.process.png" alt="process étape3"/></div>
-                        <a href=#><button type="button" class="btn btn-primary rounded mr-2 px-1">3. Envoi modèle</button></a>
+                        <a href=#><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">3. Envoi modèle</button></a>
                     </div>
                     <div>
                         <div class="mb-1"><img src="public/images/4.process.png" alt="process étape4"/></div>
@@ -75,7 +75,7 @@
                     </div>
                     <div>
                         <div class="mb-1"><img src="public/images/5.process.jpg" alt="process étape5"/></div>
-                        <a href=#><button type="button" class="btn btn-primary rounded mr-2 px-1">5. Envoi URL</button></a>
+                        <a href=#><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">5. Envoi URL</button></a>
                     </div>
                     <div>
                         <div class="mb-1"><img src="public/images/6.process.jpg" alt="process étape6"/></div>
@@ -91,13 +91,16 @@
             <div class="col-md-3"></div>
         </div><br/>
 
-        <!-- Bouton back to the top -->
-        <a href="#" class="fixed-action-btn smooth-scroll btn-floating btn-lg btn-info rounded-circle float-right"><span class="fas fa-arrow-circle-up"></span></a>
 
         <!-- bouton Retour à la page d'accueil-->
         <div class="row">
-            <a class="btn btn-lg btn-info btn-sm" href="/freewebo" role="button"><span class="fas fa-home"></span> Retour à la page d'accueil</a>
+            <div class='col-md-4'>
+                <a class="btn btn-lg btn-info btn-sm" href="/freewebo" role="button"><span class="fas fa-home"></span> Retour à la page d'accueil</a>
+            </div>
         </div>
+
+        <!-- Bouton back to the top -->
+        <a href="#" class="fixed-action-btn smooth-scroll btn-floating btn-lg btn-info rounded-circle float-right"><span class="fas fa-arrow-circle-up"></span></a>
 
     </div><br/><br/> <!-- fin container -->
 
