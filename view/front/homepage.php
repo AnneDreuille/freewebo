@@ -12,7 +12,7 @@
             </div>
 
             <div class="offset-md-1 col-md-3">
-                <!-- formulaire pour se connecter -->
+                <!-- formulaire pour se connecter signIn -->
                 <form action="index.php?action=signIn" method="post">
                     <div class="form-group">
                         <p class="italic font-weight-bold text-info small mb-0">Espace membre</p>
@@ -37,7 +37,7 @@
                                 <input type="submit" value="Se connecter" id="submit" class="btn btn-info btn-sm small" />
                             </div>
                         </div>
-                        <!-- bouton pour s'inscrire -->
+                        <!-- bouton pour s'inscrire signUp -->
                         <div class="form-group row">
                             <div class="col">
                                 <span class="small italic font-weight-bold text-info mt-3 mb-0">Pas encore membre&nbsp;?</span>
