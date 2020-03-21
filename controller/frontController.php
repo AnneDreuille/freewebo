@@ -32,7 +32,6 @@ function signUp() {
     } elseif (empty($_POST['password'])) {
         $message= false;
     } else {
-        $message= true;
 
         //créer l'objet
         $userModel= new UserModel();
@@ -40,16 +39,17 @@ function signUp() {
         //crypter le password
         $password_hash= password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-        //appeler la fonction de cet objet
-        $addData= $userModel->signUp($_POST['userType'], $_POST['lastName'], $_POST['firstName'], $_POST['mail'], $_POST['phone'], $password_hash);
+        $pas_de_mail_existant=$userModel->signIn($_POST['mail'] );
 
-        // if ($_POST['mail']== $addData['mail']){
-        //     throw new Exception('Mail déjà existant');
-        //     echo 'Il y a déjà un compte avec ce mail !';
-        // }
+        if ($pas_de_mail_existant !== false) {
+            $message= false;
 
-        if ($addData===false){
-            throw new Exception("Impossible d'ajouter les données du formulaire");
+            // echo 'Il y a déjà un compte avec ce mail !';
+        } else {
+            $message= true;
+
+            //appeler la fonction de cet objet
+            $addData= $userModel->signUp($_POST['userType'], $_POST['lastName'], $_POST['firstName'], $_POST['mail'], $_POST['phone'], $password_hash);
         }
     }
     //charger le fichier en vue de l'affichage dans la page html
@@ -90,15 +90,15 @@ function signIn() {
 //rediriger un client vers espace membre
 function member (){
     //vérifier qu'on a bien un idUser en session et que c'est un client
-    if (!empty($_SESSION['idUser']) && ($_SESSION['userType']='client')) {
+    if (!empty($_SESSION['idUser'])) {
 
-        $idClient= $_SESSION['idUser'];
+        $idUser= $_SESSION['idUser'];
 
         //créer l'objet
         $projectModel= new ProjectModel();
 
         //appeler la fonction de cet objet
-        $dataProject= $projectModel->dataProject($idClient);
+        $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
 
     } else {
         $dataProject=false;
