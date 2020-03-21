@@ -20,6 +20,16 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4">
+                <!-- afficher les messages : erreur ou succès -->
+                <p class="small italic text-center text-info font-weight-bold">
+                <?php
+                if ($message==false){
+                    echo 'Compléter SVP le formulaire';
+                } elseif ($message==true){
+                    echo 'Super ! Vous êtes maintenant inscrit(e).';
+                }
+                ?>
+                </p>
                 <!-- afficher le formulaire d'INSCRIPTION à remplir -->
                 <form action="index.php?action=signUp" method="post" class="border px-3 py-3 bg-light rounded">
                     <div>
@@ -79,16 +89,6 @@
                             <input type="submit" value="Valider" id="submit" class="btn btn-info font-weight-bold px-5"/>
                         </div>
                     </div>
-                    <!-- afficher les messages : erreur ou succès -->
-                    <p class="small italic text-center text-info">
-                    <?php
-                    if ($message==false){
-                        echo 'Compléter SVP le formulaire';
-                    } elseif ($message==true){
-                        echo 'Super ! Vous êtes maintenant inscrit(e).';
-                    }
-                    ?>
-                    </p>
                 </form>
             </div>
             <div class="col-md-4"></div>
