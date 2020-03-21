@@ -13,22 +13,30 @@ class ProjectModel extends Model {
   }
 
   //récupérer les données d'un projet
-  public function dataProject($idClient) {
+  public function dataProject($idUser, $userType) {
     $db= $this->dbConnect();
 
-    $req = $db->prepare('SELECT id,name,idClient,idDev,description,DATE_FORMAT(needDate, "%d/%m/%Y à %Hh%i") AS needDate_fr, DATE_FORMAT(assignDate, "%d/%m/%Y à %Hh%i") AS assignDate_fr, DATE_FORMAT(modelDate, "%d/%m/%Y à %Hh%i") AS modelDate_fr, DATE_FORMAT(startDate, "%d/%m/%Y à %Hh%i") AS startDate_fr, DATE_FORMAT(urlDate, "%d/%m/%Y à %Hh%i") AS urlDate_fr, DATE_FORMAT(endDate, "%d/%m/%Y à %Hh%i") AS endDate_fr, ratingClient, ratingDev FROM project WHERE idClient=?');
+    $sql= 'SELECT id,name,idClient,idDev,description,DATE_FORMAT(needDate, "%d/%m/%Y à %Hh%i") AS needDate_fr, DATE_FORMAT(assignDate, "%d/%m/%Y à %Hh%i") AS assignDate_fr, DATE_FORMAT(modelDate, "%d/%m/%Y à %Hh%i") AS modelDate_fr, DATE_FORMAT(startDate, "%d/%m/%Y à %Hh%i") AS startDate_fr, DATE_FORMAT(urlDate, "%d/%m/%Y à %Hh%i") AS urlDate_fr, DATE_FORMAT(endDate, "%d/%m/%Y à %Hh%i") AS endDate_fr, ratingClient, ratingDev FROM project WHERE ';
 
-    $req->execute(array($idClient));
+    if ($userType=='client'){
+      $sql.='idClient=?';
+    } elseif ($userType=='dev'){
+      $sql.='idDev=?';
+    }
+
+    $req = $db->prepare($sql);
+
+    $req->execute(array($idUser));
     return $req->fetch();
   }
 
   //mettre à jour les données d'1 projet / désignation d'un dév
-  public function assign($idDev) {
+  public function assign($idDev, $id) {
     $db= $this->dbConnect();
 
-    $req = $db->prepare('UPDATE project SET assignDate=NOW() WHERE idDev=?');
+    $req = $db->prepare('UPDATE project SET idDev=? ,assignDate=NOW() WHERE id=?');
 
-    return $req->execute(array($idDev));
+    return $req->execute(array($idDev, $id));
   }
 
 
