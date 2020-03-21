@@ -18,13 +18,13 @@
             <div class="col-md-6 btn-group">
                 <!-- afficher le prénom du client -->
                 <?php
-                if (!empty ($_SESSION['idUser']) && ($_SESSION['userType']='client')){;?>
-                <button type="button" class="btn btn-success disabled rounded mr-2">
+                if (!empty ($dataProject['idUser']) && ($_SESSION['userType']='client')){;?>
+                <button type="button" class="btn btn-success disabled rounded mr-2 text-capitalize">
                 <?php echo $_SESSION['firstName'] ; ?></button>
                 <?php
                 } else {; ?>
-                <button type="button" class="btn btn-outline-dark disabled rounded mr-2">
-                <?php echo 'prénom du client'; ?></button>
+                <button type="button" class="btn btn-outline-dark disabled rounded mr-2 text-capitalize">
+                <?php echo 'prénom client'; ?></button>
                 <?php
                 }
                 ?>
@@ -32,20 +32,20 @@
                 <!-- afficher le nom du projet -->
                 <?php
                 if (!empty ($dataProject['name'])){; ?>
-                <button type="button" class="btn btn-success disabled rounded mr-2">
+                <button type="button" class="btn btn-success disabled rounded mr-2 text-capitalize">
                 <?php echo $dataProject['name']; ?></button>
                 <?php
                 } else {; ?>
-                <button type="button" class="btn btn-outline-dark disabled rounded mr-2">
-                <?php echo 'nom du projet'; ?></button>
+                <button type="button" class="btn btn-outline-dark disabled rounded mr-2 text-capitalize">
+                <?php echo 'nom projet'; ?></button>
                 <?php
                 }
                 ?>
 
                 <!-- afficher le prénom du développeur -->
-                <button type="button" class="btn btn-outline-dark disabled rounded mr-2">
+                <button type="button" class="btn btn-outline-dark disabled rounded mr-2 text-capitalize">
                 <?php
-                    echo ('prénom du dev');
+                    echo ('prénom dev');
                 ?>
                 </button>
             </div>
