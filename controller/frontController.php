@@ -100,6 +100,12 @@ function member (){
         //appeler la fonction de cet objet
         $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
 
+        if ($_SESSION['userType']=='client') {
+            $idUser= $dataProject['idClient'];
+        } elseif ($_SESSION['userType']=='dev') {
+            $idUser= $dataProject['idDev'];
+        }
+
     } else {
         $dataProject=false;
     }
