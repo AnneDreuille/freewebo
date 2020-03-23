@@ -12,7 +12,7 @@ class ProjectModel extends Model {
     return $req->execute(array($name,$idClient,$description));
   }
 
-  //récupérer les données d'un projet
+  //récupérer les données d'un projet en fonction d'un user
   public function dataProject($idUser, $userType) {
     $db= $this->dbConnect();
 
@@ -39,19 +39,23 @@ class ProjectModel extends Model {
     return $req->execute(array($idDev, $id));
   }
 
-
-//NON ENCORE UTILISE
-
-
-
-  //lister les projets
+//lister les projets
   public function listProject() {
     $db= $this->dbConnect();
 
     $req = $db->prepare('SELECT id,name,idClient,idDev,description,DATE_FORMAT(needDate, "%d/%m/%Y à %Hh%i") AS needDate_fr, DATE_FORMAT(assignDate, "%d/%m/%Y à %Hh%i") AS assignDate_fr, DATE_FORMAT(modelDate, "%d/%m/%Y à %Hh%i") AS modelDate_fr, DATE_FORMAT(startDate, "%d/%m/%Y à %Hh%i") AS startDate_fr, DATE_FORMAT(urlDate, "%d/%m/%Y à %Hh%i") AS urlDate_fr, DATE_FORMAT(endDate, "%d/%m/%Y à %Hh%i") AS endDate_fr, ratingClient, ratingDev FROM project ORDER BY needDate ASC');
 
-    $req->execute(array($id));
+    $req->execute();
     return $req->fetchAll();
   }
 
+//récupérer les données d'un projet en fonction de son id
+    public function project($id) {
+    $db= $this->dbConnect();
+
+    $req = $db->prepare('SELECT id,name,idClient,idDev,description,DATE_FORMAT(needDate, "%d/%m/%Y à %Hh%i") AS needDate_fr, DATE_FORMAT(assignDate, "%d/%m/%Y à %Hh%i") AS assignDate_fr, DATE_FORMAT(modelDate, "%d/%m/%Y à %Hh%i") AS modelDate_fr, DATE_FORMAT(startDate, "%d/%m/%Y à %Hh%i") AS startDate_fr, DATE_FORMAT(urlDate, "%d/%m/%Y à %Hh%i") AS urlDate_fr, DATE_FORMAT(endDate, "%d/%m/%Y à %Hh%i") AS endDate_fr, ratingClient, ratingDev FROM project WHERE id=?');
+
+    $req->execute();
+    return $req->fetch(array($id));
+  }
 }
