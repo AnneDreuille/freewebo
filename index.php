@@ -40,9 +40,9 @@ try {
             assign();
         }
 
-        // elseif($_GET['action']=='') {
-        //      ();
-        // }
+        elseif($_GET['action']=='project') {
+            project();
+        }
 
         // elseif($_GET['action']=='') {
         //      ();
