@@ -4,7 +4,8 @@
 
 <?php ob_start(); ?>
     <div class="container-fluid">
-
+<?php echo $_SESSION['idUser'] ; ?>
+<?php echo $_SESSION['userType'] ; ?>
         <!-- bouton Retour à la page d'accueil-->
         <div class="row">
             <div class="col-md-4">
@@ -18,7 +19,7 @@
             <div class="col-md-6 btn-group">
                 <!-- afficher le prénom du client -->
                 <?php
-                if (!empty ($dataProject['idUser']) && ($_SESSION['userType']='client')){;?>
+                if ($_SESSION['userType']=='client'){;?>
                 <button type="button" class="btn btn-success disabled rounded mr-2 text-capitalize">
                 <?php echo $_SESSION['firstName'] ; ?></button>
                 <?php
