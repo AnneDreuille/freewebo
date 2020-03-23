@@ -19,46 +19,12 @@
             </div>
         </div>
 
+        <!-- mettre à jour les données d'un user -->
         <div class="row">
-            <!-- nommer un développeur -->
-            <div class="col-md-4">
-                <form action="index.php?action=assign" method="post" class="border pt-1 px-2 bg-light rounded">
-                    <p class="text-info font-weight-bold text-center">Nommer 1 développeur sur un projet</p>
-                    <div class="from-group row pb-2">
-                        <div class="col">
-                            <input type="text" name="name" id="nameProject" placeholder="Nom du projet" required class="form-control"/>
-                        </div>
-                    </div>
-                    <div class="from-group row">
-                        <div class="col">
-                            <input type="text" name="lastName" id="lastName" placeholder="Nom" required class="form-control text-uppercase"/>
-                        </div>
-                        <div class="col">
-                            <input type="text" name="firstName" id="firstName" placeholder="Prénom" required class="form-control text-capitalize"/>
-                        </div>
-                    </div><br/>
-                    <div class="form-group row">
-                        <div class="col">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" aria-label="arobase">@</span>
-                                <input type="email" name="mail" id="mail" placeholder="mail du développeur" required class="form-control text-lowercase"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col text-center">
-                            <input type="submit" value="Valider" id="submit" class="btn btn-info font-weight-bold px-5 submit" />
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <!-- mettre à jour les données d'un user -->
-            <div class="col-md-4 border bg-warning">
-                <p class='text-center'>formulaire pour mettre à jour<br/> les données d'un user</p>
-            </div>
-
             <div class="col-md-4"></div>
-        </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+        </div><br/>
 <hr/>
         <!-- liste USERS-->
         <div class="row">
@@ -83,8 +49,8 @@
                         ?>
                             <tr class="xsmall" >
                                 <td><?php echo($data['id']) ?></td>
-                                <td><?php echo($data['firstName']) ?></td>
-                                <td><?php echo($data['lastName']) ?></td>
+                                <td class="text-capitalize"><?php echo($data['firstName']) ?></td>
+                                <td class="text-uppercase"><?php echo($data['lastName']) ?></td>
                                 <td><?php echo($data['mail']) ?></td>
                                 <td><?php echo($data['phone']) ?></td>
                                 <td><?php echo(substr($data['signUpDate_fr'],0,10)) ?></td>
@@ -117,8 +83,8 @@
                         ?>
                             <tr class="xsmall" >
                                 <td><?php echo($data['id']) ?></td>
-                                <td><?php echo($data['firstName']) ?></td>
-                                <td><?php echo($data['lastName']) ?></td>
+                                <td class="text-capitalize"><?php echo($data['firstName']) ?></td>
+                                <td class="text-uppercase"><?php echo($data['lastName']) ?></td>
                                 <td><?php echo($data['mail']) ?></td>
                                 <td><?php echo($data['phone']) ?></td>
                                 <td><?php echo(substr($data['signUpDate_fr'],0,10)) ?></td>
@@ -134,41 +100,33 @@
 
         <!-- liste PROJETS-->
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-4">
                 <div class="table-responsive-sm border">
                     <p class= "text-info text-center font-weight-bold">LISTE DES PROJETS</p>
                     <table class="table table-striped table-condensed small">
                         <thead>
                             <tr class="text-info">
+                                <th>id projet</th>
                                 <th>Nom projet</th>
                                 <th>idClient</th>
                                 <th>idDev</th>
-                                <th>description</th>
-                                <th>needDate</th>
-                                <th>assignDate</th>
-                                <th>modelDate</th>
-                                <th>startDate</th>
-                                <th>urlDate</th>
-                                <th>endDate</th>
-                                <th>ratingClient</th>
-                                <th>ratingDev</th>
+                                <th>lien</th>
                             </tr>
                         </thead>
                         <tbody>
+                        <?php
+                        foreach ($listProject as $data) {
+                        ?>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td><?php echo($data['id']) ?></td>
+                                <td><?php echo($data['name']) ?></td>
+                                <td><?php echo($data['idClient']) ?></td>
+                                <td><?php echo($data['idDev']) ?></td>
+                                <td class="text-center"><a href="index.php?action=project&id=<?php echo $data['id'];?>" role="button" class="fas fa-share btn-info"></a></td>
                             </tr>
+                        <?php
+                        }
+                        ?>
                         </tbody>
                     </table>
                 </div>
