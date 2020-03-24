@@ -36,12 +36,12 @@ try {
             admin();
         }
 
-        elseif($_GET['action']=='assign') {
-            assign();
-        }
-
         elseif($_GET['action']=='project') {
             project();
+        }
+
+        elseif($_GET['action']=='assign') {
+            assign();
         }
 
         // elseif($_GET['action']=='') {
