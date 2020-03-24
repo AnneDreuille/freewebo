@@ -87,6 +87,8 @@ function signIn() {
     die();
 }
 
+//PROJECT
+
 //rediriger un client vers espace membre
 function member (){
     //vérifier qu'on a bien un idUser en session et que c'est un client
@@ -111,8 +113,6 @@ function member (){
     }
     require (__DIR__.'/../view/front/member.php');
 }
-
-//PROJECT
 
 //renseigner le formulaire "need" expression des besoins
 function need() {
