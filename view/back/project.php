@@ -22,7 +22,7 @@
         <div class="row">
             <!-- nommer un développeur -->
             <div class="col-md-4">
-                <form action="index.php?action=assign" method="post" class="border pt-1 px-2 bg-light rounded">
+                <form action="index.php?action=assign&id=<?php echo $_GET['id'];?>" method="post" class="border pt-1 px-2 bg-light rounded">
                     <p class="text-info font-weight-bold text-center">Nommer 1 développeur sur un projet</p>
                     <div class="from-group row pb-2">
                         <div class="col">
@@ -55,8 +55,8 @@
 
             <div class="col-md-4"></div>
             <div class="col-md-4"></div>
-        </div>
-<hr/>
+        </div><br/>
+
 <!-- DETAIL D'UN PROJET-->
         <div class="row">
             <div class="col-sm-12">
@@ -81,16 +81,16 @@
                         <tbody>
                             <tr>
                                 <td><?php echo($project['name']) ?></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td><?php echo($project['idClient']) ?></td>
+                                <td><?php echo($project['idDev']) ?></td>
+                                <td><?php echo(substr($project['needDate_fr'],0,10)) ?></td>
+                                <td><?php echo(substr($project['assignDate_fr'],0,10)) ?></td>
+                                <td><?php echo(substr($project['modelDate_fr'],0,10)) ?></td>
+                                <td><?php echo(substr($project['startDate_fr'],0,10)) ?></td>
+                                <td><?php echo(substr($project['urlDate_fr'],0,10)) ?></td>
+                                <td><?php echo(substr($project['endDate_fr'],0,10)) ?></td>
+                                <td><?php echo($project['ratingClient']) ?></td>
+                                <td><?php echo($project['ratingDev']) ?></td>
                             </tr>
                         </tbody>
                     </table>
@@ -100,10 +100,11 @@
         <!-- Description du projet -->
         <div class="row">
             <div class="col-sm-10">
-                <p class= "text-info font-weight-bold">Description du projet</p>
-                <p>ajouter la description</p>
+                <p class= "text-info font-weight-bold mb-1">Description du projet</p>
+                <small class= "xsmall"><?php echo($project['description']) ?></small>
             </div>
-        </div><br/>
+        </div>
+<hr/>
 
         <!-- bouton Retour à la page d'accueil-->
         <div class="row">
