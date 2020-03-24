@@ -3,7 +3,9 @@ require_once(__DIR__.'/Model.php');
 
 class ProjectModel extends Model {
 
-  //insérer un nouveau projet
+//FRONT
+
+  //créer un nouveau projet en décrivant le besoin
   public function need($name,$idClient,$description){
     $db= $this->dbConnect();
 
@@ -29,6 +31,8 @@ class ProjectModel extends Model {
     $req->execute(array($idUser));
     return $req->fetch();
   }
+
+//BACK
 
   //mettre à jour les données d'1 projet / désignation d'un dév
   public function assign($idDev, $id) {
