@@ -4,8 +4,7 @@
 
 <?php ob_start(); ?>
     <div class="container-fluid">
-<?php echo $_SESSION['idUser'] ; ?>
-<?php echo $_SESSION['userType'] ; ?>
+
         <!-- bouton Retour à la page d'accueil-->
         <div class="row">
             <div class="col-md-4">
@@ -19,7 +18,7 @@
             <div class="col-md-6 btn-group">
                 <!-- afficher le prénom du client -->
                 <?php
-                if ($_SESSION['userType']=='client'){;?>
+                if (isset ($_SESSION['userType']) && $_SESSION['userType']=='client'){;?>
                 <button type="button" class="btn btn-success disabled rounded mr-2 text-capitalize">
                 <?php echo $_SESSION['firstName'] ; ?></button>
                 <?php
@@ -44,11 +43,17 @@
                 ?>
 
                 <!-- afficher le prénom du développeur -->
-                <button type="button" class="btn btn-outline-dark disabled rounded mr-2 text-capitalize">
                 <?php
-                    echo ('prénom dev');
+                if (isset ($_SESSION['userType']) && $_SESSION['userType']=='dev'){;?>
+                <button type="button" class="btn btn-success disabled rounded mr-2 text-capitalize">
+                <?php echo $_SESSION['firstName'] ; ?></button>
+                <?php
+                } else {; ?>
+                <button type="button" class="btn btn-outline-dark disabled rounded mr-2 text-capitalize">
+                <?php echo 'prénom dev'; ?></button>
+                <?php
+                }
                 ?>
-                </button>
             </div>
             <div class="col-md-3"></div>
         </div><br/><br/>
