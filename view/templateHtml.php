@@ -64,6 +64,16 @@
         <header class="card-header">
             <h1 class="text-center page-header text-info"><img src="/freewebo/public/images/logo.png" alt="logo" class="img.card-img"/><strong> <?php echo $header; ?></strong>
             </h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item">
+                      <a class="nav-link text-info font-weight-bold" href="index.php"><span class="fas fa-home"></span> Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-info font-weight-bold" href="index.php?action=member"><span class="fas fa-campground"></span> Espace membre</a>
+                    </li>
+                </ul>
+            </nav>
         </header><br/>
 
         <?php echo $content; ?>
