@@ -25,7 +25,7 @@
             <div class="col-md-4"></div>
             <div class="col-md-4"></div>
         </div><br/>
-<hr/>
+
         <!-- liste USERS-->
         <div class="row">
             <!-- liste CLIENTS-->
