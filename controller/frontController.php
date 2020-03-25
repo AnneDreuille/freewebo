@@ -15,22 +15,32 @@ function homepage(){
 //renseigner le formulaire d'inscription
 function signUp() {
     //vérifier que le formulaire a bien reçu les paramètres
-    $message= null;
+    $error= null;
+    $alert= null;
 
-    if (empty($_POST['userType'])) {
-        $message= false;
+    if (empty($_POST)) {
+        $alert= null;
+    } elseif (empty($_POST['userType'])) {
+        $error= true;
+        $alert='Choisir SVP votre statut&nbsp;!';
     } elseif (empty($_POST['lastName'])) {
-        $message= false;
+        $error= true;
+        $alert='Indiquer SVP votre nom&nbsp;!';
     } elseif (empty($_POST['firstName'])) {
-        $message= false;
+        $error= true;
+        $alert='Indiquer SVP votre prénom&nbsp;!';
     } elseif (empty($_POST['mail'])) {
-        $message= false;
+        $error= true;
+        $alert='Indiquer SVP votre mail&nbsp;!';
     } elseif (!preg_match('#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#is', $_POST['mail'])){
-        $message= false;
+        $error= true;
+        $alert='Indiquer SVP une adresse mail correcte&nbsp;!';
     } elseif (!empty ($_POST['phone']) && !preg_match('[0-9]{10}', $_POST['phone'])) {
-        $message= false;
+        $error= true;
+        $alert='Indiquer SVP un n° tél correct&nbsp;!';
     } elseif (empty($_POST['password'])) {
-        $message= false;
+        $error= true;
+        $alert='Indiquer SVP un mot de passe&nbsp;!';
     } else {
 
         //créer l'objet
@@ -39,14 +49,14 @@ function signUp() {
         //crypter le password
         $password_hash= password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-        $pas_de_mail_existant=$userModel->signIn($_POST['mail'] );
+        //vérifier que le mail n'existe pas déjà
+        $no_existing_mail=$userModel->signIn($_POST['mail'] );
 
-        if ($pas_de_mail_existant !== false) {
-            $message= false;
-
-            // echo 'Il y a déjà un compte avec ce mail !';
+        if ($no_existing_mail !== false) {
+            $error= true;
+            $alert= 'Il y a déjà un compte avec ce mail&nbsp;!';
         } else {
-            $message= true;
+            $error= false;
 
             //appeler la fonction de cet objet
             $addData= $userModel->signUp($_POST['userType'], $_POST['lastName'], $_POST['firstName'], $_POST['mail'], $_POST['phone'], $password_hash);
@@ -89,24 +99,22 @@ function signIn() {
 
 //PROJECT
 
-//rediriger un client vers espace membre
+//rediriger un user vers espace membre
 function member (){
-    //vérifier qu'on a bien un idUser en session et que c'est un client
+    //vérifier qu'on a bien un idUser en session
     if (!empty($_SESSION['idUser'])) {
 
         $idUser= $_SESSION['idUser'];
 
         //créer l'objet
         $projectModel= new ProjectModel();
+        $userModel= new UserModel();
 
         //appeler la fonction de cet objet
         $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
 
-        if ($_SESSION['userType']=='client') {
-            $idUser= $dataProject['idClient'];
-        } elseif ($_SESSION['userType']=='dev') {
-            $idUser= $dataProject['idDev'];
-        }
+        $client=$userModel->getUser($dataProject['idClient']);
+        $dev=$userModel->getUser($dataProject['idDev']);
 
     } else {
         $dataProject=false;
