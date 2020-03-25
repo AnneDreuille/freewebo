@@ -18,9 +18,9 @@
             <div class="col-md-6 btn-group">
                 <!-- afficher le prénom du client -->
                 <?php
-                if (isset ($_SESSION['userType']) && $_SESSION['userType']=='client'){;?>
+                if (!empty ($client['firstName'])){;?>
                 <button type="button" class="btn btn-success disabled rounded mr-2 text-capitalize">
-                <?php echo $_SESSION['firstName'] ; ?></button>
+                <?php echo $client['firstName'] ; ?></button>
                 <?php
                 } else {; ?>
                 <button type="button" class="btn btn-outline-dark disabled rounded mr-2 text-capitalize">
@@ -44,9 +44,9 @@
 
                 <!-- afficher le prénom du développeur -->
                 <?php
-                if (isset ($_SESSION['userType']) && $_SESSION['userType']=='dev'){;?>
+                if (!empty ($dev['firstName'])) {;?>
                 <button type="button" class="btn btn-success disabled rounded mr-2 text-capitalize">
-                <?php echo $_SESSION['firstName'] ; ?></button>
+                <?php echo $dev['firstName'] ; ?></button>
                 <?php
                 } else {; ?>
                 <button type="button" class="btn btn-outline-dark disabled rounded mr-2 text-capitalize">
@@ -63,29 +63,71 @@
             <div class="col-md-12 text-center">
                 <div class="btn-group align-items-end" role="group">
                     <div>
-                        <div class="mb-1"><img src="public/images/1.process.jpg" alt="process étape1"/>
-                        </div>
+                        <div class="mb-1"><img src="public/images/1.process.jpg" alt="process étape1"/></div>
                         <a href="index.php?action=need"><button type="button" class="btn btn-success rounded mr-2 px-1">1. Je décris le besoin</button></a>
+                        <div>
+                        <?php if ($dataProject['needDate_fr'] !== null) {; ?>
+                            <span class="far fa-check-circle fa-2x text-success pt-2"></span>
+                        <?php } else {; ?>
+                            <span class="fas fa-tools fa-2x text-muted pt-2"></span>
+                        <?php };?>
+                        </div>
                     </div>
+
                     <div>
                         <div class="mb-1"><img src="public/images/2.process.jpg" alt="process étape2"/></div>
                         <a href=#><button type="button" class="btn btn-warning disabled rounded mr-2 px-1">2. Recherche développeur</button></a>
+                        <div>
+                        <?php if ($dataProject['assignDate_fr'] !== null) {; ?>
+                            <span class="far fa-check-circle fa-2x text-success pt-2"></span>
+                        <?php } else {; ?>
+                            <span class="fas fa-tools fa-2x text-muted pt-2"></span>
+                        <?php };?>
+                        </div>
                     </div>
                     <div>
                         <div class="mb-1"><img src="public/images/3.process.png" alt="process étape3"/></div>
                         <a href=#><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">3. Envoi modèle</button></a>
+                        <div>
+                        <?php if ($dataProject['modelDate_fr'] !== null) {; ?>
+                            <span class="far fa-check-circle fa-2x text-success pt-2"></span>
+                        <?php } else {; ?>
+                            <span class="fas fa-tools fa-2x text-muted pt-2"></span>
+                        <?php };?>
+                        </div>
                     </div>
                     <div>
                         <div class="mb-1"><img src="public/images/4.process.png" alt="process étape4"/></div>
                         <a href=#><button type="button" class="btn btn-success rounded mr-2 px-1">4. J'accepte le modèle</button></a>
+                        <div>
+                        <?php if ($dataProject['startDate_fr'] !== null) {; ?>
+                            <span class="far fa-check-circle fa-2x text-success pt-2"></span>
+                        <?php } else {; ?>
+                            <span class="fas fa-tools fa-2x text-muted pt-2"></span>
+                        <?php };?>
+                        </div>
                     </div>
                     <div>
                         <div class="mb-1"><img src="public/images/5.process.jpg" alt="process étape5"/></div>
                         <a href=#><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">5. Envoi URL</button></a>
+                        <div>
+                        <?php if ($dataProject['urlDate_fr'] !== null) {; ?>
+                            <span class="far fa-check-circle fa-2x text-success pt-2"></span>
+                        <?php } else {; ?>
+                            <span class="fas fa-tools fa-2x text-muted pt-2"></span>
+                        <?php };?>
+                        </div>
                     </div>
                     <div>
                         <div class="mb-1"><img src="public/images/6.process.jpg" alt="process étape6"/></div>
                         <a href=#><button type="button" class="btn btn-warning rounded mr-2 px-1">6. Notations</button></a>
+                        <div>
+                        <?php if ($dataProject['endDate_fr'] !== null) {; ?>
+                            <span class="far fa-check-circle fa-2x text-success pt-2"></span>
+                        <?php } else {; ?>
+                            <span class="fas fa-tools text-muted fa-2x pt-2"></span>
+                        <?php };?>
+                        </div>
                     </div>
                 </div>
             </div>
