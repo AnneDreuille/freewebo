@@ -23,9 +23,9 @@
                 <!-- afficher les messages : erreur ou succès -->
                 <p class="small italic text-center text-info font-weight-bold">
                 <?php
-                if ($message==false){
-                    echo 'Compléter SVP le formulaire';
-                } elseif ($message==true){
+                if ($error===true){
+                    echo $alert;
+                } elseif ($error===false){
                     echo 'Super ! Vous êtes maintenant inscrit(e).';
                 }
                 ?>
@@ -50,10 +50,10 @@
 
                     <div class="form-group row mt-3">
                         <div class="col">
-                            <input type="text" name="lastName" id="lastName" placeholder="Nom" required class="form-control text-uppercase"/>
+                            <input type="text" name="lastName" id="lastName" placeholder="Nom" required class="form-control text-uppercase" value="<?php if (isset($_POST['lastName'])){echo $_POST['lastName'];} ?>" />
                         </div>
                         <div class="col">
-                            <input type="text" name="firstName" id="firstName" placeholder="Prénom" required class="form-control text-capitalize"/>
+                            <input type="text" name="firstName" id="firstName" placeholder="Prénom" required class="form-control text-capitalize" value="<?php if (isset($_POST['firstName'])){echo $_POST['firstName'];} ?>" />
                         </div>
                     </div>
 
@@ -61,7 +61,7 @@
                         <div class="col">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" aria-label="arobase">@</span>
-                                <input type="email" name="mail" id="mail" placeholder="monmail@exemple.com" required class="form-control text-lowercase"/>
+                                <input type="email" name="mail" id="mail" placeholder="monmail@exemple.com" required class="form-control text-lowercase" value="<?php if (isset($_POST['mail'])){echo $_POST['mail'];} ?>" />
                             </div>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                         <div class="col">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" aria-label="tel"><span class="fas fa-phone"></span></span>
-                                <input type="tel" name="phone" id="phone" placeholder="0X XX XX XX XX" class="form-control" />
+                                <input type="tel" name="phone" id="phone" placeholder="0X XX XX XX XX" class="form-control" value="<?php if (isset($_POST['phone'])){echo $_POST['phone'];} ?>" />
                             </div>
                         </div>
                     </div>
