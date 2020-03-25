@@ -62,8 +62,11 @@
 
     <body>
         <header class="card-header">
-            <h1 class="text-center page-header text-info"><img src="/freewebo/public/images/logo.png" alt="logo" class="img.card-img"/><strong> <?php echo $header; ?></strong>
+            <h1 class="text-center page-header text-info">
+                <div class="d-md-inline d-sm-block"><img src="/freewebo/public/images/logo.png" alt="logo" class="img.card-img"/></div>
+                <strong class="pl-2"><?php echo $header; ?></strong>
             </h1>
+
             <nav>
                 <ul class="nav">
                     <li class="nav-item">
