@@ -14,13 +14,23 @@ class UserModel extends Model {
     return $req->execute(array($userType,$lastName,$firstName,$mail,$phone,$password));
   }
 
-  //récupérer les données d'1 user
+  //récupérer les données d'1 user en fct de son mail
   public function signIn($mail) {
     $db= $this->dbConnect();
 
     $req = $db->prepare('SELECT id,userType,lastName,firstName,mail,phone,password,DATE_FORMAT(signUpDate, "%d/%m/%Y à %Hh%i") AS signUpDate_fr, DATE_FORMAT(blacklistDate, "%d/%m/%Y à %Hh%i") AS blacklistDate_fr FROM user WHERE mail=?');
 
     $req->execute(array($mail));
+    return $req->fetch();
+  }
+
+//récupérer les données d'1 user en fct de son id
+  public function getUser($id) {
+    $db= $this->dbConnect();
+
+    $req = $db->prepare('SELECT id,userType,lastName,firstName,mail,phone,password,DATE_FORMAT(signUpDate, "%d/%m/%Y à %Hh%i") AS signUpDate_fr, DATE_FORMAT(blacklistDate, "%d/%m/%Y à %Hh%i") AS blacklistDate_fr FROM user WHERE id=?');
+
+    $req->execute(array($id));
     return $req->fetch();
   }
 
