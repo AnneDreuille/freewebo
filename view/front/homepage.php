@@ -41,7 +41,7 @@
                         <div class="form-group row">
                             <div class="col">
                                 <span class="small italic font-weight-bold text-info mt-3 mb-0">Pas encore membre&nbsp;?</span>
-                                <a class="btn btn-sm btn-info small" href="index.php?action=signUp" role="button"><span class="fas fa-user-edit"></span> S'inscrire</a>
+                                <a class="btn btn-sm btn-info small" href="index.php?action=signUp" role="button"><span class="fas fa-user-edit pr-1"></span>S'inscrire</a>
                             </div>
                         </div>
                     </div>

@@ -8,14 +8,14 @@
         <!-- bouton Retour à la page d'accueil-->
         <div class="row">
             <div class="col-md-4">
-                <a class="btn btn-lg btn-info btn-sm" href="/freewebo" role="button"><span class="fas fa-home"></span> Retour à la page d'accueil</a>
+                <a class="btn btn-lg btn-info btn-sm" href="/freewebo" role="button"><span class="fas fa-home pr-1"></span>Retour à la page d'accueil</a>
             </div>
         </div>
 
         <!-- bouton Retour à l'espace membre-->
         <div class="row my-2">
             <div class='col-md-4'>
-                <a class="btn btn-lg btn-success btn-sm" href="index.php?action=member" role="button"><span class="fas fa-campground"></span> Retour à l'espace membre</a>
+                <a class="btn btn-lg btn-success btn-sm" href="index.php?action=member" role="button"><span class="fas fa-campground pr-1"></span>Retour à l'espace membre</a>
             </div>
         </div>
 
@@ -136,14 +136,14 @@
         <!-- bouton Retour à la page d'accueil-->
         <div class="row">
             <div class="col-md-4">
-                <a class="btn btn-lg btn-info btn-sm" href="/freewebo" role="button"><span class="fas fa-home"></span> Retour à la page d'accueil</a>
+                <a class="btn btn-lg btn-info btn-sm" href="/freewebo" role="button"><span class="fas fa-home pr-1"></span>Retour à la page d'accueil</a>
             </div>
         </div>
 
         <!-- bouton Retour à l'espace membre-->
         <div class="row mt-2">
             <div class='col-md-4'>
-                <a class="btn btn-lg btn-success btn-sm" href="index.php?action=member" role="button"><span class="fas fa-campground"></span> Retour à l'espace membre</a>
+                <a class="btn btn-lg btn-success btn-sm" href="index.php?action=member" role="button"><span class="fas fa-campground pr-1"></span>Retour à l'espace membre</a>
             </div>
         </div>
 

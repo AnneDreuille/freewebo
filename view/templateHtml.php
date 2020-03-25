@@ -61,8 +61,8 @@
     </head>
 
     <body>
-        <header class="card-header">
-            <h1 class="text-center page-header text-info">
+        <header class="card-header pb-0">
+            <h1 class="text-center page-header text-info pt-0 mb-0">
                 <div class="d-md-inline d-sm-block"><img src="/freewebo/public/images/logo.png" alt="logo" class="img.card-img"/></div>
                 <strong class="pl-2"><?php echo $header; ?></strong>
             </h1>
@@ -70,10 +70,10 @@
             <nav>
                 <ul class="nav">
                     <li class="nav-item">
-                      <a class="nav-link text-info font-weight-bold" href="index.php"><span class="fas fa-home"></span> Accueil</a>
+                      <a class="nav-link text-info font-weight-bold" href="index.php"><span class="fas fa-home pr-1"></span>Accueil</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-info font-weight-bold" href="index.php?action=member"><span class="fas fa-campground"></span> Espace membre</a>
+                      <a class="nav-link text-info font-weight-bold" href="index.php?action=member"><span class="fas fa-campground pr-1"></span>Espace membre</a>
                     </li>
                 </ul>
             </nav>

@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-3">
                 <!-- bouton Retour à l'espace membre-->
-                <a class="btn btn-lg btn-success btn-sm" href="index.php?action=member" role="button"><span class="fas fa-campground"></span> Retour à l'espace membre</a>
+                <a class="btn btn-lg btn-success btn-sm" href="index.php?action=member" role="button"><span class="fas fa-campground pr-1"></span>Retour à l'espace membre</a>
             </div>
 
             <div class="col-md-6">
@@ -63,7 +63,7 @@
         <!-- bouton Retour à l'espace membre-->
         <div class="row">
             <div class='col-md-3'>
-                <a class="btn btn-lg btn-success btn-sm" href="index.php?action=member" role="button"><span class="fas fa-campground"></span> Retour à l'espace membre</a>
+                <a class="btn btn-lg btn-success btn-sm" href="index.php?action=member" role="button"><span class="fas fa-campground pr-1"></span>Retour à l'espace membre</a>
             </div>
         </div>
 
