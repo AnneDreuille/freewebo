@@ -5,45 +5,7 @@
 <?php ob_start(); ?>
     <div class="container-fluid">
 
-        <div class="row">
-            <!-- nommer un développeur -->
-            <div class="col-md-4">
-                <form action="index.php?action=assign&id=<?php echo $_GET['id'];?>" method="post" class="border pt-1 px-2 bg-light rounded">
-                    <p class="text-info font-weight-bold text-center">Nommer 1 développeur sur un projet</p>
-                    <div class="from-group row pb-2">
-                        <div class="col">
-                            <input type="text" name="name" id="nameProject" placeholder="Nom du projet" required class="form-control text-capitalize"/>
-                        </div>
-                    </div>
-                    <div class="from-group row">
-                        <div class="col">
-                            <input type="text" name="lastName" id="lastName" placeholder="Nom" required class="form-control text-uppercase"/>
-                        </div>
-                        <div class="col">
-                            <input type="text" name="firstName" id="firstName" placeholder="Prénom" required class="form-control text-capitalize"/>
-                        </div>
-                    </div><br/>
-                    <div class="form-group row">
-                        <div class="col">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" aria-label="arobase">@</span>
-                                <input type="email" name="mail" id="mail" placeholder="mail du développeur" required class="form-control text-lowercase"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col text-center">
-                            <input type="submit" value="Valider" id="submit" class="btn btn-info font-weight-bold px-5 submit" />
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-        </div><br/>
-
-<!-- DETAIL D'UN PROJET-->
+        <!-- DETAIL D'UN PROJET-->
         <div class="row">
             <div class="col-sm-12">
                 <div class="table-responsive-sm border">
@@ -90,6 +52,32 @@
                 <small class= "xsmall"><?php echo($project['description']) ?></small>
             </div>
         </div>
+<hr/>
+        <!-- MISE A JOUR D'UN PROJET-->
+        <div class="row">
+            <!-- nommer un développeur -->
+            <div class="col-md-4">
+                <form action="index.php?action=assign&id=<?php echo $_GET['id'];?>" method="post" class="border pt-1 px-2 bg-light rounded">
+                    <p class="text-info font-weight-bold text-center">Nommer 1 développeur sur un projet</p>
+                    <div class="form-group row">
+                        <div class="col">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" aria-label="arobase">@</span>
+                                <input type="email" name="mail" id="mail" placeholder="mail du développeur" required class="form-control text-lowercase"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col text-center">
+                            <input type="submit" value="Valider" id="submit" class="btn btn-info font-weight-bold px-5 submit" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+        </div><br/>
 <hr/>
 
         <!-- bouton Retour à la page d'accueil-->
