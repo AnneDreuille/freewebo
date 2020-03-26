@@ -99,18 +99,18 @@ function signIn() {
 
 //PROJECT
 
-//rediriger un user vers espace membre
+//diriger un user vers espace membre avec données user et projet
 function member (){
     //vérifier qu'on a bien un idUser en session
     if (!empty($_SESSION['idUser'])) {
 
         $idUser= $_SESSION['idUser'];
 
-        //créer l'objet
+        //créer les objets
         $projectModel= new ProjectModel();
         $userModel= new UserModel();
 
-        //appeler la fonction de cet objet
+        //appeler les fonctions de ces objets
         $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
 
         $client=$userModel->getUser($dataProject['idClient']);
