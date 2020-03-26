@@ -5,13 +5,6 @@
 <?php ob_start(); ?>
     <div class="container-fluid">
 
-        <!-- bouton Retour à la page d'accueil-->
-        <div class="row">
-            <div class="col-md-4">
-                <a class="btn btn-lg btn-info btn-sm" href="/freewebo" role="button"><span class="fas fa-home pr-1"></span>Retour à la page d'accueil</a>
-            </div>
-        </div>
-
         <!-- afficher prénom client, nom projet et prénom dév-->
         <div class="row">
             <div class="col-md-3"></div>
@@ -143,7 +136,7 @@
         <!-- bouton Retour à la page d'accueil-->
         <div class="row">
             <div class='col-md-4'>
-                <a class="btn btn-lg btn-info btn-sm" href="/freewebo" role="button"><span class="fas fa-home pr-1"></span>Retour à la page d'accueil</a>
+                <a class="btn btn-lg btn-info btn-sm" href="index.php" role="button"><span class="fas fa-home pr-1"></span>Retour à la page d'accueil</a>
             </div>
         </div>
 

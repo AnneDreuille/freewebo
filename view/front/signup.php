@@ -6,10 +6,7 @@
     <div class="container-fluid">
 
         <div class="row">
-            <div class="col-md-4">
-                <!-- bouton Retour à la page d'accueil-->
-                <a class="btn btn-lg btn-info btn-sm" href="/freewebo" role="button"><span class="fas fa-home pr-1"></span>Retour à la page d'accueil</a>
-            </div>
+            <div class="col-md-4"></div>
 
             <div class="col-md-4">
                 <p class="text-center bg-info rounded text-white py-3">Une fois inscrit, vous pourrez demander la création de votre site web gratuitement&nbsp;!<br/>Si vous êtes développeur, vous pourrez être bénévole sur un projet&nbsp;!</p>
@@ -98,7 +95,7 @@
         <!-- bouton Retour à la page d'accueil-->
         <div class="row">
             <div class='col-md-4'>
-                <a class="btn btn-lg btn-info btn-sm" href="/freewebo" role="button"><span class="fas fa-home pr-1"></span>Retour à la page d'accueil</a>
+                <a class="btn btn-lg btn-info btn-sm" href="index.php" role="button"><span class="fas fa-home pr-1"></span>Retour à la page d'accueil</a>
             </div>
         </div>
 

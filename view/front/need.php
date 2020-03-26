@@ -6,10 +6,7 @@
     <div class="container-fluid">
 
         <div class="row">
-            <div class="col-md-3">
-                <!-- bouton Retour à l'espace membre-->
-                <a class="btn btn-lg btn-success btn-sm" href="index.php?action=member" role="button"><span class="fas fa-campground pr-1"></span>Retour à l'espace membre</a>
-            </div>
+            <div class="col-md-3"></div>
 
             <div class="col-md-6">
                 <p class="text-center bg-info rounded text-white py-3">Décriver SVP précisément votre besoin<br/> afin nous puissions l'analyser et trouver un développeur bénévole<br/> qui se chargera de la réalisation de votre site web&nbsp;!</p>
