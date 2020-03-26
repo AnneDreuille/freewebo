@@ -50,7 +50,25 @@
         </div><br/>
 
         <div class="row">
-            <div class="col-md-8"></div>
+            <!-- Description service apporté -->
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-title">Comment faire pour avoir mon site web&nbsp;!</div>
+
+                    <div class="card-body">
+
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div><br/>
+
             <div class="col-md-4"></div>
         </div><br/>
 
