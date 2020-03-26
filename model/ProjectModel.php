@@ -34,15 +34,6 @@ class ProjectModel extends Model {
 
 //BACK
 
-  //mettre à jour les données d'1 projet / désignation d'un dév
-  public function assign($idDev, $id) {
-    $db= $this->dbConnect();
-
-    $req = $db->prepare('UPDATE project SET idDev=? ,assignDate=NOW() WHERE id=?');
-
-    return $req->execute(array($idDev, $id));
-  }
-
 //lister les projets
   public function listProject() {
     $db= $this->dbConnect();
@@ -62,4 +53,14 @@ class ProjectModel extends Model {
     $req->execute(array($id));
     return $req->fetch();
   }
+
+//mettre à jour les données d'1 projet / désignation d'un dév
+  public function assign($idDev, $id) {
+    $db= $this->dbConnect();
+
+    $req = $db->prepare('UPDATE project SET idDev=? ,assignDate=NOW() WHERE id=?');
+
+    return $req->execute(array($idDev, $id));
+  }
+
 }
