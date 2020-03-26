@@ -44,9 +44,9 @@ try {
             assign();
         }
 
-        // elseif($_GET['action']=='') {
-        //      ();
-        // }
+        elseif($_GET['action']=='modelFile') {
+            modelFile();
+        }
 
         // elseif($_GET['action']=='') {
         //      ();
