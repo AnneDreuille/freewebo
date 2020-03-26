@@ -75,7 +75,27 @@
                 </form>
             </div>
 
-            <div class="col-md-4"></div>
+            <!-- déposer le fichier du modèle -->
+            <div class="col-md-4">
+                <form action="index.php?action=modelFile&id=<?php echo $_GET['id'];?>" method="post" enctype="multipart/form-data" class="border pt-1 px-2 bg-light rounded">
+                    <p class="text-info font-weight-bold text-center">Déposer le fichier du modèle</p>
+                    <div class="form-group row">
+                        <div class="col">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text small" aria-label="trombone"><span class="fas fa-paperclip"></span></span>
+                                <input type="file" name="modelFile" required class="form-control text-lowercase"/>
+                            </div>
+                            <p><small id="helpName" class="form-text xsmall italic pb-0">Ex. nom de fichier pour le projet dont l'id=3: P3_modelFile.<br/>Préférer un format image lisible par tous.</small></p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col text-center">
+                            <input type="submit" value="Valider" id="submit" class="btn btn-info font-weight-bold px-5 submit" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+
             <div class="col-md-4"></div>
         </div><br/>
 <hr/>
