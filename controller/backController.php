@@ -73,3 +73,34 @@ function assign(){
         throw new Exception('Pas de projet identifié');
     }
 }
+
+//déposer le fichier du modèle
+function modelFile(){
+
+    //vérifier qu'on a un id projet dans l'url
+    if (isset($_GET['id']) && $_GET['id']>0) {
+
+        //vérifier si le fichier a bien été envoyé et s'il n'y a pas d'erreur
+        if (isset($_FILES['modelFile']) && $_FILES['modelFile']['error'] == 0){
+
+            //valider le fichier et le stocker définitivement
+            move_uploaded_file($_FILES['modelFile']['tmp_name'], 'public/uploads/' . basename($_FILES['modelFile']['name']));
+
+            //créer l'objet
+            $projectModel= new ProjectModel();
+
+            //appeler la fonction de cet objet
+            $modelFile= $projectModel->modelFile($_GET['id']);
+
+            //charger le fichier en vue de l'affichage dans la page html
+            require(__DIR__.'/../view/back/project.php');
+
+        } else {
+            //envoyer une exception dans catch en cas d'erreur
+            throw new Exception('Pas de fichier envoyé');
+        }
+    } else {
+        //envoyer une exception dans catch en cas d'erreur
+        throw new Exception('Pas de projet identifié');
+    }
+}
