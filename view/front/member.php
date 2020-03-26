@@ -13,7 +13,7 @@
                 <?php
                 if (!empty ($client['firstName'])){;?>
                 <button type="button" class="btn btn-success disabled rounded mr-2 text-capitalize">
-                <?php echo $client['firstName'] ; ?></button>
+                <?php echo htmlspecialchars($client['firstName']); ?></button>
                 <?php
                 } else {; ?>
                 <button type="button" class="btn btn-outline-dark disabled rounded mr-2 text-capitalize">
@@ -26,7 +26,7 @@
                 <?php
                 if (!empty ($dataProject['name'])){; ?>
                 <button type="button" class="btn btn-success disabled rounded mr-2 text-capitalize">
-                <?php echo $dataProject['name']; ?></button>
+                <?php echo htmlspecialchars($dataProject['name']); ?></button>
                 <?php
                 } else {; ?>
                 <button type="button" class="btn btn-outline-dark disabled rounded mr-2 text-capitalize">
@@ -39,7 +39,7 @@
                 <?php
                 if (!empty ($dev['firstName'])) {;?>
                 <button type="button" class="btn btn-success disabled rounded mr-2 text-capitalize">
-                <?php echo $dev['firstName'] ; ?></button>
+                <?php echo htmlspecialchars($dev['firstName']); ?></button>
                 <?php
                 } else {; ?>
                 <button type="button" class="btn btn-outline-dark disabled rounded mr-2 text-capitalize">
