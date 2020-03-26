@@ -63,4 +63,15 @@ class ProjectModel extends Model {
     return $req->execute(array($idDev, $id));
   }
 
+//mettre à jour les données d'1 projet / dépôt du modèle
+  public function modelFile($id) {
+    $db= $this->dbConnect();
+
+    $req = $db->prepare('UPDATE project SET modelDate=NOW() WHERE id=?');
+
+    return $req->execute(array($id));
+  }
+
+
+
 }
