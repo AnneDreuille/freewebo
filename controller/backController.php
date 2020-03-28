@@ -8,6 +8,10 @@ require_once(__DIR__.'/../model/ProjectModel.php');
 //afficher les listes clients, devs, projets ds admin
 function admin(){
 
+    if (empty($_SESSION['userType']) || $_SESSION['userType'] !=='admin') {
+        throw new Exception("Vous n'avez pas accès à cette page");
+    }
+
     //créer les objets
     $userModel= new UserModel();
     $projectModel = new ProjectModel();
@@ -83,14 +87,17 @@ function modelFile(){
         //vérifier si le fichier a bien été envoyé et s'il n'y a pas d'erreur
         if (isset($_FILES['modelFile']) && $_FILES['modelFile']['error'] == 0){
 
+            $originFile=$_FILES['modelFile']['tmp_name'];
+            $fileName= uniqid().basename($_FILES['modelFile']['name']);
+
             //valider le fichier et le stocker définitivement
-            move_uploaded_file($_FILES['modelFile']['tmp_name'], 'public/uploads/' . basename($_FILES['modelFile']['name']));
+            move_uploaded_file($originFile, 'public/uploads/' .$fileName);
 
             //créer l'objet
             $projectModel= new ProjectModel();
 
             //appeler la fonction de cet objet
-            $modelFile= $projectModel->modelFile($_GET['id']);
+            $modelFile= $projectModel->modelFile($fileName, $_GET['id']);
 
             //charger le fichier en vue de l'affichage dans la page html
             require(__DIR__.'/../view/back/project.php');
