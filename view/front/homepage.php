@@ -72,7 +72,7 @@
                 <div class="card-title text-center">
                     <button class="btn btn-warning rounded-circle w-55 p-4" type="button"><img src="public/images/time.png" alt="time" class="pb-1"/><br/>Combien de temps avant d'avoir mon site web&nbsp;?</button>
                 </div>
-                <div class="d-flex justify-content-center text-warning shadow rounded">
+                <div class="d-flex justify-content-center text-secondary shadow rounded">
                     <ol>
                         <li>Recherche d'un développeur.</li>
                         <li>Analyse de votre besoin.</li>
@@ -139,7 +139,7 @@
                             <img class="d-block w-100" src="public/images/strasbourg.png" alt="Strasbourg">
                         </div>
                         <div class="carousel-item border">
-                            <a href="https://locavelo.webagency2-0.com/" class="text-decoration-none"><h3 class="text-center text-info mb-3">Appli location vélos<span class="fas fa-link fa-xs pl-2"></span></h3></a>
+                            <a href="https://locavelo.webagency2-0.com/" class="text-decoration-none"><h3 class="text-center text-info mb-3">Appli web location vélos<span class="fas fa-link fa-xs pl-2"></span></h3></a>
                             <img class="d-block w-100" src="public/images/locavelo.png" alt="Locavelo">
                         </div>
                         <div class="carousel-item border">
