@@ -32,25 +32,25 @@
                     <div>
                         <p class="mb-0 text-info font-weight-bold">Qui êtes-vous&nbsp;?</p>
                         <div class="form-check">
-                            <input type="radio" id="radio1" name="userType" value="client" class="form-check-input" />
-                            <label for="radio1" class="form-check-label">Gérant d'une association</label>
+                            <input type="radio" id="radio1" name="userType" value="client" class="form-check-input"
+                            <?php if (isset($_POST['userType']) && $_POST['userType'] === 'client') {
+                                echo 'checked';}?> />
+                            <label for="radio1" class="form-check-label">Gérant association ou créateur entreprise</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" id="radio2" name="userType" value="client" class="form-check-input" />
-                            <label for="radio2" class="form-check-label">Jeune créateur d'entreprise</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="radio" id="radio3" name="userType" value="dev" class="form-check-input" />
-                            <label for="radio3" class="form-check-label">Développeur bénévole</label>
+                            <input type="radio" id="radio2" name="userType" value="dev" class="form-check-input"
+                            <?php if (isset($_POST['userType']) && $_POST['userType'] === 'dev') {
+                                echo 'checked';}?>/>
+                            <label for="radio2" class="form-check-label">Développeur bénévole</label>
                         </div>
                     </div>
 
                     <div class="form-group row mt-3">
                         <div class="col">
-                            <input type="text" name="lastName" id="lastName" placeholder="Nom" required class="form-control text-uppercase" value="<?php if (isset($_POST['lastName'])){echo $_POST['lastName'];} ?>" />
+                            <input type="text" name="lastName" id="lastName" placeholder="Nom" required class="form-control text-uppercase" value="<?php if (isset($_POST['lastName'])){echo htmlspecialchars($_POST['lastName']);} ?>" />
                         </div>
                         <div class="col">
-                            <input type="text" name="firstName" id="firstName" placeholder="Prénom" required class="form-control text-capitalize" value="<?php if (isset($_POST['firstName'])){echo $_POST['firstName'];} ?>" />
+                            <input type="text" name="firstName" id="firstName" placeholder="Prénom" required class="form-control text-capitalize" value="<?php if (isset($_POST['firstName'])){echo htmlspecialchars($_POST['firstName']);} ?>" />
                         </div>
                     </div>
 
@@ -58,7 +58,7 @@
                         <div class="col">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" aria-label="arobase">@</span>
-                                <input type="email" name="mail" id="mail" placeholder="monmail@exemple.com" required class="form-control text-lowercase" value="<?php if (isset($_POST['mail'])){echo $_POST['mail'];} ?>" />
+                                <input type="email" name="mail" id="mail" placeholder="monmail@exemple.com" required class="form-control text-lowercase" value="<?php if (isset($_POST['mail'])){echo htmlspecialchars($_POST['mail']);} ?>" />
                             </div>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                         <div class="col">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" aria-label="tel"><span class="fas fa-phone"></span></span>
-                                <input type="tel" name="phone" id="phone" placeholder="0X XX XX XX XX" class="form-control" value="<?php if (isset($_POST['phone'])){echo $_POST['phone'];} ?>" />
+                                <input type="tel" name="phone" id="phone" placeholder="0X XX XX XX XX" class="form-control" value="<?php if (isset($_POST['phone'])){echo htmlspecialchars($_POST['phone']);} ?>" />
                             </div>
                         </div>
                     </div>
