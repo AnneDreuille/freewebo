@@ -28,6 +28,10 @@ function admin(){
 //afficher les données d'un projet
 function project(){
 
+    if (empty($_SESSION['userType']) || $_SESSION['userType'] !=='admin') {
+        throw new Exception("Vous n'avez pas accès à cette page");
+    }
+
     //vérifier qu'on a bien reçu un id en paramètre dans l'url
     if (isset($_GET['id']) && $_GET['id']>0) {
 
@@ -65,8 +69,9 @@ function assign(){
 
             $assign= $projectModel->assign($idDev, $_GET['id']);
 
-            //charger le fichier en vue de l'affichage dans la page html
-            require(__DIR__.'/../view/back/project.php');
+            //diriger vers la page project
+            header('location: index.php?action=project');
+            die();
 
         } else {
             //envoyer une exception dans catch en cas d'erreur
@@ -88,7 +93,9 @@ function modelFile(){
         if (isset($_FILES['modelFile']) && $_FILES['modelFile']['error'] == 0){
 
             $originFile=$_FILES['modelFile']['tmp_name'];
-            $fileName= uniqid().basename($_FILES['modelFile']['name']);
+            // $fileName= uniqid().basename($_FILES['modelFile']['name']);
+            $fileName= basename($_FILES['modelFile']['name']);
+
 
             //valider le fichier et le stocker définitivement
             move_uploaded_file($originFile, 'public/uploads/' .$fileName);
@@ -99,8 +106,9 @@ function modelFile(){
             //appeler la fonction de cet objet
             $modelFile= $projectModel->modelFile($fileName, $_GET['id']);
 
-            //charger le fichier en vue de l'affichage dans la page html
-            require(__DIR__.'/../view/back/project.php');
+            //diriger vers l'espace membre
+            header('location: index.php?action=member');
+            die();
 
         } else {
             //envoyer une exception dans catch en cas d'erreur
