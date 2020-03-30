@@ -28,17 +28,17 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><?php echo($project['name']) ?></td>
-                                <td><?php echo($project['idClient']) ?></td>
-                                <td><?php echo($project['idDev']) ?></td>
-                                <td><?php echo(substr($project['needDate_fr'],0,10)) ?></td>
-                                <td><?php echo(substr($project['assignDate_fr'],0,10)) ?></td>
-                                <td><?php echo(substr($project['modelDate_fr'],0,10)) ?></td>
-                                <td><?php echo(substr($project['startDate_fr'],0,10)) ?></td>
-                                <td><?php echo(substr($project['urlDate_fr'],0,10)) ?></td>
-                                <td><?php echo(substr($project['endDate_fr'],0,10)) ?></td>
-                                <td><?php echo($project['ratingClient']) ?></td>
-                                <td><?php echo($project['ratingDev']) ?></td>
+                                <td><?php echo htmlspecialchars($project['name']); ?></td>
+                                <td><?php echo htmlspecialchars($project['idClient']); ?></td>
+                                <td><?php echo htmlspecialchars($project['idDev']); ?></td>
+                                <td><?php echo(substr($project['needDate_fr'],0,10)); ?></td>
+                                <td><?php echo(substr($project['assignDate_fr'],0,10)); ?></td>
+                                <td><?php echo(substr($project['modelDate_fr'],0,10)); ?></td>
+                                <td><?php echo(substr($project['startDate_fr'],0,10)); ?></td>
+                                <td><?php echo(substr($project['urlDate_fr'],0,10)); ?></td>
+                                <td><?php echo(substr($project['endDate_fr'],0,10)); ?></td>
+                                <td><?php echo htmlspecialchars($project['ratingClient']); ?></td>
+                                <td><?php echo htmlspecialchars($project['ratingDev']); ?></td>
                             </tr>
                         </tbody>
                     </table>
@@ -49,7 +49,7 @@
         <div class="row">
             <div class="col-sm-10">
                 <p class= "text-info font-weight-bold mb-1">Description du projet</p>
-                <small class= "xsmall"><?php echo($project['description']) ?></small>
+                <small class= "xsmall"><?php echo $project['description']; ?></small>
             </div>
         </div>
 <hr/>
@@ -57,7 +57,7 @@
         <div class="row">
             <!-- nommer un développeur -->
             <div class="col-md-4">
-                <form action="index.php?action=assign&id=<?php echo $_GET['id'];?>" method="post" class="border pt-1 px-2 bg-light rounded">
+                <form action="index.php?action=assign&id=<?php echo htmlspecialchars($_GET['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded">
                     <p class="text-info font-weight-bold text-center">Nommer 1 développeur sur un projet</p>
                     <div class="form-group row">
                         <div class="col">
@@ -75,27 +75,8 @@
                 </form>
             </div>
 
-            <!-- déposer le fichier du modèle -->
-            <div class="col-md-4">
-                <form action="index.php?action=modelFile&id=<?php echo $_GET['id'];?>" method="post" enctype="multipart/form-data" class="border pt-1 px-2 bg-light rounded">
-                    <p class="text-info font-weight-bold text-center">Déposer le fichier du modèle</p>
-                    <div class="form-group row">
-                        <div class="col">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text small" aria-label="trombone"><span class="fas fa-paperclip"></span></span>
-                                <input type="file" name="modelFile" required class="form-control text-lowercase"/>
-                            </div>
-                            <p><small id="helpName" class="form-text xsmall italic pb-0">Ex. nom de fichier pour le projet dont l'id=3: P3_modelFile.<br/>Préférer un format image lisible par tous.</small></p>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col text-center">
-                            <input type="submit" value="Valider" id="submit" class="btn btn-info font-weight-bold px-5 submit" />
-                        </div>
-                    </div>
-                </form>
-            </div>
 
+            <div class="col-md-4"></div>
             <div class="col-md-4"></div>
         </div><br/>
 <hr/>
