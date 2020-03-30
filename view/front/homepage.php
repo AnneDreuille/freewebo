@@ -131,19 +131,19 @@
 
                     <div class="carousel-inner">
                         <div class="carousel-item active border">
-                            <a href="https://www.webagency2-0.com/" class="text-decoration-none"><h3 class="text-center text-info mb-3">Site agence web<span class="fas fa-link fa-xs pl-2"></span></h3></a>
+                            <a href="https://www.webagency2-0.com/" class="text-decoration-none" data-toggle="tooltip" data-placement="top" title="Clic vers le site"><h3 class="text-center text-info mb-3">Site agence web<span class="fas fa-link fa-xs pl-2"></span></h3></a>
                             <img class="d-block w-100" src="public/images/webagency.png" alt="Webagency">
                         </div>
                         <div class="carousel-item border">
-                            <a href="https://strasbourgtourisme.webagency2-0.com/" class="text-decoration-none"><h3 class="text-center text-info mb-3">Site Office Tourisme<span class="fas fa-link fa-xs pl-2"></span></h3></a>
+                            <a href="https://strasbourgtourisme.webagency2-0.com/" class="text-decoration-none" data-toggle="tooltip" data-placement="top" title="Clic vers le site"><h3 class="text-center text-info mb-3">Site Office Tourisme<span class="fas fa-link fa-xs pl-2"></span></h3></a>
                             <img class="d-block w-100" src="public/images/strasbourg.png" alt="Strasbourg">
                         </div>
                         <div class="carousel-item border">
-                            <a href="https://locavelo.webagency2-0.com/" class="text-decoration-none"><h3 class="text-center text-info mb-3">Appli web location vélos<span class="fas fa-link fa-xs pl-2"></span></h3></a>
+                            <a href="https://locavelo.webagency2-0.com/" class="text-decoration-none" data-toggle="tooltip" data-placement="top" title="Clic vers l'appli web"><h3 class="text-center text-info mb-3">Appli web location vélos<span class="fas fa-link fa-xs pl-2"></span></h3></a>
                             <img class="d-block w-100" src="public/images/locavelo.png" alt="Locavelo">
                         </div>
                         <div class="carousel-item border">
-                            <a href="https://blogjf.webagency2-0.com/" class="text-decoration-none"><h3 class="text-center text-info mb-3">Blog écrivain<span class="fas fa-link fa-xs pl-2"></span></h3></a>
+                            <a href="https://blogjf.webagency2-0.com/" class="text-decoration-none" data-toggle="tooltip" data-placement="top" title="Clic vers le site"><h3 class="text-center text-info mb-3">Blog écrivain<span class="fas fa-link fa-xs pl-2"></span></h3></a>
                             <img class="d-block w-100" src="public/images/blogjf.png" alt="Blog JF">
                         </div>
                     </div>
