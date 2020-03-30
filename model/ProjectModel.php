@@ -32,6 +32,7 @@ class ProjectModel extends Model {
     return $req->fetch();
   }
 
+
 //BACK
 
 //lister les projets
@@ -72,6 +73,14 @@ class ProjectModel extends Model {
     return $req->execute(array($modelFile, $id));
   }
 
+//mettre à jour les données d'1 projet / validation du modèle
+  public function validModel($id) {
+    $db= $this->dbConnect();
+
+    $req = $db->prepare('UPDATE project SET modelDate=NOW() WHERE id=?');
+
+    return $req->execute(array($id));
+  }
 
 
 }
