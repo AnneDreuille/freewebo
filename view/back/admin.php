@@ -34,12 +34,12 @@
                         foreach ($listClient as $data) {
                         ?>
                             <tr class="xsmall" >
-                                <td><?php echo($data['id']) ?></td>
-                                <td class="text-capitalize"><?php echo($data['firstName']) ?></td>
-                                <td class="text-uppercase"><?php echo($data['lastName']) ?></td>
-                                <td><?php echo($data['mail']) ?></td>
-                                <td><?php echo($data['phone']) ?></td>
-                                <td><?php echo(substr($data['signUpDate_fr'],0,10)) ?></td>
+                                <td><?php echo htmlspecialchars($data['id']); ?></td>
+                                <td class="text-capitalize"><?php echo htmlspecialchars($data['firstName']); ?></td>
+                                <td class="text-uppercase"><?php echo htmlspecialchars($data['lastName']); ?></td>
+                                <td><?php echo htmlspecialchars($data['mail']); ?></td>
+                                <td><?php echo htmlspecialchars($data['phone']); ?></td>
+                                <td><?php echo (substr($data['signUpDate_fr'],0,10)); ?></td>
                             </tr>
                         <?php
                         }
@@ -68,12 +68,12 @@
                         foreach ($listDev as $data) {
                         ?>
                             <tr class="xsmall" >
-                                <td><?php echo($data['id']) ?></td>
-                                <td class="text-capitalize"><?php echo($data['firstName']) ?></td>
-                                <td class="text-uppercase"><?php echo($data['lastName']) ?></td>
-                                <td><?php echo($data['mail']) ?></td>
-                                <td><?php echo($data['phone']) ?></td>
-                                <td><?php echo(substr($data['signUpDate_fr'],0,10)) ?></td>
+                                <td><?php echo htmlspecialchars($data['id']); ?></td>
+                                <td class="text-capitalize"><?php echo htmlspecialchars($data['firstName']); ?></td>
+                                <td class="text-uppercase"><?php echo htmlspecialchars($data['lastName']); ?></td>
+                                <td><?php echo htmlspecialchars($data['mail']); ?></td>
+                                <td><?php echo htmlspecialchars($data['phone']); ?></td>
+                                <td><?php echo (substr($data['signUpDate_fr'],0,10)); ?></td>
                             </tr>
                         <?php
                         }
@@ -104,11 +104,11 @@
                         foreach ($listProject as $data) {
                         ?>
                             <tr>
-                                <td><?php echo($data['id']) ?></td>
-                                <td><?php echo($data['name']) ?></td>
-                                <td><?php echo($data['idClient']) ?></td>
-                                <td><?php echo($data['idDev']) ?></td>
-                                <td class="text-center"><a href="index.php?action=project&id=<?php echo $data['id'];?>" role="button" class="fas fa-share btn-info"></a></td>
+                                <td><?php echo htmlspecialchars($data['id']); ?></td>
+                                <td><?php echo htmlspecialchars($data['name']); ?></td>
+                                <td><?php echo htmlspecialchars($data['idClient']); ?></td>
+                                <td><?php echo htmlspecialchars($data['idDev']); ?></td>
+                                <td class="text-center"><a href="index.php?action=project&id=<?php echo htmlspecialchars($data['id']); ?>" role="button" class="fas fa-share btn-info"></a></td>
                             </tr>
                         <?php
                         }
