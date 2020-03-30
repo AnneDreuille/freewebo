@@ -55,9 +55,14 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <div class="btn-group align-items-end" role="group">
+                    <!-- 1. Je décris le besoin  -->
                     <div>
                         <div class="mb-1"><img src="public/images/1.process.jpg" alt="process étape1"/></div>
-                        <a href="index.php?action=need"><button type="button" class="btn btn-success rounded mr-2 px-1">1. Je décris le besoin</button></a>
+                        <?php if ($dataProject['needDate_fr'] !== null) {; ?>
+                            <a href="index.php?action=need"><button type="button" class="btn btn-success rounded mr-2 px-1">1. Je décris le besoin</button></a>
+                        <?php } else {; ?>
+                            <a href="index.php?action=need" data-toggle="tooltip" data-placement="top" title="Clic pour définir le besoin"><button type="button" class="btn btn-success rounded mr-2 px-1">1. Je décris le besoin</button></a>
+                        <?php };?>
                         <div>
                         <?php if ($dataProject['needDate_fr'] !== null) {; ?>
                             <span class="far fa-check-circle fa-2x text-success pt-2"></span>
@@ -66,7 +71,7 @@
                         <?php };?>
                         </div>
                     </div>
-
+                    <!-- 2. Recherche développeur  -->
                     <div>
                         <div class="mb-1"><img src="public/images/2.process.jpg" alt="process étape2"/></div>
                         <a href=#><button type="button" class="btn btn-warning disabled rounded mr-2 px-1">2. Recherche développeur</button></a>
@@ -78,17 +83,24 @@
                         <?php };?>
                         </div>
                     </div>
+                    <!-- 3. Envoi modèle -->
                     <div>
                         <div class="mb-1"><img src="public/images/3.process.png" alt="process étape3"/></div>
+                        <?php if($dataProject['modelDate_fr']===null){;?>
                         <a href=#><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">3. Envoi modèle</button></a>
+                        <?php } else {;?>
+                        <a href="public/uploads/P3_modelFile.png" data-toggle="tooltip" data-placement="top" title="Clic pour voir le fichier"><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">3. Envoi modèle</button></a>
+                        <?php };?>
                         <div>
                         <?php if ($dataProject['modelDate_fr'] !== null) {; ?>
-                            <span class="far fa-check-circle fa-2x text-success pt-2"></span>
+                            <span class="far fa-check-circle fa-2x text-success pt-2">
+                            </span>
                         <?php } else {; ?>
                             <span class="fas fa-tools fa-2x text-muted pt-2"></span>
                         <?php };?>
                         </div>
                     </div>
+                    <!-- 4. J'accepte le modèle -->
                     <div>
                         <div class="mb-1"><img src="public/images/4.process.png" alt="process étape4"/></div>
                         <a href=#><button type="button" class="btn btn-success rounded mr-2 px-1">4. J'accepte le modèle</button></a>
@@ -100,6 +112,7 @@
                         <?php };?>
                         </div>
                     </div>
+                    <!-- 5. Envoi URL -->
                     <div>
                         <div class="mb-1"><img src="public/images/5.process.jpg" alt="process étape5"/></div>
                         <a href=#><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">5. Envoi URL</button></a>
@@ -111,6 +124,7 @@
                         <?php };?>
                         </div>
                     </div>
+                    <!-- 6. Notations -->
                     <div>
                         <div class="mb-1"><img src="public/images/6.process.jpg" alt="process étape6"/></div>
                         <a href=#><button type="button" class="btn btn-warning rounded mr-2 px-1">6. Notations</button></a>
@@ -126,11 +140,39 @@
             </div>
         </div><br/><br/>
 
+        <!-- formulaires pour actions développeur -->
+        <?php
+        if (!empty($_SESSION['userType']) && ($_SESSION['userType']==='client') ){
+            echo '';
+            } else {?>
+
         <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-3"></div>
-            <div class="col-md-3"></div>
+            <div class="col-md-4"></div>
+            <!-- déposer le fichier du modèle -->
+            <div class="col-md-4">
+                <form action="index.php?action=modelFile&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" enctype="multipart/form-data" class="border pt-1 px-2 bg-light rounded">
+                    <p class="text-info font-weight-bold text-center">Déposer le fichier du modèle</p>
+                    <div class="form-group row">
+                        <div class="col">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text small" aria-label="trombone"><span class="fas fa-paperclip"></span></span>
+                                <input type="file" name="modelFile" required class="form-control text-lowercase"/>
+                            </div>
+                            <p><small id="helpName" class="form-text xsmall italic pb-0">Ex. nom de fichier pour le projet dont l'id=3: P3_modelFile.<br/>Préférer un format image lisible par tous.</small></p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col text-center">
+                            <input type="submit" value="Valider" id="submit" class="btn btn-info font-weight-bold px-5 submit" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-4"></div>
+
         </div><br/>
+        <?php };?>
 
 
         <!-- bouton Retour à la page d'accueil-->
