@@ -66,15 +66,17 @@
                 <div class="d-md-inline d-sm-block"><img src="/freewebo/public/images/logo.png" alt="logo" class="img.card-img"/></div>
                 <strong class="pl-2"><?php echo $header; ?></strong>
             </h1>
-
             <nav>
                 <ul class="nav">
                     <li class="nav-item">
-                      <a class="nav-link text-info font-weight-bold" href="index.php"><span class="fas fa-home pr-1"></span>Accueil</a>
+                        <a class="nav-link text-info font-weight-bold" href="index.php"><span class="fas fa-home pr-1"></span>Accueil</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-info font-weight-bold" href="index.php?action=member"><span class="fas fa-campground pr-1"></span>Espace membre</a>
+                        <a class="nav-link text-info font-weight-bold" href="index.php?action=member"><span class="fas fa-campground pr-1"></span>Espace membre</a>
                     </li>
+                    <span class="nav-item ml-auto">
+                        <a class="nav-link text-secondary" href="index.php?action=admin" data-toggle="tooltip" data-placement="top" title="Accès réservé" ><span class="fas fa-igloo pr-1"></span>Espace admin</a>
+                    </span>
                 </ul>
             </nav>
         </header><br/>
