@@ -30,25 +30,18 @@
                     <div class="form-group row">
                         <div class="col">
                             <label for="description" class="text-info font-weight-bold">Description du site souhaité</label>
-                            <textarea name="description" id="description" class="form-group">
-                                <small>Type de site souhaité : site institutionnel ou vitrine, site e-commerce, blog,...<br/><br/>
-                                Type de visiteurs attendus<br/><br/>
-                                Description de votre activité (quels sont les objectifs)<br/><br/>
-                                Contenu de votre site (textes, photos...)<br/><br/>
-                                Fonctionnalités de votre site (ex. formulaire de contact,...)<br/><br/>
-                                Design souhaité : couleurs, police de caractères, graphisme<br/><br/>
-                                ...</small>
-                            </textarea>
-
+                            <textarea name="description" id="description"></textarea>
                             <p><small id="helpDescription" class="form-text italic">
-                                <ul class="list-group" >
-                                    <li class="list-group-item">Type de site souhaité : site institutionnel ou vitrine, site e-commerce, blog,...</li>
-                                    <li class="list-group-item">Type de visiteurs attendus</li>
-                                    <li class="list-group-item">Description de votre activité (quels sont les objectifs)</li>
-                                    <li class="list-group-item">Contenu de votre site (textes, photos...)</li>
-                                    <li class="list-group-item">Fonctionnalités de votre site (ex. formulaire de contact,...)</li>
-                                    <li class="list-group-item">Design souhaité : couleurs, police de caractères, graphisme</li>
-                                    <li class="list-group-item">...</li>
+                                <p class="text-info mb-0">Liste des rubriques pour aide&nbsp;:</p>
+                                <ul>
+                                    <li>Type de site souhaité : site institutionnel ou vitrine, site e-commerce, blog,...</li>
+                                    <li>Type de visiteurs attendus</li>
+                                    <li>Description de votre activité (quels sont les objectifs)</li>
+                                    <li>Contenu de votre site (textes, photos...)</li>
+                                    <li>Fonctionnalités de votre site (ex. formulaire de contact,...)</li>
+                                    <li>Design souhaité : couleurs, police de caractères, graphisme</li>
+                                    <li>Hébergement du site&nbsp;: confirmer SVP si nous devons nous en charger.
+                                    <li>...</li>
                                 </ul>
                             </small></p>
                         </div>
