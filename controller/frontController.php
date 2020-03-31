@@ -141,8 +141,32 @@ function need() {
     require(__DIR__.'/../view/front/need.php');
 }
 
+//valider le modèle
+function validModel(){
 
+    //vérifier qu'on a bien un idUser en session
+    if (!empty($_SESSION['idUser'])) {
 
+        $idUser= $_SESSION['idUser'];
 
+        //créer les objets
+        $projectModel= new ProjectModel();
+        $userModel= new UserModel();
 
+        //appeler les fonctions de ces objets
+        $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
 
+        $client=$userModel->getUser($dataProject['idClient']);
+        $dev=$userModel->getUser($dataProject['idDev']);
+        $idProject= $dataProject['id'];
+
+        $validModel= $projectModel->validModel($idProject);
+
+        //appeler les fonctions de ces objets
+        header('location: index.php?action=member');
+        die();
+
+    } else {
+        $dataProject=false;
+    }
+}
