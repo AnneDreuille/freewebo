@@ -58,12 +58,12 @@
                     <button class="btn btn-primary rounded-circle w-55 p-4" type="button"><img src="public/images/start.png" alt="start" class="pb-1"/><br/>Comment faire pour avoir mon site web&nbsp;?</button>
                 </div>
                 <div class="d-flex justify-content-center text-primary shadow rounded pt-2">
-                    <ol>
+                    <ul class="small italic">
                         <li>Je commence par m'inscrire&nbsp;!</li>
                         <li>J'accède à mon espace membre.</li>
                         <li>Je décris mon besoin.</li>
                         <li>Je valide le modèle proposé.</li>
-                    </ol>
+                    </ul>
                 </div>
             </div><br/>
 
@@ -73,12 +73,12 @@
                     <button class="btn btn-warning rounded-circle w-55 p-4" type="button"><img src="public/images/time.png" alt="time" class="pb-1"/><br/>Combien de temps avant d'avoir mon site web&nbsp;?</button>
                 </div>
                 <div class="d-flex justify-content-center text-secondary shadow rounded">
-                    <ol>
+                    <ul class="small italic">
                         <li>Recherche d'un développeur.</li>
                         <li>Analyse de votre besoin.</li>
                         <li>Début création dès modèle OK.</li>
                         <li>Durée création = 1 à 2 mois.</li>
-                    </ol>
+                    </ul>
                 </div>
             </div><br/>
 
@@ -88,12 +88,12 @@
                     <button class="btn btn-secondary rounded-circle w-55 p-4" type="button"><img src="public/images/limit.png" alt="limit" class="pb-3"/><br/>Quelles sont les limites de FreeWebo&nbsp;?</button>
                 </div>
                 <div class="d-flex justify-content-center text-secondary shadow rounded">
-                    <ol>
+                    <ul class="small italic">
                         <li>Pour assoc. & créations entrepr.</li>
                         <li>Condition d'avoir 1 développeur.</li>
                         <li>Création de sites "simples"&nbsp;!</li>
                         <li>Coût modique hébergement site.</li>
-                    </ol>
+                    </ul>
                 </div>
             </div><br/>
 
@@ -103,12 +103,12 @@
                     <button class="btn btn-success rounded-circle w-55 p-4" type="button"><img src="public/images/end.png" alt="end" class="pb-2"/><br/>Comment j'obtiens l'accès à mon site web&nbsp;?</button>
                 </div>
                 <div class="d-flex justify-content-center text-success shadow rounded">
-                    <ol>
+                    <ul class="small italic">
                         <li>Lien d'accès URL transmis.</li>
                         <li>Site web publié sur la "toile"&nbsp;!</li>
                         <li>Notation vous<=>développeur.</li>
                         <li>Dites si vous aimez FreeWebo&nbsp;!</li>
-                    </ol>
+                    </ul>
                 </div>
             </div>
         </div><br/>
