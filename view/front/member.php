@@ -87,9 +87,9 @@
                     <div>
                         <div class="mb-1"><img src="public/images/3.process.png" alt="process étape3"/></div>
                         <?php if($dataProject['modelDate_fr']===null){;?>
-                        <a href=#><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">3. Envoi modèle</button></a>
+                        <a href=#><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">3. Dépôt modèle</button></a>
                         <?php } else {;?>
-                        <a href="public/uploads/P3_modelFile.png" data-toggle="tooltip" data-placement="top" title="Clic pour voir le fichier"><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">3. Envoi modèle</button></a>
+                        <a href="public/uploads/P3_modelFile.png" data-toggle="tooltip" data-placement="top" title="Clic pour voir le fichier"><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">3. Dépôt modèle</button></a>
                         <?php };?>
                         <div>
                         <?php if ($dataProject['modelDate_fr'] !== null) {; ?>
@@ -115,7 +115,7 @@
                     <!-- 5. Envoi URL -->
                     <div>
                         <div class="mb-1"><img src="public/images/5.process.jpg" alt="process étape5"/></div>
-                        <a href=#><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">5. Envoi URL</button></a>
+                        <a href=#><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">5. Dépôt URL</button></a>
                         <div>
                         <?php if ($dataProject['urlDate_fr'] !== null) {; ?>
                             <span class="far fa-check-circle fa-2x text-success pt-2"></span>
