@@ -86,27 +86,36 @@ function assign(){
 //déposer le fichier du modèle
 function modelFile(){
 
-    //vérifier qu'on a un id projet dans l'url
-    if (isset($_GET['id']) && $_GET['id']>0) {
+    //vérifier qu'on a bien un idUser en session
+    if (!empty($_SESSION['idUser'])) {
+
+        $idUser= $_SESSION['idUser'];
 
         //vérifier si le fichier a bien été envoyé et s'il n'y a pas d'erreur
         if (isset($_FILES['modelFile']) && $_FILES['modelFile']['error'] == 0){
 
             $tmpFileName=$_FILES['modelFile']['tmp_name'];
-            // $longFileName= uniqid().basename($_FILES['modelFile']['name']);
+            // $uniqName= uniqid().basename($_FILES['modelFile']['name']);
             $fileName= basename($_FILES['modelFile']['name']);
-
+            // $fileName = substr($uniqName,13);
 
             //valider le fichier et le stocker définitivement
             move_uploaded_file($tmpFileName, 'public/uploads/' .$fileName);
 
-            //créer l'objet
+            //créer les objets
             $projectModel= new ProjectModel();
+            $userModel= new UserModel();
 
-            //appeler la fonction de cet objet
-            $modelFile= $projectModel->modelFile($fileName, $_GET['id']);
+            //appeler les fonctions de ces objets
+            $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
 
-            //diriger vers l'espace membre
+            $client=$userModel->getUser($dataProject['idClient']);
+            $dev=$userModel->getUser($dataProject['idDev']);
+            $idProject= $dataProject['id'];
+
+            $modelFile= $projectModel->modelFile($fileName, $idProject);
+
+            //appeler les fonctions de ces objets
             header('location: index.php?action=member');
             die();
 
@@ -116,6 +125,45 @@ function modelFile(){
         }
     } else {
         //envoyer une exception dans catch en cas d'erreur
-        throw new Exception('Pas de projet identifié');
+        throw new Exception('Pas de user identifié');
     }
 }
+
+//déposer l'url du site créé
+function urlName(){
+
+    //vérifier qu'on a bien un idUser en session
+    if (!empty($_SESSION['idUser'])) {
+
+        $idUser= $_SESSION['idUser'];
+
+        //vérifier si l'url a bien été entrée
+        if (!empty($_POST['urlName'])) {
+
+            //créer les objets
+            $projectModel= new ProjectModel();
+            $userModel= new UserModel();
+
+            //appeler les fonctions de ces objets
+            $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
+
+            $client=$userModel->getUser($dataProject['idClient']);
+            $dev=$userModel->getUser($dataProject['idDev']);
+            $idProject= $dataProject['id'];
+
+            $urlName= $projectModel->urlName($_POST['urlName'], $idProject);
+
+            //appeler les fonctions de ces objets
+            header('location: index.php?action=member');
+            die();
+
+        } else {
+            //envoyer une exception dans catch en cas d'erreur
+            throw new Exception("Pas d'url transmise");
+        }
+    } else {
+        //envoyer une exception dans catch en cas d'erreur
+        throw new Exception('Pas de user identifié');
+    }
+}
+
