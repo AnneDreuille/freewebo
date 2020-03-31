@@ -31,6 +31,10 @@ try {
             need();
         }
 
+        elseif($_GET['action']=='validModel') {
+            validModel();
+        }
+
 //BACK
         elseif($_GET['action']=='admin') {
             admin();
@@ -48,9 +52,9 @@ try {
             modelFile();
         }
 
-        // elseif($_GET['action']=='') {
-        //      ();
-        // }
+        elseif($_GET['action']=='urlName') {
+            urlName();
+        }
 
 
 
