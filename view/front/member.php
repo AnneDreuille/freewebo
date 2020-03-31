@@ -83,7 +83,7 @@
                         <?php };?>
                         </div>
                     </div>
-                    <!-- 3. Envoi modèle -->
+                    <!-- 3. Dépôt modèle -->
                     <div>
                         <div class="mb-1"><img src="public/images/3.process.png" alt="process étape3"/></div>
                         <?php if($dataProject['modelDate_fr']===null){;?>
@@ -100,10 +100,14 @@
                         <?php };?>
                         </div>
                     </div>
-                    <!-- 4. J'accepte le modèle -->
+                    <!-- 4. Je valide le modèle -->
                     <div>
                         <div class="mb-1"><img src="public/images/4.process.png" alt="process étape4"/></div>
-                        <a href=#><button type="button" class="btn btn-success rounded mr-2 px-1">4. J'accepte le modèle</button></a>
+                        <?php if ($dataProject['startDate_fr'] !== null) {; ?>
+                        <a href="index.php?action=validModel"><button type="button" class="btn btn-success rounded mr-2 px-1">4. Je valide le modèle</button></a>
+                        <?php } else {; ?>
+                        <a href="index.php?action=validModel" data-toggle="tooltip" data-placement="top" title="Clic pour valider le modèle"><button type="button" class="btn btn-success rounded mr-2 px-1">1. Je valide le modèle</button></a>
+                        <?php };?>
                         <div>
                         <?php if ($dataProject['startDate_fr'] !== null) {; ?>
                             <span class="far fa-check-circle fa-2x text-success pt-2"></span>
@@ -112,10 +116,14 @@
                         <?php };?>
                         </div>
                     </div>
-                    <!-- 5. Envoi URL -->
+                    <!-- 5. Dépôt URL -->
                     <div>
                         <div class="mb-1"><img src="public/images/5.process.jpg" alt="process étape5"/></div>
+                        <?php if($dataProject['urlDate_fr']===null){;?>
                         <a href=#><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">5. Dépôt URL</button></a>
+                        <?php } else {;?>
+                        <a href=# data-toggle="tooltip" data-placement="top" title="Clic pour voir l'URL"><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">5. Dépôt URL</button></a>
+                        <?php };?>
                         <div>
                         <?php if ($dataProject['urlDate_fr'] !== null) {; ?>
                             <span class="far fa-check-circle fa-2x text-success pt-2"></span>
@@ -140,7 +148,7 @@
             </div>
         </div><br/><br/>
 
-        <!-- formulaires pour actions développeur -->
+        <!-- FORMULAIRES CACHES POUR ACTIONS DEVELOPPEUR -->
         <?php
         if (!empty($_SESSION['userType']) && ($_SESSION['userType']==='client') ){
             echo '';
@@ -163,17 +171,72 @@
                     </div>
                     <div class="form-group row">
                         <div class="col text-center">
-                            <input type="submit" value="Valider" id="submit" class="btn btn-info font-weight-bold px-5 submit" />
+                            <input type="submit" value="Valider" id="submit" class="btn btn-secondary font-weight-bold px-5 submit" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- déposer l'URL du site créé -->
+            <div class="col-md-3">
+                <form action="index.php?action=urlName&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded">
+                    <p class="text-info font-weight-bold text-center">Déposer l'URL du site créé</p>
+                    <div class="form-group row">
+                        <div class="col">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text small" aria-label="url"><span class="fas fa-link"></span></span>
+                                <input type="basic-url" name="urlName" required class="form-control text-lowercase"/>
+                            </div>
+                            <p><small id="helpName" class="form-text xsmall italic pb-0">URL commençant par https://</small></p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col text-center">
+                            <input type="submit" value="Valider" id="submit" class="btn btn-secondary font-weight-bold px-5 submit" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div><br/><br/>
+        <?php };?>
+
+         <!-- MESSAGERIE -->
+        <div class="row">
+            <!-- formulaire pour poster un message -->
+            <div class ="col-md-3 offset-md-1">
+                <button class="btn btn-warning btn-block font-weight-bold disabled">Ecrire un message ici&nbsp;!</button>
+                <form action="" method="post" class="border pt-1 px-2 bg-light rounded">
+                    <div class="form-group row">
+                        <div class="col">
+                            <input type="text" id="firstName" name="firstName" required placeholder="Votre prénom" class="form-control text-capitalize" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <textarea id="message" name="message"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col text-center">
+                            <input type="submit" value="Poster" class="btn btn-warning font-weight-bold px-5" />
                         </div>
                     </div>
                 </form>
             </div>
 
-            <div class="col-md-4"></div>
+            <!-- afficher les derniers posts -->
+            <div class ="col-md-5 offset-md-1">
+                <button class="btn btn-warning btn-block font-weight-bold disabled"><span class="far fa-comments fa-lg pr-2"></span>Messages</button>
+                <!-- utilisation d'une liste de descriptions -->
+                <div class="border rounded p-2 bg-light">
+                    <dl>
+                        <dt class="text-capitalize">prénom</dt>
+                        <dd class="small text-primary font-italic">Posté le...</dd>
+                        <dd class="text-justify">message</dd>
+                    </dl>
+                </div>
+            </div>
 
         </div><br/>
-        <?php };?>
-
 
         <!-- bouton Retour à la page d'accueil-->
         <div class="row">
