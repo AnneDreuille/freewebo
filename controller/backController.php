@@ -92,13 +92,13 @@ function modelFile(){
         //vérifier si le fichier a bien été envoyé et s'il n'y a pas d'erreur
         if (isset($_FILES['modelFile']) && $_FILES['modelFile']['error'] == 0){
 
-            $originFile=$_FILES['modelFile']['tmp_name'];
-            // $fileName= uniqid().basename($_FILES['modelFile']['name']);
+            $tmpFileName=$_FILES['modelFile']['tmp_name'];
+            // $longFileName= uniqid().basename($_FILES['modelFile']['name']);
             $fileName= basename($_FILES['modelFile']['name']);
 
 
             //valider le fichier et le stocker définitivement
-            move_uploaded_file($originFile, 'public/uploads/' .$fileName);
+            move_uploaded_file($tmpFileName, 'public/uploads/' .$fileName);
 
             //créer l'objet
             $projectModel= new ProjectModel();
