@@ -90,8 +90,13 @@ function signIn() {
         }
 
         //diriger le membre inscrit vers l'espace membre
-        header('location: index.php?action=member');
-        die();
+        if ($_SESSION['userType']!=='admin'){
+            header('location: index.php?action=member');
+            die();
+        } else {
+            header('location: index.php?action=admin');
+            die();
+        }
     }
     header('location: index.php');
     die();
@@ -111,7 +116,11 @@ function member (){
         $userModel= new UserModel();
 
         //appeler les fonctions de ces objets
-        $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
+        if ($_SESSION['userType']!=='admin'){
+            $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
+        } else {
+            $dataProject=$projectModel->project($_GET['id']);
+        }
 
         $client=$userModel->getUser($dataProject['idClient']);
         $dev=$userModel->getUser($dataProject['idDev']);
@@ -122,7 +131,7 @@ function member (){
     require (__DIR__.'/../view/front/member.php');
 }
 
-//renseigner le formulaire "need" expression des besoins
+//USER renseigner le formulaire "need" expression des besoins
 function need() {
     //vérifier que le formulaire a bien reçu les paramètres
     if (!empty($_POST['name']) && !empty($_SESSION['idUser']) && !empty($_POST['description'])) {
@@ -141,7 +150,46 @@ function need() {
     require(__DIR__.'/../view/front/need.php');
 }
 
-//valider le modèle
+//DEV déposer le fichier du modèle
+function modelFile(){
+    //vérifier qu'on a bien un idUser en session
+    if (!empty($_SESSION['idUser'])) {
+
+        $idUser= $_SESSION['idUser'];
+
+        //vérifier si le fichier a bien été envoyé et s'il n'y a pas d'erreur
+        if (isset($_FILES['modelFile']) && $_FILES['modelFile']['error'] == 0){
+
+            $tmpFileName=$_FILES['modelFile']['tmp_name'];
+            $uniqName= uniqid().basename($_FILES['modelFile']['name']);
+
+            //valider le fichier et le stocker définitivement
+            move_uploaded_file($tmpFileName, 'public/uploads/' .$uniqName);
+
+            //créer les objets
+            $projectModel= new ProjectModel();
+            $userModel= new UserModel();
+
+            //appeler les fonctions de ces objets
+            $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
+
+            $modelFile= $projectModel->modelFile($uniqName, $dataProject['id']);
+
+            //appeler les fonctions de ces objets
+            header('location: index.php?action=member');
+            die();
+
+        } else {
+            //envoyer une exception dans catch en cas d'erreur
+            throw new Exception('Pas de fichier envoyé');
+        }
+    } else {
+        //envoyer une exception dans catch en cas d'erreur
+        throw new Exception('Pas de user identifié');
+    }
+}
+
+//USER valider le modèle
 function validModel(){
 
     //vérifier qu'on a bien un idUser en session
@@ -156,11 +204,7 @@ function validModel(){
         //appeler les fonctions de ces objets
         $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
 
-        $client=$userModel->getUser($dataProject['idClient']);
-        $dev=$userModel->getUser($dataProject['idDev']);
-        $idProject= $dataProject['id'];
-
-        $validModel= $projectModel->validModel($idProject);
+        $validModel= $projectModel->validModel($dataProject['id']);
 
         //appeler les fonctions de ces objets
         header('location: index.php?action=member');
@@ -170,3 +214,39 @@ function validModel(){
         $dataProject=false;
     }
 }
+
+//DEV déposer l'url du site créé
+function urlName(){
+
+    //vérifier qu'on a bien un idUser en session
+    if (!empty($_SESSION['idUser'])) {
+
+        $idUser= $_SESSION['idUser'];
+
+        //vérifier si l'url a bien été entrée
+        if (!empty($_POST['urlName'])) {
+
+            //créer les objets
+            $projectModel= new ProjectModel();
+            $userModel= new UserModel();
+
+            //appeler les fonctions de ces objets
+            $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
+
+            $urlName= $projectModel->urlName($_POST['urlName'], $dataProject['id']);
+
+            //appeler les fonctions de ces objets
+            header('location: index.php?action=member');
+            die();
+
+        } else {
+            //envoyer une exception dans catch en cas d'erreur
+            throw new Exception("Pas d'url transmise");
+        }
+    } else {
+        //envoyer une exception dans catch en cas d'erreur
+        throw new Exception('Pas de user identifié');
+    }
+}
+
+
