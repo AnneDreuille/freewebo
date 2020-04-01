@@ -99,7 +99,7 @@
         <script>
             tinymce.init({
             selector:'textarea',
-            height:400,
+            height:300,
             plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
             toolbar_mode: 'floating',
             });
