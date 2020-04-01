@@ -21,9 +21,9 @@
                                 <th>modelDate</th>
                                 <th>startDate</th>
                                 <th>urlDate</th>
-                                <th>endDate</th>
                                 <th>ratingClient</th>
                                 <th>ratingDev</th>
+                                <th>endDate</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -31,14 +31,14 @@
                                 <td><?php echo htmlspecialchars($project['name']); ?></td>
                                 <td><?php echo htmlspecialchars($project['idClient']); ?></td>
                                 <td><?php echo htmlspecialchars($project['idDev']); ?></td>
-                                <td><?php echo(substr($project['needDate_fr'],0,10)); ?></td>
-                                <td><?php echo(substr($project['assignDate_fr'],0,10)); ?></td>
-                                <td><?php echo(substr($project['modelDate_fr'],0,10)); ?></td>
-                                <td><?php echo(substr($project['startDate_fr'],0,10)); ?></td>
-                                <td><?php echo(substr($project['urlDate_fr'],0,10)); ?></td>
-                                <td><?php echo(substr($project['endDate_fr'],0,10)); ?></td>
+                                <td><?php echo htmlspecialchars(substr($project['needDate_fr'],0,10)); ?></td>
+                                <td><?php echo htmlspecialchars(substr($project['assignDate_fr'],0,10)); ?></td>
+                                <td><?php echo htmlspecialchars(substr($project['modelDate_fr'],0,10)); ?></td>
+                                <td><?php echo htmlspecialchars(substr($project['startDate_fr'],0,10)); ?></td>
+                                <td><?php echo htmlspecialchars(substr($project['urlDate_fr'],0,10)); ?></td>
                                 <td><?php echo htmlspecialchars($project['ratingClient']); ?></td>
                                 <td><?php echo htmlspecialchars($project['ratingDev']); ?></td>
+                                <td><?php echo htmlspecialchars(substr($project['endDate_fr'],0,10)); ?></td>
                             </tr>
                         </tbody>
                     </table>
@@ -91,7 +91,7 @@
         <!-- bouton Retour à l'espace membre-->
         <div class="row mt-2">
             <div class='col-md-4'>
-                <a class="btn btn-lg btn-success btn-sm" href="index.php?action=member" role="button"><span class="fas fa-campground pr-1"></span>Retour à l'espace membre</a>
+                <a class="btn btn-lg btn-success btn-sm" href="index.php?action=member&id=<?php echo htmlspecialchars($_GET['id']);?>" role="button"><span class="fas fa-campground pr-1"></span>Retour à l'espace membre</a>
             </div>
         </div>
 
