@@ -89,7 +89,7 @@
                         <?php if($dataProject['modelDate_fr']===null){;?>
                         <a href=#><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">3. Dépôt modèle</button></a>
                         <?php } else {;?>
-                        <a href="public/uploads/P3_modelFile.png" data-toggle="tooltip" data-placement="top" title="Clic pour voir le fichier"><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">3. Dépôt modèle</button></a>
+                        <a href="public/uploads/<?php echo $dataProject['modelFile'];?>" target="_blank" data-toggle="tooltip" data-placement="top" title="Clic pour voir le fichier"><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">3. Dépôt modèle</button></a>
                         <?php };?>
                         <div>
                         <?php if ($dataProject['modelDate_fr'] !== null) {; ?>
@@ -122,7 +122,7 @@
                         <?php if($dataProject['urlDate_fr']===null){;?>
                         <a href=#><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">5. Dépôt URL</button></a>
                         <?php } else {;?>
-                        <a href=# data-toggle="tooltip" data-placement="top" title="Clic pour voir l'URL"><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">5. Dépôt URL</button></a>
+                        <a href="<?php echo $dataProject['urlName'];?>" target="_blank" data-toggle="tooltip" data-placement="top" title="Clic pour voir l'URL"><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">5. Dépôt URL</button></a>
                         <?php };?>
                         <div>
                         <?php if ($dataProject['urlDate_fr'] !== null) {; ?>
@@ -199,7 +199,7 @@
         </div><br/><br/>
         <?php };?>
 
-         <!-- MESSAGERIE -->
+        <!-- MESSAGERIE -->
         <div class="row">
             <!-- formulaire pour poster un message -->
             <div class ="col-md-3 offset-md-1">
