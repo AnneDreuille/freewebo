@@ -5,11 +5,43 @@
 <?php ob_start(); ?>
     <div class="container-fluid">
 
-        <!-- mettre à jour les données d'un user -->
+        <!-- liste PROJETS EN COURS-->
         <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
+            <div class="offset-sm-3 col-sm-6 offset-sm-3">
+                <div class="table-responsive-sm border">
+                    <p class= "text-info text-center font-weight-bold">LISTE DES PROJETS EN COURS</p>
+                    <table class="table table-striped table-condensed small">
+                        <thead>
+                            <tr class="text-info">
+                                <th>id projet</th>
+                                <th>Nom projet</th>
+                                <th>idClient</th>
+                                <th>idDev</th>
+                                <th class="text-center">suivi projet</th>
+                                <th class="text-center">espace membre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        foreach ($listProject as $data) {
+                            if (empty($data['endDate_fr'])) {
+                        ?>
+
+                            <tr>
+                                <td><?php echo htmlspecialchars($data['id']); ?></td>
+                                <td><?php echo htmlspecialchars($data['name']); ?></td>
+                                <td><?php echo htmlspecialchars($data['idClient']); ?></td>
+                                <td><?php echo htmlspecialchars($data['idDev']); ?></td>
+                                <td class="text-center"><a href="index.php?action=project&id=<?php echo htmlspecialchars($data['id']); ?>" role="button" class="fas fa-share btn-info"></a></td>
+                                <td class="text-center"><a href="index.php?action=member&id=<?php echo htmlspecialchars($data['id']); ?>" role="button" class="fas fa-share btn-success"></a></td>
+                            </tr>
+                        <?php
+                        } }
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div><br/>
 
         <!-- liste USERS-->
@@ -39,7 +71,7 @@
                                 <td class="text-uppercase"><?php echo htmlspecialchars($data['lastName']); ?></td>
                                 <td><?php echo htmlspecialchars($data['mail']); ?></td>
                                 <td><?php echo htmlspecialchars($data['phone']); ?></td>
-                                <td><?php echo (substr($data['signUpDate_fr'],0,10)); ?></td>
+                                <td><?php echo htmlspecialchars(substr($data['signUpDate_fr'],0,10)); ?></td>
                             </tr>
                         <?php
                         }
@@ -73,7 +105,7 @@
                                 <td class="text-uppercase"><?php echo htmlspecialchars($data['lastName']); ?></td>
                                 <td><?php echo htmlspecialchars($data['mail']); ?></td>
                                 <td><?php echo htmlspecialchars($data['phone']); ?></td>
-                                <td><?php echo (substr($data['signUpDate_fr'],0,10)); ?></td>
+                                <td><?php echo htmlspecialchars(substr($data['signUpDate_fr'],0,10)); ?></td>
                             </tr>
                         <?php
                         }
@@ -84,11 +116,18 @@
             </div>
         </div><br/>
 
-        <!-- liste PROJETS-->
+        <!-- mettre à jour les données d'un user -->
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+        </div><br/>
+
+        <!-- liste PROJETS TERMINES-->
+        <div class="row">
+            <div class="offset-sm-6 col-sm-6">
                 <div class="table-responsive-sm border">
-                    <p class= "text-info text-center font-weight-bold">LISTE DES PROJETS</p>
+                    <p class= "text-info text-center font-weight-bold">LISTE DES PROJETS TERMINES</p>
                     <table class="table table-striped table-condensed small">
                         <thead>
                             <tr class="text-info">
@@ -96,22 +135,26 @@
                                 <th>Nom projet</th>
                                 <th>idClient</th>
                                 <th>idDev</th>
-                                <th>lien</th>
+                                <th class="text-center">suivi projet</th>
+                                <th class="text-center">espace membre</th>
                             </tr>
                         </thead>
                         <tbody>
                         <?php
                         foreach ($listProject as $data) {
+                            if (!empty($data['endDate_fr'])) {
                         ?>
+
                             <tr>
                                 <td><?php echo htmlspecialchars($data['id']); ?></td>
                                 <td><?php echo htmlspecialchars($data['name']); ?></td>
                                 <td><?php echo htmlspecialchars($data['idClient']); ?></td>
                                 <td><?php echo htmlspecialchars($data['idDev']); ?></td>
                                 <td class="text-center"><a href="index.php?action=project&id=<?php echo htmlspecialchars($data['id']); ?>" role="button" class="fas fa-share btn-info"></a></td>
+                                <td class="text-center"><a href="index.php?action=member&id=<?php echo htmlspecialchars($data['id']); ?>" role="button" class="fas fa-share btn-success"></a></td>
                             </tr>
                         <?php
-                        }
+                        } }
                         ?>
                         </tbody>
                     </table>
@@ -123,13 +166,6 @@
         <div class="row">
             <div class="col-md-4">
                 <a class="btn btn-lg btn-info btn-sm" href="index.php" role="button"><span class="fas fa-home pr-1"></span>Retour à la page d'accueil</a>
-            </div>
-        </div>
-
-        <!-- bouton Retour à l'espace membre-->
-        <div class="row mt-2">
-            <div class='col-md-4'>
-                <a class="btn btn-lg btn-success btn-sm" href="index.php?action=member" role="button"><span class="fas fa-campground pr-1"></span>Retour à l'espace membre</a>
             </div>
         </div>
 
