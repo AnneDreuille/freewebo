@@ -148,15 +148,13 @@
             </div>
         </div><br/><br/>
 
-        <!-- FORMULAIRES CACHES POUR ACTIONS DEVELOPPEUR -->
+        <!-- FORMULAIRES POUR DEVELOPPEUR CACHES AU CLIENT-->
         <?php
         if (!empty($_SESSION['userType']) && ($_SESSION['userType']==='client') ){
-            echo '';
-            } else {?>
-
+        echo '';
+        } else {?>
         <div class="row">
-            <div class="col-md-4"></div>
-            <!-- déposer le fichier du modèle -->
+            <!-- DEV déposer le fichier du modèle -->
             <div class="col-md-4">
                 <form action="index.php?action=modelFile&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" enctype="multipart/form-data" class="border pt-1 px-2 bg-light rounded">
                     <p class="text-info font-weight-bold text-center">Déposer le fichier du modèle</p>
@@ -176,7 +174,7 @@
                     </div>
                 </form>
             </div>
-            <!-- déposer l'URL du site créé -->
+            <!-- DEV déposer l'URL du site créé -->
             <div class="col-md-3">
                 <form action="index.php?action=urlName&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded">
                     <p class="text-info font-weight-bold text-center">Déposer l'URL du site créé</p>
@@ -192,6 +190,55 @@
                     <div class="form-group row">
                         <div class="col text-center">
                             <input type="submit" value="Valider" id="submit" class="btn btn-secondary font-weight-bold px-5 submit" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- DEV donner 1 note au client -->
+            <div class="col-md-3">
+                <form action="index.php?action=ratingClient" method="post" class="border pt-1 px-5 bg-light rounded">
+                    <p class="text-info font-weight-bold text-center">Evaluer le client</p>
+                    <div class="form-group row">
+                        <div class="col ratingClient d-flex flex-row-reverse h2 justify-content-around">
+                            <input type="radio" id="5-stars" name="ratingClient" value="5" />
+                            <label for="5-stars" class="star">&#9733;</label>
+                            <input type="radio" id="4-stars" name="ratingClient" value="4" />
+                            <label for="4-stars" class="star">&#9733;</label>
+                            <input type="radio" id="3-stars" name="ratingClient" value="3" />
+                            <label for="3-stars" class="star">&#9733;</label>
+                            <input type="radio" id="2-stars" name="ratingClient" value="2" />
+                            <label for="2-stars" class="star">&#9733;</label>
+                            <input type="radio" id="1-star" name="ratingClient" value="1" />
+                            <label for="1-star" class="star">&#9733;</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <?php };?>
+
+        <!-- FORMULAIRE NOTATION POUR CLIENT CACHE AU DEV-->
+        <?php
+        if (!empty($_SESSION['userType']) && ($_SESSION['userType']==='dev') && (empty($dataProject['urlDate_fr']))) {
+            echo '';
+        } else {?>
+        <div class="row">
+            <!-- CLIENT donner 1 note au dev -->
+            <div class="offset-md-7 col-md-3">
+                <form action="index.php?action=ratingDev" method="post" class="border pt-1 px-5 bg-light rounded">
+                    <p class="text-info font-weight-bold text-center">Evaluer le développeur</p>
+                    <div class="form-group row">
+                        <div class="col ratingDev d-flex flex-row-reverse h2 justify-content-around">
+                            <input type="radio" id="5-stars" name="ratingDev" value="5" />
+                            <label for="5-stars" class="star">&#9733;</label>
+                            <input type="radio" id="4-stars" name="ratingDev" value="4" />
+                            <label for="4-stars" class="star">&#9733;</label>
+                            <input type="radio" id="3-stars" name="ratingDev" value="3" />
+                            <label for="3-stars" class="star">&#9733;</label>
+                            <input type="radio" id="2-stars" name="ratingDev" value="2" />
+                            <label for="2-stars" class="star">&#9733;</label>
+                            <input type="radio" id="1-star" name="ratingDev" value="1" />
+                            <label for="1-star" class="star">&#9733;</label>
                         </div>
                     </div>
                 </form>
