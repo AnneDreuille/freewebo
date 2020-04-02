@@ -1,22 +1,54 @@
 html, body{
-  margin:0;
-  padding:0;
-  font-size: 20px;
-  font-family:"Open Sans",sans-serif;
-  color:#333; /*gris foncé au lieu de noir*/
+    margin:0;
+    padding:0;
+    font-size: 20px;
+    font-family:"Open Sans",sans-serif;
+    color:#333; /*gris foncé au lieu de noir*/
 }
 
 .italic{
-  font-style: italic;
+    font-style: italic;
 }
 
 .small{
-  font-size: 16px !important;
+    font-size: 16px !important;
 }
 
 .xsmall{
-  font-size: 15px !important;
+    font-size: 15px !important;
 }
+
+/*RATING CLIENT*/
+.ratingClient input {
+    display:none;
+}
+.ratingClient label {
+    color:#ccc;
+    cursor:pointer;
+}
+.ratingClient :checked ~ label {
+    color:#f90;
+}
+.ratingClient label:hover,
+.ratingClient label:hover ~ label {
+    color:#fc0;
+}
+/*RATING DEV*/
+.ratingDev input {
+    display:none;
+}
+.ratingDev label {
+    color:#ccc;
+    cursor:pointer;
+}
+.ratingDev :checked ~ label {
+    color:#f90;
+}
+.ratingDev label:hover,
+.ratingDev label:hover ~ label {
+    color:#fc0;
+}
+/*FIN RATING*/
 
 
 footer{
