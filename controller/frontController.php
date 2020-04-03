@@ -2,8 +2,8 @@
 
 //charger les classes
 require_once(__DIR__.'/../model/UserModel.php');
-require_once(__DIR__.'/../model/ChatModel.php');
 require_once(__DIR__.'/../model/ProjectModel.php');
+require_once(__DIR__.'/../model/ChatModel.php');
 
 //rediriger vers homepage
 function homepage(){
@@ -114,20 +114,25 @@ function member (){
         //créer les objets
         $projectModel= new ProjectModel();
         $userModel= new UserModel();
+        $chatModel= new ChatModel();
 
-        //appeler les fonctions de ces objets
+        //connexion différente client ou dev et admin
         if ($_SESSION['userType']!=='admin'){
             $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
         } else {
             $dataProject=$projectModel->project($_GET['id']);
         }
 
+        //appeler les fonctions de ces objets
         $client=$userModel->getUser($dataProject['idClient']);
         $dev=$userModel->getUser($dataProject['idDev']);
+
+        $listMessage= $chatModel->listMessage();
 
     } else {
         $dataProject=false;
     }
+    //charger le fichier en vue de l'affichage dans la page html
     require (__DIR__.'/../view/front/member.php');
 }
 
@@ -175,7 +180,7 @@ function modelFile(){
 
             $modelFile= $projectModel->modelFile($uniqName, $dataProject['id']);
 
-            //appeler les fonctions de ces objets
+            //diriger vers la page member
             header('location: index.php?action=member');
             die();
 
@@ -206,7 +211,7 @@ function validModel(){
 
         $validModel= $projectModel->validModel($dataProject['id']);
 
-        //appeler les fonctions de ces objets
+        //diriger vers la page member
         header('location: index.php?action=member');
         die();
 
@@ -235,7 +240,7 @@ function urlName(){
 
             $urlName= $projectModel->urlName($_POST['urlName'], $dataProject['id']);
 
-            //appeler les fonctions de ces objets
+            //diriger vers la page member
             header('location: index.php?action=member');
             die();
 
@@ -249,4 +254,108 @@ function urlName(){
     }
 }
 
+//DEV noter le client
+function ratingClient(){
 
+    //vérifier qu'on a bien un idUser en session
+    if (!empty($_SESSION['idUser'])) {
+
+        $idUser= $_SESSION['idUser'];
+
+        //vérifier si la notation a bien été entrée
+        if (!empty($_POST['ratingClient'])) {
+
+        //créer les objets
+        $projectModel= new ProjectModel();
+        $userModel= new UserModel();
+
+        //appeler les fonctions de ces objets
+        $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
+
+        $ratingClient= $projectModel->ratingClient($_POST['ratingClient'], $dataProject['id']);
+
+        //diriger vers la page member
+        header('location: index.php?action=member');
+        die();
+
+        } else {
+            //envoyer une exception dans catch en cas d'erreur
+            throw new Exception("Pas de notation indiquée");
+        }
+    } else {
+        //envoyer une exception dans catch en cas d'erreur
+        throw new Exception('Pas de user identifié');
+    }
+}
+
+//CLIENT noter le développeur
+function ratingDev(){
+
+    //vérifier qu'on a bien un idUser en session
+    if (!empty($_SESSION['idUser'])) {
+
+        $idUser= $_SESSION['idUser'];
+
+        //vérifier si la notation a bien été entrée
+        if (!empty($_POST['ratingDev'])) {
+
+        //créer les objets
+        $projectModel= new ProjectModel();
+        $userModel= new UserModel();
+
+        //appeler les fonctions de ces objets
+        $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
+
+        $ratingDev= $projectModel->ratingDev($_POST['ratingDev'], $dataProject['id']);
+
+        //diriger vers la page member
+        header('location: index.php?action=member');
+        die();
+
+        } else {
+            //envoyer une exception dans catch en cas d'erreur
+            throw new Exception("Pas de notation indiquée");
+        }
+    } else {
+        //envoyer une exception dans catch en cas d'erreur
+        throw new Exception('Pas de user identifié');
+    }
+}
+
+//CHAT
+
+function addMessage(){
+    //vérifier qu'on a bien un idUser en session
+    if (!empty($_SESSION['idUser'])) {
+
+        $idUser= $_SESSION['idUser'];
+
+        //vérifier si le msg a bien été posté
+        if (!empty($_POST['message'])) {
+
+        //créer les objets
+        $projectModel= new ProjectModel();
+        $userModel= new UserModel();
+        $chatModel= new ChatModel();
+
+        //appeler les fonctions de ces objets
+        $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
+
+        $getUser= $userModel->getUser($idUser);
+        $idSender= $getUser['id'];
+
+        $addMessage= $chatModel->addMessage($idSender,$dataProject['id'],$_POST['message']);
+
+        //diriger vers la page member
+        header('location: index.php?action=member');
+        die();
+
+        } else {
+            //envoyer une exception dans catch en cas d'erreur
+            throw new Exception("Pas de message posté");
+        }
+    } else {
+        //envoyer une exception dans catch en cas d'erreur
+        throw new Exception('Pas de user identifié');
+    }
+}
