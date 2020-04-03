@@ -35,7 +35,7 @@
                         </div>
                         <div class="form-group row mb-1">
                             <div class="col">
-                                <input type="submit" value="Se connecter" id="submit" class="btn btn-info btn-sm small" />
+                                <input type="submit" value="Se connecter" class="btn btn-info btn-sm small" />
                             </div>
                         </div>
                         <!-- bouton pour s'inscrire signUp -->
