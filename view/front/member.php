@@ -155,7 +155,7 @@
         } else {?>
         <div class="row">
             <!-- DEV déposer le fichier du modèle -->
-            <div class="col-md-4">
+            <div class="offset-md-1 col-md-4">
                 <form action="index.php?action=modelFile&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" enctype="multipart/form-data" class="border pt-1 px-2 bg-light rounded">
                     <p class="text-info font-weight-bold text-center">Déposer le fichier du modèle</p>
                     <div class="form-group row">
@@ -169,7 +169,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col text-center">
-                            <input type="submit" value="Valider" id="submit" class="btn btn-secondary font-weight-bold px-5 submit" />
+                            <input type="submit" value="Valider" class="btn btn-secondary font-weight-bold px-5 submit" />
                         </div>
                     </div>
                 </form>
@@ -189,14 +189,14 @@
                     </div>
                     <div class="form-group row">
                         <div class="col text-center">
-                            <input type="submit" value="Valider" id="submit" class="btn btn-secondary font-weight-bold px-5 submit" />
+                            <input type="submit" value="Valider" class="btn btn-secondary font-weight-bold px-5 submit" />
                         </div>
                     </div>
                 </form>
             </div>
             <!-- DEV donner 1 note au client -->
             <div class="col-md-3">
-                <form action="index.php?action=ratingClient" method="post" class="border pt-1 px-5 bg-light rounded">
+                <form action="index.php?action=ratingClient&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" class="border pt-1 px-5 bg-light rounded">
                     <p class="text-info font-weight-bold text-center">Evaluer le client</p>
                     <div class="form-group row">
                         <div class="col ratingClient d-flex flex-row-reverse h2 justify-content-around">
@@ -212,6 +212,11 @@
                             <label for="1-star" class="star">&#9733;</label>
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <div class="col text-center">
+                            <input type="submit" value="Valider" class="btn btn-secondary font-weight-bold px-5 submit" />
+                        </div>
+                    </div>
                 </form>
             </div>
         </div><br/><br/>
@@ -221,27 +226,29 @@
         <?php
         if (!empty($_SESSION['userType']) && ($_SESSION['userType']==='dev')) {
             echo '';
-            if (!empty($dataProject['urlDate_fr'])) {
-                echo '';
-            }
-        } else {?>
+            } else {?>
         <div class="row">
             <!-- CLIENT donner 1 note au dev -->
             <div class="offset-md-7 col-md-3">
-                <form action="index.php?action=ratingDev" method="post" class="border pt-1 px-5 bg-light rounded">
+                <form action="index.php?action=ratingDev&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" class="border pt-1 px-5 bg-light rounded">
                     <p class="text-info font-weight-bold text-center">Evaluer le développeur</p>
                     <div class="form-group row">
                         <div class="col ratingDev d-flex flex-row-reverse h2 justify-content-around">
-                            <input type="radio" id="5-stars" name="ratingDev" value="5" />
-                            <label for="5-stars" class="star">&#9733;</label>
-                            <input type="radio" id="4-stars" name="ratingDev" value="4" />
-                            <label for="4-stars" class="star">&#9733;</label>
-                            <input type="radio" id="3-stars" name="ratingDev" value="3" />
-                            <label for="3-stars" class="star">&#9733;</label>
-                            <input type="radio" id="2-stars" name="ratingDev" value="2" />
-                            <label for="2-stars" class="star">&#9733;</label>
-                            <input type="radio" id="1-star" name="ratingDev" value="1" />
-                            <label for="1-star" class="star">&#9733;</label>
+                            <input type="radio" id="5stars" name="ratingDev" value="5" />
+                            <label for="5stars" class="star">&#9733;</label>
+                            <input type="radio" id="4stars" name="ratingDev" value="4" />
+                            <label for="4stars" class="star">&#9733;</label>
+                            <input type="radio" id="3stars" name="ratingDev" value="3" />
+                            <label for="3stars" class="star">&#9733;</label>
+                            <input type="radio" id="2stars" name="ratingDev" value="2" />
+                            <label for="2stars" class="star">&#9733;</label>
+                            <input type="radio" id="1star" name="ratingDev" value="1" />
+                            <label for="1star" class="star">&#9733;</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col text-center">
+                            <input type="submit" value="Valider" class="btn btn-info font-weight-bold px-5 submit" />
                         </div>
                     </div>
                 </form>
@@ -254,12 +261,7 @@
             <!-- formulaire pour poster un message -->
             <div class ="col-md-3 offset-md-1">
                 <button class="btn btn-warning btn-block font-weight-bold disabled">Ecrire un message ici&nbsp;!</button>
-                <form action="" method="post" class="border pt-1 px-2 bg-light rounded">
-                    <div class="form-group row">
-                        <div class="col">
-                            <input type="text" id="firstName" name="firstName" required placeholder="Votre prénom" class="form-control text-capitalize" />
-                        </div>
-                    </div>
+                <form action="index.php?action=addMessage&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded">
                     <div class="form-group row">
                         <div class="col">
                             <textarea id="message" name="message"></textarea>
@@ -278,11 +280,13 @@
                 <button class="btn btn-warning btn-block font-weight-bold disabled"><span class="far fa-comments fa-lg pr-2"></span>Messages</button>
                 <!-- utilisation d'une liste de descriptions -->
                 <div class="border rounded p-2 bg-light">
+                    <?php foreach ($listMessage as $data) { ?>
                     <dl>
-                        <dt class="text-capitalize">prénom</dt>
-                        <dd class="small text-primary font-italic">Posté le...</dd>
-                        <dd class="text-justify">message</dd>
+                        <dt class="text-capitalize"><?php echo htmlspecialchars($data['firstName']) ;?></dt>
+                        <dd class="small text-primary font-italic"><?php echo 'Posté le '.htmlspecialchars($data['postDate_fr']) ;?></dd>
+                        <dd class="text-justify"><?php echo $data['message'] ;?></dd>
                     </dl>
+                <?php } ?>
                 </div>
             </div>
 
