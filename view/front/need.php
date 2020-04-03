@@ -49,7 +49,7 @@
 
                     <div class="form-group row">
                         <div class="col text-center">
-                            <input type="submit" value="Valider" id="submit" class="btn btn-info font-weight-bold px-5 submit" />
+                            <input type="submit" value="Valider" class="btn btn-info font-weight-bold px-5" />
                         </div>
                     </div>
                 </form>
