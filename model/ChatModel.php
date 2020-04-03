@@ -16,11 +16,16 @@ class ChatModel extends Model {
     public function listMessage() {
       $db= $this->dbConnect();
 
-      $req = $db->prepare('SELECT id,idSender,idProject,message,DATE_FORMAT(postDate, "%d/%m/%Y à %Hh%i") AS postDate_fr FROM chat ORDER BY postDate DESC');
+      $req = $db->prepare('SELECT user.firstName, chat.id, chat.idProject, chat.message, DATE_FORMAT(chat.postDate, "%d/%m/%Y à %Hh%i") AS postDate_fr
+        FROM chat
+        INNER JOIN user
+        ON user.id=chat.idSender
+
+        ORDER BY postDate DESC')
+        LIMIT 0,10 ;
 
       $req->execute();
       return $req->fetchAll();
     }
-
 
 }
