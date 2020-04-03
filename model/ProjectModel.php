@@ -32,6 +32,60 @@ class ProjectModel extends Model {
     return $req->fetch();
   }
 
+  //mettre à jour les données d'1 projet / désignation d'un dév
+  public function assign($idDev, $id) {
+    $db= $this->dbConnect();
+
+    $req = $db->prepare('UPDATE project SET idDev=? ,assignDate=NOW() WHERE id=?');
+
+    return $req->execute(array($idDev, $id));
+  }
+
+  //mettre à jour les données d'1 projet / dépôt du modèle
+  public function modelFile($modelFile, $id) {
+    $db= $this->dbConnect();
+
+    $req = $db->prepare('UPDATE project SET modelFile= ?, modelDate=NOW() WHERE id=?');
+
+    return $req->execute(array($modelFile, $id));
+  }
+
+  //mettre à jour les données d'1 projet / validation du modèle
+  public function validModel($id) {
+    $db= $this->dbConnect();
+
+    $req = $db->prepare('UPDATE project SET startDate=NOW() WHERE id=?');
+
+    return $req->execute(array($id));
+  }
+
+  //mettre à jour les données d'1 projet / dépôt URL
+  public function urlName($urlName, $id) {
+    $db= $this->dbConnect();
+
+    $req = $db->prepare('UPDATE project SET urlName=?, urlDate=NOW() WHERE id=?');
+
+    return $req->execute(array($urlName, $id));
+  }
+
+  //mettre à jour les données d'1 projet / rating Client
+  public function ratingClient($ratingClient, $id) {
+    $db= $this->dbConnect();
+
+    $req = $db->prepare('UPDATE project SET ratingClient=? WHERE id=?');
+
+    return $req->execute(array($ratingClient, $id));
+  }
+
+  //mettre à jour les données d'1 projet / rating Dev
+  public function ratingDev($ratingDev, $id) {
+    $db= $this->dbConnect();
+
+    $req = $db->prepare('UPDATE project SET ratingDev=? WHERE id=?');
+
+    return $req->execute(array($ratingDev, $id));
+  }
+
 
 //BACK
 
@@ -54,42 +108,5 @@ class ProjectModel extends Model {
     $req->execute(array($id));
     return $req->fetch();
   }
-
-//mettre à jour les données d'1 projet / désignation d'un dév
-  public function assign($idDev, $id) {
-    $db= $this->dbConnect();
-
-    $req = $db->prepare('UPDATE project SET idDev=? ,assignDate=NOW() WHERE id=?');
-
-    return $req->execute(array($idDev, $id));
-  }
-
-//mettre à jour les données d'1 projet / dépôt du modèle
-  public function modelFile($modelFile, $id) {
-    $db= $this->dbConnect();
-
-    $req = $db->prepare('UPDATE project SET modelFile= ?, modelDate=NOW() WHERE id=?');
-
-    return $req->execute(array($modelFile, $id));
-  }
-
-//mettre à jour les données d'1 projet / validation du modèle
-  public function validModel($id) {
-    $db= $this->dbConnect();
-
-    $req = $db->prepare('UPDATE project SET startDate=NOW() WHERE id=?');
-
-    return $req->execute(array($id));
-  }
-
-//mettre à jour les données d'1 projet / dépôt URL
-  public function urlName($urlName, $id) {
-    $db= $this->dbConnect();
-
-    $req = $db->prepare('UPDATE project SET urlName=?, urlDate=NOW() WHERE id=?');
-
-    return $req->execute(array($urlName, $id));
-  }
-
 
 }
