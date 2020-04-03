@@ -1,3 +1,4 @@
+
 <?php $title ="S'inscrire sur freewebo.org - Agence Web solidaire"; ?>
 <?php $metaDescription="S'inscrire à FreeWebo pour demander la création de votre site web gratuitement... ou pour être développeur bénévole&nbsp;!"; ?>
 <?php $header = 'Inscrivez-vous sur le site FreeWebo&nbsp;!'; ?>
@@ -83,7 +84,7 @@
 
                     <div class="form-group row">
                         <div class="col text-center">
-                            <input type="submit" value="Valider" id="submit" class="btn btn-info font-weight-bold px-5"/>
+                            <input type="submit" value="Valider" class="btn btn-info font-weight-bold px-5"/>
                         </div>
                     </div>
                 </form>
