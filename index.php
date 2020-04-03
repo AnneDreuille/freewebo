@@ -43,6 +43,21 @@ try {
             urlName();
         }
 
+        elseif($_GET['action']=='ratingClient') {
+            ratingClient();
+        }
+
+        elseif($_GET['action']=='ratingDev') {
+            ratingDev();
+        }
+
+        elseif($_GET['action']=='addMessage') {
+            addMessage();
+        }
+
+        elseif($_GET['action']=='listMessage') {
+            listMessage();
+        }
 
 //BACK
         elseif($_GET['action']=='admin') {
