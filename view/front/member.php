@@ -5,7 +5,7 @@
 <?php ob_start(); ?>
     <div class="container-fluid">
 
-        <!-- afficher prénom client, nom projet et prénom dév-->
+        <!-- AFFICHER PRENOM CLIENT, NOM PROJET & PRENOM DEV-->
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6 btn-group">
@@ -13,11 +13,11 @@
                 <?php
                 if (!empty ($client['firstName'])){;?>
                 <button type="button" class="btn btn-success disabled rounded mr-2 text-capitalize">
-                <?php echo htmlspecialchars($client['firstName']); ?></button>
+                <?php echo 'Demandeur&nbsp;: ' .htmlspecialchars($client['firstName']); ?></button>
                 <?php
                 } else {; ?>
                 <button type="button" class="btn btn-outline-dark disabled rounded mr-2 text-capitalize">
-                <?php echo 'prénom client'; ?></button>
+                <?php echo 'prénom client&nbsp;?'; ?></button>
                 <?php
                 }
                 ?>
@@ -26,11 +26,11 @@
                 <?php
                 if (!empty ($dataProject['name'])){; ?>
                 <button type="button" class="btn btn-success disabled rounded mr-2 text-capitalize">
-                <?php echo htmlspecialchars($dataProject['name']); ?></button>
+                <?php echo 'Nom du projet&nbsp;: ' .htmlspecialchars($dataProject['name']); ?></button>
                 <?php
                 } else {; ?>
                 <button type="button" class="btn btn-outline-dark disabled rounded mr-2 text-capitalize">
-                <?php echo 'nom projet'; ?></button>
+                <?php echo 'Nom projet&nbsp;?'; ?></button>
                 <?php
                 }
                 ?>
@@ -39,11 +39,11 @@
                 <?php
                 if (!empty ($dev['firstName'])) {;?>
                 <button type="button" class="btn btn-success disabled rounded mr-2 text-capitalize">
-                <?php echo htmlspecialchars($dev['firstName']); ?></button>
+                <?php echo 'Développeur&nbsp;: ' .htmlspecialchars($dev['firstName']); ?></button>
                 <?php
                 } else {; ?>
                 <button type="button" class="btn btn-outline-dark disabled rounded mr-2 text-capitalize">
-                <?php echo 'prénom dev'; ?></button>
+                <?php echo 'Développeur&nbsp;?'; ?></button>
                 <?php
                 }
                 ?>
@@ -51,7 +51,7 @@
             <div class="col-md-3"></div>
         </div><br/><br/>
 
-        <!-- afficher les boutons & images du process -->
+        <!-- AFFICHER BOUTONS & IMAGES PROCESS-->
         <div class="row">
             <div class="col-md-12 text-center">
                 <div class="btn-group align-items-end" role="group">
@@ -214,13 +214,16 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div><br/><br/>
         <?php };?>
 
-        <!-- FORMULAIRE NOTATION POUR CLIENT CACHE AU DEV-->
+        <!-- FORMULAIRE POUR CLIENT CACHE AU DEV-->
         <?php
-        if (!empty($_SESSION['userType']) && ($_SESSION['userType']==='dev') && (empty($dataProject['urlDate_fr']))) {
+        if (!empty($_SESSION['userType']) && ($_SESSION['userType']==='dev')) {
             echo '';
+            if (!empty($dataProject['urlDate_fr'])) {
+                echo '';
+            }
         } else {?>
         <div class="row">
             <!-- CLIENT donner 1 note au dev -->
