@@ -29,15 +29,15 @@
                         <tbody>
                             <tr>
                                 <td><?php echo htmlspecialchars($project['name']); ?></td>
-                                <td><?php echo htmlspecialchars($project['idClient']); ?></td>
-                                <td><?php echo htmlspecialchars($project['idDev']); ?></td>
+                                <td class="text-center"><?php echo htmlspecialchars($project['idClient']); ?></td>
+                                <td class="text-center"><?php echo htmlspecialchars($project['idDev']); ?></td>
                                 <td><?php echo htmlspecialchars(substr($project['needDate_fr'],0,10)); ?></td>
                                 <td><?php echo htmlspecialchars(substr($project['assignDate_fr'],0,10)); ?></td>
                                 <td><?php echo htmlspecialchars(substr($project['modelDate_fr'],0,10)); ?></td>
                                 <td><?php echo htmlspecialchars(substr($project['startDate_fr'],0,10)); ?></td>
                                 <td><?php echo htmlspecialchars(substr($project['urlDate_fr'],0,10)); ?></td>
-                                <td><?php echo htmlspecialchars($project['ratingClient']); ?></td>
-                                <td><?php echo htmlspecialchars($project['ratingDev']); ?></td>
+                                <td class="text-center"><?php echo htmlspecialchars($project['ratingClient']); ?></td>
+                                <td class="text-center"><?php echo htmlspecialchars($project['ratingDev']); ?></td>
                                 <td><?php echo htmlspecialchars(substr($project['endDate_fr'],0,10)); ?></td>
                             </tr>
                         </tbody>
@@ -69,7 +69,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col text-center">
-                            <input type="submit" value="Valider" id="submit" class="btn btn-info font-weight-bold px-5 submit" />
+                            <input type="submit" value="Valider" class="btn btn-info font-weight-bold px-5" />
                         </div>
                     </div>
                 </form>
