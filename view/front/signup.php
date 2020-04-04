@@ -1,4 +1,3 @@
-
 <?php $title ="S'inscrire sur freewebo.org - Agence Web solidaire"; ?>
 <?php $metaDescription="S'inscrire à FreeWebo pour demander la création de votre site web gratuitement... ou pour être développeur bénévole&nbsp;!"; ?>
 <?php $header = 'Inscrivez-vous sur le site FreeWebo&nbsp;!'; ?>
