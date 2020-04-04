@@ -20,9 +20,7 @@ class ChatModel extends Model {
         FROM chat
         INNER JOIN user
         ON user.id=chat.idSender
-
-        ORDER BY postDate DESC
-        LIMIT 0,10' );
+        ORDER BY postDate DESC ');
 
       $req->execute();
       return $req->fetchAll();
