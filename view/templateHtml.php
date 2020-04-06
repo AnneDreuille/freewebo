@@ -71,12 +71,18 @@
                     <li class="nav-item">
                         <a class="nav-link text-info font-weight-bold" href="index.php"><span class="fas fa-home pr-1"></span>Accueil</a>
                     </li>
+                    <?php if (!empty($_SESSION ['userType']) && $_SESSION ['userType']==="admin"){
+                        echo '';
+                        } else {?>
                     <li class="nav-item">
                         <a class="nav-link text-info font-weight-bold" href="index.php?action=member"><span class="fas fa-campground pr-1"></span>Espace membre</a>
                     </li>
+                    <?php };?>
+                    <?php if (!empty($_SESSION ['userType']) && $_SESSION ['userType']==="admin"){?>
                     <span class="nav-item ml-auto">
-                        <a class="nav-link text-secondary" href="index.php?action=admin" data-toggle="tooltip" data-placement="top" title="Accès réservé" ><span class="fas fa-igloo pr-1"></span>Espace admin</a>
+                        <a class="nav-link text-secondary" href="index.php?action=admin" ><span class="fas fa-igloo pr-1"></span>Espace admin</a>
                     </span>
+                    <?php };?>
                 </ul>
             </nav>
         </header><br/>
