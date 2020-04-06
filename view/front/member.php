@@ -204,15 +204,30 @@
                     <p class="text-info font-weight-bold text-center">Evaluer le client</p>
                     <div class="form-group row">
                         <div class="col ratingClient d-flex flex-row-reverse h2 justify-content-around">
-                            <input type="radio" id="5-stars" name="ratingClient" value="5" />
+
+                            <input type="radio" id="5-stars" name="ratingClient" value="5"
+                            <?php if (isset($dataProject['ratingClient']) && $dataProject['ratingClient'] == "5") {
+                                echo 'checked'; }?> />
                             <label for="5-stars" class="star">&#9733;</label>
-                            <input type="radio" id="4-stars" name="ratingClient" value="4" />
+
+                            <input type="radio" id="4-stars" name="ratingClient" value="4"
+                            <?php if (isset($dataProject['ratingClient']) && $dataProject['ratingClient'] == "4") {
+                                echo 'checked'; }?> />
                             <label for="4-stars" class="star">&#9733;</label>
-                            <input type="radio" id="3-stars" name="ratingClient" value="3" />
+
+                            <input type="radio" id="3-stars" name="ratingClient" value="3"
+                            <?php if (isset($dataProject['ratingClient']) && $dataProject['ratingClient'] == "3") {
+                                echo 'checked';}?> />
                             <label for="3-stars" class="star">&#9733;</label>
-                            <input type="radio" id="2-stars" name="ratingClient" value="2" />
+
+                            <input type="radio" id="2-stars" name="ratingClient" value="2"
+                            <?php if (isset($dataProject['ratingClient']) && $dataProject['ratingClient'] == "2") {
+                                echo 'checked';}?> />
                             <label for="2-stars" class="star">&#9733;</label>
-                            <input type="radio" id="1-star" name="ratingClient" value="1" />
+
+                            <input type="radio" id="1-star" name="ratingClient" value="1"
+                            <?php if (isset($dataProject['ratingClient']) && $dataProject['ratingClient'] == "1") {
+                                echo 'checked';}?> />
                             <label for="1-star" class="star">&#9733;</label>
                         </div>
                     </div>
@@ -240,15 +255,25 @@
                     <p class="text-info font-weight-bold text-center">Evaluer le développeur</p>
                     <div class="form-group row">
                         <div class="col ratingDev d-flex flex-row-reverse h2 justify-content-around">
-                            <input type="radio" id="5stars" name="ratingDev" value="5" />
+
+                            <input type="radio" id="5stars" name="ratingDev" value="5" <?php if (isset($dataProject['ratingDev']) && $dataProject['ratingDev'] == "5") {
+                                echo 'checked'; }?> />
                             <label for="5stars" class="star">&#9733;</label>
-                            <input type="radio" id="4stars" name="ratingDev" value="4" />
+
+                            <input type="radio" id="4stars" name="ratingDev" value="4" <?php if (isset($dataProject['ratingDev']) && $dataProject['ratingDev'] == "4") {
+                                echo 'checked'; }?> />
                             <label for="4stars" class="star">&#9733;</label>
-                            <input type="radio" id="3stars" name="ratingDev" value="3" />
+
+                            <input type="radio" id="3stars" name="ratingDev" value="3" <?php if (isset($dataProject['ratingDev']) && $dataProject['ratingDev'] == "3") {
+                                echo 'checked'; }?> />
                             <label for="3stars" class="star">&#9733;</label>
-                            <input type="radio" id="2stars" name="ratingDev" value="2" />
+
+                            <input type="radio" id="2stars" name="ratingDev" value="2" <?php if (isset($dataProject['ratingDev']) && $dataProject['ratingDev'] == "2") {
+                                echo 'checked'; }?> />
                             <label for="2stars" class="star">&#9733;</label>
-                            <input type="radio" id="1star" name="ratingDev" value="1" />
+
+                            <input type="radio" id="1star" name="ratingDev" value="1" <?php if (isset($dataProject['ratingDev']) && $dataProject['ratingDev'] == "1") {
+                                echo 'checked'; }?> />
                             <label for="1star" class="star">&#9733;</label>
                         </div>
                     </div>
