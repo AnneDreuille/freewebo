@@ -58,7 +58,7 @@
             <!-- nommer un développeur -->
             <div class="col-md-4">
                 <form action="index.php?action=assign&id=<?php echo htmlspecialchars($_GET['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded">
-                    <p class="text-info font-weight-bold text-center">Nommer 1 développeur sur un projet</p>
+                    <p class="text-info font-weight-bold text-center">Nommer 1 développeur sur le projet</p>
                     <div class="form-group row">
                         <div class="col">
                             <div class="input-group-prepend">
@@ -74,10 +74,19 @@
                     </div>
                 </form>
             </div>
+            <!-- acter la fin d'un projet -->
+            <div class="col-md-3">
+                <form action="index.php?action=endDate" method="post" class="border pt-1 px-2 bg-light rounded">
+                    <p class="text-info font-weight-bold text-center">Acter la fin du projet</p>
+                    <div class="form-group row">
+                        <div class="col text-center">
+                            <input type="submit" value="Valider" class="btn btn-info font-weight-bold px-5" />
+                        </div>
+                    </div>
+                </form>
+            </div>
 
-
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
+            <div class="col-md-5"></div>
         </div><br/>
 <hr/>
 
