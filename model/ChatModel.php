@@ -13,16 +13,17 @@ class ChatModel extends Model {
   }
 
 //récupérer la liste des messages
-    public function listMessage() {
+    public function listMessage($idProject) {
       $db= $this->dbConnect();
 
       $req = $db->prepare('SELECT user.firstName, chat.id, chat.idProject, chat.message, DATE_FORMAT(chat.postDate, "%d/%m/%Y à %Hh%i") AS postDate_fr
         FROM chat
         INNER JOIN user
         ON user.id=chat.idSender
+        WHERE idProject=?
         ORDER BY postDate DESC ');
 
-      $req->execute();
+      $req->execute(array($idProject));
       return $req->fetchAll();
     }
 
