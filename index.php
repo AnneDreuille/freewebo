@@ -72,6 +72,10 @@ try {
             assign();
         }
 
+        elseif($_GET['action']=='endDate') {
+            endDate();
+        }
+
 
     }
     //afficher par défaut la page d'accueil
