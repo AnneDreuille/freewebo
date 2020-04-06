@@ -127,7 +127,7 @@ function member (){
         $client=$userModel->getUser($dataProject['idClient']);
         $dev=$userModel->getUser($dataProject['idDev']);
 
-        $listMessage= $chatModel->listMessage();
+        $listMessage= $chatModel->listMessage($dataProject['id']);
 
     } else {
         $dataProject=false;
