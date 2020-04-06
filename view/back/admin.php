@@ -24,7 +24,7 @@
                         <tbody>
                         <?php
                         foreach ($listProject as $data) {
-                            if (empty($data['endDate_fr'])) {
+                            if (empty($data['endDate'])) {
                         ?>
 
                             <tr>
@@ -138,7 +138,7 @@
                         <tbody>
                         <?php
                         foreach ($listProject as $data) {
-                            if (!empty($data['endDate_fr'])) {
+                            if (!empty($data['endDate'])) {
                         ?>
 
                             <tr>
