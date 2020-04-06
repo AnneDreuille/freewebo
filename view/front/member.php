@@ -137,11 +137,15 @@
                         <div class="mb-1"><img src="public/images/6.process.jpg" alt="process étape6"/></div>
                         <a href=#><button type="button" class="btn btn-warning rounded mr-2 px-1">6. Notations</button></a>
                         <div>
-                        <?php if ($dataProject['endDate_fr'] !== null) {; ?>
+                        <?php if (!empty($_SESSION['userType']) && $_SESSION['userType']==="client" && isset($dataProject['ratingDev'])) {?>
                             <span class="far fa-check-circle fa-2x text-success pt-2"></span>
-                        <?php } else {; ?>
+                        <?php } elseif (!empty($_SESSION['userType']) && $_SESSION['userType']==="dev" && isset($dataProject['ratingClient'])) {?>
+                            <span class="far fa-check-circle fa-2x text-success pt-2"></span>
+                        <?php } elseif (!empty($_SESSION['userType']) && $_SESSION['userType']==="admin" && isset($dataProject['ratingClient']) && isset($dataProject['ratingDev'])) {?>
+                            <span class="far fa-check-circle fa-2x text-success pt-2"></span>
+                        <?php } else { ?>
                             <span class="fas fa-tools text-muted fa-2x pt-2"></span>
-                        <?php };?>
+                        <?php }; ?>
                         </div>
                     </div>
                 </div>
