@@ -83,3 +83,16 @@ function assign(){
     }
 }
 
+function endDate(){
+
+    //créer l'objet
+    $projectModel= new ProjectModel();
+
+    //appeler la fonction de cet objet
+    $endDate= $projectModel->endDate();
+
+    //diriger vers la page project
+    header('location: index.php?action=project');
+    die();
+
+}
