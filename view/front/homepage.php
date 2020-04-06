@@ -90,7 +90,7 @@
                 <div class="d-flex justify-content-center text-secondary shadow rounded">
                     <ul class="small italic">
                         <li>Pour assoc. & créations entrepr.</li>
-                        <li>Condition d'avoir 1 développeur.</li>
+                        <li>Condition : trouver 1 développeur.</li>
                         <li>Création de sites "simples"&nbsp;!</li>
                         <li>Coût modique hébergement site.</li>
                     </ul>
