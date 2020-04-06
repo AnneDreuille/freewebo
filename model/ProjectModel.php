@@ -89,7 +89,7 @@ class ProjectModel extends Model {
 
 //BACK
 
-//lister les projets
+  //lister les projets
   public function listProject() {
     $db= $this->dbConnect();
 
@@ -99,7 +99,7 @@ class ProjectModel extends Model {
     return $req->fetchAll();
   }
 
-//récupérer les données d'un projet en fonction de son id
+  //récupérer les données d'un projet en fonction de son id
     public function project($id) {
     $db= $this->dbConnect();
 
@@ -107,6 +107,15 @@ class ProjectModel extends Model {
 
     $req->execute(array($id));
     return $req->fetch();
+  }
+
+  //mettre à jour les données d'1 projet / endDate
+  public function endDate() {
+    $db= $this->dbConnect();
+
+    $req = $db->prepare('UPDATE project SET endDate=NOW()');
+
+    return $req->execute();
   }
 
 }
