@@ -3,7 +3,7 @@ require_once(__DIR__.'/Model.php');
 
 class ProjectModel extends Model {
 
-//FRONT
+  //FRONT
 
   //créer un nouveau projet en décrivant le besoin
   public function need($name,$idClient,$description){
@@ -87,7 +87,7 @@ class ProjectModel extends Model {
   }
 
 
-//BACK
+  //BACK
 
   //lister les projets
   public function listProject() {
@@ -100,7 +100,7 @@ class ProjectModel extends Model {
   }
 
   //récupérer les données d'un projet en fonction de son id
-    public function project($id) {
+  public function project($id) {
     $db= $this->dbConnect();
 
     $req = $db->prepare('SELECT id,name,idClient,idDev,description,DATE_FORMAT(needDate, "%d/%m/%Y à %Hh%i") AS needDate_fr, DATE_FORMAT(assignDate, "%d/%m/%Y à %Hh%i") AS assignDate_fr, modelFile, DATE_FORMAT(modelDate, "%d/%m/%Y à %Hh%i") AS modelDate_fr, DATE_FORMAT(startDate, "%d/%m/%Y à %Hh%i") AS startDate_fr, urlName, DATE_FORMAT(urlDate, "%d/%m/%Y à %Hh%i") AS urlDate_fr, DATE_FORMAT(endDate, "%d/%m/%Y à %Hh%i") AS endDate_fr, ratingClient, ratingDev FROM project WHERE id=?');
@@ -110,12 +110,13 @@ class ProjectModel extends Model {
   }
 
   //mettre à jour les données d'1 projet / endDate
-  public function endDate() {
+  public function endDate($id) {
     $db= $this->dbConnect();
 
-    $req = $db->prepare('UPDATE project SET endDate=NOW()');
+    $req = $db->prepare('UPDATE project SET endDate=NOW() WHERE id=?');
 
-    return $req->execute();
+    return $req->execute(array($id));
   }
 
 }
+
