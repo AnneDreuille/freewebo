@@ -85,14 +85,21 @@ function assign(){
 
 function endDate(){
 
-    //créer l'objet
-    $projectModel= new ProjectModel();
+    //vérifier qu'on a un id projet dans l'url
+    if (isset($_GET['id']) && $_GET['id']>0) {
 
-    //appeler la fonction de cet objet
-    $endDate= $projectModel->endDate();
+        //créer l'objet
+        $projectModel= new ProjectModel();
 
-    //diriger vers la page project
-    header('location: index.php?action=project');
-    die();
+        //appeler la fonction de cet objet
+        $endDate= $projectModel->endDate($_GET['id']);
 
+        //diriger vers la page project
+        header('location: index.php?action=project&id='.$_GET['id']);
+        die();
+
+    } else {
+        // envoyer une exception dans catch en cas d'erreur
+        throw new Exception('Pas de projet identifié');
+    }
 }
