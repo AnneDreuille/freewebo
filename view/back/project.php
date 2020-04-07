@@ -76,7 +76,7 @@
             </div>
             <!-- acter la fin d'un projet -->
             <div class="col-md-3">
-                <form action="index.php?action=endDate" method="post" class="border pt-1 px-2 bg-light rounded">
+                <form action="index.php?action=endDate&id=<?php echo htmlspecialchars($_GET['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded">
                     <p class="text-info font-weight-bold text-center">Acter la fin du projet</p>
                     <div class="form-group row">
                         <div class="col text-center">
