@@ -79,10 +79,12 @@
                     </li>
                     <?php };?>
                     <?php if (!empty($_SESSION ['userType']) && $_SESSION ['userType']==="admin"){?>
-                    <span class="nav-item ml-auto">
+                    <li class="nav-item">
                         <a class="nav-link text-secondary" href="index.php?action=admin" ><span class="fas fa-igloo pr-1"></span>Espace admin</a>
-                    </span>
+                    </li>
                     <?php };?>
+                    <!-- bouton like -->
+                    <button class="nav-link text-info font-weight-bold small ml-auto btn btn-link" onClick="onClick()"><span class="fas fa-thumbs-up fa-lg pr-2"></span>J'aime FreeWebo</button><a class="text-info font-weight-bold small mt-2" id="clicks">0</a>
                 </ul>
             </nav>
         </header><br/>
