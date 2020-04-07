@@ -307,11 +307,11 @@
                 </form>
             </div>
 
-            <!-- afficher les derniers posts -->
+            <!-- afficher les posts -->
             <div class ="col-md-5 offset-md-1">
                 <button class="btn btn-warning btn-block font-weight-bold disabled"><span class="far fa-comments fa-lg pr-2"></span>Messages</button>
                 <!-- utilisation d'une liste de descriptions -->
-                <div class="border rounded p-2 bg-light">
+                <div class="border rounded p-2 bg-light mh-100 overflow-auto">
                     <?php foreach ($listMessage as $data) { ?>
                     <dl>
                         <dt class="text-capitalize"><?php echo htmlspecialchars($data['firstName']) ;?></dt>
