@@ -84,7 +84,10 @@
                     </li>
                     <?php };?>
                     <!-- bouton like -->
-                    <button class="nav-link text-info font-weight-bold small ml-auto btn btn-link" onClick="onClick()"><span class="fas fa-thumbs-up fa-lg pr-2"></span>J'aime FreeWebo</button><a class="text-info font-weight-bold small mt-2" id="clicks">0</a>
+                    <div class="nav-link ml-auto">
+                        <button class="btn btn-link text-info font-weight-bold small text-decoration-none"><span class="fas fa-thumbs-up fa-lg pr-2"></span>J'aime FreeWebo</button>
+                        <a href="#" class="mt-2 pl-2 text-info font-weight-bold small" id="clicks">0</a>
+                    </div>
                 </ul>
             </nav>
         </header><br/>
