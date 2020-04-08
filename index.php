@@ -59,6 +59,10 @@ try {
             listMessage();
         }
 
+        elseif($_GET['action']=='clicks') {
+            clicks();
+        }
+
 //BACK
         elseif($_GET['action']=='admin') {
             admin();
