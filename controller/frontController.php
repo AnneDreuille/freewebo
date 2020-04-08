@@ -356,3 +356,19 @@ function addMessage(){
         throw new Exception('Pas de user identifié');
     }
 }
+
+//BOUTON LIKE
+function clicks(){
+
+    $file = './clicks.txt';
+    //ouvrir le fichier pour lire le contenu existant
+    $clicks = file_get_contents($file);
+    //ajouter 1
+    $clicks ++;
+    //écrire le résultat dans le fichier
+    file_put_contents($file, $clicks);
+
+    //diriger vers la page html
+    header('location: index.php');
+    die();
+}
