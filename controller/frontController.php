@@ -339,12 +339,12 @@ function addMessage(){
         $chatModel= new ChatModel();
 
         //appeler les fonctions de ces objets
-        $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
+        // $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
 
-        $addMessage= $chatModel->addMessage($idUser,$dataProject['id'],$_POST['message']);
+        $addMessage= $chatModel->addMessage($idUser,$_GET['id'],$_POST['message']);
 
         //diriger vers la page member
-        header('location: index.php?action=member');
+        header('location: index.php?action=member&id='.$_GET['id']);
         die();
 
         } else {
