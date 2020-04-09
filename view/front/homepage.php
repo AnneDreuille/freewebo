@@ -5,7 +5,7 @@
 <?php ob_start(); ?>
     <div class="container-fluid">
 
-        <!-- PITCH INSCRIPTION CONNEXION -->
+        <!-- PITCH, INSCRIPTION, CONNEXION -->
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4">
