@@ -5,6 +5,10 @@ require_once(__DIR__.'/../model/UserModel.php');
 require_once(__DIR__.'/../model/ProjectModel.php');
 require_once(__DIR__.'/../model/ChatModel.php');
 
+// use \model\UserModel;
+// use \model\ProjectModel;
+// use \model\ChatModel;
+
 //rediriger vers homepage
 function homepage(){
     require(__DIR__.'/../view/front/homepage.php');
