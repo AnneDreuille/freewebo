@@ -311,7 +311,7 @@
             <div class ="col-md-5 offset-md-1">
                 <button class="btn btn-warning btn-block font-weight-bold disabled"><span class="far fa-comments fa-lg pr-2"></span>Messages</button>
                 <!-- utilisation d'une liste de descriptions -->
-                <div class="border rounded p-2 bg-light mh-100 overflow-auto">
+                <div class="border rounded p-2 bg-light overflow-auto" id="listMessage">
                     <?php foreach ($listMessage as $data) { ?>
                     <dl>
                         <dt class="text-capitalize"><?php echo htmlspecialchars($data['firstName']) ;?></dt>
@@ -332,7 +332,7 @@
         </div>
 
         <!-- Bouton back to the top -->
-        <a href="#" class="fixed-action-btn smooth-scroll btn-floating btn-lg btn-info rounded-circle float-right"><span class="fas fa-arrow-circle-up"></span></a>
+        <a href="#" class="fixed-action-btn smooth-scroll btn-floating btn-lg btn-info rounded-circle float-right"><span class="fas fa-arrow-circle-up"></span></a><br/><br/>
 
     </div><br/><br/> <!-- fin container -->
 
