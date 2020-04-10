@@ -14,6 +14,11 @@ function homepage(){
     require(__DIR__.'/../view/front/homepage.php');
 }
 
+//rediriger vers errorPage
+function errorPage(){
+    require(__DIR__.'/../view/front/errorPage.php');
+}
+
 //USER
 
 //renseigner le formulaire d'inscription
