@@ -107,7 +107,7 @@
                         <li>Lien d'accès URL transmis.</li>
                         <li>Site web publié sur la "toile"&nbsp;!</li>
                         <li>Notation vous<=>développeur.</li>
-                        <li>Dites si vous aimez FreeWebo&nbsp;!</li>
+                        <li><a href="#btnLike" class="text-success text-decoration-none">Dites si vous aimez FreeWebo&nbsp;!</a></li>
                     </ul>
                 </div>
             </div>
@@ -153,7 +153,7 @@
 <hr/>
 
         <!-- Bouton back to the top -->
-        <a href="#" class="fixed-action-btn smooth-scroll btn-floating btn-lg btn-info rounded-circle float-right"><span class="fas fa-arrow-circle-up"></span></a>
+        <a href="#" class="fixed-action-btn smooth-scroll btn-floating btn-lg btn-info rounded-circle float-right"><span class="fas fa-arrow-circle-up"></span></a><br/><br/>
 
     </div><br/><br/> <!-- fin container -->
 
