@@ -312,17 +312,21 @@
                 <button class="btn btn-warning btn-block font-weight-bold disabled"><span class="far fa-comments fa-lg pr-2"></span>Messages</button>
                 <!-- utilisation d'une liste de descriptions -->
                 <div class="border rounded p-2 bg-light overflow-auto" id="listMessage">
+                <?php if (empty($_SESSION['userType'])){
+                    echo '';
+                } else {?>
+
                     <?php foreach ($listMessage as $data) { ?>
                     <dl>
                         <dt class="text-capitalize"><?php echo htmlspecialchars($data['firstName']) ;?></dt>
                         <dd class="small text-primary font-italic"><?php echo 'Posté le '.htmlspecialchars($data['postDate_fr']) ;?></dd>
                         <dd class="text-justify"><?php echo $data['message'] ;?></dd>
                     </dl>
+                    <?php } ?>
                 <?php } ?>
                 </div>
             </div>
-
-        </div><br/>
+        </div><br/><br/>
 
         <!-- bouton Retour à la page d'accueil-->
         <div class="row">
