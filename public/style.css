@@ -50,9 +50,14 @@ html, body{
 }
 /*FIN RATING*/
 
+/*listMessage dans page Member */
+#listMessage {
+    height: 500px !important;
+}
 
-footer{
-  height:100px;
+
+footer {
+    height: 150px !important;
 }
 
 
