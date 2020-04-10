@@ -74,7 +74,7 @@ function assign(){
             $assign= $projectModel->assign($idDev, $_GET['id']);
 
             //diriger vers la page project
-            header('location: index.php?action=project');
+            header('location: index.php?action=project&id='.$_GET['id']);
             die();
 
         } else {
