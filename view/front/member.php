@@ -157,6 +157,7 @@
         <div class="row">
             <!-- DEV déposer le fichier du modèle -->
             <div class="offset-md-1 col-md-4">
+                <?php if ($dataProject['assignDate_fr'] !== null) { ?>
                 <form action="index.php?action=modelFile&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" enctype="multipart/form-data" class="border pt-1 px-2 bg-light rounded">
                     <p class="text-info font-weight-bold text-center">Déposer le fichier du modèle</p>
                     <div class="form-group row">
@@ -174,6 +175,7 @@
                         </div>
                     </div>
                 </form>
+                <?php }?>
             </div>
             <!-- DEV déposer l'URL du site créé -->
             <div class="col-md-3">
