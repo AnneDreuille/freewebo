@@ -67,27 +67,50 @@
                 <strong class="pl-2"><?php echo $header; ?></strong>
             </h1>
             <nav>
-                <ul class="nav">
+                <ul class="nav d-flex justify-content-between">
+                    <!-- Accueil -->
                     <li class="nav-item">
                         <a href="index.php" class="nav-link text-info font-weight-bold"><span class="fas fa-home pr-1"></span>Accueil</a>
                     </li>
-                    <?php if (!empty($_SESSION ['userType']) && $_SESSION ['userType']==="admin"){
+                    <!-- Espace membre -->
+                    <?php if (!empty($_SESSION ['userType']) && ($_SESSION ['userType']==="admin")) {
                         echo '';
                         } else {?>
                     <li class="nav-item">
+                        <?php if (empty($_SESSION ['userType'])){?>
+                        <a href="" class="nav-link text-info font-weight-bold" data-toggle="tooltip" data-placement="top" title="Pour avoir accès, il faut s'inscrire&nbsp;!"><span class="fas fa-campground pr-1"></span>Espace membre</a>
+                        <?php } else {?>
                         <a href="index.php?action=member" class="nav-link text-info font-weight-bold"><span class="fas fa-campground pr-1"></span>Espace membre</a>
+                        <?php };?>
                     </li>
                     <?php };?>
+
+                    <!-- Espace Admin -->
                     <?php if (!empty($_SESSION ['userType']) && $_SESSION ['userType']==="admin"){?>
                     <li class="nav-item">
                         <a class="nav-link text-secondary" href="index.php?action=admin" ><span class="fas fa-igloo pr-1"></span>Espace admin</a>
                     </li>
                     <?php };?>
-                    <li class="nav-link ml-auto">
-                        <!-- bouton like -->
+
+                    <!-- Bonjour ! -->
+                    <?php if (empty($_SESSION['firstName'])){?>
+                    <li class="nav-item">
+                        <p class="text-secondary italic font-weight-bold h5 mb-0 mt-2"><span class="far fa-comment pr-1"></span>"Bonjour&nbsp;!"</p>
+                    </li>
+                    <?php } else {?>
+                    <li class="nav-item">
+                        <p class="text-secondary italic font-weight-bold h5 mb-0 mt-2"><span class="far fa-comment pr-1"></span>"Bonjour, <?php echo $_SESSION['firstName'];?>&nbsp;!"</p>
+                    </li>
+                    <?php };?>
+
+                    <!-- bouton like -->
+                    <li class="nav-link">
                         <a href="index.php?action=clicks" class="text-info font-weight-bold text-decoration-none mt-2 pr-1" id="btnLike" data-toggle="tooltip" data-placement="top" title="Clic si tu aimes&nbsp;!"><span class="fas fa-thumbs-up pr-1"></span>J'aime FreeWebo</a>
                         <span class="text-info pr-5">0</span>
-                        <!-- bouton contact -->
+                    </li>
+
+                    <!-- bouton contact -->
+                    <li class="nav-link">
                         <a href="mailto:support@freewebo.org" class="mt-2 text-info font-weight-bold text-decoration-none" data-toggle="tooltip" data-placement="top" title="Clic pour écrire un mail" ><span class="fas fa-question-circle pr-1"></span>Contact</a>
                     </li>
                 </ul>
