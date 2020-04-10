@@ -97,15 +97,8 @@
             </div>
         </div>
 
-        <!-- bouton Retour à l'espace membre-->
-        <div class="row mt-2">
-            <div class='col-md-4'>
-                <a class="btn btn-lg btn-success btn-sm" href="index.php?action=member&id=<?php echo htmlspecialchars($_GET['id']);?>" role="button"><span class="fas fa-campground pr-1"></span>Retour à l'espace membre</a>
-            </div>
-        </div>
-
         <!-- Bouton back to the top -->
-        <a href="#" class="fixed-action-btn smooth-scroll btn-floating btn-lg btn-info rounded-circle float-right"><span class="fas fa-arrow-circle-up"></span></a>
+        <a href="#" class="fixed-action-btn smooth-scroll btn-floating btn-lg btn-info rounded-circle float-right"><span class="fas fa-arrow-circle-up"></span></a><br/><br/>
 
     </div><br/><br/> <!-- fin container -->
 
