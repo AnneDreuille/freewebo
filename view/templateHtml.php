@@ -85,7 +85,8 @@
                     <?php };?>
                     <li class="nav-link ml-auto">
                         <!-- bouton like -->
-                        <a href="index.php?action=clicks" class="text-info font-weight-bold text-decoration-none mt-2 pr-5" id="btnLike" data-toggle="tooltip" data-placement="top" title="Clic si tu aimes&nbsp;!" ><span class="fas fa-thumbs-up pr-1"></span>J'aime FreeWebo</a><span><?php echo $clicks; ?></span>
+                        <a href="index.php?action=clicks" class="text-info font-weight-bold text-decoration-none mt-2 pr-2" id="btnLike" data-toggle="tooltip" data-placement="top" title="Clic si tu aimes&nbsp;!"><span class="fas fa-thumbs-up pr-1"></span>J'aime FreeWebo</a>
+                        <span class="text-info pr-5">0</span>
                         <!-- bouton contact -->
                         <a href="mailto:support@freewebo.org" class="mt-2 text-info font-weight-bold text-decoration-none" data-toggle="tooltip" data-placement="top" title="Clic pour écrire un mail" ><span class="fas fa-question-circle pr-1"></span>Contact</a>
                     </li>
