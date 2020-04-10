@@ -15,7 +15,11 @@ try {
     if (isset($_GET['action'])) {
 
 //FRONT
-        if ($_GET['action']=='signUp') {
+        if ($_GET['action']=='errorPage') {
+            errorPage();
+        }
+
+        elseif ($_GET['action']=='signUp') {
             signUp();
         }
 
