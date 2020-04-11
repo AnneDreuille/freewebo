@@ -1,8 +1,6 @@
 <?php
 
-// namespace model;
-
-require_once(__DIR__.'/Model.php');
+namespace model;
 
 class ChatModel extends Model {
 
