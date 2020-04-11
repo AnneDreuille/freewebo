@@ -24,4 +24,4 @@ ExpiresDefault "access plus 2 days"
 </IfModule>
 ## EXPIRES CACHING ##
 
-ErrorDocument 404 /errorPage.php
+ErrorDocument 404 /freewebo/index.php?action=errorPage
