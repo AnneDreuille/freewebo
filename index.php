@@ -2,12 +2,24 @@
 
 <?php
 
+//charger les classes automatiquement
+spl_autoload_register(function ($className) {
+    include $className . '.php';
+});
+
 //charger le fichier config avec définition des constantes d'accès à la db
 require_once(__DIR__.'/app/config.php');
 
 //charger les fichiers controller
 require_once(__DIR__.'/controller/frontController.php');
 require_once(__DIR__.'/controller/backController.php');
+
+//BOUTON LIKE
+function nbLike(){
+    $file = 'clicks.txt';
+    $clicks = file_get_contents($file);
+    echo $clicks;
+}
 
 //tester le paramètre action pour savoir quelle fonction du controleur appeler
 try {
