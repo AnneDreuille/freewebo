@@ -1,13 +1,8 @@
 <?php
 
-//charger les classes
-require_once(__DIR__.'/../model/UserModel.php');
-require_once(__DIR__.'/../model/ProjectModel.php');
-require_once(__DIR__.'/../model/ChatModel.php');
-
-// use \model\UserModel;
-// use \model\ProjectModel;
-// use \model\ChatModel;
+use \model\UserModel;
+use \model\ProjectModel;
+use \model\ChatModel;
 
 //afficher les listes clients, devs, projets ds admin
 function admin(){
