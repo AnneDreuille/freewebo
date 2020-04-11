@@ -1,13 +1,8 @@
 <?php
 
-//charger les classes
-require_once(__DIR__.'/../model/UserModel.php');
-require_once(__DIR__.'/../model/ProjectModel.php');
-require_once(__DIR__.'/../model/ChatModel.php');
-
-// use \model\UserModel;
-// use \model\ProjectModel;
-// use \model\ChatModel;
+use \model\UserModel;
+use \model\ProjectModel;
+use \model\ChatModel;
 
 //rediriger vers homepage
 function homepage(){
@@ -366,10 +361,10 @@ function addMessage(){
     }
 }
 
-//BOUTON LIKE
+//BOUTON LIKE mise à jour dans le fichier
 function clicks(){
 
-    $file = './clicks.txt';
+    $file = 'clicks.txt';
     //ouvrir le fichier pour lire le contenu existant
     $clicks = file_get_contents($file);
     //ajouter 1
@@ -381,3 +376,4 @@ function clicks(){
     header('location: index.php');
     die();
 }
+
