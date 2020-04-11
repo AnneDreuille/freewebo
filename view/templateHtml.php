@@ -106,7 +106,7 @@
                     <!-- bouton like -->
                     <li class="nav-link">
                         <a href="index.php?action=clicks" class="text-info font-weight-bold text-decoration-none mt-2 pr-1" id="btnLike" data-toggle="tooltip" data-placement="top" title="Clic si tu aimes&nbsp;!"><span class="fas fa-thumbs-up pr-1"></span>J'aime FreeWebo</a>
-                        <span class="text-info pr-5">0</span>
+                        <span class="text-info pr-5"><?php nbLike();?></span>
                     </li>
 
                     <!-- bouton contact -->
