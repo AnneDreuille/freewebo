@@ -5,10 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title><?php echo htmlspecialchars($title); ?></title>
+        <title><?php echo $title; ?></title>
 
         <!-- meta description pour le SEO : améliorer la visibilité du site -->
-        <meta name="description" content="<?php echo htmlspecialchars($metaDescription); ?>" />
+        <meta name="description" content="<?php echo $metaDescription; ?>" />
 
         <!--lien google font police Monserrat-->
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -64,7 +64,7 @@
         <header class="card-header pb-0">
             <h1 class="text-center page-header text-info pt-0 mb-0">
                 <div class="d-md-inline d-sm-block"><img src="/freewebo/public/images/logo.png" alt="logo" class="img.card-img"/></div>
-                <strong class="pl-2"><?php echo htmlspecialchars($header); ?></strong>
+                <strong class="pl-2"><?php echo $header; ?></strong>
             </h1>
             <nav>
                 <ul class="nav d-flex justify-content-between">
@@ -122,14 +122,18 @@
 
         <footer class="card-footer">
             <!-- partenaires -->
-
             <div class ="container d-flex justify-content-between align-items-center">
                 <p class="text-info font-weight-bold h5">Nos partenaires</p>
                 <div><img src="public/images/bnpparibas.png" alt="bnpparibas"/></div>
                 <div><img src="public/images/ideas.png" alt="ideas"/></div>
                 <div><img src="public/images/openclassrooms.png" alt="openclassrooms"/></div>
                 <div><img src="public/images/tousbenevoles.jpg" alt="tousbenevoles"/></div>
-            </div><br/><br/>
+            </div>
+            <hr/>
+            <!-- politique de confidentialité -->
+            <div class="row float-right">
+                <a href="index.php?action=privacyPolicy"><p class="text-secondary small italic pr-5">Politique de confidentialité</p></a>
+            </div><br/>
         </footer><br/>
 
         <!-- script pour TinyMCE éditeur texte -->
