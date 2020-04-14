@@ -119,7 +119,7 @@
         <div class="row mt-5">
             <div class=" offset-md-1 col-md-10 offset-md-1">
                 <h2 class="text-center text-muted shadow font-weight-bold mb-5" >Exemples de créations en parcours de formation</h2>
-                <div class="carousel slide" data-ride="carousel" data-interval="6000" id="carousel">
+                <div class="carousel slide" data-ride="carousel" data-interval="5500" id="carousel">
                     <div>
                         <a class="carousel-control-prev d-flex justify-content-start" href="#carousel" data-slide="prev" role="button">
                             <span class="carousel-control-prev-icon bg-primary rounded-circle" aria-hidden="true"></span>
