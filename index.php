@@ -31,6 +31,10 @@ try {
             errorPage();
         }
 
+        elseif ($_GET['action']=='privacyPolicy') {
+            privacyPolicy();
+        }
+
         elseif ($_GET['action']=='signUp') {
             signUp();
         }
