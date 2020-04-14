@@ -55,7 +55,7 @@
                     <div>
                         <div class="mb-1"><img src="public/images/1.process.jpg" alt="process étape1"/></div>
                         <?php if ($dataProject['needDate_fr'] !== null) { ?>
-                            <a href="index.php?action=need"><button type="button" class="btn btn-success rounded mr-2 px-1">1. Je décris le besoin</button></a>
+                            <a href=""><button type="button" class="btn btn-success rounded mr-2 px-1">1. Je décris le besoin</button></a>
                         <?php } else { ?>
                             <a href="index.php?action=need" data-toggle="tooltip" data-placement="top" title="Clic pour définir le besoin"><button type="button" class="btn btn-success rounded mr-2 px-1">1. Je décris le besoin</button></a>
                         <?php }?>
