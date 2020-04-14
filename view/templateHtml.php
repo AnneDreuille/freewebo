@@ -111,7 +111,7 @@
 
                     <!-- bouton contact -->
                     <li class="nav-link">
-                        <a href="mailto:support@freewebo.org" class="mt-2 text-info font-weight-bold text-decoration-none" data-toggle="tooltip" data-placement="top" title="Clic pour écrire un mail" ><span class="fas fa-question-circle pr-1"></span>Contact</a>
+                        <a href="mailto:support@freewebo.org" class="mt-2 text-info font-weight-bold text-decoration-none" data-toggle="tooltip" data-placement="top" title="Clic pour écrire un mail à : support@freewebo.org" ><span class="fas fa-question-circle pr-1"></span>Contact</a>
                     </li>
                 </ul>
             </nav>
