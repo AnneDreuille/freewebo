@@ -21,7 +21,7 @@
                 <p class="small italic text-center text-info font-weight-bold">
                 <?php
                 if ($error===true){
-                    echo $alert;
+                    echo htmlspecialchars($alert);
                 } elseif ($error===false){
                     echo 'Super ! Vous êtes maintenant inscrit(e).';
                 }

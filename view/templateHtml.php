@@ -5,10 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title><?php echo $title; ?></title>
+        <title><?php echo htmlspecialchars($title); ?></title>
 
         <!-- meta description pour le SEO : améliorer la visibilité du site -->
-        <meta name="description" content="<?php echo $metaDescription; ?>" />
+        <meta name="description" content="<?php echo htmlspecialchars($metaDescription); ?>" />
 
         <!--lien google font police Monserrat-->
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -64,7 +64,7 @@
         <header class="card-header pb-0">
             <h1 class="text-center page-header text-info pt-0 mb-0">
                 <div class="d-md-inline d-sm-block"><img src="/freewebo/public/images/logo.png" alt="logo" class="img.card-img"/></div>
-                <strong class="pl-2"><?php echo $header; ?></strong>
+                <strong class="pl-2"><?php echo htmlspecialchars($header); ?></strong>
             </h1>
             <nav>
                 <ul class="nav d-flex justify-content-between">
@@ -99,7 +99,7 @@
                     </li>
                     <?php } else {?>
                     <li class="nav-item">
-                        <p class="text-secondary italic font-weight-bold h5 mb-0 mt-2"><span class="far fa-comment pr-1"></span>"Bonjour, <?php echo $_SESSION['firstName'];?>&nbsp;!"</p>
+                        <p class="text-secondary italic font-weight-bold h5 mb-0 mt-2"><span class="far fa-comment pr-1"></span>"Bonjour, <?php echo htmlspecialchars($_SESSION['firstName']);?>&nbsp;!"</p>
                     </li>
                     <?php };?>
 
