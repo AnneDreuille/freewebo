@@ -19,7 +19,7 @@
 
             <div class="col-md-6">
                 <!-- afficher le formulaire d'EXPRESSION DES BESOINS à remplir -->
-                <form action="index.php?action=need" method="post" class="border px-3 py-3 bg-light rounded">
+                <form action="index.php?action=need" method="post" class="border px-3 py-3 bg-light rounded submit">
                     <div class="from-group row">
                         <div class="col">
                             <label for="name" class="text-info font-weight-bold" >Nom de votre site</label>
@@ -50,6 +50,7 @@
                     <div class="form-group row">
                         <div class="col text-center">
                             <input type="submit" value="Valider" class="btn btn-info font-weight-bold px-5" />
+                            <p id="msg" class="text-center text-info italic small pt-3"></p>
                         </div>
                     </div>
                 </form>
@@ -60,9 +61,11 @@
 
 
         <!-- bouton Retour à l'espace membre-->
-        <?php if (!empty($_SESSION ['userType']) && $_SESSION ['userType']==="admin"){
-            echo '';
-            } else {?>
+        <?php if (!empty($_SESSION ['userType']) && $_SESSION ['userType']==="admin") {
+              echo '';
+              } elseif (empty($_SESSION ['userType'])) {
+                echo '';
+                } else {?>
         <div class="row">
             <div class='col-md-3'>
                 <a class="btn btn-lg btn-success btn-sm" href="index.php?action=member" role="button"><span class="fas fa-campground pr-1"></span>Retour à l'espace membre</a>
