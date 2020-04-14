@@ -27,7 +27,8 @@
 
         <!-- bouton Retour à l'espace membre-->
         <?php if (!empty($_SESSION ['userType']) && $_SESSION ['userType']==="admin") {
-            if (empty($_SESSION ['userType'])) {
+              echo '';
+              } elseif (empty($_SESSION ['userType'])) {
                 echo '';
                 } else {?>
         <div class="row">
@@ -35,7 +36,7 @@
                 <a class="btn btn-lg btn-success btn-sm" href="index.php?action=member" role="button"><span class="fas fa-campground pr-1"></span>Retour à l'espace membre</a>
             </div>
         </div><br/>
-        <?php }}?>
+        <?php }?>
 
         <!-- bouton Retour à la page d'accueil-->
         <div class="row">
