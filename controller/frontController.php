@@ -14,6 +14,11 @@ function errorPage(){
     require(__DIR__.'/../view/front/errorPage.php');
 }
 
+//diriger vers privacyPolicy
+function privacyPolicy(){
+    require(__DIR__.'/../view/front/privacyPolicy.php');
+}
+
 //USER
 
 //renseigner le formulaire d'inscription
