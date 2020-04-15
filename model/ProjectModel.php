@@ -90,15 +90,40 @@ class ProjectModel extends Model {
 
   //BACK
 
-  //lister les projets
-  public function listProject() {
+  //lister les projets en cours
+  public function currentProjectList() {
     $db= $this->dbConnect();
 
-    $req = $db->prepare('SELECT id,name,idClient,idDev,description,DATE_FORMAT(needDate, "%d/%m/%Y à %Hh%i") AS needDate_fr, DATE_FORMAT(assignDate, "%d/%m/%Y à %Hh%i") AS assignDate_fr, modelFile, DATE_FORMAT(modelDate, "%d/%m/%Y à %Hh%i") AS modelDate_fr, DATE_FORMAT(startDate, "%d/%m/%Y à %Hh%i") AS startDate_fr, urlName, DATE_FORMAT(urlDate, "%d/%m/%Y à %Hh%i") AS urlDate_fr, DATE_FORMAT(endDate, "%d/%m/%Y à %Hh%i") AS endDate_fr, ratingClient, ratingDev FROM project ORDER BY needDate ASC');
+    $req = $db->prepare('SELECT id,name,idClient,idDev,description,DATE_FORMAT(needDate, "%d/%m/%Y à %Hh%i") AS needDate_fr, DATE_FORMAT(assignDate, "%d/%m/%Y à %Hh%i") AS assignDate_fr, modelFile, DATE_FORMAT(modelDate, "%d/%m/%Y à %Hh%i") AS modelDate_fr, DATE_FORMAT(startDate, "%d/%m/%Y à %Hh%i") AS startDate_fr, urlName, DATE_FORMAT(urlDate, "%d/%m/%Y à %Hh%i") AS urlDate_fr, DATE_FORMAT(endDate, "%d/%m/%Y à %Hh%i") AS endDate_fr, ratingClient, ratingDev FROM project WHERE endDate IS NULL ORDER BY needDate ASC');
 
     $req->execute();
     return $req->fetchAll();
   }
+
+  //récupérer le nombre de projets terminés
+  public function nbProject() {
+    $db= $this->dbConnect();
+
+    $req = $db->prepare('SELECT COUNT(id) AS nbProject FROM project WHERE endDate IS NOT NULL');
+
+    $req->execute();
+    return $req->fetchColumn();
+  }
+
+  //lister les projets terminés
+  public function endProjectList($currentPage) {
+    $db= $this->dbConnect();
+
+    //définir le nb de projets affiché par page
+    $perPage=3;
+
+    //limiter la requête pour l'affichage avec pagination
+    $req = $db->prepare('SELECT id,name,idClient,idDev,description,DATE_FORMAT(needDate, "%d/%m/%Y à %Hh%i") AS needDate_fr, DATE_FORMAT(assignDate, "%d/%m/%Y à %Hh%i") AS assignDate_fr, modelFile, DATE_FORMAT(modelDate, "%d/%m/%Y à %Hh%i") AS modelDate_fr, DATE_FORMAT(startDate, "%d/%m/%Y à %Hh%i") AS startDate_fr, urlName, DATE_FORMAT(urlDate, "%d/%m/%Y à %Hh%i") AS urlDate_fr, DATE_FORMAT(endDate, "%d/%m/%Y à %Hh%i") AS endDate_fr, ratingClient, ratingDev FROM project WHERE endDate IS NOT NULL ORDER BY needDate DESC LIMIT '.(($currentPage-1)*$perPage).','.$perPage.' ');
+
+    $req->execute();
+    return $req->fetchAll();
+  }
+
 
   //récupérer les données d'un projet en fonction de son id
   public function project($id) {
