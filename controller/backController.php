@@ -18,7 +18,19 @@ function admin(){
     //appeler les fonctions de ces objets
     $listClient= $userModel->listClient();
     $listDev= $userModel->listDev();
-    $listProject= $projectModel->listProject();
+    $currentProjectList= $projectModel->currentProjectList();
+
+    //appeler la fonction pour le nb de projets terminés
+    $nbProject= $projectModel->nbProject();
+
+    //vérifier qu'on a bien reçu un n° page (p) en paramètre dans l'url
+    if (isset ($_GET['p']) && $_GET['p']>0 && $_GET['p']<=$nbProject) {
+        $currentPage = ($_GET['p']);
+    } else {
+        $currentPage =1;
+    }
+
+    $endProjectList= $projectModel->endProjectList($currentPage);
 
     //charger le fichier en vue de l'affichage dans la page html
     require(__DIR__.'/../view/back/admin.php');
