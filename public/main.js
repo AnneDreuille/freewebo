@@ -9,7 +9,9 @@ $('.submit').submit (function (event) {
 
   //requête ajax
   $.ajax({
-    url:$form.attr('action') //attr renvoie à l'attribut action
+    url:$form.attr('action'), //attr renvoie à l'attribut action
+    data:new FormData($form[0]), //objet avec arg.qui fait réf à form html
+    method:"post"
 
   //afficher msg lors de l'évènement
   }) .done(function(){ //dès que la requête a réussi
