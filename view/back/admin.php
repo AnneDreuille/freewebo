@@ -23,9 +23,8 @@
                         </thead>
                         <tbody>
                         <?php
-                        foreach ($listProject as $data) {
-                            if (empty($data['endDate_fr'])) {
-                        ?>
+                        foreach ($listProject as $data) :
+                            if (empty($data['endDate_fr'])) :?>
 
                             <tr>
                                 <td class="text-center"><?php echo htmlspecialchars($data['id']); ?></td>
@@ -35,9 +34,7 @@
                                 <td class="text-center"><a href="index.php?action=project&id=<?php echo htmlspecialchars($data['id']); ?>" role="button" class="fas fa-share btn-info"></a></td>
                                 <td class="text-center"><a href="index.php?action=member&id=<?php echo htmlspecialchars($data['id']); ?>" role="button" class="fas fa-share btn-success"></a></td>
                             </tr>
-                        <?php
-                        } }
-                        ?>
+                        <?php endif; endforeach;?>
                         </tbody>
                     </table>
                 </div>
@@ -62,7 +59,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php foreach ($listClient as $data) { ?>
+                        <?php foreach ($listClient as $data) : ?>
                             <tr class="xsmall" >
                                 <td><?php echo htmlspecialchars($data['id']); ?></td>
                                 <td class="text-capitalize"><?php echo htmlspecialchars($data['firstName']); ?></td>
@@ -71,7 +68,7 @@
                                 <td><?php echo htmlspecialchars($data['phone']); ?></td>
                                 <td><?php echo htmlspecialchars(substr($data['signUpDate_fr'],0,10)); ?></td>
                             </tr>
-                        <?php } ?>
+                        <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
@@ -92,9 +89,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php
-                        foreach ($listDev as $data) {
-                        ?>
+                        <?php foreach ($listDev as $data) :?>
                             <tr class="xsmall" >
                                 <td><?php echo htmlspecialchars($data['id']); ?></td>
                                 <td class="text-capitalize"><?php echo htmlspecialchars($data['firstName']); ?></td>
@@ -103,9 +98,7 @@
                                 <td><?php echo htmlspecialchars($data['phone']); ?></td>
                                 <td><?php echo htmlspecialchars(substr($data['signUpDate_fr'],0,10)); ?></td>
                             </tr>
-                        <?php
-                        }
-                        ?>
+                        <?php endforeach;?>
                         </tbody>
                     </table>
                 </div>
@@ -137,10 +130,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php
-                        foreach ($listProject as $data) {
-                            if (!empty($data['endDate_fr'])) {
-                        ?>
+                        <?php foreach ($listProject as $data) :
+                            if (!empty($data['endDate_fr'])) : ?>
                             <tr>
                                 <td><?php echo htmlspecialchars($data['id']); ?></td>
                                 <td class="text-capitalize"><?php echo htmlspecialchars($data['name']); ?></td>
@@ -150,9 +141,7 @@
                                 <td class="text-center"><a href="index.php?action=project&id=<?php echo htmlspecialchars($data['id']); ?>" role="button" class="fas fa-share btn-info"></a></td>
                                 <td class="text-center"><a href="index.php?action=member&id=<?php echo htmlspecialchars($data['id']); ?>" role="button" class="fas fa-share btn-success"></a></td>
                             </tr>
-                        <?php
-                        } }
-                        ?>
+                        <?php endif; endforeach; ?>
                         </tbody>
                     </table>
                 </div>
