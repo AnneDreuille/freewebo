@@ -73,35 +73,33 @@
                         <a href="index.php" class="nav-link text-info font-weight-bold"><span class="fas fa-home pr-1"></span>Accueil</a>
                     </li>
                     <!-- Espace membre -->
-                    <?php if (!empty($_SESSION ['userType']) && ($_SESSION ['userType']==="admin")) {
-                        echo '';
-                        } else {?>
+                    <?php if (!empty($_SESSION ['userType']) && ($_SESSION ['userType']!=="admin")) : ?>
                     <li class="nav-item">
-                        <?php if (empty($_SESSION ['userType'])){?>
+                        <?php if (empty($_SESSION ['userType'])):?>
                         <a href="" class="nav-link text-info font-weight-bold" data-toggle="tooltip" data-placement="top" title="Pour avoir accès, il faut s'inscrire&nbsp;!"><span class="fas fa-campground pr-1"></span>Espace membre</a>
-                        <?php } else {?>
+                        <?php else :?>
                         <a href="index.php?action=member" class="nav-link text-info font-weight-bold"><span class="fas fa-campground pr-1"></span>Espace membre</a>
-                        <?php };?>
+                        <?php endif;?>
                     </li>
-                    <?php };?>
+                    <?php endif;?>
 
                     <!-- Espace Admin -->
-                    <?php if (!empty($_SESSION ['userType']) && $_SESSION ['userType']==="admin"){?>
+                    <?php if (!empty($_SESSION ['userType']) && $_SESSION ['userType']==="admin"):?>
                     <li class="nav-item">
                         <a class="nav-link text-secondary" href="index.php?action=admin" ><span class="fas fa-igloo pr-1"></span>Espace admin</a>
                     </li>
-                    <?php };?>
+                    <?php endif;?>
 
                     <!-- Bonjour ! -->
-                    <?php if (empty($_SESSION['firstName'])){?>
+                    <?php if (empty($_SESSION['firstName'])):?>
                     <li class="nav-item">
                         <p class="text-secondary italic font-weight-bold h5 mb-0 mt-2"><span class="far fa-comment pr-1"></span>"Bonjour&nbsp;!"</p>
                     </li>
-                    <?php } else {?>
+                    <?php else :?>
                     <li class="nav-item">
                         <p class="text-secondary italic font-weight-bold h5 mb-0 mt-2"><span class="far fa-comment pr-1"></span>"Bonjour, <?php echo htmlspecialchars($_SESSION['firstName']);?>&nbsp;!"</p>
                     </li>
-                    <?php };?>
+                    <?php endif;?>
 
                     <!-- bouton like -->
                     <li class="nav-link">
