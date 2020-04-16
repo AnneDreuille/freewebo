@@ -98,6 +98,7 @@ function assign(){
     }
 }
 
+//acter la fin d'un projet
 function endDate(){
 
     //vérifier qu'on a un id projet dans l'url
@@ -118,3 +119,36 @@ function endDate(){
         throw new Exception('Pas de projet identifié');
     }
 }
+
+//mettre à jour les données d'un user
+function updateUser() {
+    //vérifier qu'on a bien reçu un id en paramètre dans l'url
+    if (isset($_GET['id']) && $_GET['id']>0) {
+
+        //créer l'objet
+        $userModel= new UserModel();
+
+        //appeler la fonction des données client
+        $getUser= $userModel->getUser($_GET['id']);
+
+        // vérifier que le formulaire a bien reçu les paramètres
+        if (!empty($_POST['lastName']) && !empty($_POST['firstName']) && !empty($_POST['mail'])) {
+
+            //appeler la fonction update
+            $updateUser= $userModel->updateUser($_POST['lastName'], $_POST['firstName'], $_POST['mail'], $_POST['phone'], $_POST['password'], $_GET['id']);
+
+            //diriger vers la page user et mettre à jour le user
+            header('Location: index.php?action=updateUser&id=' .$_GET['id']);
+            die();
+
+        } else {
+            //charger le fichier en vue de l'affichage dans la page html
+            require(__DIR__.'/../view/back/user.php');
+        }
+    } else {
+        throw new Exception('Erreur : pas de client identifié');
+    }
+}
+
+
+
