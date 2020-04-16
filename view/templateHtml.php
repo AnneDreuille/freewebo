@@ -73,15 +73,14 @@
                         <a href="index.php" class="nav-link text-info font-weight-bold"><span class="fas fa-home pr-1"></span>Accueil</a>
                     </li>
                     <!-- Espace membre -->
-                    <?php if (!empty($_SESSION ['userType']) && ($_SESSION ['userType']!=="admin")) : ?>
                     <li class="nav-item">
-                        <?php if (empty($_SESSION ['userType'])):?>
-                        <a href="" class="nav-link text-info font-weight-bold" data-toggle="tooltip" data-placement="top" title="Pour avoir accès, il faut s'inscrire&nbsp;!"><span class="fas fa-campground pr-1"></span>Espace membre</a>
-                        <?php else :?>
+                        <?php if (!empty($_SESSION ['userType']) && ($_SESSION ['userType']!=="admin")) :?>
                         <a href="index.php?action=member" class="nav-link text-info font-weight-bold"><span class="fas fa-campground pr-1"></span>Espace membre</a>
+
+                        <?php elseif (empty($_SESSION ['userType'])):?>
+                        <a href="" class="nav-link text-info font-weight-bold" data-toggle="tooltip" data-placement="top" title="Pour avoir accès, il faut s'inscrire&nbsp;!"><span class="fas fa-campground pr-1"></span>Espace membre</a>
                         <?php endif;?>
                     </li>
-                    <?php endif;?>
 
                     <!-- Espace Admin -->
                     <?php if (!empty($_SESSION ['userType']) && $_SESSION ['userType']==="admin"):?>
