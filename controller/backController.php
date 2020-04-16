@@ -24,7 +24,7 @@ function admin(){
     $nbProject= $projectModel->nbProject();
 
     //définir le nb de projets par page et le nb de pages
-    $perPage=3;
+    $perPage=2;
     $nbPage=ceil($nbProject/$perPage);
 
     //vérifier qu'on a bien reçu un n° page (p) en paramètre dans l'url
