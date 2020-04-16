@@ -1,6 +1,6 @@
 <?php $title ="Espace Administration freewebo.org - Agence Web solidaire"; ?>
 <?php $metaDescription="Espace administration du site freewebo.org - Agence Web solidaire&nbsp;!"; ?>
-<?php $header = 'Espace Administration FreeWebo'; ?>
+<?php $titlePage = 'Espace Administration FreeWebo'; ?>
 
 <?php ob_start(); ?>
     <div class="container-fluid">
@@ -150,14 +150,14 @@
                     ?>
                    <ul class="pagination pagination-sm justify-content-center">
                         <?php if ($currentPage >1) : ?>
-                        <li class="page-item disabled">
+                        <li class="page-item">
                             <a class="page-link" href="index.php?action=admin&p=<?php echo htmlspecialchars($previous);?>" tabindex="-1"><span class="fas fa-backward text-info"></span></a>
                         <?php else : ?>
                             <a class="page-link" href="" tabindex="-1"><span class="fas fa-backward text-info"></span></a>
                         </li>
                         <?php endif; ?>
 
-                        <li class="page-item">
+                        <li class="page-item disabled">
                             <a class="page-link" href="">
                             <?php echo ' '.$currentPage .' sur ' .$nbPage.' '; ?></a>
                         </li>
