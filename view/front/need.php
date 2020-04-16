@@ -1,6 +1,6 @@
 <?php $title ="Définir votre besoin de site web sur freewebo.org - Agence Web solidaire"; ?>
 <?php $metaDescription="Sur FreeWebo, vous pouvez décrire le site web dont vous avez besoin. Si vous êtes gérant d'association ou jeune créateur d'entreprise, la réalisation de votre site web sera effectuée gratuitement à l'aide de développeurs bénévoles&nbsp;!"; ?>
-<?php $header = 'Définir votre besoin de site web sur FreeWebo&nbsp;!'; ?>
+<?php $titlePage = 'Définir votre besoin de site web sur FreeWebo&nbsp;!'; ?>
 
 <?php ob_start(); ?>
     <div class="container-fluid">
