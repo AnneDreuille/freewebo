@@ -23,9 +23,7 @@
                         </thead>
                         <tbody>
                         <?php
-                        foreach ($listProject as $data) :
-                            if (empty($data['endDate_fr'])) :?>
-
+                        foreach ($currentProjectList as $data) :?>
                             <tr>
                                 <td class="text-center"><?php echo htmlspecialchars($data['id']); ?></td>
                                 <td class="text-capitalize"><?php echo htmlspecialchars($data['name']); ?></td>
@@ -34,7 +32,7 @@
                                 <td class="text-center"><a href="index.php?action=project&id=<?php echo htmlspecialchars($data['id']); ?>" role="button" class="fas fa-share btn-info"></a></td>
                                 <td class="text-center"><a href="index.php?action=member&id=<?php echo htmlspecialchars($data['id']); ?>" role="button" class="fas fa-share btn-success"></a></td>
                             </tr>
-                        <?php endif; endforeach;?>
+                        <?php endforeach;?>
                         </tbody>
                     </table>
                 </div>
@@ -130,8 +128,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php foreach ($listProject as $data) :
-                            if (!empty($data['endDate_fr'])) : ?>
+                        <?php foreach ($endProjectList as $data) : ?>
                             <tr>
                                 <td><?php echo htmlspecialchars($data['id']); ?></td>
                                 <td class="text-capitalize"><?php echo htmlspecialchars($data['name']); ?></td>
@@ -141,29 +138,37 @@
                                 <td class="text-center"><a href="index.php?action=project&id=<?php echo htmlspecialchars($data['id']); ?>" role="button" class="fas fa-share btn-info"></a></td>
                                 <td class="text-center"><a href="index.php?action=member&id=<?php echo htmlspecialchars($data['id']); ?>" role="button" class="fas fa-share btn-success"></a></td>
                             </tr>
-                        <?php endif; endforeach; ?>
+                        <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
                 <!-- pagination -->
                 <nav aria-label="pagination">
+                    <?php
+                    $next=$currentPage+1;
+                    $previous=$currentPage-1;
+                    ?>
                    <ul class="pagination pagination-sm justify-content-center">
+                        <?php if ($currentPage >1) : ?>
                         <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">
-                            Précédent</a>
+                            <a class="page-link" href="index.php?action=admin&p=<?php echo htmlspecialchars($previous);?>" tabindex="-1"><span class="fas fa-backward text-info"></span></a>
+                        <?php else : ?>
+                            <a class="page-link" href="" tabindex="-1"><span class="fas fa-backward text-info"></span></a>
                         </li>
+                        <?php endif; ?>
+
                         <li class="page-item">
-                            <a class="page-link" href="#">1</a>
+                            <a class="page-link" href="">
+                            <?php echo ' '.$currentPage .' sur ' .$nbPage.' '; ?></a>
                         </li>
+
+                        <?php if ($currentPage<$nbProject): ?>
                         <li class="page-item">
-                            <a class="page-link" href="#">2</a>
+                            <a class="page-link" href="index.php?action=admin&p=<?php echo htmlspecialchars($next);?>"><span class="fas fa-forward text-info"></span></a>
+                        <?php else : ?>
+                            <a class="page-link" href=""><span class="fas fa-forward text-info"></span></a>
                         </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">3</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Suivant</a>
-                        </li>
+                        <?php endif; ?>
                     </ul>
                 </nav>
             </div>
