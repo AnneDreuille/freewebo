@@ -64,7 +64,7 @@
         <header class="card-header pb-0">
             <h1 class="text-center page-header text-info pt-0 mb-0">
                 <div class="d-md-inline d-sm-block"><img src="/freewebo/public/images/logo.png" alt="logo" class="img.card-img"/></div>
-                <strong class="pl-2"><?php echo $header; ?></strong>
+                <strong class="pl-2"><?php echo $titlePage; ?></strong>
             </h1>
             <nav>
                 <ul class="nav d-flex justify-content-between">
@@ -103,12 +103,17 @@
                     <!-- bouton like -->
                     <li class="nav-link">
                         <a href="index.php?action=clicks" class="text-info font-weight-bold text-decoration-none mt-2 pr-1" id="btnLike" data-toggle="tooltip" data-placement="top" title="Clic si tu aimes&nbsp;!"><span class="fas fa-thumbs-up pr-1"></span>J'aime FreeWebo</a>
-                        <span class="text-info pr-5"><?php nbLike();?></span>
+                        <span class="text-info"><?php nbLike();?></span>
                     </li>
 
                     <!-- bouton contact -->
                     <li class="nav-link">
                         <a href="mailto:support@freewebo.org" class="mt-2 text-info font-weight-bold text-decoration-none" data-toggle="tooltip" data-placement="top" title="Clic pour écrire un mail à : support@freewebo.org" ><span class="fas fa-question-circle pr-1"></span>Contact</a>
+                    </li>
+
+                    <!-- bouton déconnexion -->
+                    <li class="nav-link">
+                        <a href="index.php?action=logOut" class="mt-2 text-info font-weight-bold text-decoration-none" data-toggle="tooltip" data-placement="top" title="Clic pour se déconnecter"><span class="fas fa-sign-out-alt pr-1"></span>Déconnexion</a>
                     </li>
                 </ul>
             </nav>
