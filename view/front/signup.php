@@ -1,6 +1,6 @@
 <?php $title ="S'inscrire sur freewebo.org - Agence Web solidaire"; ?>
 <?php $metaDescription="S'inscrire à FreeWebo pour demander la création de votre site web gratuitement... ou pour être développeur bénévole&nbsp;!"; ?>
-<?php $header = 'Inscrivez-vous sur le site FreeWebo&nbsp;!'; ?>
+<?php $titlePage = 'Inscrivez-vous sur le site FreeWebo&nbsp;!'; ?>
 
 <?php ob_start(); ?>
     <div class="container-fluid">
@@ -21,7 +21,7 @@
                 <p class="small italic text-center text-info font-weight-bold">
                 <?php
                 if ($error===true):
-                    echo htmlspecialchars($alert);
+                    echo $alert;
                 elseif ($error===false):
                     echo 'Super ! Vous êtes maintenant inscrit(e).';
                 endif; ?>
@@ -32,14 +32,14 @@
                         <p class="mb-0 text-info font-weight-bold">Qui êtes-vous&nbsp;?</p>
                         <div class="form-check">
                             <input type="radio" id="radio1" name="userType" value="client" class="form-check-input"
-                            <?php if (isset($_POST['userType']) && $_POST['userType'] === 'client') :
+                            <?php if (!empty($_POST['userType']) && $_POST['userType'] === 'client') :
                                 echo 'checked';
                             endif;?> />
                             <label for="radio1" class="form-check-label">Gérant association ou créateur entreprise</label>
                         </div>
                         <div class="form-check">
                             <input type="radio" id="radio2" name="userType" value="dev" class="form-check-input"
-                            <?php if (isset($_POST['userType']) && $_POST['userType'] === 'dev') :
+                            <?php if (!empty($_POST['userType']) && $_POST['userType'] === 'dev') :
                                 echo 'checked';
                                 endif;?>/>
                             <label for="radio2" class="form-check-label">Développeur bénévole</label>
@@ -48,14 +48,12 @@
 
                     <div class="form-group row mt-3">
                         <div class="col">
-                            <input type="text" name="lastName" id="lastName" placeholder="Nom" required class="form-control text-uppercase" value="
-                            <?php if (isset($_POST['lastName'])):
+                            <input type="text" name="lastName" id="lastName" placeholder="Nom" required class="form-control text-uppercase" value="<?php if (!empty($_POST['lastName'])):
                                 echo htmlspecialchars($_POST['lastName']);
                             endif; ?>" />
                         </div>
                         <div class="col">
-                            <input type="text" name="firstName" id="firstName" placeholder="Prénom" required class="form-control text-capitalize" value="
-                            <?php if (isset($_POST['firstName'])):
+                            <input type="text" name="firstName" id="firstName" placeholder="Prénom" required class="form-control text-capitalize" value="<?php if (!empty($_POST['firstName'])):
                                 echo htmlspecialchars($_POST['firstName']);
                             endif; ?>" />
                         </div>
@@ -65,8 +63,7 @@
                         <div class="col">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" aria-label="arobase">@</span>
-                                <input type="email" name="mail" id="mail" placeholder="monmail@exemple.com" required class="form-control text-lowercase" value="
-                                <?php if (isset($_POST['mail'])):
+                                <input type="email" name="mail" id="mail" placeholder="monmail@exemple.com" required class="form-control text-lowercase" value="<?php if (!empty($_POST['mail'])):
                                     echo htmlspecialchars($_POST['mail']);
                                 endif; ?>" />
                             </div>
@@ -77,9 +74,10 @@
                         <div class="col">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" aria-label="tel"><span class="fas fa-phone"></span></span>
-                                <input type="tel" name="phone" id="phone" placeholder="0X XX XX XX XX" class="form-control" value="
-                                <?php if (isset($_POST['phone'])):
+                                <input type="tel" name="phone" id="phone" placeholder="0X XX XX XX XX" class="form-control" value="<?php if (!empty($_POST['phone'])):
                                     echo htmlspecialchars($_POST['phone']);
+                                else :
+                                    echo '';
                                 endif; ?>" />
                             </div>
                         </div>
