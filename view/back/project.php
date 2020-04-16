@@ -51,12 +51,12 @@
                 <p class= "text-info font-weight-bold mb-1">Description du projet</p>
                 <small class= "xsmall"><?php echo $project['description']; ?></small>
             </div>
-        </div>
-<hr/>
+        </div><br/><br/>
+
         <!-- MISE A JOUR D'UN PROJET-->
         <div class="row">
             <!-- nommer un développeur -->
-            <div class="col-md-4">
+            <div class="offset-md-2 col-md-4">
                 <form action="index.php?action=assign&id=<?php echo htmlspecialchars($_GET['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded">
                     <p class="text-info font-weight-bold text-center">Nommer 1 développeur sur le projet</p>
                     <div class="form-group row">
@@ -86,9 +86,8 @@
                 </form>
             </div>
 
-            <div class="col-md-5"></div>
-        </div><br/>
-<hr/>
+            <div class="col-md-3"></div>
+        </div><br/><br/>
 
         <!-- bouton Retour à la page d'accueil-->
         <div class="row">
