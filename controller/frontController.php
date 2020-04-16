@@ -9,6 +9,15 @@ function homepage(){
     require(__DIR__.'/../view/front/homepage.php');
 }
 
+//se déconnecter
+function logOut(){
+    $_SESSION=array();
+    session_destroy();
+
+    header('location: index.php');
+    die();
+}
+
 //rediriger vers errorPage
 function errorPage(){
     require(__DIR__.'/../view/front/errorPage.php');
