@@ -42,7 +42,7 @@
         <!-- liste USERS-->
         <div class="row">
             <!-- liste CLIENTS-->
-            <div class="col-sm-6">
+            <div class="col-sm-6 mx-0 px-0">
                 <div class="table-responsive-sm border">
                     <p class= "text-info text-center font-weight-bold">LISTE DES CLIENTS</p>
                     <table class="table table-striped table-condensed small">
@@ -54,6 +54,7 @@
                                 <th class="text-center">mail</th>
                                 <th>phone</th>
                                 <th>signUpDate</th>
+                                <th>update</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -65,6 +66,7 @@
                                 <td class="text-lowercase"><?php echo htmlspecialchars($data['mail']); ?></td>
                                 <td><?php echo htmlspecialchars($data['phone']); ?></td>
                                 <td><?php echo htmlspecialchars(substr($data['signUpDate_fr'],0,10)); ?></td>
+                                <td class="text-center"><a href="index.php?action=updateUser&id=<?php echo htmlspecialchars($data['id']); ?>" role="button" class="fas fa-share btn-info"></a></td>
                             </tr>
                         <?php endforeach; ?>
                         </tbody>
@@ -72,7 +74,7 @@
                 </div>
             </div>
             <!-- liste DEVS-->
-            <div class='col-sm-6'>
+            <div class='col-sm-6 mx-0 pl-1 pr-0'>
                 <div class="table-responsive-sm border">
                     <p class= "text-info text-center font-weight-bold">LISTE DES DEVS</p>
                     <table class="table table-striped table-condensed small">
@@ -84,6 +86,7 @@
                                 <th class="text-center">mail</th>
                                 <th>phone</th>
                                 <th>signUpDate</th>
+                                <th>update</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -95,6 +98,7 @@
                                 <td class="text-lowercase"><?php echo htmlspecialchars($data['mail']); ?></td>
                                 <td><?php echo htmlspecialchars($data['phone']); ?></td>
                                 <td><?php echo htmlspecialchars(substr($data['signUpDate_fr'],0,10)); ?></td>
+                                <td class="text-center"><a href="index.php?action=updateUser&id=<?php echo htmlspecialchars($data['id']); ?>" role="button" class="fas fa-share btn-info"></a></td>
                             </tr>
                         <?php endforeach;?>
                         </tbody>
