@@ -115,7 +115,7 @@ class ProjectModel extends Model {
     $db= $this->dbConnect();
 
     //définir le nb de projets affiché par page
-    $perPage=3;
+    $perPage=2;
 
     //limiter la requête pour l'affichage avec pagination
     $req = $db->prepare('SELECT id,name,idClient,idDev,description,DATE_FORMAT(needDate, "%d/%m/%Y à %Hh%i") AS needDate_fr, DATE_FORMAT(assignDate, "%d/%m/%Y à %Hh%i") AS assignDate_fr, modelFile, DATE_FORMAT(modelDate, "%d/%m/%Y à %Hh%i") AS modelDate_fr, DATE_FORMAT(startDate, "%d/%m/%Y à %Hh%i") AS startDate_fr, urlName, DATE_FORMAT(urlDate, "%d/%m/%Y à %Hh%i") AS urlDate_fr, DATE_FORMAT(endDate, "%d/%m/%Y à %Hh%i") AS endDate_fr, ratingClient, ratingDev FROM project WHERE endDate IS NOT NULL ORDER BY needDate DESC LIMIT '.(($currentPage-1)*$perPage).','.$perPage.' ');
