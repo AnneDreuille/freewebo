@@ -83,6 +83,10 @@ try {
             clicks();
         }
 
+        elseif($_GET['action']=='logOut') {
+            logOut();
+        }
+
 //BACK
         elseif($_GET['action']=='admin') {
             admin();
@@ -100,6 +104,9 @@ try {
             endDate();
         }
 
+        elseif($_GET['action']=='updateUser') {
+            updateUser();
+        }
 
     }
     //afficher par défaut la page d'accueil
