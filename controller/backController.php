@@ -23,6 +23,10 @@ function admin(){
     //appeler la fonction pour le nb de projets terminés
     $nbProject= $projectModel->nbProject();
 
+    //définir le nb de projets par page et le nb de pages
+    $perPage=3;
+    $nbPage=ceil($nbProject/$perPage);
+
     //vérifier qu'on a bien reçu un n° page (p) en paramètre dans l'url
     if (isset ($_GET['p']) && $_GET['p']>0 && $_GET['p']<=$nbProject) {
         $currentPage = ($_GET['p']);
