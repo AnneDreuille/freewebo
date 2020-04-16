@@ -58,6 +58,14 @@ class UserModel extends Model {
     return $req->fetchAll();
   }
 
+  //mettre à jour les données d'1 user
+  public function updateUser($lastName, $firstName, $mail, $phone, $password, $id) {
+    $db= $this->dbConnect();
+
+    $req = $db->prepare('UPDATE user SET lastName=?, firstName=?, mail=?, phone=?, password=? WHERE id=?');
+
+    return $req->execute(array($lastName, $firstName, $mail, $phone, $password, $id));
+  }
 
 
 //NON ENCORE UTILISE
@@ -82,14 +90,7 @@ class UserModel extends Model {
     return $req->fetchColumn();
   }
 
-  //mettre à jour les données d'1 user
-  public function updateUser($mail, $phone, $id) {
-    $db= $this->dbConnect();
 
-    $req = $db->prepare('UPDATE user SET mail=?, phone=?, WHERE id=?');
-
-    return $req->execute(array($mail, $phone, $id));
-  }
 
   //blacklister 1 user
   public function blacklist($id) {
