@@ -14,7 +14,8 @@
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
         <!--lien font-awesome pour les icônes-->
-        <script src="https://kit.fontawesome.com/97e1d87785.js"></script>
+        <link rel="stylesheet" href=
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"></link>
 
         <!--liens pour le favicon (les 2 1ers pour version en ligne, le 3ème pour version en local)-->
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
