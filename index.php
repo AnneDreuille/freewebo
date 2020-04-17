@@ -87,6 +87,14 @@ try {
             logOut();
         }
 
+        elseif($_GET['action']=='dev') {
+            dev();
+        }
+
+        elseif($_GET['action']=='listMessageDev') {
+            listMessageDev();
+        }
+
 //BACK
         elseif($_GET['action']=='admin') {
             admin();
