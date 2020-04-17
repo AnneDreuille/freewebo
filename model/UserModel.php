@@ -67,39 +67,4 @@ class UserModel extends Model {
     return $req->execute(array($lastName, $firstName, $mail, $phone, $password, $id));
   }
 
-
-//NON ENCORE UTILISE
-
-  //récupérer le nombre de clients
-  public function nbClient() {
-    $db= $this->dbConnect();
-
-    $req = $db->prepare('SELECT COUNT(id) AS nbClient FROM user WHERE userType="client"');
-
-    $req->execute();
-    return $req->fetchColumn();
-  }
-
-  //récupérer le nombre de développeurs
-  public function nbDev() {
-    $db= $this->dbConnect();
-
-    $req = $db->prepare('SELECT COUNT(id) AS nbDev FROM user WHERE userType="dev"');
-
-    $req->execute();
-    return $req->fetchColumn();
-  }
-
-
-
-  //blacklister 1 user
-  public function blacklist($id) {
-    $db= $this->dbConnect();
-
-    $req = $db->prepare('UPDATE user SET blacklistDate=NOW() WHERE id=?');
-
-    return $req->execute(array($id));
-  }
-
-
 }
