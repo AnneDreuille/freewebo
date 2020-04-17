@@ -82,6 +82,13 @@
                         <?php endif;?>
                     </li>
 
+                    <!-- Espace Dev -->
+                    <?php if (!empty($_SESSION ['userType']) && ($_SESSION ['userType']==="dev" || $_SESSION['userType']==="admin")):?>
+                    <li class="nav-item">
+                        <a class="nav-link text-secondary" href="index.php?action=dev" ><span class= "fas fa-laptop-house pr-1"></span>Espace Dev</a>
+                    </li>
+                    <?php endif;?>
+
                     <!-- Espace Admin -->
                     <?php if (!empty($_SESSION ['userType']) && $_SESSION ['userType']==="admin"):?>
                     <li class="nav-item">
