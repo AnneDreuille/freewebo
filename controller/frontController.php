@@ -18,7 +18,7 @@ function logOut(){
     die();
 }
 
-//rediriger vers errorPage
+//diriger vers errorPage
 function errorPage(){
     require(__DIR__.'/../view/front/errorPage.php');
 }
@@ -27,6 +27,7 @@ function errorPage(){
 function privacyPolicy(){
     require(__DIR__.'/../view/front/privacyPolicy.php');
 }
+
 
 //USER
 
@@ -351,28 +352,51 @@ function addMessage(){
         //vérifier si le msg a bien été posté
         if (!empty($_POST['message'])) {
 
-        //créer les objets
-        $projectModel= new ProjectModel();
-        $userModel= new UserModel();
-        $chatModel= new ChatModel();
+            //créer les objets
+            $projectModel= new ProjectModel();
+            $userModel= new UserModel();
+            $chatModel= new ChatModel();
 
-        //appeler les fonctions de ces objets
-        // $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
+            //vérifier qu'on a un id projet dans l'url
+            if (isset($_GET['id']) && $_GET['id']>0) {
 
-        $addMessage= $chatModel->addMessage($idUser,$_GET['id'],$_POST['message']);
+                $addMessage= $chatModel->addMessage($idUser,$_GET['id'],$_POST['message']);
 
-        //diriger vers la page member
-        header('location: index.php?action=member&id='.$_GET['id']);
-        die();
+                //diriger vers la page member
+                header('location: index.php?action=member&id='.$_GET['id']);
+                die();
+
+            } else {
+                $idProject =null;
+
+                $addMessage= $chatModel->addMessage($idUser,$idProject,$_POST['message']);
+
+                //diriger vers la page dev
+                header('location: index.php?action=dev&id='.$idUser);
+                die();
+            }
 
         } else {
             //envoyer une exception dans catch en cas d'erreur
             throw new Exception("Pas de message posté");
         }
+
     } else {
         //envoyer une exception dans catch en cas d'erreur
         throw new Exception('Pas de user identifié');
     }
+}
+
+//se connecter à l'Espace Dev & afficher les msg
+function dev(){
+
+    //créer l'objet
+    $chatModel= new ChatModel();
+
+    //appeler la fonction
+    $listMessageDev= $chatModel->listMessageDev();
+
+    require(__DIR__.'/../view/front/dev.php');
 }
 
 //BOUTON LIKE mise à jour dans le fichier
