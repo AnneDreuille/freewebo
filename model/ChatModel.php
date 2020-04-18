@@ -36,6 +36,7 @@ class ChatModel extends Model {
         FROM chat
         INNER JOIN user
         ON user.id=chat.idSender
+        WHERE chat.idProject IS NULL
         ORDER BY postDate DESC ');
 
       $req->execute();
