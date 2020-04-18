@@ -15,7 +15,7 @@
 
         <!--lien font-awesome pour les icônes-->
         <link rel="stylesheet" href=
-        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"></link>
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.css"></link>
 
         <!--liens pour le favicon (les 2 1ers pour version en ligne, le 3ème pour version en local)-->
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
@@ -84,9 +84,9 @@
                     </li>
 
                     <!-- Espace Dev -->
-                    <?php if (!empty($_SESSION ['userType']) && ($_SESSION ['userType']==="dev" || $_SESSION['userType']==="admin")):?>
+                    <?php if (!empty($_SESSION ['userType']) && $_SESSION ['userType']!=="client"):?>
                     <li class="nav-item">
-                        <a class="nav-link text-secondary" href="index.php?action=dev" ><span class= "fas fa-laptop-house pr-1"></span>Espace Dev</a>
+                        <a class="nav-link text-secondary" href="index.php?action=dev"><span class="fas fa-laptop-house pr-1"></span>Espace Dev</a>
                     </li>
                     <?php endif;?>
 
