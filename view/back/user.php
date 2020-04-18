@@ -5,7 +5,7 @@
 <?php ob_start(); ?>
     <div class="container-fluid">
 
-        <!-- AFFICHER LES DONNES D'UN USER POUR MISE A JOUR-->
+        <!-- AFFICHER LES DONNEES D'UN USER POUR MISE A JOUR-->
         <div class="row">
             <div class="offset-md-4 col-md-4">
                 <form action="index.php?action=updateUser&id=<?php echo htmlspecialchars($_GET['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded">
@@ -41,7 +41,7 @@
                         <div class="col">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" aria-label="password"><span class="fas fa-lock"></span></span>
-                                <input type="text" name="password" id="password" class="form-control xsmall" value="<?php echo htmlspecialchars($getUser['password']);?>"/>
+                                <input type="text" name="password" id="password" class="form-control xsmall" />
                             </div>
                         </div>
                     </div>
