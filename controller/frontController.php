@@ -353,8 +353,6 @@ function addMessage(){
         if (!empty($_POST['message'])) {
 
             //créer les objets
-            $projectModel= new ProjectModel();
-            $userModel= new UserModel();
             $chatModel= new ChatModel();
 
             //vérifier qu'on a un id projet dans l'url
