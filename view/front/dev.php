@@ -31,13 +31,13 @@
                 <div class="border rounded p-2 bg-light overflow-auto">
 
                 <?php foreach ($listMessageDev as $data) : ?>
-                    <?php if ($data['idProject']===null):?>
+
                     <dl>
                         <dt class="text-capitalize"><?php echo htmlspecialchars($data['firstName']) ;?></dt>
                         <dd class="small text-primary font-italic"><?php echo 'Posté le '.htmlspecialchars($data['postDate_fr']) ;?></dd>
                         <dd class="text-justify"><?php echo $data['message'] ;?></dd>
                     </dl>
-                    <?php endif; ?>
+
                 <?php endforeach; ?>
                 </div>
             </div>
