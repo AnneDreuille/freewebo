@@ -134,8 +134,12 @@ function updateUser() {
         // vérifier que le formulaire a bien reçu les paramètres
         if (!empty($_POST['lastName']) && !empty($_POST['firstName']) && !empty($_POST['mail'])) {
 
-            //crypter le password
-            $password_hash= password_hash($_POST['password'], PASSWORD_DEFAULT);
+            if (empty($_POST['password'])){
+                $password_hash=$getUser['password'];
+            } else {
+                //crypter le password
+                $password_hash= password_hash($_POST['password'], PASSWORD_DEFAULT);
+            }
 
             //appeler la fonction update
             $updateUser= $userModel->updateUser($_POST['lastName'], $_POST['firstName'], $_POST['mail'], $_POST['phone'], $password_hash, $_GET['id']);
