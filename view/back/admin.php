@@ -7,7 +7,7 @@
 
         <!-- liste PROJETS EN COURS-->
         <div class="row">
-            <div class="offset-sm-3 col-sm-6 offset-sm-3">
+            <div class="offset-sm-3 col-sm-6 offset-sm-3 table">
                 <div class="table-responsive-sm border">
                     <p class= "text-info text-center font-weight-bold">LISTE DES PROJETS EN COURS</p>
                     <table class="table table-striped table-condensed small">
@@ -42,7 +42,7 @@
         <!-- liste USERS-->
         <div class="row">
             <!-- liste CLIENTS-->
-            <div class="col-sm-6 mx-0 px-0">
+            <div class="col-sm-6 mx-0 px-0 table">
                 <div class="table-responsive-sm border">
                     <p class= "text-info text-center font-weight-bold">LISTE DES CLIENTS</p>
                     <table class="table table-striped table-condensed small">
@@ -74,7 +74,7 @@
                 </div>
             </div>
             <!-- liste DEVS-->
-            <div class='col-sm-6 mx-0 pl-1 pr-0'>
+            <div class='col-sm-6 mx-0 pl-1 pr-0 table'>
                 <div class="table-responsive-sm border">
                     <p class= "text-info text-center font-weight-bold">LISTE DES DEVS</p>
                     <table class="table table-striped table-condensed small">
@@ -116,7 +116,7 @@
 
         <div class="row">
             <!-- liste PROJETS TERMINES-->
-            <div class="offset-sm-2 col-sm-8">
+            <div class="offset-sm-2 col-sm-8 table">
                 <div class="table-responsive-sm border">
                     <p class= "text-info text-center font-weight-bold">LISTE DES PROJETS TERMINES</p>
                     <table class="table table-striped table-condensed small">
