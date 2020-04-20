@@ -18,7 +18,7 @@
             <!-- <div class="col-md-2"></div> -->
 
             <div class="col-md-12 text-center">
-                <img src="public/images/errorPage.jpg" alt="errorPage"/>
+                <img src="public/images/errorPage.jpg" alt="errorPage" id="errorPage"/>
             </div>
 
             <!-- <div class="col-md-2"></div> -->
