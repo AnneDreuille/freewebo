@@ -64,7 +64,7 @@
     <body>
         <header class="card-header pb-0">
             <h1 class="text-center page-header text-info pt-0 mb-0">
-                <div class="d-md-inline d-sm-block"><img src="/freewebo/public/images/logo.png" alt="logo" class="img.card-img"/></div>
+                <div class="d-md-inline"><img src="/freewebo/public/images/logo.png" alt="logo" class="img.card-img"/></div>
                 <strong class="pl-2"><?php echo $titlePage; ?></strong>
             </h1>
             <nav>
@@ -100,11 +100,11 @@
                     <!-- Bonjour ! -->
                     <?php if (empty($_SESSION['firstName'])):?>
                     <li class="nav-item">
-                        <p class="text-secondary italic font-weight-bold h5 mb-0 mt-2"><span class="far fa-comment pr-1"></span>"Bonjour&nbsp;!"</p>
+                        <a href="" class="nav-link text-secondary italic font-weight-bold h5" disabled><span class="far fa-comment pr-1"></span>"Bonjour&nbsp;!"</a>
                     </li>
                     <?php else :?>
-                    <li class="nav-item">
-                        <p class="text-secondary italic font-weight-bold h5 mb-0 mt-2"><span class="far fa-comment pr-1"></span>"Bonjour, <?php echo htmlspecialchars($_SESSION['firstName']);?>&nbsp;!"</p>
+                    <li class="nav-item text-center">
+                        <a href="" class="nav-link text-secondary italic font-weight-bold h5" disabled><span class="far fa-comment pr-1"></span>"Bonjour, <?php echo htmlspecialchars($_SESSION['firstName']);?>&nbsp;!"</a>
                     </li>
                     <?php endif;?>
 
@@ -130,19 +130,19 @@
         <?php echo $content; ?>
 
 
-        <footer class="card-footer">
+        <footer class="row card-footer">
             <!-- partenaires -->
-            <div class ="container d-flex justify-content-between align-items-center">
-                <p class="text-info font-weight-bold h5">Nos partenaires</p>
-                <div><img src="public/images/bnpparibas.png" alt="bnpparibas"/></div>
-                <div><img src="public/images/ideas.png" alt="ideas"/></div>
-                <div><img src="public/images/openclassrooms.png" alt="openclassrooms"/></div>
-                <div><img src="public/images/tousbenevoles.jpg" alt="tousbenevoles"/></div>
+            <div class ="col-md-11 container d-md-flex justify-content-around align-items-center d-sm-inline-flex">
+                <p class="text-info text-center font-weight-bold h5 px-1">Nos partenaires</p>
+                <div class="text-center py-1"><img src="public/images/bnpparibas.png" alt="bnpparibas"/></div>
+                <div class="text-center py-1"><img src="public/images/ideas.png" alt="ideas"/></div>
+                <div class="text-center py-1"><img src="public/images/openclassrooms.png" alt="openclassrooms"/></div>
+                <div class="text-center py-1"><img src="public/images/tousbenevoles.jpg" alt="tousbenevoles"/></div>
             </div>
             <hr/>
             <!-- politique de confidentialité -->
-            <div class="row float-right">
-                <a href="index.php?action=privacyPolicy"><p class="text-secondary small italic pr-5">Politique de confidentialité</p></a>
+            <div class="col-md-1 text-center pr-1 d-md-flex align-items-end">
+                <a href="index.php?action=privacyPolicy"><p class="text-secondary small italic">Politique de confidentialité</p></a>
             </div><br/>
         </footer><br/>
 
