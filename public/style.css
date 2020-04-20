@@ -55,7 +55,6 @@ html, body{
     height: 500px !important;
 }
 
-
 footer {
     height: 200px !important;
 }
@@ -63,8 +62,49 @@ footer {
 
 
 @media screen and (max-width:768px){
-  html, body{
-    font-size:14px;
-    margin :0;
-  }
+    html, body{
+        font-size:14px;
+        margin :0;
+    }
+
+    h1 {
+        font-size:22px;
+    }
+    h2 {
+        font-size:17px;
+    }
+
+    nav, nav .h5 {
+        font-size: x-small;
+    }
+    /*admin*/
+    table, .table, thead, th, tbody, td {
+        font-size: x-small;
+        width:auto;
+        text-align: center;
+        overflow: auto;
+        table-layout: fixed;
+        margin:0;
+        padding:0;
+    }
+    .table-responsive-sm{
+        overflow-x: scroll;
+    }
+    /*esp membre*/
+    .btn{
+        font-size: small;
+        padding:2px;
+    }
+    #process>div{
+        font-size: small;
+        overflow-x: scroll;
+    }
+    #process{
+        overflow-x: scroll;
+    }
+
+    #errorPage{
+        width:75%;
+    }
+
 }
