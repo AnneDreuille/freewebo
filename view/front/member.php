@@ -40,9 +40,9 @@
         </div><br/><br/>
 
         <!-- AFFICHER BOUTONS & IMAGES PROCESS-->
-        <div class="row">
+        <div class="row" id="process">
             <div class="col-md-12 text-center">
-                <div class="btn-group align-items-end" role="group">
+                <div class="btn-group align-items-end" role="group" >
                     <!-- 1. Je décris le besoin  -->
                     <div>
                         <div class="mb-1"><img src="public/images/1.process.jpg" alt="process étape1"/></div>
