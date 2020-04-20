@@ -7,7 +7,7 @@
 
         <!-- DETAIL D'UN PROJET-->
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12 table">
                 <div class="table-responsive-sm border">
                     <p class= "text-info text-center font-weight-bold">DETAIL D'UN PROJET</p>
                     <table class="table table-striped table-condensed small">
