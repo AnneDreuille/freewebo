@@ -2,21 +2,23 @@
 
 //détecter validation formulaire
 
-// $('.submit').submit (function (event) {
-//   event.preventDefault(); //permet de ne pas recharger la page
+$('.submit').submit (function (event) {
+  event.preventDefault(); //permet de ne pas recharger la page
+  tinyMCE.triggerSave(); //assure que le contenu de texterea est bien enregistré
+  let $form=$(this); //this = formulaire sur lequel on a cliqué
 
-//   let $form=$(this); //this = formulaire sur lequel on a cliqué
+  //requête ajax
+  $.ajax({
+    url:$form.attr('action'), //attr renvoie à l'attribut action
+    data:new FormData($form[0]), //objet avec arg.qui fait réf à form html
+    processData: false, // indique à jQuery de ne pas traiter les données
+    contentType: false, // indique à jQuery de ne pas configurer le contentType
+    method:"post"
 
-//   //requête ajax
-//   $.ajax({
-//     url:$form.attr('action'), //attr renvoie à l'attribut action
-//     data:new FormData($form[0]), //objet avec arg.qui fait réf à form html
-//     method:"post"
+  //afficher msg lors de l'évènement
+  }) .done(function(){ //dès que la requête a réussi
 
-//   //afficher msg lors de l'évènement
-//   }) .done(function(){ //dès que la requête a réussi
-
-//     $form.find('p#msg').text('Votre description de besoin a bien été enregistrée.');
-//   })
-// });
+    $form.find('p#msg').text('Votre description de besoin a bien été enregistrée.');
+  })
+});
 
