@@ -107,4 +107,8 @@ footer {
         width:75%;
     }
 
+    footer{
+        height:420px !important;
+    }
+
 }
