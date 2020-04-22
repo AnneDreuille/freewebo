@@ -10,7 +10,7 @@
         <!-- meta description pour le SEO : améliorer la visibilité du site -->
         <meta name="description" content="<?php echo $metaDescription; ?>" />
 
-        <!--lien google font police Monserrat-->
+        <!--lien google font police Open Sans-->
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
         <!--lien font-awesome pour les icônes-->
