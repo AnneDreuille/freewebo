@@ -1,7 +1,6 @@
 //jquery pour afficher le message de succès du formulaire need
 
 //détecter validation formulaire
-
 $('.submit').submit (function (event) {
   event.preventDefault(); //permet de ne pas recharger la page
   tinyMCE.triggerSave(); //enregistre le contenu de texterea
