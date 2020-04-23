@@ -18,12 +18,12 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 <!-- afficher les messages : erreur ou succès -->
-                <p class="small italic text-center text-info font-weight-bold">
+                <p class="italic text-center text-info font-weight-bold">
                 <?php
                 if ($error===true):
                     echo $alert;
                 elseif ($error===false):
-                    echo 'Super ! Vous êtes maintenant inscrit(e).';
+                    echo "Super ! Vous êtes maintenant inscrit(e).";?><br/><?php echo "Sur la page d'accueil, vous pouvez désormais vous connecter à votre espace membre en indiquant mail et mot de passe.";
                 endif; ?>
                 </p>
                 <!-- afficher le formulaire d'INSCRIPTION à remplir -->
@@ -35,7 +35,7 @@
                             <?php if (!empty($_POST['userType']) && $_POST['userType'] === 'client') :
                                 echo 'checked';
                             endif;?> />
-                            <label for="radio1" class="form-check-label">Gérant association ou créateur entreprise</label>
+                            <label for="radio1" class="form-check-label">Créateur entreprise ou Gérant association</label>
                         </div>
                         <div class="form-check">
                             <input type="radio" id="radio2" name="userType" value="dev" class="form-check-input"
