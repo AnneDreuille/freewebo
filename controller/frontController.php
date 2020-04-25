@@ -96,10 +96,15 @@ function signIn() {
         //appeler la fonction de cet objet
         $member= $userModel->signIn($_POST['mail']);
 
+        if ($member===false){
+            header('location: index.php');
+            die();
+        }
+
         //comparer le password entré haché avec celui dans la db
         $password_OK = password_verify($_POST['password'], $member['password']);
 
-        if (!$password_OK) {
+        if (!$password_OK || $member['blacklistDate_fr']!==null) {
             header('location: index.php');
             die();
         } else {
