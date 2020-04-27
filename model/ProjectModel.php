@@ -37,7 +37,7 @@ class ProjectModel extends Model {
   public function assign($idDev, $id) {
     $db= $this->dbConnect();
 
-    $req = $db->prepare('UPDATE project SET idDev=? ,assignDate=NOW() WHERE id=?');
+    $req = $db->prepare('UPDATE project SET idDev=?, assignDate=NOW() WHERE id=?');
 
     return $req->execute(array($idDev, $id));
   }
