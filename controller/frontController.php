@@ -147,6 +147,11 @@ function member (){
             $dataProject=$projectModel->project($_GET['id']);
         }
 
+        if ($dataProject===false){
+            header('location: index.php');
+            die();
+        }
+
         //appeler les fonctions de ces objets
         $client=$userModel->getUser($dataProject['idClient']);
         $dev=$userModel->getUser($dataProject['idDev']);
@@ -202,6 +207,11 @@ function modelFile(){
             //appeler les fonctions de ces objets
             $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
 
+            if ($dataProject===false){
+            header('location: index.php?action=member');
+            die();
+            }
+
             $modelFile= $projectModel->modelFile($uniqName, $dataProject['id']);
 
             //diriger vers la page member
@@ -233,6 +243,11 @@ function validModel(){
         //appeler les fonctions de ces objets
         $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
 
+        if ($dataProject===false){
+            header('location: index.php?action=member');
+            die();
+        }
+
         $validModel= $projectModel->validModel($dataProject['id']);
 
         //diriger vers la page member
@@ -261,6 +276,11 @@ function urlName(){
 
             //appeler les fonctions de ces objets
             $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
+
+            if ($dataProject===false){
+            header('location: index.php?action=member');
+            die();
+            }
 
             $urlName= $projectModel->urlName($_POST['urlName'], $dataProject['id']);
 
@@ -296,6 +316,11 @@ function ratingClient(){
         //appeler les fonctions de ces objets
         $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
 
+        if ($dataProject===false){
+            header('location: index.php?action=member');
+            die();
+            }
+
         $ratingClient= $projectModel->ratingClient($_POST['ratingClient'], $dataProject['id']);
 
         //diriger vers la page member
@@ -329,6 +354,11 @@ function ratingDev(){
 
         //appeler les fonctions de ces objets
         $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
+
+        if ($dataProject===false){
+            header('location: index.php?action=member');
+            die();
+        }
 
         $ratingDev= $projectModel->ratingDev($_POST['ratingDev'], $dataProject['id']);
 

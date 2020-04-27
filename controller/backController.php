@@ -80,6 +80,11 @@ function assign(){
             //appeler les fonctions de ces objets
             $member= $userModel->signIn($_POST['mail']);
 
+            if ($member===false){
+            header('location: index.php?action=admin');
+            die();
+            }
+
             $idDev= $member['id'];
 
             $assign= $projectModel->assign($idDev, $_GET['id']);
@@ -130,6 +135,11 @@ function updateUser() {
 
         //appeler la fonction des données client
         $getUser= $userModel->getUser($_GET['id']);
+
+        if ($getUser===false){
+            header('location: index.php?action=admin');
+            die();
+        }
 
         // vérifier que le formulaire a bien reçu les paramètres
         if (!empty($_POST['lastName']) && !empty($_POST['firstName']) && !empty($_POST['mail'])) {
