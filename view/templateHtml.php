@@ -18,8 +18,8 @@
         "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.css"></link>
 
         <!--liens pour le favicon (les 2 1ers pour version en ligne, le 3ème pour version en local)-->
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="<?php echo BASE_PATH;?>favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="<?php echo BASE_PATH;?>favicon.ico" type="image/x-icon" />
         <link rel="icon" href="<?php echo BASE_PATH;?>public/images/favicon.ico" type="image/ico" />
 
         <!--lien CDN bootstrap-->
@@ -64,7 +64,7 @@
     <body>
         <header class="card-header pb-0">
             <h1 class="text-center page-header text-info pt-0 mb-0">
-                <div class="d-md-inline"><img src="/freewebo/public/images/logo.png" alt="logo" class="img.card-img"/></div>
+                <div class="d-md-inline"><img src="<?php echo BASE_PATH;?>public/images/logo.png" alt="logo" class="img.card-img"/></div>
                 <strong class="pl-2"><?php echo $titlePage; ?></strong>
             </h1>
             <nav>

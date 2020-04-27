@@ -45,7 +45,7 @@
                 <div class="btn-group align-items-end" role="group" >
                     <!-- 1. Je décris le besoin  -->
                     <div>
-                        <div class="mb-1"><img src="public/images/1.process.jpg" alt="process étape1"/></div>
+                        <div class="mb-1"><img src="<?php echo BASE_PATH;?>public/images/1.process.jpg" alt="process étape1"/></div>
                         <?php if ($dataProject['needDate_fr'] !== null) : ?>
                             <a href=""><button type="button" class="btn btn-success rounded mr-2 px-1">1. Je décris le besoin</button></a>
                         <?php else : ?>
@@ -61,7 +61,7 @@
                     </div>
                     <!-- 2. Recherche développeur  -->
                     <div>
-                        <div class="mb-1"><img src="public/images/2.process.jpg" alt="process étape2"/></div>
+                        <div class="mb-1"><img src="<?php echo BASE_PATH;?>public/images/2.process.jpg" alt="process étape2"/></div>
                         <a href=#><button type="button" class="btn btn-warning disabled rounded mr-2 px-1">2. Recherche développeur</button></a>
                         <div>
                         <?php if ($dataProject['assignDate_fr'] !== null) : ?>
@@ -73,7 +73,7 @@
                     </div>
                     <!-- 3. Dépôt modèle -->
                     <div>
-                        <div class="mb-1"><img src="public/images/3.process.png" alt="process étape3"/></div>
+                        <div class="mb-1"><img src="<?php echo BASE_PATH;?>public/images/3.process.png" alt="process étape3"/></div>
                         <?php if($dataProject['modelDate_fr']===null):?>
                         <a href=#><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">3. Dépôt modèle</button></a>
                         <?php else :?>
@@ -90,7 +90,7 @@
                     </div>
                     <!-- 4. Je valide le modèle -->
                     <div>
-                        <div class="mb-1"><img src="public/images/4.process.png" alt="process étape4"/></div>
+                        <div class="mb-1"><img src="<?php echo BASE_PATH;?>public/images/4.process.png" alt="process étape4"/></div>
                         <?php if ($dataProject['startDate_fr'] !== null) : ?>
                         <a href="index.php?action=validModel"><button type="button" class="btn btn-success rounded mr-2 px-1">4. Je valide le modèle</button></a>
                         <?php else : ?>
@@ -106,7 +106,7 @@
                     </div>
                     <!-- 5. Dépôt URL -->
                     <div>
-                        <div class="mb-1"><img src="public/images/5.process.jpg" alt="process étape5"/></div>
+                        <div class="mb-1"><img src="<?php echo BASE_PATH;?>public/images/5.process.jpg" alt="process étape5"/></div>
                         <?php if($dataProject['urlDate_fr']===null):?>
                         <a href=#><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">5. Dépôt URL</button></a>
                         <?php else :?>
@@ -122,7 +122,7 @@
                     </div>
                     <!-- 6. Notations -->
                     <div>
-                        <div class="mb-1"><img src="public/images/6.process.jpg" alt="process étape6"/></div>
+                        <div class="mb-1"><img src="<?php echo BASE_PATH;?>public/images/6.process.jpg" alt="process étape6"/></div>
                         <a href=#><button type="button" class="btn btn-warning rounded mr-2 px-1">6. Notations</button></a>
                         <!--affichage # selon le type de user -->
                         <div>
