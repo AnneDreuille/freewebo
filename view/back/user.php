@@ -10,6 +10,7 @@
             <div class="offset-md-4 col-md-4">
                 <form action="index.php?action=updateUser&id=<?php echo htmlspecialchars($_GET['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded">
                     <p class="text-info font-weight-bold text-center">Mettre à jour un utilisateur</p>
+                    <!-- nom & prénom -->
                     <div class="form-group row mt-3">
                         <div class="col">
                             <input type="text" name="lastName" id="lastName" class="form-control text-uppercase" value="<?php echo htmlspecialchars($getUser['lastName']);?>" />
@@ -18,7 +19,7 @@
                             <input type="text" name="firstName" id="firstName" class="form-control text-capitalize" value="<?php echo htmlspecialchars($getUser['firstName']);?>" />
                         </div>
                     </div>
-
+                    <!-- mail -->
                     <div class="form-group row">
                         <div class="col">
                             <div class="input-group-prepend">
@@ -27,7 +28,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <!-- phone -->
                     <div class="form-group row">
                         <div class="col">
                             <div class="input-group-prepend">
@@ -36,7 +37,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <!-- password -->
                     <div class="form-group row">
                         <div class="col">
                             <div class="input-group-prepend">
@@ -45,7 +46,16 @@
                             </div>
                         </div>
                     </div>
-
+                    <!-- checkbox blacklist -->
+                    <div class="form-group row">
+                        <div class="col">
+                            <div class="form-check pl-4">
+                                <input type="checkbox" id="blacklist" name="blacklist" class="form-check-input mt-2" />
+                                <label for="blacklist" class="form-check-label">cocher pour blacklister l'utilisateur</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bouton valider -->
                     <div class="form-group row">
                         <div class="col text-center">
                             <input type="submit" value="Valider" class="btn btn-info font-weight-bold px-5"/>
