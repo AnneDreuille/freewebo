@@ -104,7 +104,7 @@ function signIn() {
         //comparer le password entré haché avec celui dans la db
         $password_OK = password_verify($_POST['password'], $member['password']);
 
-        if (!$password_OK || $member['blacklistDate_fr']!==null) {
+        if (!$password_OK) {
             header('location: index.php');
             die();
         } else {
