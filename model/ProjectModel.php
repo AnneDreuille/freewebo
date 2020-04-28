@@ -124,7 +124,6 @@ class ProjectModel extends Model {
     return $req->fetchAll();
   }
 
-
   //récupérer les données d'un projet en fonction de son id
   public function project($id) {
     $db= $this->dbConnect();
