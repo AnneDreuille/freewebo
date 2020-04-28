@@ -18,6 +18,7 @@ function admin(){
     //appeler les fonctions de ces objets
     $listClient= $userModel->listClient();
     $listDev= $userModel->listDev();
+    $blacklist= $userModel->blacklist();
     $currentProjectList= $projectModel->currentProjectList();
 
     //appeler la fonction pour le nb de projets terminés
@@ -80,7 +81,7 @@ function assign(){
             //appeler les fonctions de ces objets
             $member= $userModel->signIn($_POST['mail']);
 
-            if ($member===false){
+            if ($member===false || $member['blacklist']==1){
             header('location: index.php?action=admin');
             die();
             }
@@ -151,8 +152,14 @@ function updateUser() {
                 $password_hash= password_hash($_POST['password'], PASSWORD_DEFAULT);
             }
 
+            if (empty($_POST['blacklist'])){
+                $blacklist=0;
+            } else {
+                $blacklist=1;
+            }
+
             //appeler la fonction update
-            $updateUser= $userModel->updateUser($_POST['lastName'], $_POST['firstName'], $_POST['mail'], $_POST['phone'], $password_hash, $_GET['id']);
+            $updateUser= $userModel->updateUser($_POST['lastName'], $_POST['firstName'], $_POST['mail'], $_POST['phone'], $password_hash, $blacklist, $_GET['id']);
 
             //diriger vers la page user et mettre à jour le user
             header('Location: index.php?action=updateUser&id=' .$_GET['id']);
