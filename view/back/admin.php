@@ -107,16 +107,37 @@
             </div>
         </div><br/>
 
-        <!-- mettre à jour les données d'un user -->
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-        </div><br/>
 
         <div class="row">
+            <!-- LISTE USERS BLACKLISTES-->
+            <div class="col-sm-5 mx-0 px-0 table">
+                <div class="table-responsive-sm border">
+                    <p class= "text-info text-center font-weight-bold">BLACKLIST</p>
+                    <table class="table table-striped table-condensed small">
+                        <thead>
+                            <tr class="text-info">
+                                <th>id user</th>
+                                <th>userType</th>
+                                <th>prénom</th>
+                                <th>nom</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach ($blacklist as $data) : ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($data['id']); ?></td>
+                                <td><?php echo htmlspecialchars($data['userType']); ?></td>
+                                <td class="text-capitalize"><?php echo htmlspecialchars($data['firstName']); ?></td>
+                                <td class="text-uppercase"><?php echo htmlspecialchars($data['lastName']); ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
             <!-- liste PROJETS TERMINES-->
-            <div class="offset-sm-2 col-sm-8 table">
+            <div class="col-sm-7 mx-0 pl-1 pr-0 table">
                 <div class="table-responsive-sm border">
                     <p class= "text-info text-center font-weight-bold">LISTE DES PROJETS TERMINES</p>
                     <table class="table table-striped table-condensed small">
