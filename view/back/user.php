@@ -50,7 +50,10 @@
                     <div class="form-group row">
                         <div class="col">
                             <div class="form-check pl-4">
-                                <input type="checkbox" id="blacklist" name="blacklist" class="form-check-input mt-2" />
+                                <input type="checkbox" id="blacklist" name="blacklist" class="form-check-input mt-2"
+                                <?php if ($getUser['blacklist'] === "1") :
+                                    echo 'checked';
+                                endif;?> />
                                 <label for="blacklist" class="form-check-label">cocher pour blacklister l'utilisateur</label>
                             </div>
                         </div>
