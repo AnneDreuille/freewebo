@@ -196,9 +196,13 @@ function modelFile(){
 
             $tmpFileName=$_FILES['modelFile']['tmp_name'];
             $uniqName= uniqid().basename($_FILES['modelFile']['name']);
+            $extension=$uniqName['extension'];
+            $extensionOk= array('png','jpeg','pdf');
 
-            //valider le fichier et le stocker définitivement
-            move_uploaded_file($tmpFileName, 'public/uploads/' .$uniqName);
+            if (in_array($extension, $extensionOk)){
+                //valider le fichier et le stocker définitivement
+                move_uploaded_file($tmpFileName, 'public/uploads/' .$uniqName);
+            }
 
             //créer les objets
             $projectModel= new ProjectModel();
