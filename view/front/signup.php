@@ -48,12 +48,12 @@
 
                     <div class="form-group row mt-3">
                         <div class="col">
-                            <input type="text" name="lastName" id="lastName" placeholder="Nom" required class="form-control text-uppercase" value="<?php if (!empty($_POST['lastName'])):
+                            <input type="text" name="lastName" id="lastName" title="Nom" placeholder="Nom" required class="form-control text-uppercase" value="<?php if (!empty($_POST['lastName'])):
                                 echo htmlspecialchars($_POST['lastName']);
                             endif; ?>" />
                         </div>
                         <div class="col">
-                            <input type="text" name="firstName" id="firstName" placeholder="Prénom" required class="form-control text-capitalize" value="<?php if (!empty($_POST['firstName'])):
+                            <input type="text" name="firstName" id="firstName" title="Prénom" placeholder="Prénom" required class="form-control text-capitalize" value="<?php if (!empty($_POST['firstName'])):
                                 echo htmlspecialchars($_POST['firstName']);
                             endif; ?>" />
                         </div>
@@ -63,7 +63,7 @@
                         <div class="col">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" aria-label="arobase">@</span>
-                                <input type="email" name="mail" id="mail" placeholder="monmail@exemple.com" required class="form-control text-lowercase" value="<?php if (!empty($_POST['mail'])):
+                                <input type="email" name="mail" id="mail" title="mail" placeholder="monmail@exemple.com" required class="form-control text-lowercase" value="<?php if (!empty($_POST['mail'])):
                                     echo htmlspecialchars($_POST['mail']);
                                 endif; ?>" />
                             </div>
@@ -74,7 +74,7 @@
                         <div class="col">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" aria-label="tel"><span class="fas fa-phone"></span></span>
-                                <input type="tel" name="phone" id="phone" placeholder="0X XX XX XX XX" class="form-control" value="<?php if (!empty($_POST['phone'])):
+                                <input type="tel" name="phone" id="phone" title="tel" placeholder="0X XX XX XX XX" class="form-control" value="<?php if (!empty($_POST['phone'])):
                                     echo htmlspecialchars($_POST['phone']);
                                 else :
                                     echo '';
@@ -87,7 +87,7 @@
                         <div class="col">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" aria-label="password"><span class="fas fa-lock"></span></span>
-                                <input type="password" name="password" id="password" placeholder="******" data-toggle="password" required class="form-control"/>
+                                <input type="password" name="password" id="password" placeholder="******" title="password" data-toggle="password" required class="form-control"/>
                             </div>
                         </div>
                     </div>
