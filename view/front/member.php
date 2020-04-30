@@ -301,7 +301,7 @@
             <!-- formulaire pour poster un message -->
             <div class ="col-md-3 offset-md-1">
                 <button class="btn btn-warning btn-block font-weight-bold disabled">Ecrire un message ici&nbsp;!</button>
-                <form action="index.php?action=addMessage&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded">
+                <form action="index.php?action=addMessage&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded submitPost">
                     <div class="form-group row">
                         <div class="col">
                             <textarea id="message" name="message"></textarea>
