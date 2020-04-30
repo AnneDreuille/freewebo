@@ -4,7 +4,8 @@
 
 //charger les classes automatiquement
 spl_autoload_register(function ($className) {
-    include $className . '.php';
+    // include $className . '.php';
+    include str_replace('\\', DIRECTORY_SEPARATOR, $className ).'.php';
 });
 
 //charger le fichier config avec définition des constantes d'accès à la db
