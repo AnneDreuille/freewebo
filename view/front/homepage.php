@@ -108,7 +108,7 @@
                     <ul class="small italic">
                         <li>Lien d'accès URL transmis.</li>
                         <li>Site web publié sur la "toile"&nbsp;!</li>
-                        <li>Notation vous<=>développeur.</li>
+                        <li>Notation vous&lt;=&gt;développeur.</li>
                         <li><a href="#btnLike" class="text-success text-decoration-none">Dites si vous aimez FreeWebo&nbsp;!</a></li>
                     </ul>
                 </div>
