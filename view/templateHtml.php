@@ -15,7 +15,7 @@
 
         <!--lien font-awesome pour les icônes-->
         <link rel="stylesheet" href=
-        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.css"></link>
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.css">
 
         <!--liens pour le favicon (les 2 1ers pour version en ligne, le 3ème pour version en local)-->
         <link rel="icon" href="<?php echo BASE_PATH;?>favicon.ico" type="image/x-icon" />
@@ -44,10 +44,10 @@
 
     <body>
         <header class="card-header pb-0">
-            <h1 class="text-center page-header text-info pt-0 mb-0">
+            <div class="h1 text-center page-header text-info pt-0 mb-0">
                 <div class="d-md-inline"><img src="<?php echo BASE_PATH;?>public/images/logo.png" alt="logo" class="img.card-img"/></div>
                 <strong class="pl-2"><?php echo $titlePage; ?></strong>
-            </h1>
+            </div>
             <nav>
                 <ul class="nav d-flex justify-content-between">
                     <!-- Accueil -->
@@ -81,11 +81,11 @@
                     <!-- Bonjour ! -->
                     <?php if (empty($_SESSION['firstName'])):?>
                     <li class="nav-item">
-                        <a href="" class="nav-link text-secondary italic font-weight-bold h5" disabled><span class="far fa-comment pr-1"></span>"Bonjour&nbsp;!"</a>
+                        <span class="nav-link text-secondary italic font-weight-bold h5"><span class="far fa-comment pr-1"></span>"Bonjour&nbsp;!"</span>
                     </li>
                     <?php else :?>
                     <li class="nav-item text-center">
-                        <a href="" class="nav-link text-secondary italic font-weight-bold h5" disabled><span class="far fa-comment pr-1"></span>"Bonjour, <?php echo htmlspecialchars($_SESSION['firstName']);?>&nbsp;!"</a>
+                        <span class="nav-link text-secondary italic font-weight-bold h5"><span class="far fa-comment pr-1"></span>"Bonjour, <?php echo htmlspecialchars($_SESSION['firstName']);?>&nbsp;!"</span>
                     </li>
                     <?php endif;?>
 
