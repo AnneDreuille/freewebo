@@ -19,7 +19,7 @@
 
             <div class="col-md-6">
                 <!-- afficher le formulaire d'EXPRESSION DES BESOINS à remplir -->
-                <form action="index.php?action=need" method="post" class="border px-3 py-3 bg-light rounded submit">
+                <form action="index.php?action=need" method="post" class="border px-3 py-3 bg-light rounded submitNeed">
                     <div class="from-group row">
                         <div class="col">
                             <label for="name" class="text-info font-weight-bold" >Nom de votre site</label>
