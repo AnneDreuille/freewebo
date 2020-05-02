@@ -196,27 +196,27 @@ function modelFile(){
 
             $tmpFileName=$_FILES['modelFile']['tmp_name'];
             $uniqName= uniqid().basename($_FILES['modelFile']['name']);
-            $extension=$uniqName['extension'];
+            $extension=pathinfo($uniqName)['extension'];
             $extensionOk= array('png','jpeg','pdf');
 
             if (in_array($extension, $extensionOk)){
                 //valider le fichier et le stocker définitivement
                 move_uploaded_file($tmpFileName, 'public/uploads/' .$uniqName);
+
+                //créer les objets
+                $projectModel= new ProjectModel();
+                $userModel= new UserModel();
+
+                //appeler les fonctions de ces objets
+                $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
+
+                if ($dataProject===false){
+                header('location: index.php?action=member');
+                die();
+                }
+
+                $modelFile= $projectModel->modelFile($uniqName, $dataProject['id']);
             }
-
-            //créer les objets
-            $projectModel= new ProjectModel();
-            $userModel= new UserModel();
-
-            //appeler les fonctions de ces objets
-            $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
-
-            if ($dataProject===false){
-            header('location: index.php?action=member');
-            die();
-            }
-
-            $modelFile= $projectModel->modelFile($uniqName, $dataProject['id']);
 
             //diriger vers la page member
             header('location: index.php?action=member');
@@ -399,8 +399,9 @@ function addMessage(){
 
                 $addMessage= $chatModel->addMessage($idUser,$_GET['id'],$_POST['message']);
 
-                //diriger vers la page member
-                header('location: index.php?action=member&id='.$_GET['id']);
+                //récupérer en json les messages
+                $messages=$chatModel->listMessage($_GET['id']);
+                echo json_encode(array("success"=>true,"messages"=>$messages));
                 die();
 
             } else {
@@ -408,19 +409,20 @@ function addMessage(){
 
                 $addMessage= $chatModel->addMessage($idUser,$idProject,$_POST['message']);
 
-                //diriger vers la page dev
-                header('location: index.php?action=dev&id='.$idUser);
+                //récupérer en json les messages
+                $messages=$chatModel->listMessageDev();
+                echo json_encode(array("success"=>true, "messages"=>$messages));
                 die();
             }
 
         } else {
-            //envoyer une exception dans catch en cas d'erreur
-            throw new Exception("Pas de message posté");
+            //envoyer une erreur
+            echo json_encode(array("success"=>false));
         }
 
     } else {
-        //envoyer une exception dans catch en cas d'erreur
-        throw new Exception('Pas de user identifié');
+        //envoyer une erreur
+        echo json_encode(array("success"=>false));
     }
 }
 
