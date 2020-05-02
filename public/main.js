@@ -35,10 +35,24 @@ $('.submitPost').submit (function (event) {
         data:new FormData($form[0]), //objet avec arg.qui fait réf à form html
         processData: false, //indique à jQuery de ne pas traiter les données
         contentType: false, //indique à jQuery de ne pas configurer le contentType
-        method:"post"
+        method:"post",
+        dataType:"JSON"
 
     //actualiser les msg lors de l'évènement
-    // }) .done(function(){ //dès que la requête ajax a réussi
-
-    })
+    }) .done(function(data){ //dès que la requête ajax a réussi
+        if (data.success===true){
+            let listMessage= $("#listMessage"); //réf à id listMessage
+            listMessage.html(""); //met à 0 les msg précédents
+            $("#message").val(""); //à revoir
+            data.messages.forEach(function(element) {
+                listMessage.append(
+                    `<dl>
+                        <dt class="text-capitalize">${element.firstName}</dt>
+                        <dd class="small text-primary font-italic">Posté le ${element.postDate_fr}</dd>
+                        <dd class="text-justify">${element.message}</dd>
+                    </dl>`
+                );
+            });
+        }
+    });
 });
