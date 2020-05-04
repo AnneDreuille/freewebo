@@ -44,10 +44,10 @@
 
     <body>
         <header class="card-header pb-0">
-            <div class="h1 text-center page-header text-info pt-0 mb-0">
-                <div class="d-md-inline"><img src="<?php echo BASE_PATH;?>public/images/logo.png" alt="logo" class="img.card-img"/></div>
+            <h1 class="text-center page-header text-info pt-0 mb-0">
+                <p class="d-md-inline"><img src="<?php echo BASE_PATH;?>public/images/logo.png" alt="logo" class="img.card-img"/></p>
                 <strong class="pl-2"><?php echo $titlePage; ?></strong>
-            </div>
+            </h1>
             <nav>
                 <ul class="nav d-flex justify-content-between">
                     <!-- Accueil -->
