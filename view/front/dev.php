@@ -28,7 +28,7 @@
             <div class ="offset-md-1 col-md-6">
                 <button class="btn btn-warning btn-block font-weight-bold disabled"><span class="far fa-comments fa-lg pr-2"></span>Messages</button>
                 <!-- utilisation d'une liste de descriptions -->
-                <div class="border rounded p-2 bg-light overflow-auto">
+                <div class="border rounded p-2 bg-light overflow-auto" id="listMessage">
 
                 <?php foreach ($listMessageDev as $data) : ?>
 
