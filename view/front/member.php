@@ -157,7 +157,7 @@
                                 <span class="input-group-text small" aria-label="trombone"><span class="fas fa-paperclip"></span></span>
                                 <input type="file" name="modelFile" required class="form-control text-lowercase"/>
                             </div>
-                            <p><small id="helpName" class="form-text xsmall italic pb-0">Ex. nom de fichier pour le projet dont l'id=3: P3_modelFile.<br/>Préférer un format image lisible par tous.</small></p>
+                            <p><small id="helpName" class="form-text xsmall italic pb-0">Ex. nom de fichier pour le projet dont l'id=3: P3_modelFile.<br/>Formats acceptés : png, jpeg, pdf.</small></p>
                         </div>
                     </div>
                     <div class="form-group row">
