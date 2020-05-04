@@ -401,7 +401,10 @@ function addMessage(){
 
                 //récupérer en json les messages
                 $messages=$chatModel->listMessage($_GET['id']);
-                echo json_encode(array("success"=>true,"messages"=>$messages));
+                echo json_encode(array(
+                    "success"=>true,
+                    "messages"=>$messages
+                ));
                 die();
 
             } else {
@@ -411,7 +414,10 @@ function addMessage(){
 
                 //récupérer en json les messages
                 $messages=$chatModel->listMessageDev();
-                echo json_encode(array("success"=>true, "messages"=>$messages));
+                echo json_encode(array(
+                    "success"=>true,
+                    "messages"=>$messages
+                ));
                 die();
             }
 
