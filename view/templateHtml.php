@@ -26,6 +26,8 @@
         <!--lien autre style-->
         <link rel="stylesheet" href="<?php echo BASE_PATH;?>public/style.css"/>
 
+        <link rel="canonical" href="https://www.freewebo.org/" />
+
         <!--script schema.org-->
         <!-- Balisage JSON-LD généré par l'outil d'aide au balisage de données structurées de Google -->
         <script type="application/ld+json">
