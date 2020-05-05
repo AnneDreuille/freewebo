@@ -146,7 +146,7 @@
         </footer><br/>
 
         <!-- script pour TinyMCE éditeur texte -->
-        <script src="https://cdn.tiny.cloud/1/jy2e0nx3gog6j48dtlzexwjk3qxqq5noggxzme1zo8amqzcm/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script src="https://cdn.tiny.cloud/1/jy2e0nx3gog6j48dtlzexwjk3qxqq5noggxzme1zo8amqzcm/tinymce/5.2.2-80/tinymce.min.js" referrerpolicy="origin"></script>
         <script>
             tinymce.init({
             selector:'textarea',
