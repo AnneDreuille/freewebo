@@ -33,11 +33,30 @@
         {
           "@context" : "http://schema.org",
           "@type" : "Article",
+          "mainEntityOfPage" : {
+                "@type": "WebPage",
+                "@id": "https://freewebo.org/"
+            },
           "name" : "FreeWebo",
-          "datePublished" : "2020-04-30",
+          "author" : {
+            "@type" : "Person",
+            "name" : "Anne M Dreuille"
+          },
+          "datePublished" : "2020-05-05",
+          "dateModified" : "2020-05-05",
           "image" : "https://freewebo.org/public/images/logo.png",
-          "articleBody" : "FreeWebo est une agence web solidaire<BR/> qui crée des sites web gratuitement<BR/> pour des associations<BR/>et des jeunes créateurs d&#39;entreprise,<BR/>avec l&#39;aide de développeurs bénévoles !",
-          "url" : "https://freewebo.org/"
+          "articleSection" : "FreeWebo - Agence web solidaire",
+          "headline": "FreeWebo - Agence web solidaire",
+          "articleBody" : "FreeWebo est une agence web solidaire qui crée des sites web gratuitement pour des associations ou des jeunes créateurs d'entreprise, avec l'aide de développeurs bénévoles.",
+          "url" : "https://freewebo.org/",
+          "publisher" : {
+            "@type" : "Organization",
+            "name" : "FreeWebo",
+            "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://freewebo.org/favicon.ico"
+                }
+            }
         }
         </script>
     </head>
