@@ -17,10 +17,9 @@
         <link rel="stylesheet" href=
         "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.css">
 
-        <!--liens pour le favicon (les 2 1ers pour version en ligne, le 3ème pour version en local)-->
+        <!--liens pour le favicon -->
         <link rel="icon" href="<?php echo BASE_PATH;?>favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="<?php echo BASE_PATH;?>favicon.ico" type="image/x-icon" />
-        <link rel="icon" href="<?php echo BASE_PATH;?>public/images/favicon.ico" type="image/ico" />
 
         <!--lien CDN bootstrap-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
