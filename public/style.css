@@ -50,6 +50,12 @@ html, body{
 }
 /*FIN RATING*/
 
+/*IMG*/
+img #webdesign{
+    width:313px !important;
+    height:313px !important;
+}
+
 /*listMessage dans page Member */
 #listMessage {
     height: 500px !important;
@@ -60,7 +66,7 @@ footer {
 }
 
 
-
+/*RESPONSIVE*/
 @media screen and (max-width:768px){
     html, body{
         font-size:14px;
