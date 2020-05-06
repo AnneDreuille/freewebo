@@ -25,7 +25,7 @@ $('.submitNeed').submit (function (event) {
 
 //détecter validation formulaire avec classe submitPost
 $('.submitPost').submit (function (event) {
-    //ne pas recharger la page
+    //ne pas valider l'envoi du form. et donc ne pas recharger la page
     event.preventDefault();
     //enregistrer le contenu de texterea
     tinyMCE.triggerSave();
@@ -53,7 +53,7 @@ $('.submitPost').submit (function (event) {
             let listMessage= $("#listMessage");
             //met à 0 les msg précédents
             listMessage.html("");
-            $("#message").val(""); //à revoir
+            tinyMCE.activeEditor.setContent('');
             //afficher les msg postés
             data.messages.forEach(function(element) {
                 listMessage.append(
