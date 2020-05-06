@@ -1,6 +1,7 @@
 <?php $title ="FreeWebo - Agence web solidaire"; ?>
-<?php $metaDescription="FreeWebo est une agence web solidaire qui crée gratuitement des sites web pour des associations ou jeunes créateurs d'entreprise, en faisant appel à des développeurs bénévoles&nbsp;!"; ?>
+<?php $metaDescription="FreeWebo est une agence web solidaire qui crée des sites web gratuits pour des associations ou des jeunes entrepreneurs, grâce à des développeurs bénévoles."; ?>
 <?php $titlePage = 'Bienvenue sur le site FreeWebo&nbsp;!'; ?>
+<?php $urlCanonical="https://freewebo.org/"; ?>
 
 <?php ob_start(); ?>
     <div class="container-fluid">
