@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" prefix="og: http://ogp.me/ns#">
     <head>  <!-- script TinyMCE en fin de body -->
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <title><?php echo $title; ?></title>
 
@@ -26,7 +26,15 @@
         <!--lien autre style-->
         <link rel="stylesheet" href="<?php echo BASE_PATH;?>public/style.css"/>
 
-        <link rel="canonical" href="https://www.freewebo.org/" />
+        <!-- url canonique -->
+        <link rel="canonical" href=<?php echo $urlCanonical;?> />
+
+        <!-- balises open graph -->
+        <meta property="og:title" content="FreeWebo - Agence web solidaire"/>
+        <meta property="og:description" content="FreeWebo est une agence web solidaire qui crée des sites web gratuits pour des associations ou des jeunes entrepreneurs, grâce à des développeurs bénévoles."/>
+        <meta property="og:image" content="https://www.freewebo.org/public/images/webdesign.jpg" />
+        <meta property="og:url" content="https://www.freewebo.org/" />
+        <meta property="og:type" content="website">
 
         <!--script schema.org-->
         <!-- Balisage JSON-LD généré par l'outil d'aide au balisage de données structurées de Google -->
@@ -64,10 +72,10 @@
 
     <body>
         <header class="card-header pb-0">
-            <h1 class="text-center page-header text-info pt-0 mb-0">
-                <p class="d-md-inline"><img src="<?php echo BASE_PATH;?>public/images/logo.png" alt="logo" class="img.card-img"/></p>
-                <strong class="pl-2"><?php echo $titlePage; ?></strong>
-            </h1>
+            <div class="text-center page-header text-info pt-0 mb-0">
+                <div class="d-md-inline"><img src="<?php echo BASE_PATH;?>public/images/logo.png" alt="logo" class="img.card-img"/></div>
+                <h1 class="pl-2 d-md-inline font-weight-bold"><?php echo $titlePage; ?></h1>
+            </div>
             <nav>
                 <ul class="nav d-flex justify-content-between">
                     <!-- Accueil -->
