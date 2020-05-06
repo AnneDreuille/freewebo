@@ -1,6 +1,7 @@
 <?php $title ="S'inscrire sur freewebo.org - Agence Web solidaire"; ?>
 <?php $metaDescription="S'inscrire à FreeWebo pour demander la création de votre site web gratuitement... ou pour être développeur bénévole&nbsp;!"; ?>
 <?php $titlePage = 'Inscrivez-vous sur le site FreeWebo&nbsp;!'; ?>
+<?php $urlCanonical="https://freewebo.org/index.php?action=signUp"; ?>
 
 <?php ob_start(); ?>
     <div class="container-fluid">

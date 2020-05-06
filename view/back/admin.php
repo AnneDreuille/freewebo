@@ -1,6 +1,7 @@
 <?php $title ="Espace Administration freewebo.org - Agence Web solidaire"; ?>
 <?php $metaDescription="Espace administration du site freewebo.org - Agence Web solidaire&nbsp;!"; ?>
 <?php $titlePage = 'Espace Administration FreeWebo'; ?>
+<?php $urlCanonical="https://freewebo.org/index.php?action=admin"; ?>
 
 <?php ob_start(); ?>
     <div class="container-fluid">

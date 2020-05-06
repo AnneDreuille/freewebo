@@ -1,6 +1,7 @@
 <?php $title ="Espace Développeurs FreeWebo - Agence web solidaire"; ?>
 <?php $metaDescription="Espace réservé aux développeurs pour échanger sur les créations de site web."; ?>
 <?php $titlePage = 'Espace Développeurs FreeWebo&nbsp;!'; ?>
+<?php $urlCanonical="https://freewebo.org/index.php?action=dev"; ?>
 
 <?php ob_start(); ?>
     <div class="container-fluid">

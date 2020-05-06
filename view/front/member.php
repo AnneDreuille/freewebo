@@ -1,6 +1,7 @@
 <?php $title ="Espace membre FreeWebo - Agence web solidaire"; ?>
 <?php $metaDescription="Parce que vous êtes gérant d'une association ou jeune créateur d'entreprise, l'espace membre FreeWebo vous permet de suivre la création de votre site web, réalisée gratuitement par un développeur bénévole&nbsp;!"; ?>
 <?php $titlePage = 'Bienvenue dans votre espace membre FreeWebo&nbsp;!'; ?>
+<?php $urlCanonical="https://freewebo.org/index.php?action=member"; ?>
 
 <?php ob_start(); ?>
     <div class="container-fluid">

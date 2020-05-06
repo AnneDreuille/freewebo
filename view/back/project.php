@@ -1,6 +1,7 @@
 <?php $title ="FreeWebo - Administration Projet"; ?>
 <?php $metaDescription="Suivi des projets du site freewebo.org - Agence Web solidaire&nbsp;!"; ?>
 <?php $titlePage = 'FreeWebo - Administration Projet'; ?>
+<?php $urlCanonical="https://freewebo.org/index.php?action=project"; ?>
 
 <?php ob_start(); ?>
     <div class="container-fluid">
