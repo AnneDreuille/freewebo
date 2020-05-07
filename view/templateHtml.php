@@ -36,6 +36,15 @@
         <meta property="og:url" content="https://www.freewebo.org/" />
         <meta property="og:type" content="website">
 
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165862912-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-165862912-1');
+        </script>
+
         <!--script schema.org-->
         <!-- Balisage JSON-LD généré par l'outil d'aide au balisage de données structurées de Google -->
         <script type="application/ld+json">
