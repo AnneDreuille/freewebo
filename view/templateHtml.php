@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="<?php echo BASE_PATH;?>public/style.css"/>
 
         <!-- url canonique -->
-        <link rel="canonical" href=<?php echo $urlCanonical;?> />
+        <link rel="canonical" href="<?php echo $urlCanonical;?>" />
 
         <!-- balises open graph -->
         <meta property="og:title" content="FreeWebo - Agence web solidaire"/>
@@ -89,7 +89,7 @@
                 <ul class="nav d-flex justify-content-between">
                     <!-- Accueil -->
                     <li class="nav-item">
-                        <a href="index.php" class="nav-link text-info font-weight-bold"><span class="fas fa-home pr-1"></span>Accueil</a>
+                        <a href="<?php echo BASE_PATH;?>" class="nav-link text-info font-weight-bold"><span class="fas fa-home pr-1"></span>Accueil</a>
                     </li>
                     <!-- Espace membre -->
                     <li class="nav-item">
@@ -147,22 +147,23 @@
 
         <?php echo $content; ?>
 
-
-        <footer class="row card-footer">
-            <!-- partenaires -->
-            <div class ="col-md-11 container d-md-flex justify-content-around align-items-center d-sm-inline-flex">
-                <p class="text-info text-center font-weight-bold h5 px-1">Nos partenaires</p>
-                <div class="text-center py-1"><img src="public/images/bnpparibas.png" alt="bnpparibas"/></div>
-                <div class="text-center py-1"><img src="public/images/ideas.png" alt="ideas"/></div>
-                <div class="text-center py-1"><img src="public/images/openclassrooms.png" alt="openclassrooms"/></div>
-                <div class="text-center py-1"><img src="public/images/tousbenevoles.jpg" alt="tousbenevoles"/></div>
-            </div>
-            <hr/>
-            <!-- politique de confidentialité -->
-            <div class="col-md-1 text-center pr-1 d-md-flex align-items-end">
-                <a href="index.php?action=privacyPolicy"><p class="text-secondary small italic">Politique de confidentialité</p></a>
-            </div><br/>
-        </footer><br/>
+        <div class="container-fluid">
+            <footer class="row card-footer">
+                <!-- partenaires -->
+                <div class ="col-md-11 container d-md-flex justify-content-around align-items-center d-sm-inline-flex">
+                    <p class="text-info text-center font-weight-bold h5 px-1">Nos partenaires</p>
+                    <div class="text-center py-1"><img src="public/images/bnpparibas.png" alt="bnpparibas"/></div>
+                    <div class="text-center py-1"><img src="public/images/ideas.png" alt="ideas"/></div>
+                    <div class="text-center py-1"><img src="public/images/openclassrooms.png" alt="openclassrooms"/></div>
+                    <div class="text-center py-1"><img src="public/images/tousbenevoles.jpg" alt="tousbenevoles"/></div>
+                </div>
+                <hr/>
+                <!-- politique de confidentialité -->
+                <div class="col-md-1 text-center pr-1 d-md-flex align-items-end">
+                    <a href="index.php?action=privacyPolicy"><p class="text-secondary small italic">Politique de confidentialité</p></a>
+                </div><br/>
+            </footer><br/>
+        </div>
 
         <!-- script pour TinyMCE éditeur texte -->
         <script src="https://cdn.tiny.cloud/1/jy2e0nx3gog6j48dtlzexwjk3qxqq5noggxzme1zo8amqzcm/tinymce/5.2.2-80/tinymce.min.js" referrerpolicy="origin"></script>
