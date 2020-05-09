@@ -50,12 +50,6 @@ html, body{
 }
 /*FIN RATING*/
 
-/*IMG*/
-img #webdesign{
-    width:313px !important;
-    height:313px !important;
-}
-
 /*listMessage dans page Member */
 #listMessage {
     height: 500px !important;
