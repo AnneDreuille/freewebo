@@ -9,7 +9,7 @@
         <!-- PITCH, INSCRIPTION, CONNEXION -->
         <div class="row">
             <div class="col-md-4 text-center px-0">
-                <img src="<?php echo BASE_PATH;?>public/images/webdesign.jpg" alt="webdesign" id="webdesign" />
+                <img src="<?php echo BASE_PATH;?>public/images/webdesign.jpg" alt="webdesign" width="313" heigth="313" />
             </div>
             <div class="col-md-4 my-2">
                 <p class="text-center bg-info rounded text-white py-3">FreeWebo est une agence web solidaire<br/> qui crée des sites web gratuitement<br/> pour des associations<br/>et des jeunes créateurs d'entreprise,<br/>avec l'aide de développeurs bénévoles&nbsp;!</p>
