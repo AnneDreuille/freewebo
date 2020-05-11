@@ -82,7 +82,7 @@
     <body>
         <header class="card-header pb-0">
             <div class="text-center page-header text-info pt-0 mb-0">
-                <div class="d-md-inline"><img src="<?php echo BASE_PATH;?>public/images/logo.png" alt="logo" class="img.card-img"/></div>
+                <div class="d-md-inline"><img src="<?php echo BASE_PATH;?>public/images/logo.png" alt="logo" class="img.card-img" width="77" height="77" /></div>
                 <h1 class="pl-2 d-md-inline font-weight-bold"><?php echo $titlePage; ?></h1>
             </div>
             <nav>
@@ -152,10 +152,10 @@
                 <!-- partenaires -->
                 <div class ="col-md-11 container d-md-flex justify-content-around align-items-center d-sm-inline-flex">
                     <p class="text-info text-center font-weight-bold h5 px-1">Nos partenaires</p>
-                    <div class="text-center py-1"><img src="public/images/bnpparibas.png" alt="bnpparibas"/></div>
-                    <div class="text-center py-1"><img src="public/images/ideas.png" alt="ideas"/></div>
-                    <div class="text-center py-1"><img src="public/images/openclassrooms.png" alt="openclassrooms"/></div>
-                    <div class="text-center py-1"><img src="public/images/tousbenevoles.jpg" alt="tousbenevoles"/></div>
+                    <div class="text-center py-1"><img src="public/images/bnpparibas.png" alt="bnpparibas" width="231" height="73" /></div>
+                    <div class="text-center py-1"><img src="public/images/ideas.png" alt="ideas" width="105" height="99" /></div>
+                    <div class="text-center py-1"><img src="public/images/openclassrooms.png" alt="openclassrooms" width="202" height="98" /></div>
+                    <div class="text-center py-1"><img src="public/images/tousbenevoles.jpg" alt="tousbenevoles" width="230" height="52" /></div>
                 </div>
                 <hr/>
                 <!-- politique de confidentialité -->
