@@ -9,7 +9,7 @@
         <!-- PITCH, INSCRIPTION, CONNEXION -->
         <div class="row">
             <div class="col-md-4 text-center px-0">
-                <img src="<?php echo BASE_PATH;?>public/images/webdesign.jpg" alt="webdesign" width="313" heigth="313" />
+                <img src="<?php echo BASE_PATH;?>public/images/webdesign.jpg" alt="webdesign" width="313" height="313" />
             </div>
             <div class="col-md-4 my-2">
                 <p class="text-center bg-info rounded text-white py-3">FreeWebo est une agence web solidaire<br/> qui crée des sites web gratuitement<br/> pour des associations<br/>et des jeunes créateurs d'entreprise,<br/>avec l'aide de développeurs bénévoles&nbsp;!</p>
@@ -58,7 +58,7 @@
             <!-- start -->
             <div class="col-md-3">
                 <div class="card-title text-center">
-                    <button class="btn btn-primary rounded-circle w-55 p-4" type="button"><img src="<?php echo BASE_PATH;?>public/images/start.png" alt="start" class="pb-1"/><br/>Comment faire pour avoir mon site web&nbsp;?</button>
+                    <button class="btn btn-primary rounded-circle w-55 p-4" type="button"><img src="<?php echo BASE_PATH;?>public/images/start.png" alt="start" class="pb-1" width="73" height="83" /><br/>Comment faire pour avoir mon site web&nbsp;?</button>
                 </div>
                 <div class="d-flex justify-content-center text-primary shadow rounded pt-2">
                     <ul class="small italic">
@@ -73,7 +73,7 @@
             <!-- time -->
             <div class="col-md-3">
                 <div class="card-title text-center">
-                    <button class="btn btn-warning rounded-circle w-55 p-4" type="button"><img src="<?php echo BASE_PATH;?>public/images/time.png" alt="time" class="pb-1"/><br/>Combien de temps avant d'avoir mon site web&nbsp;?</button>
+                    <button class="btn btn-warning rounded-circle w-55 p-4" type="button"><img src="<?php echo BASE_PATH;?>public/images/time.png" alt="time" class="pb-1" width="66" height="92" /><br/>Combien de temps avant d'avoir mon site web&nbsp;?</button>
                 </div>
                 <div class="d-flex justify-content-center text-secondary shadow rounded">
                     <ul class="small italic">
@@ -88,7 +88,7 @@
             <!-- limit -->
             <div class="col-md-3">
                 <div class="card-title text-center">
-                    <button class="btn btn-secondary rounded-circle w-55 p-4" type="button"><img src="<?php echo BASE_PATH;?>public/images/limit.png" alt="limit" class="pb-3"/><br/>Quelles sont les limites de FreeWebo&nbsp;?</button>
+                    <button class="btn btn-secondary rounded-circle w-55 p-4" type="button"><img src="<?php echo BASE_PATH;?>public/images/limit.png" alt="limit" class="pb-3" width="89" height="76" /><br/>Quelles sont les limites de FreeWebo&nbsp;?</button>
                 </div>
                 <div class="d-flex justify-content-center text-secondary shadow rounded">
                     <ul class="small italic">
@@ -103,7 +103,7 @@
             <!-- end -->
             <div class="col-md-3">
                 <div class="card-title text-center">
-                    <button class="btn btn-success rounded-circle w-55 p-4" type="button"><img src="<?php echo BASE_PATH;?>public/images/end.png" alt="end" class="pb-2"/><br/>Comment j'obtiens l'accès à mon site web&nbsp;?</button>
+                    <button class="btn btn-success rounded-circle w-55 p-4" type="button"><img src="<?php echo BASE_PATH;?>public/images/end.png" alt="end" class="pb-2" width="91" height="81" /><br/>Comment j'obtiens l'accès à mon site web&nbsp;?</button>
                 </div>
                 <div class="d-flex justify-content-center text-success shadow rounded">
                     <ul class="small italic">
@@ -135,19 +135,19 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active border">
                             <a href="https://www.webagency2-0.com/" class="text-decoration-none" target="_blank" data-toggle="tooltip" data-placement="top" title="Clic vers le site"><h3 class="text-center text-info mb-3">Site agence web<span class="fas fa-link fa-xs pl-2"></span></h3></a>
-                            <img class="d-block w-100" src="<?php echo BASE_PATH;?>public/images/webagency.png" alt="Webagency">
+                            <img class="d-block w-100" src="<?php echo BASE_PATH;?>public/images/webagency.png" alt="Webagency" width="1179" height="456" />
                         </div>
                         <div class="carousel-item border">
                             <a href="https://strasbourgtourisme.webagency2-0.com/" class="text-decoration-none" target="_blank" data-toggle="tooltip" data-placement="top" title="Clic vers le site"><h3 class="text-center text-info mb-3">Site Office Tourisme<span class="fas fa-link fa-xs pl-2"></span></h3></a>
-                            <img class="d-block w-100" src="<?php echo BASE_PATH;?>public/images/strasbourg.png" alt="Strasbourg">
+                            <img class="d-block w-100" src="<?php echo BASE_PATH;?>public/images/strasbourg.png" alt="Strasbourg" width="1204" height="428" />
                         </div>
                         <div class="carousel-item border">
                             <a href="https://locavelo.webagency2-0.com/" class="text-decoration-none" target="_blank" data-toggle="tooltip" data-placement="top" title="Clic vers l'appli web"><h3 class="text-center text-info mb-3">Appli web location vélos<span class="fas fa-link fa-xs pl-2"></span></h3></a>
-                            <img class="d-block w-100" src="<?php echo BASE_PATH;?>public/images/locavelo.png" alt="Locavelo">
+                            <img class="d-block w-100" src="<?php echo BASE_PATH;?>public/images/locavelo.png" alt="Locavelo" width="1165" height="455" />
                         </div>
                         <div class="carousel-item border">
                             <a href="https://blogjf.webagency2-0.com/" class="text-decoration-none" target="_blank" data-toggle="tooltip" data-placement="top" title="Clic vers le site"><h3 class="text-center text-info mb-3">Blog écrivain<span class="fas fa-link fa-xs pl-2"></span></h3></a>
-                            <img class="d-block w-100" src="<?php echo BASE_PATH;?>public/images/blogjf.png" alt="Blog JF">
+                            <img class="d-block w-100" src="<?php echo BASE_PATH;?>public/images/blogjf.png" alt="Blog JF" width="1178" height="405" />
                         </div>
                     </div>
                 </div>
