@@ -1,5 +1,5 @@
 <?php $title ="FreeWebo.org - Politique de confidentialité"; ?>
-<?php $metaDescription="FreeWebo est une agence web solidaire qui crée gratuitement des sites web pour des associations ou jeunes créateurs d'entreprise, en faisant appel à des développeurs bénévoles&nbsp;!"; ?>
+<?php $metaDescription="FreeWebo - Politique de confidentialité"; ?>
 <?php $titlePage = 'FreeWebo.org - Politique de confidentialité'; ?>
 <?php $urlCanonical="https://freewebo.org/index.php?action=privacyPolicy"; ?>
 
@@ -9,6 +9,9 @@
         <div class="row">
             <div class="offset-md-1 col-md-10 offset-md-1 small text-justify">
               <p class="h6 text-info">L’adresse de notre site Web est : https://www.freewebo.org.</p><br/>
+
+              <!-- solution opt out pour les cookies -->
+              <iframe style="border: 0; height: 200px; width: 600px;" src="https://freewebo.matomo.cloud/index.php?module=CoreAdminHome&action=optOut&language=fr&backgroundColor=&fontColor=&fontSize=&fontFamily="></iframe>
 
               <h3 class="text-center">Politique de confidentialité (standard RGPD)
               <p>Sécurité et protection des donnés personnelles</p></h3>
