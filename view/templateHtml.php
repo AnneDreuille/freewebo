@@ -36,14 +36,37 @@
         <meta property="og:url" content="https://www.freewebo.org/" />
         <meta property="og:type" content="website">
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165862912-1"></script>
+        <!-- Matomo script mesure d'audience sans cookies-->
         <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'UA-165862912-1');
-        </script> -->
+            var _paq = window._paq || [];
+
+            // fonction de non prorogation des cookies
+            _paq.push([function() {
+                var self = this;
+                function getOriginalVisitorCookieTimeout() {
+                    var now = new Date(),
+                    nowTs = Math.round(now.getTime() / 1000),
+                    visitorInfo = self.getVisitorInfo();
+                    var createTs = parseInt(visitorInfo[2]);
+                    var cookieTimeout = 33696000; // 13 mois en secondes
+                    var originalTimeout = createTs + cookieTimeout - nowTs;
+                    return originalTimeout;
+                }
+                this.setVisitorCookieTimeout( getOriginalVisitorCookieTimeout() );
+            }]);
+
+            /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+                var u="https://freewebo.matomo.cloud/";
+                _paq.push(['setTrackerUrl', u+'matomo.php']);
+                _paq.push(['setSiteId', '1']);
+                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                g.type='text/javascript'; g.async=true; g.defer=true; g.src='//cdn.matomo.cloud/freewebo.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+            })();
+        </script>
+        <!-- End Matomo Code -->
 
         <!--script schema.org-->
         <!-- Balisage JSON-LD généré par l'outil d'aide au balisage de données structurées de Google -->
