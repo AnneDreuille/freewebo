@@ -1,5 +1,5 @@
 <?php $title ="FreeWebo.org - Agence Web solidaire"; ?>
-<?php $metaDescription="FreeWebo est une agence web solidaire qui crée gratuitement des sites web pour des associations ou jeunes créateurs d'entreprise, en faisant appel à des développeurs bénévoles&nbsp;!"; ?>
+<?php $metaDescription="FreeWebo - page d'erreur"; ?>
 <?php $titlePage = 'FreeWebo.org - Agence Web solidaire'; ?>
 <?php $urlCanonical="https://freewebo.org/index.php?action=errorPage"; ?>
 
