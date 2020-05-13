@@ -62,6 +62,11 @@ ExpiresDefault "access plus 2 days"
 
 #PAGE ERREUR#
 ErrorDocument 404 /index.php?action=errorPage
+ErrorDocument 400 /index.php?action=errorPage
+ErrorDocument 401 /index.php?action=errorPage
+ErrorDocument 403 /index.php?action=errorPage
+ErrorDocument 500 /index.php?action=errorPage
+ErrorDocument 503 /index.php?action=errorPage
 
 #REDIRECTIONS PAR REECRITURES URL#
 #RewriteEngine On
