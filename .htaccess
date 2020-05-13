@@ -1,3 +1,6 @@
+#BLOQUER ACCES AUX REPERTOIRES#
+Options All -Indexes
+
 ## EXPIRES CACHING ##
 <IfModule mod_expires.c>
 ExpiresActive On
@@ -24,7 +27,7 @@ ExpiresDefault "access plus 2 days"
 </IfModule>
 ## EXPIRES CACHING ##
 
-#COMPRESSION FICHIERS#
+##COMPRESSION FICHIERS##
 <IfModule mod_deflate.c>
   # Compress HTML, CSS, JavaScript, Text, XML and fonts
   AddOutputFilterByType DEFLATE application/javascript
@@ -55,18 +58,18 @@ ExpiresDefault "access plus 2 days"
   BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
   Header append Vary User-Agent
 </IfModule>
-#FIN COMPRESSION FICHIERS#
+##FIN COMPRESSION FICHIERS##
 
 #PAGE ERREUR#
 ErrorDocument 404 /index.php?action=errorPage
 
-#REDIRECTIONS & REECRITURES URL#
+#REDIRECTIONS PAR REECRITURES URL#
 #RewriteEngine On
 
-# http vers https#
+#HTTP VERS HTTPS#
 #RewriteCond %{SERVER_PORT} !=443
 #RewriteRule ^(.*)$ https://freewebo.org/$1 [R=301,L]
 
-# force non-www#
+#FORCE NON-WWW#
 #RewriteCond %{HTTP_HOST} !^freewebo.org [NC]
-#RewriteRule (.*) https://freewebo.org/$1 [QSA,R=301,L]
+#RewriteRule ^(.*)$ https://freewebo.org/$1 [QSA,R=301,L]
