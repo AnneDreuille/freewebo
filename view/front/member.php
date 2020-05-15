@@ -198,7 +198,6 @@
                     <p class="text-info font-weight-bold text-center">Evaluer le client</p>
                     <div class="form-group row">
                         <div class="col ratingClient d-flex flex-row-reverse h2 justify-content-around">
-
                             <input type="radio" id="5-stars" name="ratingClient" value="5"
                             <?php if (isset($dataProject['ratingClient']) && $dataProject['ratingClient'] == "5") :
                                 echo 'checked';
