@@ -80,7 +80,7 @@
                         <li>Recherche d'un développeur.</li>
                         <li>Analyse de votre besoin.</li>
                         <li>Début création dès modèle OK.</li>
-                        <li>Durée création = 1 à 2 mois.</li>
+                        <li>Durée création = 1 à 3 mois.</li>
                     </ul>
                 </div>
             </div><br/>
