@@ -90,7 +90,7 @@
                 <div class="card-title text-center">
                     <button class="btn btn-secondary rounded-circle w-55 p-4" type="button"><img src="<?php echo BASE_PATH;?>public/images/limit.png" alt="limit" class="pb-3" width="89" height="76" /><br/>Quelles sont les limites de FreeWebo&nbsp;?</button>
                 </div>
-                <div class="d-flex justify-content-center text-secondary shadow rounded">
+                <div class="d-flex justify-content-center text-secondary shadow rounded mt-4">
                     <ul class="small italic">
                         <li>Pour assoc. & créations entrepr.</li>
                         <li>Condition : trouver 1 développeur.</li>
@@ -105,7 +105,7 @@
                 <div class="card-title text-center">
                     <button class="btn btn-success rounded-circle w-55 p-4" type="button"><img src="<?php echo BASE_PATH;?>public/images/end.png" alt="end" class="pb-2" width="91" height="81" /><br/>Comment j'obtiens l'accès à mon site web&nbsp;?</button>
                 </div>
-                <div class="d-flex justify-content-center text-success shadow rounded">
+                <div class="d-flex justify-content-center text-success shadow rounded mt-3">
                     <ul class="small italic">
                         <li>Lien d'accès URL transmis.</li>
                         <li>Site web publié sur la "toile"&nbsp;!</li>
