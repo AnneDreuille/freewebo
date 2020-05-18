@@ -175,10 +175,10 @@
                 <!-- partenaires -->
                 <div class ="col-md-11 container d-md-flex justify-content-around align-items-center d-sm-inline-flex">
                     <p class="text-info text-center font-weight-bold h5 px-1">Nos partenaires</p>
-                    <div class="text-center py-1"><img src="public/images/bnpparibas.png" alt="bnpparibas" width="231" height="73" /></div>
-                    <div class="text-center py-1"><img src="public/images/ideas.png" alt="ideas" width="105" height="99" /></div>
-                    <div class="text-center py-1"><img src="public/images/openclassrooms.png" alt="openclassrooms" width="202" height="98" /></div>
-                    <div class="text-center py-1"><img src="public/images/tousbenevoles.jpg" alt="tousbenevoles" width="230" height="52" /></div>
+                    <div class="text-center py-1"><img src="<?php echo BASE_PATH;?>public/images/bnpparibas.png" alt="bnpparibas" width="231" height="73" /></div>
+                    <div class="text-center py-1"><img src="<?php echo BASE_PATH;?>public/images/ideas.png" alt="ideas" width="105" height="99" /></div>
+                    <div class="text-center py-1"><img src="<?php echo BASE_PATH;?>public/images/openclassrooms.png" alt="openclassrooms" width="202" height="98" /></div>
+                    <div class="text-center py-1"><img src="<?php echo BASE_PATH;?>public/images/tousbenevoles.jpg" alt="tousbenevoles" width="230" height="52" /></div>
                 </div>
                 <hr/>
                 <!-- politique de confidentialité -->
