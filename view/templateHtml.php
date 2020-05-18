@@ -117,7 +117,7 @@
                     <!-- Espace membre -->
                     <li class="nav-item">
                         <?php if (!empty($_SESSION ['userType']) && ($_SESSION ['userType']!=="admin")) :?>
-                        <a href="index.php?action=member" class="nav-link text-info font-weight-bold"><span class="fas fa-campground pr-1"></span>Espace membre</a>
+                        <a href="<?php echo BASE_PATH;?>index.php?action=member" class="nav-link text-info font-weight-bold"><span class="fas fa-campground pr-1"></span>Espace membre</a>
 
                         <?php elseif (empty($_SESSION ['userType'])):?>
                         <a href="" class="nav-link text-info font-weight-bold" data-toggle="tooltip" data-placement="top" title="Pour avoir accès, il faut s'inscrire&nbsp;!"><span class="fas fa-campground pr-1"></span>Espace membre</a>
@@ -127,14 +127,14 @@
                     <!-- Espace Dev -->
                     <?php if (!empty($_SESSION ['userType']) && $_SESSION ['userType']!=="client"):?>
                     <li class="nav-item">
-                        <a class="nav-link text-secondary" href="index.php?action=dev"><span class="fas fa-laptop-house pr-1"></span>Espace Dev</a>
+                        <a class="nav-link text-secondary" href="<?php echo BASE_PATH;?>index.php?action=dev"><span class="fas fa-laptop-house pr-1"></span>Espace Dev</a>
                     </li>
                     <?php endif;?>
 
                     <!-- Espace Admin -->
                     <?php if (!empty($_SESSION ['userType']) && $_SESSION ['userType']==="admin"):?>
                     <li class="nav-item">
-                        <a class="nav-link text-secondary" href="index.php?action=admin" ><span class="fas fa-igloo pr-1"></span>Espace admin</a>
+                        <a class="nav-link text-secondary" href="<?php echo BASE_PATH;?>index.php?action=admin" ><span class="fas fa-igloo pr-1"></span>Espace admin</a>
                     </li>
                     <?php endif;?>
 
@@ -151,7 +151,7 @@
 
                     <!-- bouton like -->
                     <li class="nav-link">
-                        <a href="index.php?action=clicks" class="text-info font-weight-bold text-decoration-none mt-2 pr-1" id="btnLike" data-toggle="tooltip" data-placement="top" title="Clic si tu aimes&nbsp;!"><span class="fas fa-thumbs-up pr-1"></span>J'aime FreeWebo</a>
+                        <a href="<?php echo BASE_PATH;?>index.php?action=clicks" class="text-info font-weight-bold text-decoration-none mt-2 pr-1" id="btnLike" data-toggle="tooltip" data-placement="top" title="Clic si tu aimes&nbsp;!"><span class="fas fa-thumbs-up pr-1"></span>J'aime FreeWebo</a>
                         <span class="text-info"><?php nbLike();?></span>
                     </li>
 
@@ -162,7 +162,7 @@
 
                     <!-- bouton déconnexion -->
                     <li class="nav-link">
-                        <a href="index.php?action=logOut" class="mt-2 text-info font-weight-bold text-decoration-none" data-toggle="tooltip" data-placement="top" title="Clic pour se déconnecter"><span class="fas fa-sign-out-alt pr-1"></span>Déconnexion</a>
+                        <a href="<?php echo BASE_PATH;?>index.php?action=logOut" class="mt-2 text-info font-weight-bold text-decoration-none" data-toggle="tooltip" data-placement="top" title="Clic pour se déconnecter"><span class="fas fa-sign-out-alt pr-1"></span>Déconnexion</a>
                     </li>
                 </ul>
             </nav>
