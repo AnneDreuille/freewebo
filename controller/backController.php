@@ -82,7 +82,7 @@ function assign(){
             $member= $userModel->signIn($_POST['mail']);
 
             if ($member===false || $member['blacklist']==1){
-            header('location: index.php?action=admin');
+            header('location: '.BASE_PATH.'index.php?action=admin');
             die();
             }
 
@@ -91,7 +91,7 @@ function assign(){
             $assign= $projectModel->assign($idDev, $_GET['id']);
 
             //diriger vers la page project
-            header('location: index.php?action=project&id='.$_GET['id']);
+            header('location: '.BASE_PATH.'index.php?action=project&id='.$_GET['id']);
             die();
 
         } else {
@@ -117,7 +117,7 @@ function endDate(){
         $endDate= $projectModel->endDate($_GET['id']);
 
         //diriger vers la page project
-        header('location: index.php?action=project&id='.$_GET['id']);
+        header('location: '.BASE_PATH.'index.php?action=project&id='.$_GET['id']);
         die();
 
     } else {
@@ -138,7 +138,7 @@ function updateUser() {
         $getUser= $userModel->getUser($_GET['id']);
 
         if ($getUser===false){
-            header('location: index.php?action=admin');
+            header('location: '.BASE_PATH.'index.php?action=admin');
             die();
         }
 
@@ -162,7 +162,7 @@ function updateUser() {
             $updateUser= $userModel->updateUser($_POST['lastName'], $_POST['firstName'], $_POST['mail'], $_POST['phone'], $password_hash, $blacklist, $_GET['id']);
 
             //diriger vers la page user et mettre à jour le user
-            header('Location: index.php?action=updateUser&id=' .$_GET['id']);
+            header('location: '.BASE_PATH.'index.php?action=updateUser&id=' .$_GET['id']);
             die();
 
         } else {
