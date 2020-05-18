@@ -50,7 +50,7 @@
                         <?php if ($dataProject['needDate_fr'] !== null) : ?>
                             <a href=""><button type="button" class="btn btn-success rounded mr-2 px-1">1. Je décris le besoin</button></a>
                         <?php else : ?>
-                            <a href="index.php?action=need" data-toggle="tooltip" data-placement="top" title="Clic pour définir le besoin"><button type="button" class="btn btn-success rounded mr-2 px-1">1. Je décris le besoin</button></a>
+                            <a href="<?php echo BASE_PATH;?>index.php?action=need" data-toggle="tooltip" data-placement="top" title="Clic pour définir le besoin"><button type="button" class="btn btn-success rounded mr-2 px-1">1. Je décris le besoin</button></a>
                         <?php endif;?>
                         <div>
                         <?php if ($dataProject['needDate_fr'] !== null) : ?>
@@ -78,7 +78,7 @@
                         <?php if($dataProject['modelDate_fr']===null):?>
                         <a href=#><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">3. Dépôt modèle</button></a>
                         <?php else :?>
-                        <a href="public/uploads/<?php echo htmlspecialchars($dataProject['modelFile']);?>" target="_blank" data-toggle="tooltip" data-placement="top" title="Clic pour voir le fichier"><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">3. Dépôt modèle</button></a>
+                        <a href="<?php echo BASE_PATH;?>public/uploads/<?php echo htmlspecialchars($dataProject['modelFile']);?>" target="_blank" data-toggle="tooltip" data-placement="top" title="Clic pour voir le fichier"><button type="button" class="btn btn-primary disabled rounded mr-2 px-1">3. Dépôt modèle</button></a>
                         <?php endif;?>
                         <div>
                         <?php if ($dataProject['modelDate_fr'] !== null) : ?>
@@ -93,9 +93,9 @@
                     <div>
                         <div class="mb-1"><img src="<?php echo BASE_PATH;?>public/images/4.process.png" alt="process étape4"/></div>
                         <?php if ($dataProject['startDate_fr'] !== null) : ?>
-                        <a href="index.php?action=validModel"><button type="button" class="btn btn-success rounded mr-2 px-1">4. Je valide le modèle</button></a>
+                        <a href="<?php echo BASE_PATH;?>index.php?action=validModel"><button type="button" class="btn btn-success rounded mr-2 px-1">4. Je valide le modèle</button></a>
                         <?php else : ?>
-                        <a href="index.php?action=validModel" data-toggle="tooltip" data-placement="top" title="Clic pour valider le modèle"><button type="button" class="btn btn-success rounded mr-2 px-1">1. Je valide le modèle</button></a>
+                        <a href="<?php echo BASE_PATH;?>index.php?action=validModel" data-toggle="tooltip" data-placement="top" title="Clic pour valider le modèle"><button type="button" class="btn btn-success rounded mr-2 px-1">1. Je valide le modèle</button></a>
                         <?php endif;?>
                         <div>
                         <?php if ($dataProject['startDate_fr'] !== null) : ?>
@@ -150,7 +150,7 @@
             <!-- DEV déposer le fichier du modèle -->
             <div class="offset-md-1 col-md-4">
                 <?php if ($dataProject['assignDate_fr'] !== null) : ?>
-                <form action="index.php?action=modelFile&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" enctype="multipart/form-data" class="border pt-1 px-2 bg-light rounded">
+                <form action="<?php echo BASE_PATH;?>index.php?action=modelFile&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" enctype="multipart/form-data" class="border pt-1 px-2 bg-light rounded">
                     <p class="text-info font-weight-bold text-center">Déposer le fichier du modèle</p>
                     <div class="form-group row">
                         <div class="col">
@@ -172,7 +172,7 @@
             <!-- DEV déposer l'URL du site créé -->
             <div class="col-md-3">
                 <?php if ($dataProject['startDate_fr'] !== null) :?>
-                <form action="index.php?action=urlName&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded">
+                <form action="<?php echo BASE_PATH;?>index.php?action=urlName&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded">
                     <p class="text-info font-weight-bold text-center">Déposer l'URL du site créé</p>
                     <div class="form-group row">
                         <div class="col">
@@ -194,7 +194,7 @@
             <!-- DEV donner 1 note au client -->
             <div class="col-md-3">
                 <?php if ($dataProject['urlDate_fr'] !== null) : ?>
-                <form action="index.php?action=ratingClient&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" class="border pt-1 px-5 bg-light rounded">
+                <form action="<?php echo BASE_PATH;?>index.php?action=ratingClient&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" class="border pt-1 px-5 bg-light rounded">
                     <p class="text-info font-weight-bold text-center">Evaluer le client</p>
                     <div class="form-group row">
                         <div class="col ratingClient d-flex flex-row-reverse h2 justify-content-around">
@@ -249,11 +249,10 @@
             <!-- CLIENT donner 1 note au dev -->
             <div class="offset-md-7 col-md-3">
                 <?php if ($dataProject['urlDate_fr'] !== null) : ?>
-                <form action="index.php?action=ratingDev&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" class="border pt-1 px-5 bg-light rounded">
+                <form action="<?php echo BASE_PATH;?>index.php?action=ratingDev&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" class="border pt-1 px-5 bg-light rounded">
                     <p class="text-info font-weight-bold text-center">Evaluer le développeur</p>
                     <div class="form-group row">
                         <div class="col ratingDev d-flex flex-row-reverse h2 justify-content-around">
-
                             <input type="radio" id="5stars" name="ratingDev" value="5"
                             <?php if (isset($dataProject['ratingDev']) && $dataProject['ratingDev'] == "5") :
                                 echo 'checked';
@@ -301,7 +300,7 @@
             <!-- formulaire pour poster un message -->
             <div class ="col-md-3 offset-md-1">
                 <button class="btn btn-warning btn-block font-weight-bold disabled">Ecrire un message ici&nbsp;!</button>
-                <form action="index.php?action=addMessage&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded submitPost">
+                <form action="<?php echo BASE_PATH;?>index.php?action=addMessage&id=<?php echo htmlspecialchars($dataProject['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded submitPost">
                     <div class="form-group row">
                         <div class="col">
                             <textarea id="message" name="message"></textarea>

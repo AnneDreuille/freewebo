@@ -9,7 +9,7 @@
         <!-- AFFICHER LES DONNEES D'UN USER POUR MISE A JOUR-->
         <div class="row">
             <div class="offset-md-4 col-md-4">
-                <form action="index.php?action=updateUser&id=<?php echo htmlspecialchars($_GET['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded">
+                <form action="<?php echo BASE_PATH;?>index.php?action=updateUser&id=<?php echo htmlspecialchars($_GET['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded">
                     <p class="text-info font-weight-bold text-center">Mettre à jour un utilisateur</p>
                     <!-- nom & prénom -->
                     <div class="form-group row mt-3">

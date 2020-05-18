@@ -17,7 +17,7 @@
 
             <div class="offset-md-1 col-md-3">
                 <!-- formulaire pour se connecter signIn -->
-                <form action="index.php?action=signIn" method="post">
+                <form action="<?php echo BASE_PATH;?>index.php?action=signIn" method="post">
                     <div class="form-group">
                         <p class="italic font-weight-bold text-info small mb-0">Espace membre</p>
                         <div class="form-group row mb-1">
@@ -45,7 +45,7 @@
                         <div class="form-group row">
                             <div class="col">
                                 <span class="small italic font-weight-bold text-info mt-3 mb-0">Pas encore membre&nbsp;?</span>
-                                <a class="btn btn-sm btn-info small" href="index.php?action=signUp" role="button"><span class="fas fa-user-edit pr-1"></span>S'inscrire</a>
+                                <a class="btn btn-sm btn-info small" href="<?php echo BASE_PATH;?>index.php?action=signUp" role="button"><span class="fas fa-user-edit pr-1"></span>S'inscrire</a>
                             </div>
                         </div>
                     </div>

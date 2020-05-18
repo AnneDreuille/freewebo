@@ -28,7 +28,7 @@
                 endif; ?>
                 </p>
                 <!-- afficher le formulaire d'INSCRIPTION à remplir -->
-                <form action="index.php?action=signUp" method="post" class="border px-3 py-3 bg-light rounded">
+                <form action="<?php echo BASE_PATH;?>index.php?action=signUp" method="post" class="border px-3 py-3 bg-light rounded">
                     <div>
                         <p class="mb-0 text-info font-weight-bold">Qui êtes-vous&nbsp;?</p>
                         <div class="form-check">

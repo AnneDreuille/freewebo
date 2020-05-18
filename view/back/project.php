@@ -58,7 +58,7 @@
         <div class="row">
             <!-- nommer un développeur -->
             <div class="offset-md-2 col-md-4">
-                <form action="index.php?action=assign&id=<?php echo htmlspecialchars($_GET['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded">
+                <form action="<?php echo BASE_PATH;?>index.php?action=assign&id=<?php echo htmlspecialchars($_GET['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded">
                     <p class="text-info font-weight-bold text-center">Nommer 1 développeur sur le projet</p>
                     <div class="form-group row">
                         <div class="col">
@@ -77,7 +77,7 @@
             </div>
             <!-- acter la fin d'un projet -->
             <div class="col-md-3">
-                <form action="index.php?action=endDate&id=<?php echo htmlspecialchars($_GET['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded">
+                <form action="<?php echo BASE_PATH;?>index.php?action=endDate&id=<?php echo htmlspecialchars($_GET['id']);?>" method="post" class="border pt-1 px-2 bg-light rounded">
                     <p class="text-info font-weight-bold text-center">Acter la fin du projet</p>
                     <div class="form-group row">
                         <div class="col text-center">

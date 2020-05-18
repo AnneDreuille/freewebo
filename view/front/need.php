@@ -20,7 +20,7 @@
 
             <div class="col-md-6">
                 <!-- afficher le formulaire d'EXPRESSION DES BESOINS à remplir -->
-                <form action="index.php?action=need" method="post" class="border px-3 py-3 bg-light rounded submitNeed">
+                <form action="<?php echo BASE_PATH;?>index.php?action=need" method="post" class="border px-3 py-3 bg-light rounded submitNeed">
                     <div class="from-group row">
                         <div class="col">
                             <label for="name" class="text-info font-weight-bold" >Nom de votre site</label>
@@ -65,7 +65,7 @@
         <?php if (!empty($_SESSION ['userType']) && $_SESSION ['userType']!=="admin") :?>
         <div class="row">
             <div class='col-md-3'>
-                <a class="btn btn-lg btn-success btn-sm" href="index.php?action=member" role="button"><span class="fas fa-campground pr-1"></span>Retour à l'espace membre</a>
+                <a class="btn btn-lg btn-success btn-sm" href="<?php echo BASE_PATH;?>index.php?action=member" role="button"><span class="fas fa-campground pr-1"></span>Retour à l'espace membre</a>
             </div>
         </div>
         <?php endif;?>

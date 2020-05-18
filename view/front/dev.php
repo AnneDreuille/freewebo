@@ -11,7 +11,7 @@
             <!-- formulaire pour poster un message -->
             <div class ="offset-md-1 col-md-3">
                 <button class="btn btn-warning btn-block font-weight-bold disabled">Ecrire un message ici&nbsp;!</button>
-                <form action="index.php?action=addMessage" method="post" class="border pt-1 px-2 bg-light rounded submitPost">
+                <form action="<?php echo BASE_PATH;?>index.php?action=addMessage" method="post" class="border pt-1 px-2 bg-light rounded submitPost">
                     <div class="form-group row">
                         <div class="col">
                             <textarea id="message" name="message"></textarea>
