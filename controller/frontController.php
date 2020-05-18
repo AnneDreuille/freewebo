@@ -14,7 +14,7 @@ function logOut(){
     $_SESSION=array();
     session_destroy();
 
-    header('location: index.php');
+    header('location: '.BASE_PATH);
     die();
 }
 
@@ -68,17 +68,18 @@ function signUp() {
         //crypter le password
         $password_hash= password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-        //vérifier que le mail n'existe pas déjà
-        $no_existing_mail=$userModel->signIn($_POST['mail'] );
+        //véfifier avec le mail si le user existe déjà
+        //stocker ds 1 var le résultat de la req
+        $verif_user=$userModel->signIn($_POST['mail'] );
 
-        if ($no_existing_mail !== false) {
-            $error= true;
-            $alert= 'Il y a déjà un compte avec ce mail&nbsp;!';
-        } else {
+        //créer le user si résultat false (=user inexistant)
+        if ($verif_user ===false) {
             $error= false;
-
             //appeler la fonction de cet objet
             $addData= $userModel->signUp($_POST['userType'], $_POST['lastName'], $_POST['firstName'], $_POST['mail'], $_POST['phone'], $password_hash);
+        } else {
+            $error= true;
+            $alert= 'Il y a déjà un compte avec ce mail&nbsp;!';
         }
     }
     //charger le fichier en vue de l'affichage dans la page html
@@ -97,7 +98,7 @@ function signIn() {
         $member= $userModel->signIn($_POST['mail']);
 
         if ($member===false){
-            header('location: index.php');
+            header('location: '.BASE_PATH);
             die();
         }
 
@@ -105,7 +106,7 @@ function signIn() {
         $password_OK = password_verify($_POST['password'], $member['password']);
 
         if (!$password_OK) {
-            header('location: index.php');
+            header('location: '.BASE_PATH);
             die();
         } else {
             $_SESSION['idUser'] = $member['id'];
@@ -115,14 +116,14 @@ function signIn() {
 
         //diriger le membre inscrit vers l'espace membre
         if ($_SESSION['userType']!=='admin'){
-            header('location: index.php?action=member');
+            header('location: '.BASE_PATH.'index.php?action=member');
             die();
         } else {
-            header('location: index.php?action=admin');
+            header('location: '.BASE_PATH.'index.php?action=admin');
             die();
         }
     }
-    header('location: index.php');
+    header('location: '.BASE_PATH);
     die();
 }
 
@@ -148,7 +149,7 @@ function member (){
         }
 
         if ($dataProject===false){
-            header('location: index.php');
+            header('location: '.BASE_PATH);
             die();
         }
 
@@ -201,7 +202,7 @@ function modelFile(){
 
             if (in_array($extension, $extensionOk)){
                 //valider le fichier et le stocker définitivement
-                move_uploaded_file($tmpFileName, 'public/uploads/' .$uniqName);
+                move_uploaded_file($tmpFileName, __DIR__.'/../public/uploads/' .$uniqName);
 
                 //créer les objets
                 $projectModel= new ProjectModel();
@@ -211,7 +212,7 @@ function modelFile(){
                 $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
 
                 if ($dataProject===false){
-                header('location: index.php?action=member');
+                header('location: '.BASE_PATH.'index.php?action=member');
                 die();
                 }
 
@@ -219,7 +220,7 @@ function modelFile(){
             }
 
             //diriger vers la page member
-            header('location: index.php?action=member');
+            header('location: '.BASE_PATH.'index.php?action=member');
             die();
 
         } else {
@@ -248,18 +249,19 @@ function validModel(){
         $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
 
         if ($dataProject===false){
-            header('location: index.php?action=member');
+            header('location: '.BASE_PATH.'index.php?action=member');
             die();
         }
 
         $validModel= $projectModel->validModel($dataProject['id']);
 
         //diriger vers la page member
-        header('location: index.php?action=member');
+        header('location: '.BASE_PATH.'index.php?action=member');
         die();
 
     } else {
-        $dataProject=false;
+        //envoyer une exception en cas d'erreur
+        throw new Exception('Pas de user identifié');
     }
 }
 
@@ -282,14 +284,14 @@ function urlName(){
             $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
 
             if ($dataProject===false){
-            header('location: index.php?action=member');
+            header('location: '.BASE_PATH.'index.php?action=member');
             die();
             }
 
             $urlName= $projectModel->urlName($_POST['urlName'], $dataProject['id']);
 
             //diriger vers la page member
-            header('location: index.php?action=member');
+            header('location: '.BASE_PATH.'index.php?action=member');
             die();
 
         } else {
@@ -321,14 +323,14 @@ function ratingClient(){
         $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
 
         if ($dataProject===false){
-            header('location: index.php?action=member');
+            header('location: '.BASE_PATH.'index.php?action=member');
             die();
             }
 
         $ratingClient= $projectModel->ratingClient($_POST['ratingClient'], $dataProject['id']);
 
         //diriger vers la page member
-        header('location: index.php?action=member');
+        header('location: '.BASE_PATH.'index.php?action=member');
         die();
 
         } else {
@@ -360,14 +362,14 @@ function ratingDev(){
         $dataProject= $projectModel->dataProject($idUser,$_SESSION['userType']);
 
         if ($dataProject===false){
-            header('location: index.php?action=member');
+            header('location: '.BASE_PATH.'index.php?action=member');
             die();
         }
 
         $ratingDev= $projectModel->ratingDev($_POST['ratingDev'], $dataProject['id']);
 
         //diriger vers la page member
-        header('location: index.php?action=member');
+        header('location: '.BASE_PATH.'index.php?action=member');
         die();
 
         } else {
@@ -456,7 +458,7 @@ function clicks(){
     file_put_contents($file, $clicks);
 
     //diriger vers la page html
-    header('location: index.php');
+    header('location: '.BASE_PATH);
     die();
 }
 
