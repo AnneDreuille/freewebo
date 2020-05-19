@@ -148,11 +148,6 @@ function member (){
             $dataProject=$projectModel->project($_GET['id']);
         }
 
-        if ($dataProject===false){
-            header('location: '.BASE_PATH);
-            die();
-        }
-
         //appeler les fonctions de ces objets
         $client=$userModel->getUser($dataProject['idClient']);
         $dev=$userModel->getUser($dataProject['idDev']);
