@@ -42,5 +42,4 @@ class ChatModel extends Model {
       $req->execute();
       return $req->fetchAll();
     }
-
 }
