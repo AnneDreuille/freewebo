@@ -147,6 +147,16 @@ function member (){
         } else {
             $dataProject=$projectModel->project($_GET['id']);
         }
+        // redirection quand il n'y a pas de projet
+        if ($dataProject===false){
+            if ($_SESSION['userType']==='client'){
+                header('location: '.BASE_PATH.'index.php?action=need');
+                die();
+            } else {
+                header('location: '.BASE_PATH);
+                die();
+            }
+        }
 
         //appeler les fonctions de ces objets
         $client=$userModel->getUser($dataProject['idClient']);
