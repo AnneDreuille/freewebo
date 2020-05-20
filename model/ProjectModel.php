@@ -33,15 +33,6 @@ class ProjectModel extends Model {
     return $req->fetch();
   }
 
-  //mettre à jour les données d'1 projet / désignation d'un dév
-  public function assign($idDev, $id) {
-    $db= $this->dbConnect();
-
-    $req = $db->prepare('UPDATE project SET idDev=?, assignDate=NOW() WHERE id=?');
-
-    return $req->execute(array($idDev, $id));
-  }
-
   //mettre à jour les données d'1 projet / dépôt du modèle
   public function modelFile($modelFile, $id) {
     $db= $this->dbConnect();
@@ -134,6 +125,15 @@ class ProjectModel extends Model {
     return $req->fetch();
   }
 
+  //mettre à jour les données d'1 projet / désignation d'un dév
+  public function assign($idDev, $id) {
+    $db= $this->dbConnect();
+
+    $req = $db->prepare('UPDATE project SET idDev=?, assignDate=NOW() WHERE id=?');
+
+    return $req->execute(array($idDev, $id));
+  }
+
   //mettre à jour les données d'1 projet / endDate
   public function endDate($id) {
     $db= $this->dbConnect();
@@ -144,4 +144,3 @@ class ProjectModel extends Model {
   }
 
 }
-
