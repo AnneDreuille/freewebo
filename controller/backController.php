@@ -173,6 +173,3 @@ function updateUser() {
         throw new Exception('Erreur : pas de client identifié');
     }
 }
-
-
-
