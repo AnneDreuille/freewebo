@@ -105,7 +105,7 @@
     <body>
         <header class="card-header pb-0">
             <div class="text-center page-header text-info pt-0 mb-0">
-                <div class="d-md-inline"><img src="<?php echo BASE_PATH;?>public/images/logo.png" alt="logo" class="img.card-img" width="77" height="77" /></div>
+                <div class="d-md-inline" id="btnLike"><img src="<?php echo BASE_PATH;?>public/images/logo.png" alt="logo" class="img.card-img" width="77" height="77" /></div>
                 <h1 class="pl-2 d-md-inline font-weight-bold"><?php echo $titlePage; ?></h1>
             </div>
             <nav>
@@ -151,7 +151,7 @@
 
                     <!-- bouton like -->
                     <li class="nav-link">
-                        <a href="<?php echo BASE_PATH;?>index.php?action=clicks" class="text-info font-weight-bold text-decoration-none mt-2 pr-1" id="btnLike" data-toggle="tooltip" data-placement="top" title="Clic si tu aimes&nbsp;!"><span class="fas fa-thumbs-up pr-1"></span>J'aime FreeWebo</a>
+                        <a href="<?php echo BASE_PATH;?>index.php?action=clicks" class="text-info font-weight-bold text-decoration-none mt-2 pr-1" data-toggle="tooltip" data-placement="top" title="Clic si tu aimes&nbsp;!"><span class="fas fa-thumbs-up pr-1"></span>J'aime FreeWebo</a>
                         <span class="text-info"><?php nbLike();?></span>
                     </li>
 
