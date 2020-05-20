@@ -177,9 +177,9 @@
                    <ul class="pagination pagination-sm justify-content-center">
                         <?php if ($currentPage >1) : ?>
                         <li class="page-item">
-                            <a class="page-link" href="<?php echo BASE_PATH;?>index.php?action=admin&p=<?php echo htmlspecialchars($previous);?>" tabindex="-1"><span class="fas fa-backward text-info"></span></a>
+                            <a class="page-link" href="<?php echo BASE_PATH;?>index.php?action=admin&p=<?php echo htmlspecialchars($previous);?>"><span class="fas fa-backward text-info"></span></a>
                         <?php else : ?>
-                            <a class="page-link" href="" tabindex="-1"><span class="fas fa-backward text-info"></span></a>
+                            <a class="page-link" href=""><span class="fas fa-backward text-info"></span></a>
                         </li>
                         <?php endif; ?>
 
