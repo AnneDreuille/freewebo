@@ -1,74 +1,80 @@
 <?php
-require_once(__DIR__.'/Model.php');
+
+namespace model;
 
 class UserModel extends Model {
 
-//insérer un nouveau user
-  public function signUp($userType,$firstName,$lastName,$mail,$phone,$password)
+//FRONT
+
+  //insérer un nouveau user
+  public function signUp($userType,$lastName,$firstName,$mail,$phone, $password){
     $db= $this->dbConnect();
 
-    $req = $db->prepare('INSERT INTO user (userType,firstName,lastName,mail,phone,password,signUpDate) VALUES (?,?,?,?,?,?,NOW())');
+    $req = $db->prepare('INSERT INTO user (userType,lastName,firstName,mail,phone,password,signUpDate, blacklist) VALUES (?,?,?,?,?,?,NOW(),?)');
 
-    return $req->execute(array($userType,$firstName,$lastName,$mail,$phone,$password));
+    return $req->execute(array($userType,$lastName,$firstName,$mail,$phone,$password,0));
   }
 
-  //récupérer le nombre de clients
-    public function nbClient() {
-      $db= $this->dbConnect();
+  //récupérer les données d'1 user en fct de son mail
+  public function signIn($mail) {
+    $db= $this->dbConnect();
 
-      $req = $db->prepare('SELECT COUNT(id) AS nbClient FROM user WHERE userType="client"');
+    $req = $db->prepare('SELECT id,userType,lastName,firstName,mail,phone,password,DATE_FORMAT(signUpDate, "%d/%m/%Y à %Hh%i") AS signUpDate_fr, blacklist FROM user WHERE mail=? AND blacklist=0');
 
-      $req->execute();
-      return $req->fetchColumn();
-    }
+    $req->execute(array($mail));
+    return $req->fetch();
+  }
 
-  //récupérer le nombre de développeurs
-    public function nbDev() {
-      $db= $this->dbConnect();
+//récupérer les données d'1 user en fct de son id
+  public function getUser($id) {
+    $db= $this->dbConnect();
 
-      $req = $db->prepare('SELECT COUNT(id) AS nbDev FROM user WHERE userType="dev"');
+    $req = $db->prepare('SELECT id,userType,lastName,firstName,mail,phone,password,DATE_FORMAT(signUpDate, "%d/%m/%Y à %Hh%i") AS signUpDate_fr, blacklist FROM user WHERE id=?');
 
-      $req->execute();
-      return $req->fetchColumn();
-    }
+    $req->execute(array($id));
+    return $req->fetch();
+  }
+
+
+//BACK
 
   //récupérer la liste des clients
-    public function listClient() {
-      $db= $this->dbConnect();
-
-      $req = $db->prepare('SELECT id,firstName,lastName,mail,phone,DATE_FORMAT(signUpDate, "%d/%m/%Y à %Hh%i") AS signUpDate_fr, DATE_FORMAT(blacklistDate, "%d/%m/%Y à %Hh%i") AS blacklistDate_fr FROM user ORDER BY signUpDate ASC ');
-
-      $req->execute();
-      return $req->fetchAll();
-    }
-
-//récupérer la liste des développeurs
-    public function listDev() {
-      $db= $this->dbConnect();
-
-      $req = $db->prepare('SELECT id,firstName,lastName,mail,phone,DATE_FORMAT(signUpDate, "%d/%m/%Y à %Hh%i") AS signUpDate_fr, DATE_FORMAT(blacklistDate, "%d/%m/%Y à %Hh%i") AS blacklistDate_fr FROM user ORDER BY signUpDate ASC ');
-
-      $req->execute();
-      return $req->fetchAll();
-    }
-
-//mettre à jour les données d'1 user
-  public function updateUser($mail, $phone, $id) {
+  public function listClient() {
     $db= $this->dbConnect();
 
-    $req = $db->prepare('UPDATE user SET mail=?, phone=?, WHERE id=?');
+    $req = $db->prepare('SELECT id,userType,firstName,lastName,mail,phone,DATE_FORMAT(signUpDate, "%d/%m/%Y à %Hh%i") AS signUpDate_fr, blacklist FROM user WHERE userType="client" ORDER BY signUpDate ASC');
 
-    return $req->execute(array($mail, $phone, $id));
+    $req->execute();
+    return $req->fetchAll();
   }
 
-//blacklister 1 user
-  public function blacklist($blacklistDate, $id) {
+  //récupérer la liste des devs
+  public function listDev() {
     $db= $this->dbConnect();
 
-    $req = $db->prepare('UPDATE user SET blacklistDate=NOW() WHERE id=?');
+    $req = $db->prepare('SELECT id,userType,firstName,lastName,mail,phone,DATE_FORMAT(signUpDate, "%d/%m/%Y à %Hh%i") AS signUpDate_fr, blacklist FROM user WHERE userType="dev" ORDER BY signUpDate ASC');
 
-    return $req->execute(array($id));
+    $req->execute();
+    return $req->fetchAll();
   }
 
+  //mettre à jour les données d'1 user
+  public function updateUser($lastName, $firstName, $mail, $phone, $password, $blacklist, $id) {
+    $db= $this->dbConnect();
+
+    $req = $db->prepare('UPDATE user SET lastName=?, firstName=?, mail=?, phone=?, password=?, blacklist=? WHERE id=?');
+
+    return $req->execute(array($lastName, $firstName, $mail, $phone, $password, $blacklist, $id));
+  }
+
+  //récupérer la liste des USERS blacklistés
+  public function blacklist() {
+    $db= $this->dbConnect();
+
+    $req = $db->prepare('SELECT id,userType,firstName,lastName,mail,phone,DATE_FORMAT(signUpDate, "%d/%m/%Y à %Hh%i") AS signUpDate_fr, blacklist FROM user WHERE blacklist=1');
+
+    $req->execute();
+    return $req->fetchAll();
+  }
 
 }

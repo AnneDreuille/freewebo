@@ -1,0 +1,10 @@
+# Groupe 1
+User-agent: *
+Allow: /
+
+# Groupe 2
+User-agent: *
+Disallow: /index.php?action=logOut
+Disallow: /index.php?action=clicks
+
+Sitemap: https://freewebo.org/sitemap.xml

@@ -1,25 +1,114 @@
 html, body{
-  margin-right:10px;
-  margin-left: 10px;
-  padding-top: 10px;
-  font-size: 20px;
-  font-family:"Open Sans",sans-serif;
-  color:#333; /*gris foncé au lieu de noir*/
+    margin:0;
+    padding:0;
+    font-size: 20px;
+    font-family:"Open Sans",sans-serif;
+    color:#333; /*gris foncé au lieu de noir*/
 }
 
-.font-italic{
-  font-style: italic;
+.italic{
+    font-style: italic;
 }
 
-footer{
-  height:100px;
+.small{
+    font-size: 16px !important;
+}
+
+.xsmall{
+    font-size: 15px !important;
+}
+
+/*RATING CLIENT*/
+.ratingClient input {
+    display:none;
+}
+.ratingClient label {
+    color:#ccc;
+    cursor:pointer;
+}
+.ratingClient :checked ~ label {
+    color:#f90;
+}
+.ratingClient label:hover,
+.ratingClient label:hover ~ label {
+    color:#fc0;
+}
+/*RATING DEV*/
+.ratingDev input {
+    display:none;
+}
+.ratingDev label {
+    color:#ccc;
+    cursor:pointer;
+}
+.ratingDev :checked ~ label {
+    color:#f90;
+}
+.ratingDev label:hover,
+.ratingDev label:hover ~ label {
+    color:#fc0;
+}
+/*FIN RATING*/
+
+/*listMessage dans page Member */
+#listMessage {
+    height: 500px !important;
+}
+
+footer {
+    height: 200px !important;
 }
 
 
-
+/*RESPONSIVE*/
 @media screen and (max-width:768px){
-  html, body{
-    font-size:14px;
-    margin :0;
-  }
+    html, body{
+        font-size:14px;
+        margin :0;
+    }
+
+    h1 {
+        font-size:22px;
+    }
+    h2 {
+        font-size:17px;
+    }
+
+    nav, nav .h5 {
+        font-size: x-small;
+    }
+    /*admin*/
+    table, .table, thead, th, tbody, td {
+        font-size: x-small;
+        width:auto;
+        text-align: center;
+        overflow: auto;
+        table-layout: fixed;
+        margin:0;
+        padding:0;
+    }
+    .table-responsive-sm{
+        overflow-x: scroll;
+    }
+    /*esp membre*/
+    .btn{
+        font-size: small;
+        padding:2px;
+    }
+    #process>div{
+        font-size: small;
+        overflow-x: scroll;
+    }
+    #process{
+        overflow-x: scroll;
+    }
+
+    #errorPage{
+        width:75%;
+    }
+
+    footer{
+        height:420px !important;
+    }
+
 }
