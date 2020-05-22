@@ -2,8 +2,15 @@ html, body{
     margin:0;
     padding:0;
     font-size: 20px;
-    font-family:"Open Sans",sans-serif;
     color:#333; /*gris foncé au lieu de noir*/
+}
+@font-face {
+  font-family:"Open Sans",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('Open Sans-Regular'),
+  url(https://fonts.googleapis.com/css?family=Open+Sans) format('woff2');
+  font-display: swap;
 }
 
 .italic{
