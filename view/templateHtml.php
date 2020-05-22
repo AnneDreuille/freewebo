@@ -11,7 +11,7 @@
         <meta name="description" content="<?php echo $metaDescription; ?>" />
 
         <!--lien google font police Open Sans-->
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans&display=swap' rel='stylesheet' type='text/css'>
 
         <!--lien font-awesome pour les icônes-->
         <link rel="stylesheet" href=
