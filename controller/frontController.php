@@ -13,7 +13,7 @@ function homepage(){
 function clicks(){
     $file = 'clicks.txt';
     //ouvrir le fichier pour lire le contenu existant
-    $clicks = file_get_contents($file);
+    $clicks = (int) file_get_contents($file);
     //ajouter 1
     $clicks ++;
     //écrire le résultat dans le fichier
