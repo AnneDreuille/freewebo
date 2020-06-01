@@ -9,40 +9,44 @@ $('.submitPost').submit (function (event) {
     //this = formulaire sur lequel on a cliqué
     let $form=$(this);
 
-    //requête ajax
-    $.ajax({
-        //url du form. avec attr = attribut action
-        url:$form.attr('action'),
-        //objet avec arg.qui fait réf à form html
-        data:new FormData($form[0]),
-        //ne pas traiter les données
-        processData: false,
-        //ne pas configurer le contentType
-        contentType: false,
-        method:"post",
-        dataType:"JSON"
+    //vérifier que le champ message ne soit pas vide
+    if ($('#message').val()!=''){
 
-    //actualiser les msg lors de l'évènement
-    //dès que la requête ajax a réussi
-    }) .done(function(data){
-        if (data.success===true){
-            //réf à id listMessage
-            let listMessage= $("#listMessage");
-            //met à 0 les msg précédents
-            listMessage.html("");
-            tinyMCE.activeEditor.setContent('');
-            //afficher les msg postés
-            data.messages.forEach(function(element) {
-                listMessage.append(
-                    `<dl>
-                        <dt class="text-capitalize">${element.firstName}</dt>
-                        <dd class="small text-primary font-italic">Posté le ${element.postDate_fr}</dd>
-                        <dd class="text-justify">${element.message}</dd>
-                    </dl>`
-                );
-            });
-        }
-    });
+        //requête ajax
+        $.ajax({
+            //url du form. avec attr = attribut action
+            url:$form.attr('action'),
+            //objet avec arg.qui fait réf à form html
+            data:new FormData($form[0]),
+            //ne pas traiter les données
+            processData: false,
+            //ne pas configurer le contentType
+            contentType: false,
+            method:"post",
+            dataType:"JSON"
+
+        //actualiser les msg lors de l'évènement
+        //dès que la requête ajax a réussi
+        }) .done(function(data){
+            if (data.success===true){
+                //réf à id listMessage
+                let listMessage= $("#listMessage");
+                //met à 0 les msg précédents
+                listMessage.html("");
+                tinyMCE.activeEditor.setContent('');
+                //afficher les msg postés
+                data.messages.forEach(function(element) {
+                    listMessage.append(
+                        `<dl>
+                            <dt class="text-capitalize">${element.firstName}</dt>
+                            <dd class="small text-primary font-italic">Posté le ${element.postDate_fr}</dd>
+                            <dd class="text-justify">${element.message}</dd>
+                        </dl>`
+                    );
+                });
+            }
+        });
+    }
 });
 
 //AFFICHER LE MESSAGE DE SUCCES DU FORMULAIRE NEED
@@ -56,22 +60,26 @@ $('.submitNeed').submit (function (event) {
     //this = formulaire sur lequel on a cliqué
     let $form=$(this);
 
-    //requête ajax
-    $.ajax({
-        //url du form. avec attr = attribut action
-        url:$form.attr('action'),
-        //objet avec arg.qui fait réf à form html
-        data:new FormData($form[0]),
-        //ne pas traiter les données
-        processData: false,
-        //ne pas configurer le contentType
-        contentType: false,
-        method:"post"
+    //vérifier que les champs ne soient pas vides
+    if ($('#name').val()!='' && $('#description').val()!='') {
 
-    //afficher msg lors de l'évènement
-    //dès que la requête ajax a réussi
-    }) .done(function(){
-        //trouver le §p avec id msg et ajouter le texte du msg
-        $form.find('p#msg').text('Votre description de besoin a bien été enregistrée.');
-    })
+        //requête ajax
+        $.ajax({
+            //url du form. avec attr = attribut action
+            url:$form.attr('action'),
+            //objet avec arg.qui fait réf à form html
+            data:new FormData($form[0]),
+            //ne pas traiter les données
+            processData: false,
+            //ne pas configurer le contentType
+            contentType: false,
+            method:"post"
+
+        //afficher msg lors de l'évènement
+        //dès que la requête ajax a réussi
+        }) .done(function(){
+            //trouver le §p avec id msg et ajouter le texte du msg
+            $form.find('p#msg').text('Votre description de besoin a bien été enregistrée.');
+        })
+    }
 });

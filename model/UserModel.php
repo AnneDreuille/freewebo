@@ -25,7 +25,7 @@ class UserModel extends Model {
     return $req->fetch();
   }
 
-//récupérer les données d'1 user en fct de son id
+  //récupérer les données d'1 user en fct de son id
   public function getUser($id) {
     $db= $this->dbConnect();
 
@@ -76,5 +76,4 @@ class UserModel extends Model {
     $req->execute();
     return $req->fetchAll();
   }
-
 }

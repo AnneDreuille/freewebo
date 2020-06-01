@@ -9,6 +9,21 @@ function homepage(){
     require(__DIR__.'/../view/front/homepage.php');
 }
 
+//BOUTON LIKE mise à jour nb like dans fichier.txt
+function clicks(){
+    $file = 'clicks.txt';
+    //ouvrir le fichier pour lire le contenu existant
+    $clicks = (int) file_get_contents($file);
+    //ajouter 1
+    $clicks ++;
+    //écrire le résultat dans le fichier
+    file_put_contents($file, $clicks);
+
+    //diriger vers la page html
+    header('location: '.BASE_PATH);
+    die();
+}
+
 //se déconnecter
 function logOut(){
     $_SESSION=array();
@@ -147,6 +162,16 @@ function member (){
         } else {
             $dataProject=$projectModel->project($_GET['id']);
         }
+        // redirection quand il n'y a pas de projet
+        if ($dataProject===false){
+            if ($_SESSION['userType']==='client'){
+                header('location: '.BASE_PATH.'index.php?action=need');
+                die();
+            } else {
+                header('location: '.BASE_PATH);
+                die();
+            }
+        }
 
         //appeler les fonctions de ces objets
         $client=$userModel->getUser($dataProject['idClient']);
@@ -213,7 +238,6 @@ function modelFile(){
 
                 $modelFile= $projectModel->modelFile($uniqName, $dataProject['id']);
             }
-
             //diriger vers la page member
             header('location: '.BASE_PATH.'index.php?action=member');
             die();
@@ -440,20 +464,3 @@ function dev(){
 
     require(__DIR__.'/../view/front/dev.php');
 }
-
-//BOUTON LIKE mise à jour dans le fichier
-function clicks(){
-
-    $file = 'clicks.txt';
-    //ouvrir le fichier pour lire le contenu existant
-    $clicks = file_get_contents($file);
-    //ajouter 1
-    $clicks ++;
-    //écrire le résultat dans le fichier
-    file_put_contents($file, $clicks);
-
-    //diriger vers la page html
-    header('location: '.BASE_PATH);
-    die();
-}
-

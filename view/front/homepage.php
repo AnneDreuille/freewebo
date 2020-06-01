@@ -135,19 +135,19 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active border">
                             <a href="https://www.webagency2-0.com/" class="text-decoration-none" target="_blank" data-toggle="tooltip" data-placement="top" title="Clic vers le site"><h3 class="text-center text-info mb-3">Site agence web<span class="fas fa-link fa-xs pl-2"></span></h3></a>
-                            <img class="d-block w-100" src="<?php echo BASE_PATH;?>public/images/webagency.png" alt="Webagency" width="1179" height="456" />
+                            <img class="d-block w-100" src="<?php echo BASE_PATH;?>public/images/webagency.jpg" alt="Webagency" width="1179" height="456" />
                         </div>
                         <div class="carousel-item border">
                             <a href="https://strasbourgtourisme.webagency2-0.com/" class="text-decoration-none" target="_blank" data-toggle="tooltip" data-placement="top" title="Clic vers le site"><h3 class="text-center text-info mb-3">Site Office Tourisme<span class="fas fa-link fa-xs pl-2"></span></h3></a>
-                            <img class="d-block w-100" src="<?php echo BASE_PATH;?>public/images/strasbourg.png" alt="Strasbourg" width="1204" height="428" />
+                            <img class="d-block w-100" src="<?php echo BASE_PATH;?>public/images/strasbourg.jpg" alt="Strasbourg" width="1204" height="428" />
                         </div>
                         <div class="carousel-item border">
                             <a href="https://locavelo.webagency2-0.com/" class="text-decoration-none" target="_blank" data-toggle="tooltip" data-placement="top" title="Clic vers l'appli web"><h3 class="text-center text-info mb-3">Appli web location vélos<span class="fas fa-link fa-xs pl-2"></span></h3></a>
-                            <img class="d-block w-100" src="<?php echo BASE_PATH;?>public/images/locavelo.png" alt="Locavelo" width="1165" height="455" />
+                            <img class="d-block w-100" src="<?php echo BASE_PATH;?>public/images/locavelo.jpg" alt="Locavelo" width="1165" height="455" />
                         </div>
                         <div class="carousel-item border">
                             <a href="https://blogjf.webagency2-0.com/" class="text-decoration-none" target="_blank" data-toggle="tooltip" data-placement="top" title="Clic vers le site"><h3 class="text-center text-info mb-3">Blog écrivain<span class="fas fa-link fa-xs pl-2"></span></h3></a>
-                            <img class="d-block w-100" src="<?php echo BASE_PATH;?>public/images/blogjf.png" alt="Blog JF" width="1178" height="405" />
+                            <img class="d-block w-100" src="<?php echo BASE_PATH;?>public/images/blogjf.jpg" alt="Blog JF" width="1178" height="405" />
                         </div>
                     </div>
                 </div>
