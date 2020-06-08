@@ -82,6 +82,13 @@ footer {
     nav, nav .h5 {
         font-size: x-small;
     }
+
+    /*homepage carousel*/
+    .carousel-item >img{
+        width: auto;
+        height:auto;
+    }
+
     /*admin*/
     table, .table, thead, th, tbody, td {
         font-size: x-small;
