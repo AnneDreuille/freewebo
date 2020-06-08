@@ -1,5 +1,8 @@
 <?php session_start();
 
+use \controller\FrontController;
+use \controller\BackController;
+
 //charger les classes automatiquement
 spl_autoload_register(function ($className) {
     include str_replace('\\', DIRECTORY_SEPARATOR, $className ).'.php';
@@ -7,10 +10,6 @@ spl_autoload_register(function ($className) {
 
 //charger le fichier config avec constantes d'accès à la db
 require_once(__DIR__.'/app/config.php');
-
-//charger les fichiers controller
-require_once(__DIR__.'/controller/frontController.php');
-require_once(__DIR__.'/controller/backController.php');
 
 //afficher le nb de like en barre nav
 function nbLike(){
@@ -21,75 +20,78 @@ function nbLike(){
 
 //tester le paramètre action pour savoir quelle fonction du controleur appeler
 try {
+    $frontController = new FrontController();
+    $backController = new BackController();
+
     if (isset($_GET['action'])) {
 
 //FRONT
         if($_GET['action']=='clicks') {
-            clicks();
+            $frontController->clicks();
         }
         elseif($_GET['action']=='logOut') {
-            logOut();
+            $frontController->logOut();
         }
         elseif ($_GET['action']=='errorPage') {
-            errorPage();
+            $frontController->errorPage();
         }
         elseif ($_GET['action']=='privacyPolicy') {
-            privacyPolicy();
+            $frontController->privacyPolicy();
         }
         elseif ($_GET['action']=='signUp') {
-            signUp();
+            $frontController->signUp();
         }
         elseif ($_GET['action']=='signIn') {
-            signIn();
+            $frontController->signIn();
         }
         elseif($_GET['action']=='member') {
-            member();
+            $frontController->member();
         }
         elseif($_GET['action']=='need') {
-            need();
+            $frontController->need();
         }
         elseif($_GET['action']=='modelFile') {
-            modelFile();
+            $frontController->modelFile();
         }
         elseif($_GET['action']=='validModel') {
-            validModel();
+            $frontController->validModel();
         }
         elseif($_GET['action']=='urlName') {
-            urlName();
+            $frontController->urlName();
         }
         elseif($_GET['action']=='ratingClient') {
-            ratingClient();
+            $frontController->ratingClient();
         }
         elseif($_GET['action']=='ratingDev') {
-            ratingDev();
+            $frontController->ratingDev();
         }
         elseif($_GET['action']=='addMessage') {
-            addMessage();
+            $frontController->addMessage();
         }
         elseif($_GET['action']=='dev') {
-            dev();
+            $frontController->dev();
         }
 
 //BACK
         elseif($_GET['action']=='admin') {
-            admin();
+            $backController->admin();
         }
         elseif($_GET['action']=='updateUser') {
-            updateUser();
+            $backController->updateUser();
         }
         elseif($_GET['action']=='project') {
-            project();
+            $backController->project();
         }
         elseif($_GET['action']=='assign') {
-            assign();
+            $backController->assign();
         }
         elseif($_GET['action']=='endDate') {
-            endDate();
+            $backController->endDate();
         }
     }
     //afficher par défaut la page d'accueil
     else {
-        homepage();
+        $frontController->homepage();
     }
 }
 catch(Exception $e) {
